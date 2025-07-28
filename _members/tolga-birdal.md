@@ -6,6 +6,8 @@ affiliation: Imperial College London
 links:
   home-page: https://tolgabirdal.github.io
   orcid: 0000-0001-8713-9213
+  twitter: tolga_birdal
+  github: tolgabirdal
 ---
 
 As a <strong>computer scientist</strong>, I strive to understand visual perception and build machines that can see. To do so, I leverage tools from differential geometry and algebraic topology, in conjunction with deep neural networks. My research focuses on:

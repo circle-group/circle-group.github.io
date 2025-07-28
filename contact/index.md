@@ -48,8 +48,4 @@ We are located at the Huxley Building of Imperial College London. For any inquir
 
 {% include section.html dark=true %}
 
-{% capture col2 %}
-@2025 CIRCLE Group
-{% endcapture %}
-
 {% include cols.html col2=col2 %}
