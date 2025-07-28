@@ -1,11 +1,10 @@
 ---
-name: Sarah Johnson
-image: images/photo.jpg
-description: Lead Programmer
-role: programmer
+name: Yiming Huang
+image: images/prof_pic_yiming.jpg
+description: PhD Student
+role: phd-student
 links:
-  email: sarah.johnson@gmail.com
-  twitter: sarahjohnson
+  email: y.huang24@imperial.ac.uk
 ---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+<strong>Yiming Huang</strong> is a PhD student and Lee Family scholar at the Department of Computing, Imperial College London. Previously, he obtained an MSc in Computer Science from the University of Electronic Science and Technology of China (UESTC). His research interests primarily focus on developing novel topological deep learning methods for understanding complex and higher-order graph structures. His broader interests also include generative models, graph representation learning, higher-order network analysis, and their interdisciplinary applications. More information <a href="https://yimingh.top/">here</a>.
