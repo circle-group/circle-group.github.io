@@ -1,6 +1,6 @@
 ---
 name: Caner Korkmaz
-image: images/prof_pic_caner.jpg
+image: images/prof_pic_caner.jpeg
 description: PhD Student
 role: phd-student
 links:
