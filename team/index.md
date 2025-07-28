@@ -24,9 +24,7 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 
 {% capture content %}
 
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
-{% include figure.html image="images/photo.jpg" %}
+{% include figure.html image="images/team.jpeg" %}
 
 {% endcapture %}
 
