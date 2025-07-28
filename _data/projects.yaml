@@ -1,43 +1,52 @@
-- title: Cool Dataset
-  subtitle: a subtitle
+- title: Topological Deep Learning
+  subtitle: A new way to work with higher-order, complex data in the context of deep learning.
   group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  image: images/TDL.jpg
+  link: https://pyt-team.github.io/
+  description: A new way to work with higher-order, complex data in the context of deep learning.
+  repo: https://pyt-team.github.io/
   tags:
     - resource
 
-- title: Cool Package
-  subtitle: a subtitle
+- title: 3D/4D Generative Priors & Models
+  subtitle: A new computational paradigm for addressing vision and learning problems.
   group: featured
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  image: images/QCV.jpg
+  link: https://quantumcomputervision.github.io/
+  description: A new computational paradigm for addressing vision and learning problems.
+  repo: https://quantumcomputervision.github.io/
   tags:
     - resource
 
-- title: Cool Tutorial
-  subtitle: a subtitle
-  image: images/photo.jpg
-  link: https://github.com/
-  description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+- title: Quantum Computer Vision & Machine Learning
+  subtitle: A new computational paradigm for addressing vision and learning problems.
+  group: featured
+  image: images/QCV.jpg
+  link: https://quantumcomputervision.github.io/
+  description: A new computational paradigm for addressing vision and learning problems.
+  repo: https://quantumcomputervision.github.io/
   tags:
     - resource
-    - publication
 
-- title: Cool Web App
+- title: Higher-order Generative Models of Molecules
   subtitle: a subtitle
   image: images/photo.jpg
-  link: https://github.com/
+  #link: https://github.com/
   description: Lorem ipsum _dolor sit amet_, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  repo: greenelab/lab-website-template
+  #repo: greenelab/lab-website-template
+  tags:
+    - resource
+
+- title: BeFunky
+  subtitle: a subtitle
+  image: images/befunky.jpg
+  link: https://befunky.com/
+  description: Photo Editing and Graphic Design Made for Everyone.
+  repo: https://befunky.com/
   tags:
     - software
 
-- title: Cool Web Server
+- title: Topological Complexity Measures
   subtitle: a subtitle
   image: images/photo.jpg
   link: https://github.com/

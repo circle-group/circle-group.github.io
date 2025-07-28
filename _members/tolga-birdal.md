@@ -1,6 +1,6 @@
 ---
 name: Tolga Birdal
-image: images/prof_pic_color.jpg
+image: images/prof_pic.jpg
 role: principal-investigator
 affiliation: Imperial College London
 links:
