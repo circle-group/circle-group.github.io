@@ -638,7 +638,7 @@
     - Ghada Zamzmi
     - Theodore Papamarkou
     - AIdo Guzman-Saenz
-    - ToIga Birdal
+    - Tolga Birdal
     - Michael T Schaub
   date: 2023-10-29
   publisher: Asilomar Conference on Signals, Systems, and Computers
@@ -783,7 +783,7 @@
   publisher: International Conference on Machine Learning  (ICML)
   image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
   link: https://arxiv.org/abs/2402.08871
-- id: doi:10.1109/CVPR52729.2024.00147
+- id: doi:10.1109/cvpr52733.2024.00164
   title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
   authors:
     - Yannan He
@@ -801,7 +801,7 @@
     - type: website
       text: Website
       link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
-- id: doi:10.1109/CVPR52729.2024.01660
+- id: doi:10.1109/cvpr52733.2024.01862
   title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
     for Enhanced 3D Text2Shape Generation'
   authors:
@@ -819,7 +819,7 @@
     - type: website
       text: Website
       link: https://hypersdfusion.github.io/
-- id: doi:10.1109/CVPR52729.2024.00035
+- id: doi:10.1109/cvpr52733.2024.00039
   title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
   authors:
     - Nathan Mankovich
@@ -832,7 +832,7 @@
   buttons:
     - type: source
       link: https://github.com/nmank/FunWithFlags
-- id: doi:10.1109/CVPR52729.2024.02196
+- id: doi:10.1109/cvpr52733.2024.02475
   title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
   authors:
     - Jan-Nico Zaech
