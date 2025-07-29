@@ -1,0 +1,156 @@
+- id: url:https://proceedings.neurips.cc/paper_files/paper/2024/hash/2d2cf241331d7e71a6f20e9ed798a06b-Abstract-Conference.html
+  title: Topological generalization bounds for discrete-time stochastic optimization algorithms
+  authors:
+    - Rayna Andreeva
+    - Benjamin Dupuis
+    - Rik Sarkar
+    - Tolga Birdal
+    - Umut Simsekli
+  date: 2024-12-09
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
+  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/4765-topological-generalization-bounds-for-discrete-time-stochastic-optimization-algorithms-Paper-Conference.pdf
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2407.08723
+    - type: source
+      link: https://github.com/rorondre/TDAGeneralization
+
+- id: arxiv:2410.22311
+  title: Convex formulations for training two-layer ReLU neural networks
+  authors:
+    - Karthik Prakhya
+    - Tolga Birdal
+    - Alp Yurtsever
+  date: 2025-05-05
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/prakhya2025convex.jpg
+  link: https://arxiv.org/abs/2410.22311
+  buttons:
+    - type: source
+      link: https://github.com/KarthikPrakhya/SDPNN-IW
+
+- id: url:https://proceedings.neurips.cc/paper_files/paper/2024/hash/2d2cf241331d7e71a6f20e9ed798a06b-Abstract-Conference.html
+  title: Generative Fractional Diffusion Models
+  authors:
+    - Gabriel Nobis
+    - Maximilian Springenberg
+    - Marco Aversa
+    - Michael Detzel
+    - Rembert Daems
+    - Roderick Murray-Smith
+    - Shinichi Nakajima
+    - Sebastian Lapuschkin
+    - Stefano Ermon
+    - Tolga Birdal
+    - Manfred Opper
+    - Christoph Knochenhauer
+    - Luis Oala
+    - Wojciech Samek
+  date: 2024-12-09
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  image: https://circle-group.github.io/images/publication_preview/nobis2024generative.jpg
+  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/2d2cf241331d7e71a6f20e9ed798a06b-Paper-Conference.pdf
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2310.17638
+    - type: source
+      link: https://github.com/GabrielNobis/gfdm
+
+- id: arxiv:2412.12861
+  title: 'Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera'
+  authors:
+    - Zhengdi Yu
+    - Stefanos Zafeiriou
+    - Tolga Birdal
+  date: 2025-06-17
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/yu2025dyn.jpg
+  link: https://arxiv.org/abs/2412.12861
+  buttons:
+    - type: source
+      link: https://github.com/ZhengdiYu/Dyn-HaMR
+    - type: website
+      text: Website
+      link: https://dyn-hamr.github.io/
+
+- id: arxiv:2502.07782
+  title: A Flag Decomposition for Hierarchical Datasets
+  authors:
+    - Nathan Mankovich
+    - Ignacio Santamaria
+    - Gustau Camps-Valls
+    - Tolga Birdal
+  date: 2025-06-17
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/mankovich2025flag.jpg
+  link: https://arxiv.org/abs/2502.07782
+  buttons:
+    - type: source
+      link: https://github.com/nmank/FD
+
+- id: arxiv:2501.04697
+  title: Grokking at the Edge of Numerical Stability
+  authors:
+    - Lucas Prieto
+    - Melih Barsbey
+    - Pedro AM Mediano
+    - Tolga Birdal
+  date: 2025-05-05
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/prieto2025grokking.jpg
+  link: https://arxiv.org/abs/2501.04697
+  buttons:
+    - type: source
+      link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
+
+- id: url:https://www.esann.org/
+  title: Efficient training of neural SDEs using stochastic optimal control
+  authors:
+    - Rembert Daems
+    - Manfred Opper
+    - Guillaume Crevecoeur
+    - Tolga Birdal
+  date: 2025-10-08
+  publisher: European Symposium on Artificial Neural Networks (ESANN)
+  image: https://circle-group.github.io/images/publication_preview/daems2025efficient.jpg
+  link: https://www.esann.org/
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2505.17150
+
+- id: arxiv:2501.04697
+  title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations and Compressibility
+  authors:
+    - Melih Barsbey
+    - Lucas Prieto
+    - Stefanos Zafeiriou
+    - Tolga Birdal
+  date: 2025-10-04
+  publisher: International Conference on Computer Vision (ICCV)
+  image: https://circle-group.github.io/images/publication_preview/barsbey2025large.jpg
+  link: https://arxiv.org/abs/2501.04697
+
+- id: url:https://iccv2025.thecvf.com/
+  title: 'CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations'
+  authors:
+    - Caner Korkmaz
+    - Brighton Nuwagira
+    - Barış Coşkunuzer
+    - Tolga Birdal
+  date: 2025-10-04
+  publisher: International Conference on Computer Vision (ICCV)
+  image: https://circle-group.github.io/images/publication_preview/korkmaz2025CuMPerLay.jpg
+  link: https://iccv2025.thecvf.com/
+
+- id: url:https://iccv2025.thecvf.com/
+  title: Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)
+  authors:
+    - Lennart Bastian
+    - Mohammad Rashed
+    - Nassir Navab
+    - Tolga Birdal
+  date: 2025-10-04
+  publisher: International Conference on Computer Vision (ICCV)
+  image: https://circle-group.github.io/images/publication_preview/bastian2025conservative.jpg
+  link: https://iccv2025.thecvf.com/
