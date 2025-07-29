@@ -26,26 +26,8 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 
 {% capture content %}
 
-{% capture col1 %}
-{%
-%}
-{% endcapture %}
-
-{% capture col2 %}
-{%
-  include figure.html
-  image="images/team.jpeg"
-  caption="Team dinner"
-%}
-{% endcapture %}
-
-{% capture col3 %}
-{%
-%}
-{% endcapture %}
-
-<!--{% include figure.html image="images/team.jpeg" %}-->
-{% include cols.html col1=col1 col2=col2 col3=col3%}
+{% include figure.html image="images/team.jpeg" style="margin-top: 20px;" %}
+<!--{% include cols.html col1=col1 col2=col2 col3=col3%}-->
 
 {% endcapture %}
 
