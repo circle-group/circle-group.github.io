@@ -582,19 +582,75 @@
 
 <h4 id="our-funders">Our funders</h4>
 
-<div class="cols" style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: nowrap; gap: 1rem; flex-shrink: 1;">
-  <div class="col">
+<style>
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .col-item {
+    flex: 1 1 120px;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .col-item img {
+    max-width: 100%;
+    max-height: 80px;
+    height: auto;
+    display: inline-block;
+  }
+
+  @media (max-width: 600px) {
+    .cols {
+      justify-content: center;
+    }
+
+    .col-item {
+      flex: 1 1 80px;
+      max-width: 120px;
+    }
+
+    .col-item img {
+      max-height: 60px;
+    }
+  }
+</style>
+
+<div class="cols">
+  
+    
+    <div class="col-item">
+      
 <img src="images/funders/imperial.svg" style="max-width: 120px;">
-</div>
-  <div class="col">
+
+    </div>
+  
+    
+    <div class="col-item">
+      
 <img src="images/funders/ukri.svg" style="max-width: 120px;">
-</div>
-  <div class="col">
+
+    </div>
+  
+    
+    <div class="col-item">
+      
 <img src="images/funders/RS.svg" style="max-width: 120px;">
-</div>
-  <div class="col">
+
+    </div>
+  
+    
+    <div class="col-item">
+      
 <img src="images/funders/meta.svg" style="max-width: 120px;">
-</div>
+
+    </div>
+  
 </div>
   </section>
 
