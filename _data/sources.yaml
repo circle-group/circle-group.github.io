@@ -5,7 +5,6 @@
     given: Tolga
   container-title: International conference on acoustics, speech, and
     signal processing (ICASSP)
-  id: csimcsekli2015unified
   issued: 2015
   page: 1946-1950
   publisher: IEEE
@@ -18,7 +17,6 @@
   - family: Ilic
     given: Slobodan
   container-title: Int. Conf. On 3D vision (3DV)
-  id: birdal2015point
   issued: 2015
   page: 527-535
   publisher: IEEE
@@ -36,7 +34,6 @@
     given: Slobodan
   container-title: Winter conference on applications of computer vision
     (WACV)
-  id: birdal2016online
   issued: 2016
   page: 1-10
   publisher: IEEE
@@ -51,7 +48,6 @@
   - family: Ilic
     given: Slobodan
   container-title: Int. Conf. On 3D vision (3DV)
-  id: birdal2016x
   issued: 2016
   page: 556-564
   publisher: IEEE
@@ -66,7 +62,6 @@
     given: Slobodan
   container-title: International conference on intelligent robots and
     systems
-  id: birdal2017point
   issued: 2017
   page: 6871-6878
   publisher: IEEE
@@ -79,7 +74,6 @@
   - family: Ilic
     given: Slobodan
   container-title: Int. Conf. Computer vision (ICCV)
-  id: birdal2017cad
   issued: 2017
   page: 133-142
   title: Cad priors for accurate and flexible instance reconstruction
@@ -92,7 +86,6 @@
   - family: Navab
     given: Nassir
   container-title: Int. Conf. Computer vision workshops (ICCW)
-  id: busam2017camera
   issued: 2017
   page: 2436-2445
   title: Camera pose filtering with local regression geodesics on the
@@ -108,7 +101,6 @@
   - family: Ilic
     given: Slobodan
   container-title: Adv. Neural inform. Process. Systems (NeurIPS)
-  id: birdal2018bayesian
   issued: 2018
   page: 308-319
   title: Bayesian pose graph optimization via bingham distributions and
@@ -123,7 +115,6 @@
   - family: Ilic
     given: Slobodan
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: deng2018ppfnet
   issued: 2018
   page: 195-205
   title: "Ppfnet: Global context aware local features for robust 3d
@@ -142,7 +133,6 @@
   - family: Sturm
     given: Peter
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: birdal2018minimalist
   issued: 2018
   page: 3530-3540
   title: A minimalist approach to type-agnostic detection of quadrics in
@@ -156,7 +146,6 @@
   - family: Ilic
     given: Slobodan
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: deng2018ppf
   issued: 2018
   page: 602-618
   title: "PPF-FoldNet: Unsupervised learning of rotation invariant 3D
@@ -171,7 +160,6 @@
   - family: Ilic
     given: Slobodan
   container-title: Int. Conf. On 3D vision (3DV)
-  id: haarbach2018survey
   issued: 2018
   page: 381-389
   title: Survey of higher order rigid body motion interpolation methods
@@ -181,7 +169,6 @@
   - family: Birdal
     given: Tolga
   genre: PhD thesis
-  id: birdal2018geometric
   issued: 2018
   publisher: Technische Universität München
   title: Geometric methods for 3D reconstruction from large point clouds
@@ -199,7 +186,6 @@
     given: Peter
   container-title: IEEE Trans. on Pattern Analysis and Machine
     Intelligence (TPAMI)
-  id: birdal2019generic
   issue: 6
   issued: 2019
   page: 1333-1347
@@ -214,7 +200,6 @@
   - family: Simsekli
     given: Umut
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: birdal2019probabilistic
   issued: 2019
   page: 11105-11116
   title: Probabilistic permutation synchronization using the riemannian
@@ -230,7 +215,6 @@
   - family: Tombari
     given: Federico
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: zhao20193d
   issued: 2019
   page: 1009-1018
   title: 3D point capsule networks
@@ -243,7 +227,6 @@
   - family: Ilic
     given: Slobodan
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: deng20193d
   issued: 2019
   title: 3D local features for direct pairwise registration
   type: paper-conference
@@ -263,7 +246,6 @@
   - family: Tombari
     given: Federico
   container-title: Int. Conf. Computer vision (ICCV)
-  id: manhardt2019explaining
   issued: 2019
   title: Explaining the ambiguity of object detection and 6D pose from
     visual data
@@ -282,7 +264,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: Adv. Neural inform. Process. Systems (NeurIPS)
-  id: rempe2020caspr
   issued: 2020
   page: 13688-13701
   title: "Caspr: Learning canonical spatiotemporal point cloud
@@ -302,7 +283,6 @@
   - family: Guibas
     given: Leonidas
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: uy2020deformation
   issued: 2020
   page: 397-413
   publisher: Springer International Publishing
@@ -318,7 +298,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: birdal2020synchronizing
   issued: 2020
   page: 1569-1579
   title: Synchronizing probability measures on rotations via optimal
@@ -336,7 +315,6 @@
   - family: Birdal
     given: Tolga
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: gojcic2020learning
   issued: 2020
   page: 1759-1769
   title: Learning multiview 3d point cloud registration
@@ -357,7 +335,6 @@
   - family: Navab
     given: Nassir
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: bui20206d
   issued: 2020
   publisher: Springer, Cham
   title: 6D camera relocalization in ambiguous scenes via continuous
@@ -378,7 +355,6 @@
   - family: Tombari
     given: Federico
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: zhao2020quaternion
   issued: 2020
   page: 1-19
   publisher: Springer International Publishing Cham
@@ -396,7 +372,6 @@
   - family: Birdal
     given: Tolga
   container-title: IEEE Robotics and Automation Letters
-  id: sommer2020planes
   issue: 2
   issued: 2020
   page: 1764-1771
@@ -419,7 +394,6 @@
     given: Leonidas
   container-title: Winter conference on applications of computer vision
     (WACV)
-  id: yang2021continuous
   issued: 2021
   page: 134-144
   title: Continuous geodesic convolutions for learning on 3d shapes
@@ -438,7 +412,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: Int. Conf. Computer vision (ICCV)
-  id: rempe2021humor
   issued: 2021
   page: 11488-11499
   title: "Humor: 3d human motion model for robust pose estimation"
@@ -454,7 +427,6 @@
   - family: Simsekli
     given: Umut
   container-title: Adv. Neural inform. Process. Systems (NeurIPS)
-  id: birdal2021intrinsic
   issued: 2021
   page: 6776-6789
   title: Intrinsic dimension, persistent homology and generalization in
@@ -477,7 +449,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: huang2021multibodysync
   issued: 2021
   page: 7108-7118
   title: "Multibodysync: Multi-body segmentation and motion estimation
@@ -494,7 +465,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: birdal2021quantum
   issued: 2021
   page: 13122-13133
   title: Quantum permutation synchronization
@@ -511,7 +481,6 @@
   - family: Birdal
     given: Tolga
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: gojcic2021weakly
   issued: 2021
   page: 5692-5703
   title: Weakly supervised learning of rigid 3D scene flow
@@ -530,7 +499,6 @@
   - family: Birdal
     given: Tolga
   container-title: Int. Journal of Computer Vision (IJCV)
-  id: deng2022deep
   issue: 7
   issued: 2022
   page: 1627-1654
@@ -553,7 +521,6 @@
     given: Shi-Min
   container-title: IEEE Trans. on Pattern Analysis and Machine
     Intelligence (TPAMI)
-  id: huang2022multiway
   issue: 2
   issued: 2022
   page: 2038-2053
@@ -576,7 +543,6 @@
   - family: Wang
     given: He
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: chen2022projective
   issued: 2022
   page: 6646-6655
   title: Projective manifold gradient layer for deep rotation regression
@@ -597,7 +563,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: uy2022point2cyl
   issued: 2022
   page: 11850-11860
   title: "Point2cyl: Reverse engineering 3d objects from point clouds to
@@ -612,7 +577,6 @@
   - family: Golyanik
     given: Vladislav
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: yurtsever2022q
   issued: 2022
   page: 352-369
   publisher: Springer Nature Switzerland Cham
@@ -634,7 +598,6 @@
   - family: Guibas
     given: Leonidas J
   container-title: "arXiv preprint arXiv:2207.06333"
-  id: zheng20226d
   issued: 2022
   title: 6d camera relocalization in visually ambiguous extreme
     environments
@@ -653,7 +616,6 @@
   - family: Birdal
     given: Tolga
   container-title: Int. Journal of Computer Vision (IJCV)
-  id: zhao20223dpointcaps
   issue: 9
   issued: 2022
   page: 2321-2336
@@ -677,7 +639,6 @@
   - family: Erdem
     given: Aykut
   container-title: Brit. Mach. Vision conf. (BMVC)
-  id: karacan2022disentangling
   issued: 2022
   title: Disentangling content and motion for text-based neural video
     manipulation
@@ -689,7 +650,6 @@
   - family: Birdal
     given: Tolga
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: mankovich2023chordal
   issued: 2023
   page: 3881-3890
   title: Chordal averaging on flag manifolds and its applications
@@ -710,7 +670,6 @@
   - family: Erdem
     given: Aykut
   container-title: Int. Conf. Computer vision (ICCV)
-  id: ali2023vidstyleode
   issued: 2023
   page: 7523-7534
   title: "Vidstyleode: Disentangled video editing via stylegan and
@@ -740,7 +699,6 @@
     given: Shreyas N
   - literal: others
   container-title: "arXiv preprint arXiv:2206.00606"
-  id: hajij2023topological
   issued: 2023
   title: "Topological deep learning: Going beyond graph data"
   title-short: Topological deep learning
@@ -760,7 +718,6 @@
     given: Michael T
   container-title: Asilomar conference on signals, systems, and
     computers
-  id: hajij2023combinatorial
   issued: 2023
   page: 799-803
   publisher: IEEE
@@ -776,7 +733,6 @@
   - family: Birdal
     given: Tolga
   container-title: Adv. Neural inform. Process. Systems (NeurIPS)
-  id: foti2024uv
   issued: 2024
   title: UV-free texture generation with denoising and geodesic heat
     diffusions
@@ -793,7 +749,6 @@
   - family: Şimşekli
     given: Umut
   container-title: Adv. Neural inform. Process. Systems (NeurIPS)
-  id: andreeva2024topological
   issued: 2024
   title: Topological generalization bounds for discrete-time stochastic
     optimization algorithms
@@ -821,7 +776,6 @@
     given: Luis
   - literal: others
   container-title: Adv. Neural inform. Process. Systems (NeurIPS)
-  id: nobis2023generative
   issued: 2024
   title: Generative fractional diffusion models
   type: paper-conference
@@ -841,7 +795,6 @@
   - family: Birdal
     given: Tolga
   container-title: Brit. Mach. Vision conf. (BMVC)
-  id: krahn2023projected
   issued: 2024
   title: Projected stochastic gradient descent with quantum annealed
     binary gradients
@@ -866,7 +819,6 @@
   - family: Hajij
     given: Mustafa
   container-title: "arXiv preprint arXiv:2405.14094"
-  id: ballester2024attending
   issued: 2024
   title: "Attending to topological spaces: The cellular transformer"
   title-short: Attending to topological spaces
@@ -883,7 +835,6 @@
   - family: Birdal
     given: Tolga
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: vutukur2024alignist
   issued: 2024
   title: "Alignist: CAD-informed orientation distribution estimation by
     fusing shape and correspondences"
@@ -899,7 +850,6 @@
   - family: Birdal
     given: Tolga
   container-title: Eur. Conf. Computer vision (ECCV)
-  id: yu2023signavatars
   issued: 2024
   title: "SignAvatars: A large-scale 3D sign language holistic motion
     dataset and benchmark"
@@ -928,7 +878,6 @@
     given: Paolo
   - literal: others
   container-title: Int. Conf. Machine learning (ICML)
-  id: papamarkou2024position
   issued: 2024
   title: "Position: Topological deep learning is the new frontier for
     relational learning"
@@ -946,7 +895,6 @@
   - family: Pons-Moll
     given: Gerard
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: he2024nrdf
   issued: 2024
   page: 1661-1671
   title: "Nrdf: Neural riemannian distance fields for learning
@@ -963,7 +911,6 @@
   - family: Tombari
     given: Federico
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: leng2024hypersdfusion
   issued: 2024
   page: 19691-19700
   title: "HyperSDFusion: Bridging hierarchical structures in language
@@ -978,7 +925,6 @@
   - family: Birdal
     given: Tolga
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: mankovich2024fun
   issued: 2024
   page: 330-340
   title: "Fun with flags: Robust principal directions via flag
@@ -995,7 +941,6 @@
   - family: Van Gool
     given: Luc
   container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
-  id: zaech2024probabilistic
   issued: 2024
   page: 26191-26201
   title: Probabilistic sampling of balanced k-means using adiabatic
@@ -1011,7 +956,6 @@
   - family: Birdal
     given: Tolga
   container-title: Int. Conf. Learn. Represent. (ICLR)
-  id: daemsvariational2024
   issued: 2024
   title: Variational inference for SDEs driven by fractional noise
   type: paper-conference
