@@ -2,7 +2,8 @@
 name: Yiming Huang
 image: images/prof_pic_yiming.jpg
 description: PhD Student
-role: phd-student
+role: PhD Student
+group: phd
 links:
   email: y.huang24@imperial.ac.uk
 ---

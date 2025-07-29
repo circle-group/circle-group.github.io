@@ -3,6 +3,7 @@ name: Edward Stevinson
 image: images/prof_pic_ed.jpg
 description: PhD Student
 role: PhD Student
+group: phd
 links:
   github: Stevinson
 ---

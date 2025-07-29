@@ -1,6 +1,6 @@
 ---
 name: Yaman Kindap
-image: images/prof_pic_yaman.jpg
+image: images/prof_pic_yaman.jpeg
 role: Visitor
 group: visitor
 links:

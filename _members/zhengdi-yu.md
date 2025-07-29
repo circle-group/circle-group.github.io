@@ -2,7 +2,8 @@
 name: Zhengdi Yu
 image: images/prof_pic_zhengdi.jpg
 description: PhD Student
-role: phd-student
+role: PhD Student
+group: phd
 links:
   email: z.yu23@imperial.ac.uk
 ---
