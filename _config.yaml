@@ -40,8 +40,8 @@ collections:
   members:
     output: true
   # generate page for each post
-  posts:
-    output: true
+  # posts:
+  #   output: true
 
 # jekyll plugins
 plugins:
