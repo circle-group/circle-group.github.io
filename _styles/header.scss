@@ -1,8 +1,8 @@
 ---
 ---
 
-$logo-big: 80px;
-$logo: 40px;
+$logo-big: 40px;
+$logo: 25px;
 $big-padding: 100px;
 $collapse: 700px;
 $sticky: true;
@@ -170,3 +170,14 @@ header[data-big] {
     font-size: 1.2rem !important;
   }
 }
+
+@media (max-width: 500px) {
+  header .title-text .title {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+
+  header .title-text .subtitle {
+    font-size: 0.8rem;
+    font-weight: 400;
+  }
