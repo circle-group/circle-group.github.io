@@ -13,20 +13,30 @@ We have multliple <u><a href="https://tolgabirdal.github.io/assets/pdf/circlejob
 
 <!--{% include list.html data="members" component="portrait" filter="role == 'pi'" %}-->
 {% include list.html data="members" component="portrait" filter="role == 'principal-investigator'" %}
+{% include list.html data="members" component="portrait" filter="role == 'postdoc'" %}
+{% include list.html data="members" component="portrait" filter="role == 'phd'" %}
 
 {% include section.html background="images/background.jpg" dark=true %}
 
 We are fortunate to oftenly receive visitors and collaborate with various researchers:
 
-{% include list.html data="members" component="portrait" filter="role == 'Visitor'" %}
-
-{% include list.html data="members" component="portrait" filter="role == 'phd'" %}
+{% include list.html data="members" component="portrait" filter="role == 'visitor'" %}
 
 {% include section.html %}
 
 {% capture content %}
 
-{% include figure.html image="images/team.jpeg" %}
+{% capture col2 %}
+{%
+  include figure.html
+  image="images/team.jpg"
+  caption="Team dinner"
+%}
+
+{% endcapture %}
+
+<!--{% include figure.html image="images/team.jpeg" %}-->
+{% include cols.html col2=col2 %}
 
 {% endcapture %}
 
