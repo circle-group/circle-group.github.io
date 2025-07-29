@@ -6,6 +6,7 @@ role: phd
 group: phd
 links:
   email: z.yu23@imperial.ac.uk
+  google-scholar: yo6O6MMAAAAJ
   github: ZhengdiYu
   linkedin: zhengdi-yu
 ---
