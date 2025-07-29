@@ -36,7 +36,7 @@
   #description: A new computational paradigm for addressing vision and learning problems.
   repo: https://quantumcomputervision.github.io/
 
-- title: Cognitive Sciences and Brain Modelling
+- title: <strong>Next:</strong> Cognitive Sciences and Brain Modelling
   subtitle: Our next research agenda involves uncovering the higher-order nature of cognition via TDL on brain dynamics.
   image: images/brain.jpg
   #link: https://arxiv.org/abs/2501.04697
