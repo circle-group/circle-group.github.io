@@ -7,7 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-regular fa-envelope" %}Contact
 
-We are located at the Huxley Building of Imperial College London. For any inquiries: 
+We operate under the Department of Computing of Imperial College London and are located within the Huxley Building. For any inquiries: 
 
 {%
   include button.html
