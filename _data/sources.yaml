@@ -13,7 +13,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2015-10-19
-  publisher: Int. Conf. on 3D Vision (3DV)
+  publisher: International Conference on 3D Vision (3DV)
   image: https://circle-group.github.io/images/publication_preview/birdal2015point.JPG
   link: https://ieeexplore.ieee.org/document/7335522
   buttons:
@@ -40,7 +40,7 @@
     - Ievgeniia Dobryden
     - Slobodan Ilic
   date: 2016-10-25
-  publisher: Int. Conf. on 3D Vision (3DV)
+  publisher: International Conference on 3D Vision (3DV)
   image: https://circle-group.github.io/images/publication_preview/birdal2016x.JPG
   link: http://ieeexplore.ieee.org/document/7785131/
   buttons:
@@ -52,7 +52,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2017-09-24
-  publisher: International Conference on Intelligent Robots and Systems
+  publisher: International Conference on Intelligent Robots and Systems (IROS)
   image: https://circle-group.github.io/images/publication_preview/birdal2017point.JPG
   link: https://ieeexplore.ieee.org/abstract/document/8206609/
   buttons:
@@ -64,7 +64,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2017-10-22
-  publisher: Int. Conf. Computer Vision (ICCV)
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/birdal2017cad.JPG
   link: https://arxiv.org/abs/1705.03111
 - id: doi:10.1109/ICCVW.2017.287
@@ -74,7 +74,7 @@
     - Tolga Birdal
     - Nassir Navab
   date: 2017-10-22
-  publisher: Int. Conf. Computer Vision Workshops (ICCW)
+  publisher: International Conference on Computer Vision Workshops (ICCVW)
   image: https://circle-group.github.io/images/publication_preview/busam2017camera.JPG
   link: https://arxiv.org/abs/1704.07072
 - id: arxiv:1805.12279
@@ -85,7 +85,7 @@
     - M Onur Eken
     - Slobodan Ilic
   date: 2018-12-03
-  publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/birdal2018bayesian.JPG
   link: https://arxiv.org/abs/1805.12279
   buttons:
@@ -99,7 +99,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2018-06-18
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/deng2018ppfnet.JPG
   link: https://arxiv.org/abs/1802.02669
 - id: doi:10.1109/CVPR.2018.00373
@@ -111,7 +111,7 @@
     - Slobodan Ilic
     - Peter Sturm
   date: 2018-06-18
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2018minimalist.JPG
   link: https://arxiv.org/abs/1803.07191
 - id: doi:10.1007/978-3-030-01234-2_36
@@ -121,7 +121,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2018-09-08
-  publisher: Eur. Conf. Computer Vision (ECCV)
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/deng2018ppf.JPG
   link: https://arxiv.org/abs/1808.10322
 - id: doi:10.1109/3DV.2018.00052
@@ -131,7 +131,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2018-09-05
-  publisher: Int. Conf. on 3D Vision (3DV)
+  publisher: International Conference on 3D Vision (3DV)
   image: https://circle-group.github.io/images/publication_preview/haarbach2018survey.JPG
   link: https://ieeexplore.ieee.org/document/8490989/
   buttons:
@@ -156,7 +156,7 @@
     - Slobodan Ilic
     - Peter Sturm
   date: 2019-01-08
-  publisher: IEEE Trans. on Pattern Analysis and Machine Intelligence (TPAMI)
+  publisher: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   image: https://circle-group.github.io/images/publication_preview/birdal2019generic.jpg
   link: https://arxiv.org/abs/1901.01255
   buttons:
@@ -168,7 +168,7 @@
     - Tolga Birdal
     - Umut Simsekli
   date: 2019-06-16
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2019probabilistic.jpg
   link: https://arxiv.org/abs/1904.05814
   buttons:
@@ -183,7 +183,7 @@
     - Haowen Deng
     - Federico Tombari
   date: 2019-06-16
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/zhao20193d.jpg
   link: https://arxiv.org/abs/1812.10775
   buttons:
@@ -199,7 +199,7 @@
     - Tolga Birdal
     - Slobodan Ilic
   date: 2019-06-16
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/deng20193d.jpg
   link: https://arxiv.org/abs/1904.04281
 - id: doi:10.1109/ICCV.2019.00021
@@ -213,7 +213,7 @@
     - Nassir Navab
     - Federico Tombari
   date: 2019-10-27
-  publisher: Int. Conf. Computer Vision (ICCV)
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/manhardt2019explaining.jpg
   link: https://arxiv.org/abs/1812.00287
 - id: arxiv:2008.02792
@@ -226,7 +226,7 @@
     - Srinath Sridhar
     - Leonidas J Guibas
   date: 2020-12-06
-  publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/rempe2020caspr.jpg
   link: http://arxiv.org/abs/2008.02792
   buttons:
@@ -244,7 +244,7 @@
     - Tolga Birdal
     - Leonidas Guibas
   date: 2020-08-23
-  publisher: Eur. Conf. Computer Vision (ECCV)
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/uy2020deformation.jpg
   link: https://arxiv.org/abs/2004.01228
   buttons:
@@ -261,7 +261,7 @@
     - Umut Simsekli
     - Leonidas J Guibas
   date: 2020-06-14
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2020synchronizing.jpg
   link: https://arxiv.org/abs/2004.00663
   buttons:
@@ -279,7 +279,7 @@
     - Leonidas J Guibas
     - Tolga Birdal
   date: 2020-06-14
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/gojcic2020learning.jpg
   link: https://arxiv.org/abs/2001.05119
   buttons:
@@ -296,7 +296,7 @@
     - Slobodan Ilic
     - Nassir Navab
   date: 2020-08-23
-  publisher: Eur. Conf. Computer Vision (ECCV)
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/bui20206d.jpg
   link: https://arxiv.org/abs/2004.04807
   buttons:
@@ -315,7 +315,7 @@
     - Leonidas Guibas
     - Federico Tombari
   date: 2020-08-23
-  publisher: Eur. Conf. Computer Vision (ECCV)
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/zhao2020quaternion.jpg
   link: https://arxiv.org/abs/1912.12098
   buttons:
@@ -361,7 +361,7 @@
     - Srinath Sridhar
     - Leonidas J Guibas
   date: 2021-10-11
-  publisher: Int. Conf. Computer Vision (ICCV)
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/rempe2021humor.jpg
   link: https://arxiv.org/abs/2105.04668
   buttons:
@@ -378,7 +378,7 @@
     - Leonidas J Guibas
     - Umut Simsekli
   date: 2021-12-06
-  publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/birdal2021intrinsic.jpg
   link: https://arxiv.org/abs/2111.13171
   buttons:
@@ -395,7 +395,7 @@
     - Shi-Min Hu
     - Leonidas J Guibas
   date: 2021-06-19
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/huang2021multibodysync.jpg
   link: https://arxiv.org/abs/2101.06605
   buttons:
@@ -409,7 +409,7 @@
     - Christian Theobalt
     - Leonidas J Guibas
   date: 2021-06-19
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2021quantum.jpg
   link: https://arxiv.org/abs/2101.07755
   buttons:
@@ -425,7 +425,7 @@
     - Leonidas J Guibas
     - Tolga Birdal
   date: 2021-06-19
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/gojcic2021weakly.jpg
   link: https://arxiv.org/abs/2102.08945
   buttons:
@@ -444,7 +444,7 @@
     - Slobodan Ilic
     - Tolga Birdal
   date: 2022-04-18
-  publisher: Int. Journal of Computer Vision (IJCV)
+  publisher: International Journal of Computer Vision (IJCV)
   image: https://circle-group.github.io/images/publication_preview/deng2022deep.jpg
   link: https://arxiv.org/abs/2012.11002
   buttons:
@@ -462,7 +462,7 @@
     - Leonidas J Guibas
     - Shi-Min Hu
   date: 2022-02-01
-  publisher: IEEE Trans. on Pattern Analysis and Machine Intelligence (TPAMI)
+  publisher: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   image: https://circle-group.github.io/images/publication_preview/huang2022multiway.jpg
   link: https://arxiv.org/abs/2111.12878
   buttons:
@@ -481,7 +481,7 @@
     - Leonidas J Guibas
     - He Wang
   date: 2022-06-19
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/chen2022projective.jpg
   link: https://arxiv.org/abs/2110.11657
   buttons:
@@ -501,7 +501,7 @@
     - Tolga Birdal
     - Leonidas J Guibas
   date: 2022-06-19
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/uy2022point2cyl.jpg
   link: https://arxiv.org/abs/2112.09329
   buttons:
@@ -517,7 +517,7 @@
     - Tolga Birdal
     - Vladislav Golyanik
   date: 2022-10-23
-  publisher: Eur. Conf. Computer Vision (ECCV)
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/yurtsever2022q.jpg
   link: https://arxiv.org/abs/2203.12633
   buttons:
@@ -547,7 +547,7 @@
     - Federico Tombari
     - Tolga Birdal
   date: 2022-07-01
-  publisher: Int. Journal of Computer Vision (IJCV)
+  publisher: International Journal of Computer Vision (IJCV)
   image: https://circle-group.github.io/images/publication_preview/zhao20223dpointcaps.jpg
   link: https://link.springer.com/article/10.1007/s11263-022-01632-6
   buttons:
@@ -566,7 +566,7 @@
     - Erkut Erdem
     - Aykut Erdem
   date: 2022-11-21
-  publisher: Brit. Mach. Vision Conf. (BMVC)
+  publisher: British Machine Vision Conference (BMVC)
   image: https://circle-group.github.io/images/publication_preview/karacan2022disentangling.jpg
   link: https://arxiv.org/abs/2211.02980
   buttons:
@@ -581,7 +581,7 @@
     - Nathan Mankovich
     - Tolga Birdal
   date: 2023-06-18
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/mankovich2023chordal.jpg
   link: https://arxiv.org/abs/2303.13501
   buttons:
@@ -598,7 +598,7 @@
     - Erkut Erdem
     - Aykut Erdem
   date: 2023-10-02
-  publisher: Int. Conf. Computer Vision (ICCV)
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/ali2023vidstyleode.jpg
   link: https://arxiv.org/abs/2304.06020
   buttons:
@@ -644,219 +644,3 @@
   publisher: Asilomar Conference on Signals, Systems, and Computers
   image: https://circle-group.github.io/images/publication_preview/hajij2023combinatorial.jpg
   link: https://arxiv.org/abs/2312.09504
-- id: arxiv:2408.16762
-  title: UV-free Texture Generation with Denoising and Geodesic Heat Diffusions
-  authors:
-    - Simone Foti
-    - Stefanos Zafeiriou
-    - Tolga Birdal
-  date: 2024-12-09
-  publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: https://circle-group.github.io/images/publication_preview/foti2024uv.jpg
-  link: https://arxiv.org/abs/2408.16762
-  buttons:
-    - type: source
-      link: https://github.com/simofoti/UV3-TeD
-    - type: website
-      text: Website
-      link: https://uv3ted.github.io/
-- id: arxiv:2407.08723
-  title: Topological Generalization Bounds for Discrete-Time Stochastic Optimization
-    Algorithms
-  authors:
-    - Rayna Andreeva
-    - Benjamin Dupuis
-    - Rik Sarkar
-    - Tolga Birdal
-    - Umut Şimşekli
-  date: 2024-12-09
-  publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
-  link: https://arxiv.org/abs/2407.08723
-  buttons:
-    - type: source
-      link: https://github.com/rorondre/TDAGeneralization
-- id: arxiv:2310.17638
-  title: Generative Fractional Diffusion Models
-  authors:
-    - Gabriel Nobis
-    - Marco Aversa
-    - Maximilian Springenberg
-    - Michael Detzel
-    - Stefano Ermon
-    - Shinichi Nakajima
-    - Roderick Murray-Smith
-    - Sebastian Lapuschkin
-    - Christoph Knochenhauer
-    - Luis Oala
-    - others
-  date: 2024-12-09
-  publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: https://circle-group.github.io/images/publication_preview/nobis2023generative.jpg
-  link: https://arxiv.org/abs/2310.17638
-  buttons:
-    - type: source
-      link: https://github.com/rorondre/TDAGeneralization
-- id: arxiv:2310.15128
-  title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
-  authors:
-    - Maximilian Krahn
-    - Michelle Sasdelli
-    - Fengyi Yang
-    - Vladislav Golyanik
-    - Juho Kannala
-    - Tat-Jun Chin
-    - Tolga Birdal
-  date: 2024-11-25
-  publisher: Brit. Mach. Vision Conf. (BMVC)
-  image: https://circle-group.github.io/images/publication_preview/krahn2023projected.jpg
-  link: https://arxiv.org/abs/2310.15128
-  buttons:
-    - type: source
-      link: https://github.com/mk2510/QPSBGD
-    - type: website
-      text: Website
-      link: https://qpsbgd.github.io
-- id: arxiv:2405.14094
-  title: 'Attending to Topological Spaces: The Cellular Transformer'
-  authors:
-    - Rubén Ballester
-    - Pablo Hernández-García
-    - Mathilde Papillon
-    - Claudio Battiloro
-    - Nina Miolane
-    - Tolga Birdal
-    - Carles Casacuberta
-    - Sergio Escalera
-    - Mustafa Hajij
-  date: 2024-05-27
-  publisher: arXiv preprint arXiv:2405.14094
-  image: https://circle-group.github.io/images/publication_preview/ballester2024attending.jpg
-  link: https://arxiv.org/abs/2405.14094
-- id: arxiv:2409.06683
-  title: 'Alignist: CAD-Informed Orientation Distribution Estimation by Fusing Shape
-    and Correspondences'
-  authors:
-    - Shishir R. Vutukur
-    - Rasmus L. Haugaard
-    - Junwen Huang
-    - Benjamin Busam
-    - Tolga Birdal
-  date: 2024-09-29
-  publisher: Eur. Conf. Computer Vision (ECCV)
-  image: https://circle-group.github.io/images/publication_preview/vutukur2024alignist.jpg
-  link: https://arxiv.org/abs/2409.06683
-- id: arxiv:2310.20436
-  title: 'SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and
-    Benchmark'
-  authors:
-    - Zhengdi Yu
-    - Shaoli Huang
-    - Yongkang Cheng
-    - Tolga Birdal
-  date: 2024-09-29
-  publisher: Eur. Conf. Computer Vision (ECCV)
-  image: https://circle-group.github.io/images/publication_preview/yu2023signavatars.jpg
-  link: https://arxiv.org/abs/2310.20436
-  buttons:
-    - type: source
-      link: https://github.com/ZhengdiYu/SignAvatars
-    - type: website
-      text: Website
-      link: https://signavatars.github.io/
-- id: arxiv:2402.08871
-  title: 'Position: Topological Deep Learning is the New Frontier for Relational
-    Learning'
-  authors:
-    - Theodore Papamarkou
-    - Tolga Birdal
-    - Michael M Bronstein
-    - Gunnar E Carlsson
-    - Justin Curry
-    - Yue Gao
-    - Mustafa Hajij
-    - Roland Kwitt
-    - Pietro Lio
-    - Paolo Di Lorenzo
-    - others
-  date: 2024-07-21
-  publisher: Int. Conf. Machine Learning (ICML)
-  image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
-  link: https://arxiv.org/abs/2402.08871
-- id: doi:10.1109/CVPR52729.2024.00147
-  title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
-  authors:
-    - Yannan He
-    - Garvita Tiwari
-    - Tolga Birdal
-    - Jan Eric Lenssen
-    - Gerard Pons-Moll
-  date: 2024-06-17
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: https://circle-group.github.io/images/publication_preview/he2024nrdf.jpg
-  link: https://arxiv.org/abs/2403.03122
-  buttons:
-    - type: source
-      link: https://github.com/hynann/NRDF
-    - type: website
-      text: Website
-      link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
-- id: doi:10.1109/CVPR52729.2024.01660
-  title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
-    for Enhanced 3D Text2Shape Generation'
-  authors:
-    - Zhiying Leng
-    - Tolga Birdal
-    - Xiaohui Liang
-    - Federico Tombari
-  date: 2024-06-17
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: https://circle-group.github.io/images/publication_preview/leng2024hypersdfusion.jpg
-  link: https://arxiv.org/abs/2403.00372
-  buttons:
-    - type: source
-      link: https://github.com/M-leng/HyperSDFusion-Text2Shape
-    - type: website
-      text: Website
-      link: https://hypersdfusion.github.io/
-- id: doi:10.1109/CVPR52729.2024.00035
-  title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
-  authors:
-    - Nathan Mankovich
-    - Gustau Camps-Valls
-    - Tolga Birdal
-  date: 2024-06-17
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: https://circle-group.github.io/images/publication_preview/mankovich2024fun.jpg
-  link: https://arxiv.org/abs/2401.04071
-  buttons:
-    - type: source
-      link: https://github.com/nmank/FunWithFlags
-- id: doi:10.1109/CVPR52729.2024.02196
-  title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
-  authors:
-    - Jan-Nico Zaech
-    - Martin Danelljan
-    - Tolga Birdal
-    - Luc Van Gool
-  date: 2024-06-17
-  publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
-  link: https://arxiv.org/abs/2310.12153
-- id: arxiv:2310.12975
-  title: Variational Inference for SDEs Driven by Fractional Noise
-  authors:
-    - Rembert Daems
-    - Manfred Opper
-    - Guillaume Crevecoeur
-    - Tolga Birdal
-  date: 2024-05-07
-  publisher: Int. Conf. Learn. Represent. (ICLR)
-  image: https://circle-group.github.io/images/publication_preview/daemsvariational2024.jpg
-  link: https://arxiv.org/abs/2310.12975
-  buttons:
-    - type: source
-      link: https://github.com/VideoNeuralSDE/MAFBM
-    - type: website
-      text: Website
-      link: https://videoneuralsde.github.io/
