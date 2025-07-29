@@ -5,7 +5,9 @@ description: PhD Student
 role: phd
 group: phd
 links:
-  website: https://mk2510.github.io/
+  home-page: https://mk2510.github.io/
+  e-mail: max.krahn22@imperial.ac.uk
+  google-scholar: Dg5q7-QAAAAJ
   github: mk2510
 ---
 

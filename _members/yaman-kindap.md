@@ -6,6 +6,7 @@ role: visitor
 group: visitor
 links:
   email: byamankindap@gmail.com
+  google-scholar: YngID0kAAAAJ
   github: yamankindap
 ---
 

@@ -3,10 +3,13 @@ name: Tolga Birdal
 image: images/prof_pic.jpg
 role: principal-investigator
 links:
+  email: tbirdal@imperial.ac.uk
   home-page: https://tolgabirdal.github.io
   orcid: 0000-0001-8713-9213
   twitter: tolga_birdal
+  bsky: tolgabirdal.bsky.social
   github: tolgabirdal
+  google-scholar: _Bxd5ggAAAAJ
 ---
 
 As a <strong>computer scientist</strong>, I strive to understand visual perception and build machines that can see. To do so, I leverage tools from differential geometry and algebraic topology, in conjunction with deep neural networks. My research focuses on:

@@ -5,6 +5,9 @@ description: Postdoctoral Research Associate
 role: postdoc
 group: postdoc
 links:
+  email: s.foti@imperial.ac.uk
+  home-page: https://www.simofoti.com/
+  google-scholar: BuWPfNsAAAAJ
   github: simofoti
 ---
 

@@ -5,7 +5,10 @@ description: PhD Student
 role: phd
 group: phd
 links:
+  e-mail: e.stevinson22@imperial.ac.uk
+  home-page: https://profiles.imperial.ac.uk/e.stevinson22
   github: Stevinson
+  google-scholar: m4_WK5oAAAAJ  
 ---
 
 <strong>Ed Stevinson</strong> is a machine learning researcher and engineer with nearly a decade of experience, currently pursuing a PhD in mechanisic interpretability focusing on the effect of superposi;on on adversarial examples.
