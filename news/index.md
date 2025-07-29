@@ -6,7 +6,7 @@ nav:
 ---
 
 <!--{% capture col1 %}-->
-###  {% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
+# {% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
 
 {% include list.html data="news" component="news" %}
 
