@@ -110,7 +110,7 @@ We are a fortunate to be in a world-class team composed of individuals from dive
   <div class="news-card">
     <div class="news-header">
         <span class="news-title">{{ post.title }}</span>
-        <span class="news-date">{% include icon.html icon="fa-regular fa-calendar" %} {{ post.date | date: "%B %d, %Y" }} </span>
+        <span class="news-date">{% include icon.html icon="fa-regular fa-calendar" %} {{ post.date | date: "%B, %Y" }} </span>
     </div>
     <div class="news-description">
         {{ post.description }} 
