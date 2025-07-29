@@ -143,5 +143,8 @@ header[data-big] .title {
 header[data-big] .subtitle {
   font-size: var(--large);
 }
+header[data-big] header .title-text .title {
+  font-size: 1.2rem !important;
+}
 
 /*# sourceMappingURL=header.css.map */
