@@ -42,6 +42,7 @@
 
 - title: Topological Learning Theory
   subtitle: A new suite of statistical learning theory informed by the topology of representations
+  group: featured
   image: images/TCM.jpeg
   link: https://arxiv.org/abs/2407.08723
   #description: A new suite of statistical learning theory informed by the topology of representations
