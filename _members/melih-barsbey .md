@@ -3,6 +3,7 @@ name: Melih Barsbey
 image: images/prof_pic_melih.jpg
 description: Postdoctoral Research Associate
 role: postdoc
+group: postdoc
 links:
   github: mbarsbey
 ---

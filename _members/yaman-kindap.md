@@ -1,7 +1,8 @@
 ---
 name: Yaman Kindap
-image: images/prof_pic_yaman.jpeg
-role: Visitor
+image: images/prof-pic-yaman.jpeg
+description: Visitor
+role: visitor
 group: visitor
 links:
   email: byamankindap@gmail.com

@@ -1,7 +1,8 @@
 ---
 name: Nathalie Kirch
 image: images/prof-pic-nathalie.jpeg
-role: Visitor
+description: Visitor
+role: visitor
 group: visitor
 links:
   email: n.kirch24@imperial.ac.uk

@@ -1,7 +1,8 @@
 ---
 name: Bo Pang
 image: images/prof_pic_bo.jpg
-role: Visitor
+description: Visitor
+role: visitor
 group: visitor
 links:
   email: bo98@stu.pku.edu.cn

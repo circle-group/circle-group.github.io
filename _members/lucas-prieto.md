@@ -2,7 +2,7 @@
 name: Lucas Prieto
 image: images/prof_pic_lucas.jpg
 description: PhD Student
-role: PhD Student
+role: phd
 group: phd
 links:
   email: l.prieto23@imperial.ac.uk
