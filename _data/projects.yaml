@@ -17,7 +17,7 @@
 - title: Learning Theory
   subtitle: A new suite of statistical learning theory informed by the topology of representations.
   group: featured
-  image: images/TCM.jpeg
+  image: images/MI.jpg
   link: https://arxiv.org/abs/2407.08723
   #description: A new suite of statistical learning theory informed by the topology of representations
   repo: https://github.com/tolgabirdal/PHDimGeneralization
