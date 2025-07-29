@@ -100,8 +100,9 @@ We are a fortunate to be in a world-class team composed of individuals from dive
   text=text
 %}
 
+{% include section.html %}
 
-{% capture col1 %}
+{% capture text %}
 ## {% include icon.html icon="fa-solid fa-bullhorn" %}Latest news
 
   {% assign sorted_news = site.data.news | sort: "date" | reverse %}
