@@ -31,6 +31,7 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
   image="images/logml.jpeg"
   caption="LOGML in front of Royal Albert Hall"
 %}
+{% endcapture %}
 
 {% capture col2 %}
 <!--<img src="images/logml.jpeg">-->
