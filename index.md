@@ -1,7 +1,7 @@
 ---
 ---
 
-# CIRCLE Group
+<!--# CIRCLE Group-->
   <p>
     At <strong>CIRCLE</strong>, we aim to <strong>make machines see and perceive the world</strong>—not just to recognize pixels, but to understand the structure, symmetry, and meaning embedded in the physical and abstract world. We explore the frontiers of <strong>perception, learning, and geometry</strong>, blending deep learning with the mathematical elegance of <em>topology</em>, <em>differential geometry</em>, and even <em>quantum theory</em>.
   </p>
