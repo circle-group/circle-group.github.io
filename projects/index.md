@@ -11,7 +11,7 @@ We are drawn to deep priors and structural inductive biases—the kind that brid
 
 <!--{% include tags.html tags="publication, resource, website" %}-->
 
-{% include search-info.html %}
+<!--{% include search-info.html %}-->
 
 {% include section.html %}
 
