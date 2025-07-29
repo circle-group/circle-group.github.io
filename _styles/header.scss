@@ -165,4 +165,8 @@ header[data-big] {
   .subtitle {
     font-size: var(--large);
   }
+
+  header .title-text .title {
+    font-size: 1.2rem !important;
+  }
 }
