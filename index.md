@@ -59,7 +59,7 @@ We publish in a variety of areas that cross-feed each other, including:
 {%
   include button.html
   link="projects"
-  text="Browse our projects"
+  text="Browse our research"
   icon="fa-solid fa-arrow-right"
   flip=true
   style="bare"
@@ -71,7 +71,7 @@ We publish in a variety of areas that cross-feed each other, including:
   include feature.html
   image="images/projects.jpg"
   link="projects"
-  title="Our Projects"
+  title="Our Research"
   flip=true
   style="bare"
   text=text
