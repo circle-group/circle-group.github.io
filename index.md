@@ -132,3 +132,22 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 %}
 
 {% endcapture %}
+
+{% include section.html %}
+
+#### Our funders
+
+
+{% capture col1 %}
+<img src="images/funders/ukri.svg">
+{% endcapture %}
+
+{% capture col2 %}
+<img src="images/funders/RS.png">
+{% endcapture %}
+
+{% capture col3 %}
+<img src="images/funders/meta.svg">
+{% endcapture %}
+
+{% include cols.html col1=col1 col2=col2 col3=col3%}
