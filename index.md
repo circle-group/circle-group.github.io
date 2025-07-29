@@ -137,17 +137,20 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 #### Our funders
 
-
 {% capture col1 %}
-<img src="images/funders/ukri.svg">
+<img src="images/funders/imperial.svg">
 {% endcapture %}
 
 {% capture col2 %}
-<img src="images/funders/RS.svg">
+<img src="images/funders/ukri.svg">
 {% endcapture %}
 
 {% capture col3 %}
+<img src="images/funders/RS.svg">
+{% endcapture %}
+
+{% capture col4 %}
 <img src="images/funders/meta.svg">
 {% endcapture %}
 
-{% include cols.html col1=col1 col2=col2 col3=col3%}
+{% include cols.html col1=col1 col2=col2 col3=col3 col4=col4%}
