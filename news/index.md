@@ -14,18 +14,4 @@ nav:
 
 {% include cols.html col1=col1%}
 
-<!--# {% include icon.html icon="fa-solid fa-bullhorn" %}News
-{% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
-
-{% include list.html data="news" component="news" %}
-
-{% include section.html %}
-
-{% include search-box.html %}
-
-{% include tags.html tags=site.tags %}
-
-{% include search-info.html %}
-
-{% include list.html data="posts" component="post-excerpt" %}-->
-
+{% include grid.html style="square" content=content %}
