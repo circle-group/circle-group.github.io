@@ -24,11 +24,27 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 
 {% include section.html %}
 
-{% capture content %}
 
-{% include figure.html image="images/team.jpeg" style="margin-top: 20px;" %}
-<!--{% include cols.html col1=col1 col2=col2 col3=col3%}-->
+{% capture col1 %}
+{%
+  include figure.html
+  image="images/logml.jpeg"
+  caption="LOGML in front of Royal Albert Hall"
+%}
 
+{% capture col2 %}
+<!--<img src="images/logml.jpeg">-->
+{%
+  include figure.html
+  image="images/team.jpeg"
+  caption="Team dinner"
+%}
 {% endcapture %}
+
+<!--{% capture content %}
+{% include figure.html image="images/team.jpeg" style="margin-top: 20px;" %}-->
+{% include cols.html col1=col1 col2=col2%}
+
+<!--{% endcapture %}-->
 
 {% include grid.html style="square" content=content %}
