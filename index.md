@@ -7,7 +7,7 @@
   </p>
 
   <p>
-    Our philosophy is <strong>holistic</strong>: we believe that intelligent systems must be as deeply rooted in <strong>theoretical understanding</strong> as they are in <strong>real-world utility</strong>. We let <em>applications inform learning</em>, and <em>learning theories guide applications</em>. This dual lens is what makes our work both principled and impactful. We are driven by curiosity and a commitment to <strong>open, inclusive, transformative science</strong>
+    Our philosophy is <strong>holistic</strong>: we believe that intelligent systems must be as deeply rooted in <strong>theoretical understanding</strong> as they are in <strong>real-world utility</strong>. We let <em>applications inform learning</em>, and <em>learning theories guide applications</em>. This dual lens is what makes our work both principled and impactful. We are driven by curiosity and a commitment to <strong>open, inclusive, transformative science</strong>.
   </p>
 
   <h4>Our research spans:</h4>
@@ -143,7 +143,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 {% endcapture %}
 
 {% capture col2 %}
-<img src="images/funders/RS.png">
+<img src="images/funders/RS.svg">
 {% endcapture %}
 
 {% capture col3 %}
