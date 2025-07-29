@@ -11,6 +11,8 @@ We actively publish at the top venues of computer vision and machine learning, i
 
 {% include section.html %}
 
+{% include button.html icon="fa-brands fa-google" text="More on Google Scholar" link="https://scholar.google.com/citations?hl=en&user=m23RfrcAAAAJ&view_op=list_works&sortby=pubdate" %}
+
 ## Highlighted
 
 {% include citation.html lookup="Open collaborative writing with Manubot" style="rich" %}

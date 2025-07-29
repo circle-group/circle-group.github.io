@@ -5,12 +5,21 @@ nav:
   tooltip: 
 ---
 
-# {% include icon.html icon="fa-solid fa-bullhorn" %}News
+{% capture col1 %}
+###  {% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
+
+{% include list.html data="news" component="news" %}
+
+{% endcapture %}
+
+{% include cols.html col1=col1%}
+
+<!--# {% include icon.html icon="fa-solid fa-bullhorn" %}News
 {% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
 
 {% include list.html data="news" component="news" %}
 
-<!--{% include section.html %}
+{% include section.html %}
 
 {% include search-box.html %}
 
