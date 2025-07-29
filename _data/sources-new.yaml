@@ -1,5 +1,4 @@
-- id: arxiv:2407.08723
-  title: Topological generalization bounds for discrete-time stochastic optimization algorithms
+- title: Topological generalization bounds for discrete-time stochastic optimization algorithms
   authors:
     - Rayna Andreeva
     - Benjamin Dupuis
@@ -16,8 +15,7 @@
     - type: source
       link: https://github.com/rorondre/TDAGeneralization
 
-- id: arxiv:2410.22311
-  title: Convex formulations for training two-layer ReLU neural networks
+- title: Convex formulations for training two-layer ReLU neural networks
   authors:
     - Karthik Prakhya
     - Tolga Birdal
@@ -30,8 +28,7 @@
     - type: source
       link: https://github.com/KarthikPrakhya/SDPNN-IW
 
-- id: arxiv:2310.17638
-  title: Generative Fractional Diffusion Models
+- title: Generative Fractional Diffusion Models
   authors:
     - Gabriel Nobis
     - Maximilian Springenberg
@@ -57,8 +54,7 @@
     - type: source
       link: https://github.com/GabrielNobis/gfdm
 
-- id: arxiv:2412.12861
-  title: 'Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera'
+- title: 'Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera'
   authors:
     - Zhengdi Yu
     - Stefanos Zafeiriou
@@ -74,8 +70,7 @@
       text: Website
       link: https://dyn-hamr.github.io/
 
-- id: arxiv:2502.07782
-  title: A Flag Decomposition for Hierarchical Datasets
+- title: A Flag Decomposition for Hierarchical Datasets
   authors:
     - Nathan Mankovich
     - Ignacio Santamaria
@@ -89,8 +84,7 @@
     - type: source
       link: https://github.com/nmank/FD
 
-- id: arxiv:2501.04697
-  title: Grokking at the Edge of Numerical Stability
+- title: Grokking at the Edge of Numerical Stability
   authors:
     - Lucas Prieto
     - Melih Barsbey
@@ -104,8 +98,7 @@
     - type: source
       link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
 
-- id: arxiv:2505.17150
-  title: Efficient training of neural SDEs using stochastic optimal control
+- title: Efficient training of neural SDEs using stochastic optimal control
   authors:
     - Rembert Daems
     - Manfred Opper
@@ -119,8 +112,7 @@
     - type: preprint
       link: https://arxiv.org/abs/2505.17150
 
-- id: arxiv:2501.04697
-  title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations and Compressibility
+- title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations and Compressibility
   authors:
     - Melih Barsbey
     - Lucas Prieto

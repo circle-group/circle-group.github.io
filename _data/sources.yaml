@@ -1,5 +1,4 @@
-- id: doi:10.1109/ICASSP.2015.7178310
-  title: A unified probabilistic framework for robust decoding of linear barcodes
+- title: A unified probabilistic framework for robust decoding of linear barcodes
   authors:
     - Umut Şimşekli
     - Tolga Birdal
@@ -7,8 +6,7 @@
   publisher: International Conference on Acoustics, Speech, and Signal Processing (ICASSP)
   image: https://circle-group.github.io/images/publication_preview/csimcsekli2015unified.JPG
   link: https://ieeexplore.ieee.org/document/7178310
-- id: doi:10.1109/3DV.2015.71
-  title: Point pair features based object detection and pose estimation revisited
+- title: Point pair features based object detection and pose estimation revisited
   authors:
     - Tolga Birdal
     - Slobodan Ilic
@@ -19,8 +17,7 @@
   buttons:
     - type: paper
       link: https://campar.in.tum.de/pub/tbirdal20153dv/tbirdal20153dv.pdf
-- id: doi:10.1109/WACV.2016.7477630
-  title: Online inspection of 3d parts via a locally overlapping camera network
+- title: Online inspection of 3d parts via a locally overlapping camera network
   authors:
     - Tolga Birdal
     - Emrah Bala
@@ -33,8 +30,7 @@
   buttons:
     - type: paper
       link: https://campar.in.tum.de/pub/tbirdal2016wacv/tbirdal2016wacv.pdf
-- id: doi:10.1109/3DV.2016.68
-  title: X-tag A fiducial tag for flexible and accurate bundle adjustment
+- title: X-tag A fiducial tag for flexible and accurate bundle adjustment
   authors:
     - Tolga Birdal
     - Ievgeniia Dobryden
@@ -46,8 +42,7 @@
   buttons:
     - type: paper
       link: https://campar.in.tum.de/pub/tbirdal20163dv/tbirdal20163dv.pdf
-- id: doi:10.1109/IROS.2017.8206609
-  title: A point sampling algorithm for 3d matching of irregular geometries
+- title: A point sampling algorithm for 3d matching of irregular geometries
   authors:
     - Tolga Birdal
     - Slobodan Ilic
@@ -58,8 +53,7 @@
   buttons:
     - type: paper
       link: https://tolgabirdal.github.io/downloads/tolga-birdal-iros-2017-cad-sampling.pdf
-- id: doi:10.1109/ICCV.2017.22
-  title: Cad priors for accurate and flexible instance reconstruction
+- title: Cad priors for accurate and flexible instance reconstruction
   authors:
     - Tolga Birdal
     - Slobodan Ilic
@@ -67,8 +61,7 @@
   publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/birdal2017cad.JPG
   link: https://arxiv.org/abs/1705.03111
-- id: doi:10.1109/ICCVW.2017.287
-  title: Camera pose filtering with local regression geodesics on the riemannian manifold of dual quaternions
+- title: Camera pose filtering with local regression geodesics on the riemannian manifold of dual quaternions
   authors:
     - Benjamin Busam
     - Tolga Birdal
@@ -77,8 +70,7 @@
   publisher: International Conference on Computer Vision Workshops (ICCVW)
   image: https://circle-group.github.io/images/publication_preview/busam2017camera.JPG
   link: https://arxiv.org/abs/1704.07072
-- id: arxiv:1805.12279
-  title: Bayesian pose graph optimization via bingham distributions and tempered geodesic mcmc
+- title: Bayesian pose graph optimization via bingham distributions and tempered geodesic mcmc
   authors:
     - Tolga Birdal
     - Umut Şimşekli
@@ -92,8 +84,7 @@
     - type: website
       text: Website
       link: https://synchinvision.github.io/probsync/
-- id: doi:10.1109/CVPR.2018.00028
-  title: Ppfnet Global context aware local features for robust 3d point matching
+- title: Ppfnet Global context aware local features for robust 3d point matching
   authors:
     - Haowen Deng
     - Tolga Birdal
@@ -102,8 +93,7 @@
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/deng2018ppfnet.JPG
   link: https://arxiv.org/abs/1802.02669
-- id: doi:10.1109/CVPR.2018.00373
-  title: A minimalist approach to type-agnostic detection of quadrics in point clouds
+- title: A minimalist approach to type-agnostic detection of quadrics in point clouds
   authors:
     - Tolga Birdal
     - Benjamin Busam
@@ -114,8 +104,7 @@
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2018minimalist.JPG
   link: https://arxiv.org/abs/1803.07191
-- id: doi:10.1007/978-3-030-01234-2_36
-  title: 'PPF-FoldNet: Unsupervised Learning of Rotation Invariant 3D Local Descriptors'
+- title: 'PPF-FoldNet: Unsupervised Learning of Rotation Invariant 3D Local Descriptors'
   authors:
     - Haowen Deng
     - Tolga Birdal
@@ -124,8 +113,7 @@
   publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/deng2018ppf.JPG
   link: https://arxiv.org/abs/1808.10322
-- id: doi:10.1109/3DV.2018.00052
-  title: Survey of Higher Order Rigid Body Motion Interpolation Methods for Keyframe Animation and Continuous-Time Trajectory Estimation
+- title: Survey of Higher Order Rigid Body Motion Interpolation Methods for Keyframe Animation and Continuous-Time Trajectory Estimation
   authors:
     - Adrian Haarbach
     - Tolga Birdal
@@ -140,15 +128,13 @@
     - type: website
       text: Website
       link: http://www.adrian-haarbach.de/interpolation-methods/
-- id: url:https://mediatum.ub.tum.de/1454561
-  title: Geometric Methods for 3D Reconstruction from Large Point Clouds
+- title: Geometric Methods for 3D Reconstruction from Large Point Clouds
   authors:
     - Tolga Birdal
   date: 2018-01-01
   publisher: Technische Universität München
   image: https://circle-group.github.io/images/publication_preview/birdal2018geometric.jpg
-- id: doi:10.1109/tpami.2019.2900309
-  title: Generic primitive detection in point clouds using novel minimal quadric fits
+- title: Generic primitive detection in point clouds using novel minimal quadric fits
   authors:
     - Tolga Birdal
     - Benjamin Busam
@@ -162,8 +148,7 @@
   buttons:
     - type: source
       link: https://github.com/tolgabirdal/SphereDetection3D
-- id: doi:10.1109/CVPR.2019.01137
-  title: Probabilistic permutation synchronization using the riemannian structure of the birkhoff polytope
+- title: Probabilistic permutation synchronization using the riemannian structure of the birkhoff polytope
   authors:
     - Tolga Birdal
     - Umut Simsekli
@@ -175,8 +160,7 @@
     - type: website
       text: Website
       link: https://synchinvision.github.io/probsync/
-- id: doi:10.1109/CVPR.2019.00110
-  title: 3D point capsule networks
+- title: 3D point capsule networks
   authors:
     - Yongheng Zhao
     - Tolga Birdal
@@ -192,8 +176,7 @@
     - type: website
       text: Website
       link: https://3dcapsulenetworks.github.io/
-- id: doi:10.1109/CVPR.2019.00407
-  title: 3D Local Features for Direct Pairwise Registration
+- title: 3D Local Features for Direct Pairwise Registration
   authors:
     - Haowen Deng
     - Tolga Birdal
@@ -202,8 +185,7 @@
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/deng20193d.jpg
   link: https://arxiv.org/abs/1904.04281
-- id: doi:10.1109/ICCV.2019.00021
-  title: Explaining the Ambiguity of Object Detection and 6D Pose from Visual Data
+- title: Explaining the Ambiguity of Object Detection and 6D Pose from Visual Data
   authors:
     - Fabian Manhardt
     - Diego Martin Arroyo
@@ -216,8 +198,7 @@
   publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/manhardt2019explaining.jpg
   link: https://arxiv.org/abs/1812.00287
-- id: arxiv:2008.02792
-  title: 'Caspr: Learning canonical spatiotemporal point cloud representations'
+- title: 'Caspr: Learning canonical spatiotemporal point cloud representations'
   authors:
     - Davis Rempe
     - Tolga Birdal
@@ -235,8 +216,7 @@
     - type: website
       text: Website
       link: https://geometry.stanford.edu/projects/caspr/
-- id: doi:10.1007/978-3-030-58580-8_24
-  title: Deformation-aware 3d model embedding and retrieval
+- title: Deformation-aware 3d model embedding and retrieval
   authors:
     - Mikaela Angelina Uy
     - Jingwei Huang
@@ -253,8 +233,7 @@
     - type: website
       text: Website
       link: https://deformscan2cad.github.io/
-- id: doi:10.1109/CVPR42600.2020.00165
-  title: Synchronizing probability measures on rotations via optimal transport
+- title: Synchronizing probability measures on rotations via optimal transport
   authors:
     - Tolga Birdal
     - Michael Arbel
@@ -270,8 +249,7 @@
     - type: website
       text: Website
       link: https://synchinvision.github.io/probsync/
-- id: doi:10.1109/CVPR42600.2020.00183
-  title: Learning multiview 3d point cloud registration
+- title: Learning multiview 3d point cloud registration
   authors:
     - Zan Gojcic
     - Caifa Zhou
@@ -285,8 +263,7 @@
   buttons:
     - type: source
       link: https://github.com/zgojcic/3D_multiview_reg
-- id: doi:10.1007/978-3-030-58548-8_22
-  title: 6D Camera Relocalization in Ambiguous Scenes via Continuous Multimodal Inference
+- title: 6D Camera Relocalization in Ambiguous Scenes via Continuous Multimodal Inference
   authors:
     - Mai Bui
     - Tolga Birdal
@@ -305,8 +282,7 @@
     - type: website
       text: Website
       link: https://multimodal3dvision.github.io/
-- id: doi:10.1007/978-3-030-58571-6_1
-  title: Quaternion equivariant capsule networks for 3d point clouds
+- title: Quaternion equivariant capsule networks for 3d point clouds
   authors:
     - Yongheng Zhao
     - Tolga Birdal
@@ -324,8 +300,7 @@
     - type: website
       text: Website
       link: https://3dcapsulenetworks.github.io/
-- id: doi:10.1109/lra.2020.2969936
-  title: From planes to corners Multi-purpose primitive detection in unorganized 3d point clouds
+- title: From planes to corners Multi-purpose primitive detection in unorganized 3d point clouds
   authors:
     - Christiane Sommer
     - Yumin Sun
@@ -339,8 +314,7 @@
   buttons:
     - type: source
       link: https://github.com/c-sommer/orthogonal-planes
-- id: 10.1109/wacv48630.2021.00018
-  title: Continuous geodesic convolutions for learning on 3d shapes
+- title: Continuous geodesic convolutions for learning on 3d shapes
   authors:
     - Zhangsihao Yang
     - Or Litany
@@ -351,8 +325,7 @@
   publisher: Winter Conference on Applications of Computer Vision (WACV)
   image: https://circle-group.github.io/images/publication_preview/yang2021continuous.jpg
   link: https://arxiv.org/abs/2002.02506
-- id: doi:10.1109/ICCV48922.2021.01129
-  title: 'Humor: 3d human motion model for robust pose estimation'
+- title: 'Humor: 3d human motion model for robust pose estimation'
   authors:
     - Davis Rempe
     - Tolga Birdal
@@ -370,8 +343,7 @@
     - type: website
       text: Website
       link: https://geometry.stanford.edu/projects/humor/
-- id: arxiv:2111.13171
-  title: Intrinsic dimension, persistent homology and generalization in neural networks
+- title: Intrinsic dimension, persistent homology and generalization in neural networks
   authors:
     - Tolga Birdal
     - Aaron Lou
@@ -384,8 +356,7 @@
   buttons:
     - type: source
       link: https://github.com/tolgabirdal/PHDimGeneralization
-- id: doi:10.1109/CVPR46437.2021.00703
-  title: 'Multibodysync: Multi-body segmentation and motion estimation via 3d scan synchronization'
+- title: 'Multibodysync: Multi-body segmentation and motion estimation via 3d scan synchronization'
   authors:
     - Jiahui Huang
     - He Wang
@@ -401,8 +372,7 @@
   buttons:
     - type: source
       link: https://github.com/huangjh-pub/multibody-sync
-- id: doi:10.1109/CVPR46437.2021.01290
-  title: Quantum permutation synchronization
+- title: Quantum permutation synchronization
   authors:
     - Tolga Birdal
     - Vladislav Golyanik
@@ -416,8 +386,7 @@
     - type: website
       text: Website
       link: https://quantumcomputervision.github.io/
-- id: doi:10.1109/CVPR46437.2021.00565
-  title: Weakly supervised learning of rigid 3D scene flow
+- title: Weakly supervised learning of rigid 3D scene flow
   authors:
     - Zan Gojcic
     - Or Litany
@@ -434,8 +403,7 @@
     - type: website
       text: Website
       link: https://3dsceneflow.github.io/
-- id: doi:10.1007/s11263-022-01619-3
-  title: 'Deep bingham networks: Dealing with uncertainty and ambiguity in pose estimation'
+- title: 'Deep bingham networks: Dealing with uncertainty and ambiguity in pose estimation'
   authors:
     - Haowen Deng
     - Mai Bui
@@ -453,8 +421,7 @@
     - type: website
       text: Website
       link: https://multimodal3dvision.github.io/
-- id: doi:10.1109/tpami.2022.3164653
-  title: Multiway non-rigid point cloud registration via learned functional map synchronization
+- title: Multiway non-rigid point cloud registration via learned functional map synchronization
   authors:
     - Jiahui Huang
     - Tolga Birdal
@@ -471,8 +438,7 @@
     - type: website
       text: Website
       link: https://huangjh-pub.github.io/publication/synorim/
-- id: doi:10.1109/CVPR52688.2022.00652
-  title: Projective manifold gradient layer for deep rotation regression
+- title: Projective manifold gradient layer for deep rotation regression
   authors:
     - Jiayi Chen
     - Yingda Yin
@@ -490,8 +456,7 @@
     - type: website
       text: Website
       link: https://jychen18.github.io/RPMG/
-- id: doi:10.1109/CVPR52688.2022.01154
-  title: 'Point2cyl: Reverse engineering 3d objects from point clouds to extrusion cylinders'
+- title: 'Point2cyl: Reverse engineering 3d objects from point clouds to extrusion cylinders'
   authors:
     - Mikaela Angelina Uy
     - Yen-Yu Chang
@@ -510,8 +475,7 @@
     - type: website
       text: Website
       link: https://point2cyl.github.io/
-- id: doi:10.1007/978-3-031-20077-9_21
-  title: 'Q-FW: A hybrid classical-quantum Frank-Wolfe for quadratic binary optimization'
+- title: 'Q-FW: A hybrid classical-quantum Frank-Wolfe for quadratic binary optimization'
   authors:
     - Alp Yurtsever
     - Tolga Birdal
@@ -524,8 +488,7 @@
     - type: website
       text: Website
       link: https://quantumcomputervision.github.io/
-- id: arxiv:2207.06333
-  title: 6d camera relocalization in visually ambiguous extreme environments
+- title: 6d camera relocalization in visually ambiguous extreme environments
   authors:
     - Yang Zheng
     - Tolga Birdal
@@ -537,8 +500,7 @@
   publisher: arXiv preprint arXiv:2207.06333
   image: https://circle-group.github.io/images/publication_preview/zheng20226d.jpg
   link: https://arxiv.org/abs/2207.06333
-- id: doi:10.1007/s11263-022-01632-6
-  title: '3dpointcaps++: Learning 3d representations with capsule networks'
+- title: '3dpointcaps++: Learning 3d representations with capsule networks'
   authors:
     - Yongheng Zhao
     - Guangchi Fang
@@ -556,8 +518,7 @@
     - type: website
       text: Website
       link: https://3dcapsulenetworks.github.io/
-- id: arxiv:2211.02980
-  title: Disentangling Content and Motion for Text-Based Neural Video Manipulation
+- title: Disentangling Content and Motion for Text-Based Neural Video Manipulation
   authors:
     - Levent Karacan
     - Tolga Kerimoğlu
@@ -575,8 +536,7 @@
     - type: website
       text: Website
       link: https://cyberiada.github.io/DiCoMoGAN/
-- id: doi:10.1109/CVPR52729.2023.00376
-  title: Chordal averaging on flag manifolds and its applications
+- title: Chordal averaging on flag manifolds and its applications
   authors:
     - Nathan Mankovich
     - Tolga Birdal
@@ -587,8 +547,7 @@
   buttons:
     - type: source
       link: https://github.com/nmank/FlagAveraging
-- id: doi:10.1109/ICCV51070.2023.00693
-  title: 'Vidstyleode: Disentangled video editing via stylegan and neuralodes'
+- title: 'Vidstyleode: Disentangled video editing via stylegan and neuralodes'
   authors:
     - Moayed Haji Ali
     - Andrew Bond
@@ -607,8 +566,7 @@
     - type: website
       text: Website
       link: https://cyberiada.github.io/VidStyleODE/
-- id: arxiv:2206.00606
-  title: 'Topological Deep Learning: Going Beyond Graph Data'
+- title: 'Topological Deep Learning: Going Beyond Graph Data'
   authors:
     - Mustafa Hajij
     - Ghada Zamzmi
@@ -631,8 +589,7 @@
     - type: website
       text: Website
       link: https://tdlbook.org/
-- id: doi:10.1109/ieeeconf59524.2023.10477018
-  title: 'Combinatorial complexes: bridging the gap between cell complexes and hypergraphs'
+- title: 'Combinatorial complexes: bridging the gap between cell complexes and hypergraphs'
   authors:
     - Mustafa Hajij
     - Ghada Zamzmi
@@ -644,8 +601,7 @@
   publisher: Asilomar Conference on Signals, Systems, and Computers
   image: https://circle-group.github.io/images/publication_preview/hajij2023combinatorial.jpg
   link: https://arxiv.org/abs/2312.09504
-- id: arxiv:2408.16762
-  title: UV-free Texture Generation with Denoising and Geodesic Heat Diffusions
+- title: UV-free Texture Generation with Denoising and Geodesic Heat Diffusions
   authors:
     - Simone Foti
     - Stefanos Zafeiriou
@@ -660,8 +616,7 @@
     - type: website
       text: Website
       link: https://uv3ted.github.io/
-- id: arxiv:2407.08723
-  title: Topological Generalization Bounds for Discrete-Time Stochastic Optimization
+- title: Topological Generalization Bounds for Discrete-Time Stochastic Optimization
     Algorithms
   authors:
     - Rayna Andreeva
@@ -676,8 +631,7 @@
   buttons:
     - type: source
       link: https://github.com/rorondre/TDAGeneralization
-- id: arxiv:2310.17638
-  title: Generative Fractional Diffusion Models
+- title: Generative Fractional Diffusion Models
   authors:
     - Gabriel Nobis
     - Marco Aversa
@@ -697,8 +651,7 @@
   buttons:
     - type: source
       link: https://github.com/rorondre/TDAGeneralization
-- id: arxiv:2310.15128
-  title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
+- title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
   authors:
     - Maximilian Krahn
     - Michelle Sasdelli
@@ -717,8 +670,7 @@
     - type: website
       text: Website
       link: https://qpsbgd.github.io
-- id: arxiv:2405.14094
-  title: 'Attending to Topological Spaces: The Cellular Transformer'
+- title: 'Attending to Topological Spaces: The Cellular Transformer'
   authors:
     - Rubén Ballester
     - Pablo Hernández-García
@@ -733,8 +685,7 @@
   publisher: arXiv preprint arXiv:2405.14094
   image: https://circle-group.github.io/images/publication_preview/ballester2024attending.jpg
   link: https://arxiv.org/abs/2405.14094
-- id: arxiv:2409.06683
-  title: 'Alignist: CAD-Informed Orientation Distribution Estimation by Fusing Shape
+- title: 'Alignist: CAD-Informed Orientation Distribution Estimation by Fusing Shape
     and Correspondences'
   authors:
     - Shishir R. Vutukur
@@ -746,8 +697,7 @@
   publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/vutukur2024alignist.jpg
   link: https://arxiv.org/abs/2409.06683
-- id: arxiv:2310.20436
-  title: 'SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and
+- title: 'SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and
     Benchmark'
   authors:
     - Zhengdi Yu
@@ -764,8 +714,7 @@
     - type: website
       text: Website
       link: https://signavatars.github.io/
-- id: arxiv:2402.08871
-  title: 'Position: Topological Deep Learning is the New Frontier for Relational
+- title: 'Position: Topological Deep Learning is the New Frontier for Relational
     Learning'
   authors:
     - Theodore Papamarkou
@@ -783,8 +732,7 @@
   publisher: International Conference on Machine Learning  (ICML)
   image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
   link: https://arxiv.org/abs/2402.08871
-- id: doi:10.1109/cvpr52733.2024.00164
-  title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
+- title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
   authors:
     - Yannan He
     - Garvita Tiwari
@@ -801,8 +749,7 @@
     - type: website
       text: Website
       link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
-- id: doi:10.1109/cvpr52733.2024.01862
-  title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
+- title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
     for Enhanced 3D Text2Shape Generation'
   authors:
     - Zhiying Leng
@@ -819,8 +766,7 @@
     - type: website
       text: Website
       link: https://hypersdfusion.github.io/
-- id: doi:10.1109/cvpr52733.2024.00039
-  title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
+- title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
   authors:
     - Nathan Mankovich
     - Gustau Camps-Valls
@@ -832,8 +778,7 @@
   buttons:
     - type: source
       link: https://github.com/nmank/FunWithFlags
-- id: doi:10.1109/cvpr52733.2024.02475
-  title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
+- title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
   authors:
     - Jan-Nico Zaech
     - Martin Danelljan
@@ -843,8 +788,7 @@
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
   link: https://arxiv.org/abs/2310.12153
-- id: arxiv:2310.12975
-  title: Variational Inference for SDEs Driven by Fractional Noise
+- title: Variational Inference for SDEs Driven by Fractional Noise
   authors:
     - Rembert Daems
     - Manfred Opper
