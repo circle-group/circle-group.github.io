@@ -79,7 +79,7 @@ We publish in a variety of areas that cross-feed each other, including:
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We are a fortunate to be in a world-class team composed of individuals from diverse backgrounds, ethnicities with distinct skillsets. We have multliple <u><a href="https://tolgabirdal.github.io/assets/pdf/circlejobs_phd.pdf">PhD</a></u> and <u><a href="https://tolgabirdal.github.io/assets/pdf/circlejobs.pdf">PostDoc</a></u> positions available. 
 
 {%
   include button.html
