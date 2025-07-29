@@ -12,16 +12,15 @@
 
   <h4>Our research spans:</h4>
   <ul>
-    <li><strong>3D Computer Vision</strong>: Perceiving structure, motion, and semantics in three-dimensional spaces</li>
-    <li><strong>3D/4D Generative Priors</strong>: Learning inductive biases for shape, motion, and time</li>
-    <li><strong>Geometric & Topological Deep Learning</strong>: Learning on complex domains: graphs, manifolds, and cell complexes</li>
-    <li><strong>Statistical & Topological Learning Theory</strong>: Foundations of robustness, generalization, and expressivity in machine learning</li>
-    <li><strong>Quantum Computer Vision</strong>: Novel computational paradigms towards vision and learning</li>
-    <li><strong>Generative Models for Biochemistry</strong>: Designing molecules and proteins with symmetry and structure-aware higher-order priors</li>
+    <li><strong>3D Computer Vision</strong>: Perceiving and generating structure, motion, and semantics in three and four-dimensional spaces</li>
+    <li><strong>Geometric & Topological Deep Learning</strong>: Learning on complex domains: graphs, manifolds, cell complexes and beyond</li>
+    <li><strong>Learning Theory</strong>:Statistical & topological foundations of machine learning and mechanistic interpretability</li>
+    <li><strong>Quantum Computer Vision and Machine Learning</strong>: Novel computational paradigms towards vision and learning</li>
+    <li><strong>AI-driven for Biochemistry</strong>: Designing molecules and proteins with symmetry and structure-aware higher-order priors</li>
   </ul>
 
   <p>
-    Join us as we reimagine machine intelligence from the ground up—with <strong>rigor</strong>, <strong>creativity</strong>, and <strong>a relentless curiosity</strong> about the world and how we learn to see it.
+    Join us as we reimagine machine intelligence from the ground up—with <strong>rigor</strong>, <strong>creativity</strong>, and <strong>curiosity</strong> about the world and how we learn to see it.
   </p>
 
 {% include section.html %}
