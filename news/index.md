@@ -5,7 +5,7 @@ nav:
   tooltip: 
 ---
 
-# {% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
+# {% include icon.html icon="fa-solid fa-bullhorn" %}News
 
 {% include section.html %}
 
