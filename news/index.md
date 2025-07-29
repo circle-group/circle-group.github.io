@@ -15,4 +15,4 @@ nav:
 {% include cols.html col1=col1%}
 
 <!--{% include grid.html style="square" content=content %}-->
-{% include section.html dark=true %}
+<!--{% include section.html dark=true %}-->
