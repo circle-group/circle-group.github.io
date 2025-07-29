@@ -1,6 +1,47 @@
-<div class="cols" style="display: flex; justify-content: space-evenly; align-items: center; flex-wrap: nowrap; gap: 1rem; flex-shrink: 1;">
-  {% if include.col1 %}<div class="col">{{ include.col1 }}</div>{% endif %}
-  {% if include.col2 %}<div class="col">{{ include.col2 }}</div>{% endif %}
-  {% if include.col3 %}<div class="col">{{ include.col3 }}</div>{% endif %}
-  {% if include.col4 %}<div class="col">{{ include.col4 }}</div>{% endif %}
+<style>
+  .cols {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 1.5rem;
+    margin: 1rem 0;
+  }
+
+  .col-item {
+    flex: 1 1 120px;
+    max-width: 200px;
+    text-align: center;
+  }
+
+  .col-item img {
+    max-width: 100%;
+    max-height: 80px;
+    height: auto;
+    display: inline-block;
+  }
+
+  @media (max-width: 600px) {
+    .cols {
+      justify-content: center;
+    }
+
+    .col-item {
+      flex: 1 1 80px;
+      max-width: 120px;
+    }
+
+    .col-item img {
+      max-height: 60px;
+    }
+  }
+</style>
+
+<div class="cols">
+  {% for param in include %}
+    {% assign key = param[0] %}
+    <div class="col-item">
+      {{ include[key] }}
+    </div>
+  {% endfor %}
 </div>
