@@ -16,7 +16,6 @@
 
 - title: Quantum Computer Vision & Machine Learning
   subtitle: A new computational paradigm for addressing vision and learning problems.
-  group: featured
   image: images/QCVML.jpg
   link: https://quantumcomputervision.github.io/
   #description: A new computational paradigm for addressing vision and learning problems.

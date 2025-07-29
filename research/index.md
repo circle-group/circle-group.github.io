@@ -5,7 +5,7 @@ nav:
   tooltip: Published works
 ---
 
-# {% include icon.html icon="fa-solid fa-microscope" %}Research
+# {% include icon.html icon="fa-solid fa-microscope" %}Publications
 
 We actively publish at the top venues of computer vision and machine learning, including CVPR, NeurIPS, ICLR, ICCV, ECCV, ICML and 3DV. A curated list of publications can be found below.
 
