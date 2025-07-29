@@ -21,16 +21,26 @@
   url: https://www.logml.ai/
 
 - title: 2 papers accepted at CVPR 2025
-  date: 2025-05
+  date: 2025-02
   description: Check out Zhengdi's DynHaMR, a highlight at CVPR. 
   url: https://dyn-hamr.github.io
+
+- title: 2 papers accepted at ICLR 2025
+  date: 2025-01
+  description: Lucas and Melih's work on grokking goes to Singapore.
+  url: https://circle-group.github.io/research/
+
+- title: 3 papers accepted at NeurIPS 2024
+  date: 2024-09
+  description: Rayna and Simone present their exciting works in Vancouver.
+  url: https://circle-group.github.io/research/
 
 - title: UKRI Future Leaders Fellowship
   date: 2024-07
   description: Tolga Birdal has been awarded the prestigious UKRI Future Leaders Fellowship.
   url: https://www.imperial.ac.uk/news/254977/four-imperial-academics-awarded-future-leaders/
 
-- title: Joining at Imperial College London
+- title: A new journey at Imperial College London
   date: 2022-07
   description: Tolga Birdal has joined the Department of Computing at Imperial College London an assistant professor (Lecturer).
   url: https://profiles.imperial.ac.uk/t.birdal
