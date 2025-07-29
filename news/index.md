@@ -5,14 +5,14 @@ nav:
   tooltip: 
 ---
 
-{% capture col1 %}
+<!--{% capture col1 %}-->
 ###  {% include icon.html icon="fa-solid fa-bullhorn" %}News and updates
 
 {% include list.html data="news" component="news" %}
 
-{% endcapture %}
+<!--{% endcapture %}-->
 
-{% include cols.html col1=col1%}
+<!--{% include cols.html col1=col1%}-->
 
 <!--{% include grid.html style="square" content=content %}-->
 <!--{% include section.html dark=true %}-->
