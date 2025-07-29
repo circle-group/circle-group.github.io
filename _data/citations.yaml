@@ -982,3 +982,126 @@
     link: https://videoneuralsde.github.io/
   plugin: sources.py
   file: sources.yaml
+- id: url:https://proceedings.neurips.cc/paper_files/paper/2024/hash/2d2cf241331d7e71a6f20e9ed798a06b-Abstract-Conference.html
+  title: Generative Fractional Diffusion Models
+  authors:
+  - Gabriel Nobis
+  - Maximilian Springenberg
+  - Marco Aversa
+  - Michael Detzel
+  - Rembert Daems
+  - Roderick Murray-Smith
+  - Shinichi Nakajima
+  - Sebastian Lapuschkin
+  - Stefano Ermon
+  - Tolga Birdal
+  - Manfred Opper
+  - Christoph Knochenhauer
+  - Luis Oala
+  - Wojciech Samek
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2024-12-09'
+  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/2d2cf241331d7e71a6f20e9ed798a06b-Paper-Conference.pdf
+  image: https://circle-group.github.io/images/publication_preview/nobis2024generative.jpg
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2310.17638
+  - type: source
+    link: https://github.com/GabrielNobis/gfdm
+  plugin: sources.py
+  file: sources-new.yaml
+- id: arxiv:2410.22311
+  title: Convex formulations for training two-layer ReLU neural networks
+  authors:
+  - Karthik Prakhya
+  - Tolga Birdal
+  - Alp Yurtsever
+  publisher: International Conference on Learning Representations (ICLR)
+  date: '2025-05-05'
+  link: https://arxiv.org/abs/2410.22311
+  image: https://circle-group.github.io/images/publication_preview/prakhya2025convex.jpg
+  buttons:
+  - type: source
+    link: https://github.com/KarthikPrakhya/SDPNN-IW
+  plugin: sources.py
+  file: sources-new.yaml
+- id: arxiv:2412.12861
+  title: 'Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera'
+  authors:
+  - Zhengdi Yu
+  - Stefanos Zafeiriou
+  - Tolga Birdal
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  date: '2025-06-17'
+  link: https://arxiv.org/abs/2412.12861
+  image: https://circle-group.github.io/images/publication_preview/yu2025dyn.jpg
+  buttons:
+  - type: source
+    link: https://github.com/ZhengdiYu/Dyn-HaMR
+  - type: website
+    text: Website
+    link: https://dyn-hamr.github.io/
+  plugin: sources.py
+  file: sources-new.yaml
+- id: arxiv:2502.07782
+  title: A Flag Decomposition for Hierarchical Datasets
+  authors:
+  - Nathan Mankovich
+  - Ignacio Santamaria
+  - Gustau Camps-Valls
+  - Tolga Birdal
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  date: '2025-06-17'
+  link: https://arxiv.org/abs/2502.07782
+  image: https://circle-group.github.io/images/publication_preview/mankovich2025flag.jpg
+  buttons:
+  - type: source
+    link: https://github.com/nmank/FD
+  plugin: sources.py
+  file: sources-new.yaml
+- id: arxiv:2501.04697
+  title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations
+    and Compressibility
+  authors:
+  - Melih Barsbey
+  - Lucas Prieto
+  - Stefanos Zafeiriou
+  - Tolga Birdal
+  publisher: International Conference on Computer Vision (ICCV)
+  date: '2025-10-04'
+  link: https://arxiv.org/abs/2501.04697
+  image: https://circle-group.github.io/images/publication_preview/barsbey2025large.jpg
+  buttons:
+  - type: source
+    link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
+  plugin: sources.py
+  file: sources-new.yaml
+- id: url:https://www.esann.org/
+  title: Efficient training of neural SDEs using stochastic optimal control
+  authors:
+  - Rembert Daems
+  - Manfred Opper
+  - Guillaume Crevecoeur
+  - Tolga Birdal
+  publisher: European Symposium on Artificial Neural Networks (ESANN)
+  date: '2025-10-08'
+  link: https://www.esann.org/
+  image: https://circle-group.github.io/images/publication_preview/daems2025efficient.jpg
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2505.17150
+  plugin: sources.py
+  file: sources-new.yaml
+- id: url:https://iccv2025.thecvf.com/
+  title: Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)
+  authors:
+  - Lennart Bastian
+  - Mohammad Rashed
+  - Nassir Navab
+  - Tolga Birdal
+  publisher: International Conference on Computer Vision (ICCV)
+  date: '2025-10-04'
+  link: https://iccv2025.thecvf.com/
+  image: https://circle-group.github.io/images/publication_preview/bastian2025conservative.jpg
+  plugin: sources.py
+  file: sources-new.yaml
