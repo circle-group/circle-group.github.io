@@ -1,4 +1,4 @@
-- id: url:https://proceedings.neurips.cc/paper_files/paper/2024/hash/2d2cf241331d7e71a6f20e9ed798a06b-Abstract-Conference.html
+- id: arxiv:2407.08723
   title: Topological generalization bounds for discrete-time stochastic optimization algorithms
   authors:
     - Rayna Andreeva
@@ -9,7 +9,7 @@
   date: 2024-12-09
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
-  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/4765-topological-generalization-bounds-for-discrete-time-stochastic-optimization-algorithms-Paper-Conference.pdf
+  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/0886e50806c3faf55e557bd63ba3e70c-Paper-Conference.pdf
   buttons:
     - type: preprint
       link: https://arxiv.org/abs/2407.08723
@@ -30,7 +30,7 @@
     - type: source
       link: https://github.com/KarthikPrakhya/SDPNN-IW
 
-- id: url:https://proceedings.neurips.cc/paper_files/paper/2024/hash/2d2cf241331d7e71a6f20e9ed798a06b-Abstract-Conference.html
+- id: arxiv:2310.17638
   title: Generative Fractional Diffusion Models
   authors:
     - Gabriel Nobis
@@ -104,7 +104,7 @@
     - type: source
       link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
 
-- id: url:https://www.esann.org/
+- id: arxiv:2505.17150
   title: Efficient training of neural SDEs using stochastic optimal control
   authors:
     - Rembert Daems
@@ -131,8 +131,7 @@
   image: https://circle-group.github.io/images/publication_preview/barsbey2025large.jpg
   link: https://arxiv.org/abs/2501.04697
 
-- id: url:https://iccv2025.thecvf.com/
-  title: 'CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations'
+- title: 'CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations'
   authors:
     - Caner Korkmaz
     - Brighton Nuwagira
@@ -143,8 +142,7 @@
   image: https://circle-group.github.io/images/publication_preview/korkmaz2025CuMPerLay.jpg
   link: https://iccv2025.thecvf.com/
 
-- id: url:https://iccv2025.thecvf.com/
-  title: Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)
+- title: Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)
   authors:
     - Lennart Bastian
     - Mohammad Rashed
