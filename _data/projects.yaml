@@ -30,7 +30,7 @@
   #repo: greenelab/lab-website-template
 
 - title: Quantum Computer Vision & Machine Learning
-  subtitle: A new computational paradigm for addressing vision and learning problems.
+  subtitle: A new computational paradigm for addressing vision and learning problems.<br/>
   image: images/QCVML.jpg
   link: https://quantumcomputervision.github.io/
   #description: A new computational paradigm for addressing vision and learning problems.

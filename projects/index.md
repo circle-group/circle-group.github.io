@@ -7,9 +7,9 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-wrench" %}Research
 
-{% include section.html %}
-
 We are drawn to deep priors and structural inductive biases—the kind that bridge disciplines, inspire new mathematics, and open novel research fields. Many of our projects sit at the cusp of theory and application, where tools from geometry, topology or quantum physics can enable new forms of perception, generation, or understanding. As a result, we publish in a variety of areas that cross-feed each other, including: 3D Computer Vision including 3D/4D Generative Priors, Geometric & Topological Deep Learning, Statistical & Topological Learning Theory, Mechanistic Interpretability, Quantum Computer Vision and Generative Models for Biochemistry.
+
+{% include section.html %}
 
 <!--{% include tags.html tags="publication, resource, website" %}-->
 
