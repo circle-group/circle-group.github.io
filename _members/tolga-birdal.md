@@ -2,7 +2,6 @@
 name: Tolga Birdal
 image: images/prof_pic.jpg
 role: principal-investigator
-affiliation: Imperial College London
 links:
   home-page: https://tolgabirdal.github.io
   orcid: 0000-0001-8713-9213

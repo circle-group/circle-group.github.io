@@ -57,4 +57,4 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 
 <!--{% endcapture %}-->
 
-{% include section.html dark=true %}
+<!--{% include section.html dark=true %}-->
