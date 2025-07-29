@@ -42,10 +42,19 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 %}
 {% endcapture %}
 
+{% capture col3 %}
+<!--<img src="images/logml.jpeg">-->
+{%
+  include figure.html
+  image="images/team.jpeg"
+  caption="Team dinner"
+%}
+{% endcapture %}
+
 <!--{% capture content %}
 {% include figure.html image="images/team.jpeg" style="margin-top: 20px;" %}-->
-{% include cols.html col1=col1 col2=col2%}
+{% include cols.html col1=col1 col2=col2 col3=col3%}
 
 <!--{% endcapture %}-->
 
-{% include grid.html style="square" content=content %}
+{% include section.html dark=true %}
