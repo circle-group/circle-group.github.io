@@ -10,7 +10,7 @@ nav:
 We publish in a variety of areas that cross-feed each other, including: 
 3D Computer Vision including 3D/4D Generative Priors, Geometric & Topological Deep Learning, Statistical & Topological Learning Theory, Mechanistic Interpretability, Quantum Computer Vision and Generative Models for Biochemistry.
 
-{% include tags.html tags="publication, resource, website" %}
+<!--{% include tags.html tags="publication, resource, website" %}-->
 
 {% include search-info.html %}
 
