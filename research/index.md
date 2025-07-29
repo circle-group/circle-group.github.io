@@ -11,7 +11,11 @@ We actively publish at the top venues of computer vision and machine learning, i
 
 {% include section.html %}
 
-{% include button.html icon="fa-brands fa-google" text="More on Google Scholar" link="https://scholar.google.com/citations?view_op=search_authors&mauthors=(author:%22Tolga+Birdal%22+OR+author:%22Melih+Barsbey%22+OR+author:%22Simone+Foti%22+OR+author:%22Caner+Korkmaz%22+OR+author:%22Edward+Stevinson%22+OR+author:%22Lucas+Prieto%22+OR+author:%22Maximilian+Krahn%22+OR+author:%22Yiming+Huang%22+OR+author:%E2%80%9CZhengdi+Yu%E2%80%9D)+%22Imperial+College%22&hl=en&oi=ao&view_op=list_works&sortby=pubdate" %}
+{% include button.html icon="fa-brands fa-google" text="More on Google Scholar" link="https://scholar.google.com/citations?view_op=search_authors&mauthors=(author:%22Tolga+Birdal%22+OR+author:%22Melih+Barsbey%22+OR+author:%22Simone+Foti%22+OR+author:%22Caner+Korkmaz%22+OR+author:%22Edward+Stevinson%22+OR+author:%22Lucas+Prieto%22+OR+author:%22Maximilian+Krahn%22+OR+author:%22Yiming+Huang%22+OR+author:%E2%80%9CZhengdi+Yu%E2%80%9D)+%22Imperial+College%22&hl=en&oi=ao" %}
+
+
+
+&hl=en&view_op=list_works&sortby=pubdate
 
 ## Highlighted
 
