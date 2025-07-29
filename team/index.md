@@ -29,7 +29,7 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 {% capture col2 %}
 {%
   include figure.html
-  image="images/team.jpg"
+  image="images/team.jpeg"
   caption="Team dinner"
 %}
 
