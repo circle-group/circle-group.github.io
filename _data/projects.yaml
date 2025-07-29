@@ -7,7 +7,7 @@
   repo: https://pyt-team.github.io/
 
 - title: 3D/4D Computer Vision
-  subtitle: A versatile generative models allow for reconstruction, analysis and sampling of 3D/4D shapes.
+  subtitle: Our generative models allow for reconstruction, analysis and sampling of 3D/4D shapes.
   group: featured
   image: images/GenPriors.jpg
   link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
@@ -22,7 +22,7 @@
   #description: A new suite of statistical learning theory informed by the topology of representations
   repo: https://github.com/tolgabirdal/PHDimGeneralization
 
-- title: AI-driven Structural Biology
+- title: AI-driven<br/>Structural Biology
   subtitle: Topological deep learning enables higher-order modeling of molecules for generative AI.
   image: images/molecule.jpeg
   link: https://arxiv.org/abs/2502.04308
