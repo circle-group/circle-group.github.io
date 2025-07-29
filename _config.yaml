@@ -30,10 +30,10 @@ defaults:
     values:
       layout: member
   # markdown files in /_posts
-#   - scope:
-#       type: "posts"
-#     values:
-#       layout: post
+   - scope:
+       type: "posts"
+     values:
+       layout: post
 
 collections:
   # generate page for each member
@@ -41,7 +41,7 @@ collections:
     output: true
   # generate page for each post
   posts:
-    output: false
+    output: true
 
 # jekyll plugins
 plugins:

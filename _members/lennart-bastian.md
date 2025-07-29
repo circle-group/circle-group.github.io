@@ -1,9 +1,9 @@
 ---
 name: Lennart Bastian
 image: images/prof_pic_lennart.jpg
-description: Postdoctoral Research Associate
-role: postdoc
-group: postdoc
+description: Visitor
+role: visitor
+group: visitor
 links:
   github: bastianlb
 ---

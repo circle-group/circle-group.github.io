@@ -1,0 +1,30 @@
+# Add the latest news updates here, such as:
+# - New team members joining
+# - Preprints or publications
+# - Grants and funding announcements
+# - Awards, invited talks and achievements
+# - Major lab accomplishments
+#
+# If there is an external link (e.g., to a journal or news article), add it in the `link` field.
+# Otherwise, leave `link` blank.
+# Please add the new entries on the top although these are sorted by date. 
+
+
+- title: 3 papers accepted at ICCV 2025
+  date: 2025-22-07
+  description: Caner, Melih and Lennart have accepted papers at ICCV 2025 taking place in Honolulu.
+
+- title: 2 papers accepted at CVPR 2025
+  date: 2025-05-01
+  description: Check out Zhengdi's DynHaMR, a highlight at CVPR. 
+  url: https://dyn-hamr.github.io
+
+- title: UKRI Future Leaders Fellowship
+  date: 2024-07-04
+  description: Tolga Birdal has been awarded the prestigious UKRI Future Leaders Fellowship.
+  url: https://www.imperial.ac.uk/news/254977/four-imperial-academics-awarded-future-leaders/
+
+- title: Joining at Imperial College London
+  date: 2022-07-04
+  description: Tolga Birdal has joined the Department of Computing at Imperial College London an assistant professor (Lecturer).
+  url: https://profiles.imperial.ac.uk/t.birdal
