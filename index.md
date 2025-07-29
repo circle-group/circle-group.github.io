@@ -30,7 +30,7 @@
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We actively publish at the top venues of computer vision and machine learning, including CVPR, NeurIPS, ICLR, ICCV, ECCV, ICML and 3DV. 
 
 {%
   include button.html
@@ -45,15 +45,16 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 
 {%
   include feature.html
-  image="images/photo.jpg"
+  image="images/research.jpg"
   link="research"
-  title="Our Research"
+  title="Our Publications"
   text=text
 %}
 
 {% capture text %}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+We publish in a variety of areas that cross-feed each other, including: 
+3D Computer Vision including 3D/4D Generative Priors, Geometric & Topological Deep Learning, Statistical & Topological Learning Theory, Mechanistic Interpretability, Quantum Computer Vision and Generative Models for Biochemistry.
 
 {%
   include button.html
