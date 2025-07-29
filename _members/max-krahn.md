@@ -1,6 +1,6 @@
 ---
 name: Maximillian Krahn
-image: images/prof_pic_max.jpg
+image: images/prof-pic-max.jpg
 description: PhD Student
 role: phd
 group: phd

@@ -1,5 +1,5 @@
 # site properties and page defaults
-title: CIRCLE Group
+title: Circle Group
 subtitle: 
 description: Pioneering the future of intelligent perception by fusing deep learning, topology, geometry, and pyhsics to teach machines to truly see and understand the world.
 header: images/background.jpg
@@ -40,8 +40,8 @@ collections:
   members:
     output: true
   # generate page for each post
-  # posts:
-  #   output: true
+  posts:
+    output: false
 
 # jekyll plugins
 plugins:
