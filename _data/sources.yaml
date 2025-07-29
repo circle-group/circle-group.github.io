@@ -1,23 +1,1017 @@
-- id: doi:10.1371/journal.pcbi.1007128
-  type: paper
-  description: Lorem ipsum _dolor_ **sit amet**, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-  date: 2020-12-4
-  image: https://journals.plos.org/ploscompbiol/article/figure/image?size=inline&id=info:doi/10.1371/journal.pcbi.1007128.g001&rev=2
-  buttons:
-    - type: manubot
-      link: https://greenelab.github.io/meta-review/
-    - type: source
-      text: Manuscript Source
-      link: https://github.com/greenelab/meta-review
-    - type: website
-      link: http://manubot.org/
-  tags:
-    - open science
-    - collaboration
-  repo: greenelab/meta-review
-
-- id: doi:10.1016/j.csbj.2020.05.017
-  image: https://ars.els-cdn.com/content/image/1-s2.0-S2001037020302804-gr1.jpg
-
-- id: doi:10.7554/eLife.32822
-  image: https://iiif.elifesciences.org/lax:32822%2Felife-32822-fig8-v3.tif/full/863,/0/default.webp
+- author:
+  - family: Şimşekli
+    given: Umut
+  - family: Birdal
+    given: Tolga
+  container-title: International conference on acoustics, speech, and
+    signal processing (ICASSP)
+  id: csimcsekli2015unified
+  issued: 2015
+  page: 1946-1950
+  publisher: IEEE
+  title: A unified probabilistic framework for robust decoding of linear
+    barcodes
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: Int. Conf. On 3D vision (3DV)
+  id: birdal2015point
+  issued: 2015
+  page: 527-535
+  publisher: IEEE
+  title: Point pair features based object detection and pose estimation
+    revisited
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Bala
+    given: Emrah
+  - family: Eren
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: Winter conference on applications of computer vision
+    (WACV)
+  id: birdal2016online
+  issued: 2016
+  page: 1-10
+  publisher: IEEE
+  title: Online inspection of 3d parts via a locally overlapping camera
+    network
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Dobryden
+    given: Ievgeniia
+  - family: Ilic
+    given: Slobodan
+  container-title: Int. Conf. On 3D vision (3DV)
+  id: birdal2016x
+  issued: 2016
+  page: 556-564
+  publisher: IEEE
+  title: "X-tag: A fiducial tag for flexible and accurate bundle
+    adjustment"
+  title-short: X-tag
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: International conference on intelligent robots and
+    systems
+  id: birdal2017point
+  issued: 2017
+  page: 6871-6878
+  publisher: IEEE
+  title: A point sampling algorithm for 3d matching of irregular
+    geometries
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: Int. Conf. Computer vision (ICCV)
+  id: birdal2017cad
+  issued: 2017
+  page: 133-142
+  title: Cad priors for accurate and flexible instance reconstruction
+  type: paper-conference
+- author:
+  - family: Busam
+    given: Benjamin
+  - family: Birdal
+    given: Tolga
+  - family: Navab
+    given: Nassir
+  container-title: Int. Conf. Computer vision workshops (ICCW)
+  id: busam2017camera
+  issued: 2017
+  page: 2436-2445
+  title: Camera pose filtering with local regression geodesics on the
+    riemannian manifold of dual quaternions
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Şimşekli
+    given: Umut
+  - family: Eken
+    given: M Onur
+  - family: Ilic
+    given: Slobodan
+  container-title: Adv. Neural inform. Process. Systems (NeurIPS)
+  id: birdal2018bayesian
+  issued: 2018
+  page: 308-319
+  title: Bayesian pose graph optimization via bingham distributions and
+    tempered geodesic mcmc
+  type: paper-conference
+  volume: 31
+- author:
+  - family: Deng
+    given: Haowen
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: deng2018ppfnet
+  issued: 2018
+  page: 195-205
+  title: "Ppfnet: Global context aware local features for robust 3d
+    point matching"
+  title-short: Ppfnet
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Busam
+    given: Benjamin
+  - family: Navab
+    given: Nassir
+  - family: Ilic
+    given: Slobodan
+  - family: Sturm
+    given: Peter
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: birdal2018minimalist
+  issued: 2018
+  page: 3530-3540
+  title: A minimalist approach to type-agnostic detection of quadrics in
+    point clouds
+  type: paper-conference
+- author:
+  - family: Deng
+    given: Haowen
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: deng2018ppf
+  issued: 2018
+  page: 602-618
+  title: "PPF-FoldNet: Unsupervised learning of rotation invariant 3D
+    local descriptors"
+  title-short: PPF-FoldNet
+  type: paper-conference
+- author:
+  - family: Haarbach
+    given: Adrian
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: Int. Conf. On 3D vision (3DV)
+  id: haarbach2018survey
+  issued: 2018
+  page: 381-389
+  title: Survey of higher order rigid body motion interpolation methods
+    for keyframe animation and continuous-time trajectory estimation
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  genre: PhD thesis
+  id: birdal2018geometric
+  issued: 2018
+  publisher: Technische Universität München
+  title: Geometric methods for 3D reconstruction from large point clouds
+  type: thesis
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Busam
+    given: Benjamin
+  - family: Navab
+    given: Nassir
+  - family: Ilic
+    given: Slobodan
+  - family: Sturm
+    given: Peter
+  container-title: IEEE Trans. on Pattern Analysis and Machine
+    Intelligence (TPAMI)
+  id: birdal2019generic
+  issue: 6
+  issued: 2019
+  page: 1333-1347
+  publisher: IEEE
+  title: Generic primitive detection in point clouds using novel minimal
+    quadric fits
+  type: article-journal
+  volume: 42
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Simsekli
+    given: Umut
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: birdal2019probabilistic
+  issued: 2019
+  page: 11105-11116
+  title: Probabilistic permutation synchronization using the riemannian
+    structure of the birkhoff polytope
+  type: paper-conference
+- author:
+  - family: Zhao
+    given: Yongheng
+  - family: Birdal
+    given: Tolga
+  - family: Deng
+    given: Haowen
+  - family: Tombari
+    given: Federico
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: zhao20193d
+  issued: 2019
+  page: 1009-1018
+  title: 3D point capsule networks
+  type: paper-conference
+- author:
+  - family: Deng
+    given: Haowen
+  - family: Birdal
+    given: Tolga
+  - family: Ilic
+    given: Slobodan
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: deng20193d
+  issued: 2019
+  title: 3D local features for direct pairwise registration
+  type: paper-conference
+- author:
+  - family: Manhardt
+    given: Fabian
+  - family: Arroyo
+    given: Diego Martin
+  - family: Rupprecht
+    given: Christian
+  - family: Busam
+    given: Benjamin
+  - family: Birdal
+    given: Tolga
+  - family: Navab
+    given: Nassir
+  - family: Tombari
+    given: Federico
+  container-title: Int. Conf. Computer vision (ICCV)
+  id: manhardt2019explaining
+  issued: 2019
+  title: Explaining the ambiguity of object detection and 6D pose from
+    visual data
+  type: paper-conference
+- author:
+  - family: Rempe
+    given: Davis
+  - family: Birdal
+    given: Tolga
+  - family: Zhao
+    given: Yongheng
+  - family: Gojcic
+    given: Zan
+  - family: Sridhar
+    given: Srinath
+  - family: Guibas
+    given: Leonidas J
+  container-title: Adv. Neural inform. Process. Systems (NeurIPS)
+  id: rempe2020caspr
+  issued: 2020
+  page: 13688-13701
+  title: "Caspr: Learning canonical spatiotemporal point cloud
+    representations"
+  title-short: Caspr
+  type: paper-conference
+  volume: 33
+- author:
+  - family: Uy
+    given: Mikaela Angelina
+  - family: Huang
+    given: Jingwei
+  - family: Sung
+    given: Minhyuk
+  - family: Birdal
+    given: Tolga
+  - family: Guibas
+    given: Leonidas
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: uy2020deformation
+  issued: 2020
+  page: 397-413
+  publisher: Springer International Publishing
+  title: Deformation-aware 3d model embedding and retrieval
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Arbel
+    given: Michael
+  - family: Simsekli
+    given: Umut
+  - family: Guibas
+    given: Leonidas J
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: birdal2020synchronizing
+  issued: 2020
+  page: 1569-1579
+  title: Synchronizing probability measures on rotations via optimal
+    transport
+  type: paper-conference
+- author:
+  - family: Gojcic
+    given: Zan
+  - family: Zhou
+    given: Caifa
+  - family: Wegner
+    given: Jan D
+  - family: Guibas
+    given: Leonidas J
+  - family: Birdal
+    given: Tolga
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: gojcic2020learning
+  issued: 2020
+  page: 1759-1769
+  title: Learning multiview 3d point cloud registration
+  type: paper-conference
+- author:
+  - family: Bui
+    given: Mai
+  - family: Birdal
+    given: Tolga
+  - family: Deng
+    given: Haowen
+  - family: Albarqouni
+    given: Shadi
+  - family: Guibas
+    given: Leonidas
+  - family: Ilic
+    given: Slobodan
+  - family: Navab
+    given: Nassir
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: bui20206d
+  issued: 2020
+  publisher: Springer, Cham
+  title: 6D camera relocalization in ambiguous scenes via continuous
+    multimodal inference
+  type: paper-conference
+  volume: 12363
+- author:
+  - family: Zhao
+    given: Yongheng
+  - family: Birdal
+    given: Tolga
+  - family: Lenssen
+    given: Jan Eric
+  - family: Menegatti
+    given: Emanuele
+  - family: Guibas
+    given: Leonidas
+  - family: Tombari
+    given: Federico
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: zhao2020quaternion
+  issued: 2020
+  page: 1-19
+  publisher: Springer International Publishing Cham
+  title: Quaternion equivariant capsule networks for 3d point clouds
+  type: paper-conference
+- author:
+  - family: Sommer
+    given: Christiane
+  - family: Sun
+    given: Yumin
+  - family: Guibas
+    given: Leonidas
+  - family: Cremers
+    given: Daniel
+  - family: Birdal
+    given: Tolga
+  container-title: IEEE Robotics and Automation Letters
+  id: sommer2020planes
+  issue: 2
+  issued: 2020
+  page: 1764-1771
+  publisher: IEEE
+  title: "From planes to corners: Multi-purpose primitive detection in
+    unorganized 3d point clouds"
+  title-short: From planes to corners
+  type: article-journal
+  volume: 5
+- author:
+  - family: Yang
+    given: Zhangsihao
+  - family: Litany
+    given: Or
+  - family: Birdal
+    given: Tolga
+  - family: Sridhar
+    given: Srinath
+  - family: Guibas
+    given: Leonidas
+  container-title: Winter conference on applications of computer vision
+    (WACV)
+  id: yang2021continuous
+  issued: 2021
+  page: 134-144
+  title: Continuous geodesic convolutions for learning on 3d shapes
+  type: paper-conference
+- author:
+  - family: Rempe
+    given: Davis
+  - family: Birdal
+    given: Tolga
+  - family: Hertzmann
+    given: Aaron
+  - family: Yang
+    given: Jimei
+  - family: Sridhar
+    given: Srinath
+  - family: Guibas
+    given: Leonidas J
+  container-title: Int. Conf. Computer vision (ICCV)
+  id: rempe2021humor
+  issued: 2021
+  page: 11488-11499
+  title: "Humor: 3d human motion model for robust pose estimation"
+  title-short: Humor
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Lou
+    given: Aaron
+  - family: Guibas
+    given: Leonidas J
+  - family: Simsekli
+    given: Umut
+  container-title: Adv. Neural inform. Process. Systems (NeurIPS)
+  id: birdal2021intrinsic
+  issued: 2021
+  page: 6776-6789
+  title: Intrinsic dimension, persistent homology and generalization in
+    neural networks
+  type: paper-conference
+  volume: 34
+- author:
+  - family: Huang
+    given: Jiahui
+  - family: Wang
+    given: He
+  - family: Birdal
+    given: Tolga
+  - family: Sung
+    given: Minhyuk
+  - family: Arrigoni
+    given: Federica
+  - family: Hu
+    given: Shi-Min
+  - family: Guibas
+    given: Leonidas J
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: huang2021multibodysync
+  issued: 2021
+  page: 7108-7118
+  title: "Multibodysync: Multi-body segmentation and motion estimation
+    via 3d scan synchronization"
+  title-short: Multibodysync
+  type: paper-conference
+- author:
+  - family: Birdal
+    given: Tolga
+  - family: Golyanik
+    given: Vladislav
+  - family: Theobalt
+    given: Christian
+  - family: Guibas
+    given: Leonidas J
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: birdal2021quantum
+  issued: 2021
+  page: 13122-13133
+  title: Quantum permutation synchronization
+  type: paper-conference
+- author:
+  - family: Gojcic
+    given: Zan
+  - family: Litany
+    given: Or
+  - family: Wieser
+    given: Andreas
+  - family: Guibas
+    given: Leonidas J
+  - family: Birdal
+    given: Tolga
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: gojcic2021weakly
+  issued: 2021
+  page: 5692-5703
+  title: Weakly supervised learning of rigid 3D scene flow
+  type: paper-conference
+- author:
+  - family: Deng
+    given: Haowen
+  - family: Bui
+    given: Mai
+  - family: Navab
+    given: Nassir
+  - family: Guibas
+    given: Leonidas
+  - family: Ilic
+    given: Slobodan
+  - family: Birdal
+    given: Tolga
+  container-title: Int. Journal of Computer Vision (IJCV)
+  id: deng2022deep
+  issue: 7
+  issued: 2022
+  page: 1627-1654
+  publisher: Springer US New York
+  title: "Deep bingham networks: Dealing with uncertainty and ambiguity
+    in pose estimation"
+  title-short: Deep bingham networks
+  type: article-journal
+  volume: 130
+- author:
+  - family: Huang
+    given: Jiahui
+  - family: Birdal
+    given: Tolga
+  - family: Gojcic
+    given: Zan
+  - family: Guibas
+    given: Leonidas J
+  - family: Hu
+    given: Shi-Min
+  container-title: IEEE Trans. on Pattern Analysis and Machine
+    Intelligence (TPAMI)
+  id: huang2022multiway
+  issue: 2
+  issued: 2022
+  page: 2038-2053
+  publisher: IEEE
+  title: Multiway non-rigid point cloud registration via learned
+    functional map synchronization
+  type: article-journal
+  volume: 45
+- author:
+  - family: Chen
+    given: Jiayi
+  - family: Yin
+    given: Yingda
+  - family: Birdal
+    given: Tolga
+  - family: Chen
+    given: Baoquan
+  - family: Guibas
+    given: Leonidas J
+  - family: Wang
+    given: He
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: chen2022projective
+  issued: 2022
+  page: 6646-6655
+  title: Projective manifold gradient layer for deep rotation regression
+  type: paper-conference
+- author:
+  - family: Uy
+    given: Mikaela Angelina
+  - family: Chang
+    given: Yen-Yu
+  - family: Sung
+    given: Minhyuk
+  - family: Goel
+    given: Purvi
+  - family: Lambourne
+    given: Joseph G
+  - family: Birdal
+    given: Tolga
+  - family: Guibas
+    given: Leonidas J
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: uy2022point2cyl
+  issued: 2022
+  page: 11850-11860
+  title: "Point2cyl: Reverse engineering 3d objects from point clouds to
+    extrusion cylinders"
+  title-short: Point2cyl
+  type: paper-conference
+- author:
+  - family: Yurtsever
+    given: Alp
+  - family: Birdal
+    given: Tolga
+  - family: Golyanik
+    given: Vladislav
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: yurtsever2022q
+  issued: 2022
+  page: 352-369
+  publisher: Springer Nature Switzerland Cham
+  title: "Q-FW: A hybrid classical-quantum frank-wolfe for quadratic
+    binary optimization"
+  title-short: Q-FW
+  type: paper-conference
+- author:
+  - family: Zheng
+    given: Yang
+  - family: Birdal
+    given: Tolga
+  - family: Xia
+    given: Fei
+  - family: Yang
+    given: Yanchao
+  - family: Duan
+    given: Yueqi
+  - family: Guibas
+    given: Leonidas J
+  container-title: "arXiv preprint arXiv:2207.06333"
+  id: zheng20226d
+  issued: 2022
+  title: 6d camera relocalization in visually ambiguous extreme
+    environments
+  type: article-journal
+- author:
+  - family: Zhao
+    given: Yongheng
+  - family: Fang
+    given: Guangchi
+  - family: Guo
+    given: Yulan
+  - family: Guibas
+    given: Leonidas
+  - family: Tombari
+    given: Federico
+  - family: Birdal
+    given: Tolga
+  container-title: Int. Journal of Computer Vision (IJCV)
+  id: zhao20223dpointcaps
+  issue: 9
+  issued: 2022
+  page: 2321-2336
+  publisher: Springer US New York
+  title: "3dpointcaps++: Learning 3d representations with capsule
+    networks"
+  title-short: 3dpointcaps++
+  type: article-journal
+  volume: 130
+- author:
+  - family: Karacan
+    given: Levent
+  - family: Kerimoğlu
+    given: Tolga
+  - family: İnan
+    given: İsmail
+  - family: Birdal
+    given: Tolga
+  - family: Erdem
+    given: Erkut
+  - family: Erdem
+    given: Aykut
+  container-title: Brit. Mach. Vision conf. (BMVC)
+  id: karacan2022disentangling
+  issued: 2022
+  title: Disentangling content and motion for text-based neural video
+    manipulation
+  type: paper-conference
+  volume: 33
+- author:
+  - family: Mankovich
+    given: Nathan
+  - family: Birdal
+    given: Tolga
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: mankovich2023chordal
+  issued: 2023
+  page: 3881-3890
+  title: Chordal averaging on flag manifolds and its applications
+  type: paper-conference
+- author:
+  - family: Ali
+    given: Moayed Haji
+  - family: Bond
+    given: Andrew
+  - family: Birdal
+    given: Tolga
+  - family: Ceylan
+    given: Duygu
+  - family: Karacan
+    given: Levent
+  - family: Erdem
+    given: Erkut
+  - family: Erdem
+    given: Aykut
+  container-title: Int. Conf. Computer vision (ICCV)
+  id: ali2023vidstyleode
+  issued: 2023
+  page: 7523-7534
+  title: "Vidstyleode: Disentangled video editing via stylegan and
+    neuralodes"
+  title-short: Vidstyleode
+  type: paper-conference
+- author:
+  - family: Hajij
+    given: Mustafa
+  - family: Zamzmi
+    given: Ghada
+  - family: Papamarkou
+    given: Theodore
+  - family: Miolane
+    given: Nina
+  - family: Guzmán-Sáenz
+    given: Aldo
+  - family: Ramamurthy
+    given: Karthikeyan Natesan
+  - family: Birdal
+    given: Tolga
+  - family: Dey
+    given: Tamal K
+  - family: Mukherjee
+    given: Soham
+  - family: Samaga
+    given: Shreyas N
+  - literal: others
+  container-title: "arXiv preprint arXiv:2206.00606"
+  id: hajij2023topological
+  issued: 2023
+  title: "Topological deep learning: Going beyond graph data"
+  title-short: Topological deep learning
+  type: article-journal
+- author:
+  - family: Hajij
+    given: Mustafa
+  - family: Zamzmi
+    given: Ghada
+  - family: Papamarkou
+    given: Theodore
+  - family: Guzman-Saenz
+    given: AIdo
+  - family: Birdal
+    given: ToIga
+  - family: Schaub
+    given: Michael T
+  container-title: Asilomar conference on signals, systems, and
+    computers
+  id: hajij2023combinatorial
+  issued: 2023
+  page: 799-803
+  publisher: IEEE
+  title: "Combinatorial complexes: Bridging the gap between cell
+    complexes and hypergraphs"
+  title-short: Combinatorial complexes
+  type: paper-conference
+- author:
+  - family: Foti
+    given: Simone
+  - family: Zafeiriou
+    given: Stefanos
+  - family: Birdal
+    given: Tolga
+  container-title: Adv. Neural inform. Process. Systems (NeurIPS)
+  id: foti2024uv
+  issued: 2024
+  title: UV-free texture generation with denoising and geodesic heat
+    diffusions
+  type: paper-conference
+- author:
+  - family: Andreeva
+    given: Rayna
+  - family: Dupuis
+    given: Benjamin
+  - family: Sarkar
+    given: Rik
+  - family: Birdal
+    given: Tolga
+  - family: Şimşekli
+    given: Umut
+  container-title: Adv. Neural inform. Process. Systems (NeurIPS)
+  id: andreeva2024topological
+  issued: 2024
+  title: Topological generalization bounds for discrete-time stochastic
+    optimization algorithms
+  type: paper-conference
+- author:
+  - family: Nobis
+    given: Gabriel
+  - family: Aversa
+    given: Marco
+  - family: Springenberg
+    given: Maximilian
+  - family: Detzel
+    given: Michael
+  - family: Ermon
+    given: Stefano
+  - family: Nakajima
+    given: Shinichi
+  - family: Murray-Smith
+    given: Roderick
+  - family: Lapuschkin
+    given: Sebastian
+  - family: Knochenhauer
+    given: Christoph
+  - family: Oala
+    given: Luis
+  - literal: others
+  container-title: Adv. Neural inform. Process. Systems (NeurIPS)
+  id: nobis2023generative
+  issued: 2024
+  title: Generative fractional diffusion models
+  type: paper-conference
+- author:
+  - family: Krahn
+    given: Maximilian
+  - family: Sasdelli
+    given: Michelle
+  - family: Yang
+    given: Fengyi
+  - family: Golyanik
+    given: Vladislav
+  - family: Kannala
+    given: Juho
+  - family: Chin
+    given: Tat-Jun
+  - family: Birdal
+    given: Tolga
+  container-title: Brit. Mach. Vision conf. (BMVC)
+  id: krahn2023projected
+  issued: 2024
+  title: Projected stochastic gradient descent with quantum annealed
+    binary gradients
+  type: paper-conference
+- author:
+  - family: Ballester
+    given: Rubén
+  - family: Hernández-Garcı́a
+    given: Pablo
+  - family: Papillon
+    given: Mathilde
+  - family: Battiloro
+    given: Claudio
+  - family: Miolane
+    given: Nina
+  - family: Birdal
+    given: Tolga
+  - family: Casacuberta
+    given: Carles
+  - family: Escalera
+    given: Sergio
+  - family: Hajij
+    given: Mustafa
+  container-title: "arXiv preprint arXiv:2405.14094"
+  id: ballester2024attending
+  issued: 2024
+  title: "Attending to topological spaces: The cellular transformer"
+  title-short: Attending to topological spaces
+  type: article-journal
+- author:
+  - family: Vutukur
+    given: Shishir R.
+  - family: Haugaard
+    given: Rasmus L.
+  - family: Huang
+    given: Junwen
+  - family: Busam
+    given: Benjamin
+  - family: Birdal
+    given: Tolga
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: vutukur2024alignist
+  issued: 2024
+  title: "Alignist: CAD-informed orientation distribution estimation by
+    fusing shape and correspondences"
+  title-short: Alignist
+  type: paper-conference
+- author:
+  - family: Yu
+    given: Zhengdi
+  - family: Huang
+    given: Shaoli
+  - family: Cheng
+    given: Yongkang
+  - family: Birdal
+    given: Tolga
+  container-title: Eur. Conf. Computer vision (ECCV)
+  id: yu2023signavatars
+  issued: 2024
+  title: "SignAvatars: A large-scale 3D sign language holistic motion
+    dataset and benchmark"
+  title-short: SignAvatars
+  type: paper-conference
+- author:
+  - family: Papamarkou
+    given: Theodore
+  - family: Birdal
+    given: Tolga
+  - family: Bronstein
+    given: Michael M
+  - family: Carlsson
+    given: Gunnar E
+  - family: Curry
+    given: Justin
+  - family: Gao
+    given: Yue
+  - family: Hajij
+    given: Mustafa
+  - family: Kwitt
+    given: Roland
+  - family: Lio
+    given: Pietro
+  - family: Di Lorenzo
+    given: Paolo
+  - literal: others
+  container-title: Int. Conf. Machine learning (ICML)
+  id: papamarkou2024position
+  issued: 2024
+  title: "Position: Topological deep learning is the new frontier for
+    relational learning"
+  title-short: Position
+  type: paper-conference
+- author:
+  - family: He
+    given: Yannan
+  - family: Tiwari
+    given: Garvita
+  - family: Birdal
+    given: Tolga
+  - family: Lenssen
+    given: Jan Eric
+  - family: Pons-Moll
+    given: Gerard
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: he2024nrdf
+  issued: 2024
+  page: 1661-1671
+  title: "Nrdf: Neural riemannian distance fields for learning
+    articulated pose priors"
+  title-short: Nrdf
+  type: paper-conference
+- author:
+  - family: Leng
+    given: Zhiying
+  - family: Birdal
+    given: Tolga
+  - family: Liang
+    given: Xiaohui
+  - family: Tombari
+    given: Federico
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: leng2024hypersdfusion
+  issued: 2024
+  page: 19691-19700
+  title: "HyperSDFusion: Bridging hierarchical structures in language
+    and geometry for enhanced 3D Text2Shape generation"
+  title-short: HyperSDFusion
+  type: paper-conference
+- author:
+  - family: Mankovich
+    given: Nathan
+  - family: Camps-Valls
+    given: Gustau
+  - family: Birdal
+    given: Tolga
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: mankovich2024fun
+  issued: 2024
+  page: 330-340
+  title: "Fun with flags: Robust principal directions via flag
+    manifolds"
+  title-short: Fun with flags
+  type: paper-conference
+- author:
+  - family: Zaech
+    given: Jan-Nico
+  - family: Danelljan
+    given: Martin
+  - family: Birdal
+    given: Tolga
+  - family: Van Gool
+    given: Luc
+  container-title: IEEE Conf. Computer vision pattern recognition (CVPR)
+  id: zaech2024probabilistic
+  issued: 2024
+  page: 26191-26201
+  title: Probabilistic sampling of balanced k-means using adiabatic
+    quantum computing
+  type: paper-conference
+- author:
+  - family: Daems
+    given: Rembert
+  - family: Opper
+    given: Manfred
+  - family: Crevecoeur
+    given: Guillaume
+  - family: Birdal
+    given: Tolga
+  container-title: Int. Conf. Learn. Represent. (ICLR)
+  id: daemsvariational2024
+  issued: 2024
+  title: Variational inference for SDEs driven by fractional noise
+  type: paper-conference
