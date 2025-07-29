@@ -1,167 +1,155 @@
 # DO NOT EDIT, GENERATED AUTOMATICALLY
 
-- id: doi:10.1109/ICASSP.2015.7178310
-  title: A unified probabilistic framework for robust decoding of linear barcodes
+- title: A unified probabilistic framework for robust decoding of linear barcodes
   authors:
   - "Umut \u015Eim\u015Fekli"
   - Tolga Birdal
+  date: '2015-04-19'
   publisher: International Conference on Acoustics, Speech, and Signal Processing
     (ICASSP)
-  date: '2015-04-19'
-  link: https://ieeexplore.ieee.org/document/7178310
   image: https://circle-group.github.io/images/publication_preview/csimcsekli2015unified.JPG
+  link: https://ieeexplore.ieee.org/document/7178310
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/3DV.2015.71
-  title: Point pair features based object detection and pose estimation revisited
+- title: Point pair features based object detection and pose estimation revisited
   authors:
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: International Conference on 3D Vision (3DV)
   date: '2015-10-19'
-  link: https://ieeexplore.ieee.org/document/7335522
+  publisher: International Conference on 3D Vision (3DV)
   image: https://circle-group.github.io/images/publication_preview/birdal2015point.JPG
+  link: https://ieeexplore.ieee.org/document/7335522
   buttons:
   - type: paper
     link: https://campar.in.tum.de/pub/tbirdal20153dv/tbirdal20153dv.pdf
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/WACV.2016.7477630
-  title: Online inspection of 3d parts via a locally overlapping camera network
+- title: Online inspection of 3d parts via a locally overlapping camera network
   authors:
   - Tolga Birdal
   - Emrah Bala
   - Tolga Eren
   - Slobodan Ilic
-  publisher: Winter Conference on Applications of Computer Vision (WACV)
   date: '2016-03-02'
-  link: http://ieeexplore.ieee.org/document/7477630/
+  publisher: Winter Conference on Applications of Computer Vision (WACV)
   image: https://circle-group.github.io/images/publication_preview/birdal2016online.JPG
+  link: http://ieeexplore.ieee.org/document/7477630/
   buttons:
   - type: paper
     link: https://campar.in.tum.de/pub/tbirdal2016wacv/tbirdal2016wacv.pdf
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/3DV.2016.68
-  title: X-tag A fiducial tag for flexible and accurate bundle adjustment
+- title: X-tag A fiducial tag for flexible and accurate bundle adjustment
   authors:
   - Tolga Birdal
   - Ievgeniia Dobryden
   - Slobodan Ilic
-  publisher: International Conference on 3D Vision (3DV)
   date: '2016-10-25'
-  link: http://ieeexplore.ieee.org/document/7785131/
+  publisher: International Conference on 3D Vision (3DV)
   image: https://circle-group.github.io/images/publication_preview/birdal2016x.JPG
+  link: http://ieeexplore.ieee.org/document/7785131/
   buttons:
   - type: paper
     link: https://campar.in.tum.de/pub/tbirdal20163dv/tbirdal20163dv.pdf
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/IROS.2017.8206609
-  title: A point sampling algorithm for 3d matching of irregular geometries
+- title: A point sampling algorithm for 3d matching of irregular geometries
   authors:
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: International Conference on Intelligent Robots and Systems (IROS)
   date: '2017-09-24'
-  link: https://ieeexplore.ieee.org/abstract/document/8206609/
+  publisher: International Conference on Intelligent Robots and Systems (IROS)
   image: https://circle-group.github.io/images/publication_preview/birdal2017point.JPG
+  link: https://ieeexplore.ieee.org/abstract/document/8206609/
   buttons:
   - type: paper
     link: https://tolgabirdal.github.io/downloads/tolga-birdal-iros-2017-cad-sampling.pdf
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/ICCV.2017.22
-  title: Cad priors for accurate and flexible instance reconstruction
+- title: Cad priors for accurate and flexible instance reconstruction
   authors:
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: International Conference on Computer Vision (ICCV)
   date: '2017-10-22'
-  link: https://arxiv.org/abs/1705.03111
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/birdal2017cad.JPG
+  link: https://arxiv.org/abs/1705.03111
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/ICCVW.2017.287
-  title: Camera pose filtering with local regression geodesics on the riemannian manifold
+- title: Camera pose filtering with local regression geodesics on the riemannian manifold
     of dual quaternions
   authors:
   - Benjamin Busam
   - Tolga Birdal
   - Nassir Navab
-  publisher: International Conference on Computer Vision Workshops (ICCVW)
   date: '2017-10-22'
-  link: https://arxiv.org/abs/1704.07072
+  publisher: International Conference on Computer Vision Workshops (ICCVW)
   image: https://circle-group.github.io/images/publication_preview/busam2017camera.JPG
+  link: https://arxiv.org/abs/1704.07072
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:1805.12279
-  title: Bayesian pose graph optimization via bingham distributions and tempered geodesic
+- title: Bayesian pose graph optimization via bingham distributions and tempered geodesic
     mcmc
   authors:
   - Tolga Birdal
   - "Umut \u015Eim\u015Fekli"
   - M Onur Eken
   - Slobodan Ilic
-  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2018-12-03'
-  link: https://arxiv.org/abs/1805.12279
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/birdal2018bayesian.JPG
+  link: https://arxiv.org/abs/1805.12279
   buttons:
   - type: website
     text: Website
     link: https://synchinvision.github.io/probsync/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR.2018.00028
-  title: Ppfnet Global context aware local features for robust 3d point matching
+- title: Ppfnet Global context aware local features for robust 3d point matching
   authors:
   - Haowen Deng
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2018-06-18'
-  link: https://arxiv.org/abs/1802.02669
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/deng2018ppfnet.JPG
+  link: https://arxiv.org/abs/1802.02669
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR.2018.00373
-  title: A minimalist approach to type-agnostic detection of quadrics in point clouds
+- title: A minimalist approach to type-agnostic detection of quadrics in point clouds
   authors:
   - Tolga Birdal
   - Benjamin Busam
   - Nassir Navab
   - Slobodan Ilic
   - Peter Sturm
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2018-06-18'
-  link: https://arxiv.org/abs/1803.07191
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2018minimalist.JPG
+  link: https://arxiv.org/abs/1803.07191
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/978-3-030-01234-2_36
-  title: 'PPF-FoldNet: Unsupervised Learning of Rotation Invariant 3D Local Descriptors'
+- title: 'PPF-FoldNet: Unsupervised Learning of Rotation Invariant 3D Local Descriptors'
   authors:
   - Haowen Deng
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: European Conference on Computer Vision (ECCV)
   date: '2018-09-08'
-  link: https://arxiv.org/abs/1808.10322
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/deng2018ppf.JPG
+  link: https://arxiv.org/abs/1808.10322
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/3DV.2018.00052
-  title: Survey of Higher Order Rigid Body Motion Interpolation Methods for Keyframe
+- title: Survey of Higher Order Rigid Body Motion Interpolation Methods for Keyframe
     Animation and Continuous-Time Trajectory Estimation
   authors:
   - Adrian Haarbach
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: International Conference on 3D Vision (3DV)
   date: '2018-09-05'
-  link: https://ieeexplore.ieee.org/document/8490989/
+  publisher: International Conference on 3D Vision (3DV)
   image: https://circle-group.github.io/images/publication_preview/haarbach2018survey.JPG
+  link: https://ieeexplore.ieee.org/document/8490989/
   buttons:
   - type: source
     link: https://github.com/adrelino/interpolation-methods
@@ -170,60 +158,55 @@
     link: http://www.adrian-haarbach.de/interpolation-methods/
   plugin: sources.py
   file: sources.yaml
-- id: url:https://mediatum.ub.tum.de/1454561
-  title: Geometric Methods for 3D Reconstruction from Large Point Clouds
+- title: Geometric Methods for 3D Reconstruction from Large Point Clouds
   authors:
   - Tolga Birdal
-  publisher: "Technische Universit\xE4t M\xFCnchen"
   date: '2018-01-01'
-  link: https://mediatum.ub.tum.de/1454561
+  publisher: "Technische Universit\xE4t M\xFCnchen"
   image: https://circle-group.github.io/images/publication_preview/birdal2018geometric.jpg
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/tpami.2019.2900309
-  title: Generic primitive detection in point clouds using novel minimal quadric fits
+- title: Generic primitive detection in point clouds using novel minimal quadric fits
   authors:
   - Tolga Birdal
   - Benjamin Busam
   - Nassir Navab
   - Slobodan Ilic
   - Peter Sturm
-  publisher: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   date: '2019-01-08'
-  link: https://arxiv.org/abs/1901.01255
+  publisher: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   image: https://circle-group.github.io/images/publication_preview/birdal2019generic.jpg
+  link: https://arxiv.org/abs/1901.01255
   buttons:
   - type: source
     link: https://github.com/tolgabirdal/SphereDetection3D
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR.2019.01137
-  title: Probabilistic permutation synchronization using the riemannian structure
+- title: Probabilistic permutation synchronization using the riemannian structure
     of the birkhoff polytope
   authors:
   - Tolga Birdal
   - Umut Simsekli
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2019-06-16'
-  link: https://arxiv.org/abs/1904.05814
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2019probabilistic.jpg
+  link: https://arxiv.org/abs/1904.05814
   buttons:
   - type: website
     text: Website
     link: https://synchinvision.github.io/probsync/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR.2019.00110
-  title: 3D point capsule networks
+- title: 3D point capsule networks
   authors:
   - Yongheng Zhao
   - Tolga Birdal
   - Haowen Deng
   - Federico Tombari
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2019-06-16'
-  link: https://arxiv.org/abs/1812.10775
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/zhao20193d.jpg
+  link: https://arxiv.org/abs/1812.10775
   buttons:
   - type: source
     link: https://github.com/yongheng1991/3D-point-capsule-networks
@@ -232,20 +215,18 @@
     link: https://3dcapsulenetworks.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR.2019.00407
-  title: 3D Local Features for Direct Pairwise Registration
+- title: 3D Local Features for Direct Pairwise Registration
   authors:
   - Haowen Deng
   - Tolga Birdal
   - Slobodan Ilic
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2019-06-16'
-  link: https://arxiv.org/abs/1904.04281
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/deng20193d.jpg
+  link: https://arxiv.org/abs/1904.04281
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/ICCV.2019.00021
-  title: Explaining the Ambiguity of Object Detection and 6D Pose from Visual Data
+- title: Explaining the Ambiguity of Object Detection and 6D Pose from Visual Data
   authors:
   - Fabian Manhardt
   - Diego Martin Arroyo
@@ -254,14 +235,13 @@
   - Tolga Birdal
   - Nassir Navab
   - Federico Tombari
-  publisher: International Conference on Computer Vision (ICCV)
   date: '2019-10-27'
-  link: https://arxiv.org/abs/1812.00287
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/manhardt2019explaining.jpg
+  link: https://arxiv.org/abs/1812.00287
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2008.02792
-  title: 'Caspr: Learning canonical spatiotemporal point cloud representations'
+- title: 'Caspr: Learning canonical spatiotemporal point cloud representations'
   authors:
   - Davis Rempe
   - Tolga Birdal
@@ -269,10 +249,10 @@
   - Zan Gojcic
   - Srinath Sridhar
   - Leonidas J Guibas
-  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2020-12-06'
-  link: http://arxiv.org/abs/2008.02792
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/rempe2020caspr.jpg
+  link: http://arxiv.org/abs/2008.02792
   buttons:
   - type: source
     link: https://github.com/davrempe/caspr
@@ -281,18 +261,17 @@
     link: https://geometry.stanford.edu/projects/caspr/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/978-3-030-58580-8_24
-  title: Deformation-aware 3d model embedding and retrieval
+- title: Deformation-aware 3d model embedding and retrieval
   authors:
   - Mikaela Angelina Uy
   - Jingwei Huang
   - Minhyuk Sung
   - Tolga Birdal
   - Leonidas Guibas
-  publisher: European Conference on Computer Vision (ECCV)
   date: '2020-08-23'
-  link: https://arxiv.org/abs/2004.01228
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/uy2020deformation.jpg
+  link: https://arxiv.org/abs/2004.01228
   buttons:
   - type: source
     link: https://github.com/mikacuy/deformation_aware_embedding
@@ -301,17 +280,16 @@
     link: https://deformscan2cad.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR42600.2020.00165
-  title: Synchronizing probability measures on rotations via optimal transport
+- title: Synchronizing probability measures on rotations via optimal transport
   authors:
   - Tolga Birdal
   - Michael Arbel
   - Umut Simsekli
   - Leonidas J Guibas
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2020-06-14'
-  link: https://arxiv.org/abs/2004.00663
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2020synchronizing.jpg
+  link: https://arxiv.org/abs/2004.00663
   buttons:
   - type: source
     link: https://github.com/MichaelArbel/OT-sync
@@ -320,25 +298,23 @@
     link: https://synchinvision.github.io/probsync/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR42600.2020.00183
-  title: Learning multiview 3d point cloud registration
+- title: Learning multiview 3d point cloud registration
   authors:
   - Zan Gojcic
   - Caifa Zhou
   - Jan D Wegner
   - Leonidas J Guibas
   - Tolga Birdal
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2020-06-14'
-  link: https://arxiv.org/abs/2001.05119
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/gojcic2020learning.jpg
+  link: https://arxiv.org/abs/2001.05119
   buttons:
   - type: source
     link: https://github.com/zgojcic/3D_multiview_reg
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/978-3-030-58548-8_22
-  title: 6D Camera Relocalization in Ambiguous Scenes via Continuous Multimodal Inference
+- title: 6D Camera Relocalization in Ambiguous Scenes via Continuous Multimodal Inference
   authors:
   - Mai Bui
   - Tolga Birdal
@@ -347,10 +323,10 @@
   - Leonidas Guibas
   - Slobodan Ilic
   - Nassir Navab
-  publisher: European Conference on Computer Vision (ECCV)
   date: '2020-08-23'
-  link: https://arxiv.org/abs/2004.04807
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/bui20206d.jpg
+  link: https://arxiv.org/abs/2004.04807
   buttons:
   - type: source
     link: https://github.com/Multimodal3DVision/torch_bingham
@@ -359,8 +335,7 @@
     link: https://multimodal3dvision.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/978-3-030-58571-6_1
-  title: Quaternion equivariant capsule networks for 3d point clouds
+- title: Quaternion equivariant capsule networks for 3d point clouds
   authors:
   - Yongheng Zhao
   - Tolga Birdal
@@ -368,10 +343,10 @@
   - Emanuele Menegatti
   - Leonidas Guibas
   - Federico Tombari
-  publisher: European Conference on Computer Vision (ECCV)
   date: '2020-08-23'
-  link: https://arxiv.org/abs/1912.12098
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/zhao2020quaternion.jpg
+  link: https://arxiv.org/abs/1912.12098
   buttons:
   - type: source
     link: https://github.com/tolgabirdal/qecnetworks
@@ -380,8 +355,7 @@
     link: https://3dcapsulenetworks.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/lra.2020.2969936
-  title: From planes to corners Multi-purpose primitive detection in unorganized 3d
+- title: From planes to corners Multi-purpose primitive detection in unorganized 3d
     point clouds
   authors:
   - Christiane Sommer
@@ -389,31 +363,29 @@
   - Leonidas Guibas
   - Daniel Cremers
   - Tolga Birdal
-  publisher: IEEE Robotics and Automation Letters
   date: '2020-02-27'
-  link: https://arxiv.org/abs/2001.07360
+  publisher: IEEE Robotics and Automation Letters
   image: https://circle-group.github.io/images/publication_preview/sommer2020planes.jpg
+  link: https://arxiv.org/abs/2001.07360
   buttons:
   - type: source
     link: https://github.com/c-sommer/orthogonal-planes
   plugin: sources.py
   file: sources.yaml
-- id: 10.1109/wacv48630.2021.00018
-  title: Continuous geodesic convolutions for learning on 3d shapes
+- title: Continuous geodesic convolutions for learning on 3d shapes
   authors:
   - Zhangsihao Yang
   - Or Litany
   - Tolga Birdal
   - Srinath Sridhar
   - Leonidas Guibas
-  publisher: Winter Conference on Applications of Computer Vision (WACV)
   date: '2021-01-05'
-  link: https://arxiv.org/abs/2002.02506
+  publisher: Winter Conference on Applications of Computer Vision (WACV)
   image: https://circle-group.github.io/images/publication_preview/yang2021continuous.jpg
+  link: https://arxiv.org/abs/2002.02506
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/ICCV48922.2021.01129
-  title: 'Humor: 3d human motion model for robust pose estimation'
+- title: 'Humor: 3d human motion model for robust pose estimation'
   authors:
   - Davis Rempe
   - Tolga Birdal
@@ -421,10 +393,10 @@
   - Jimei Yang
   - Srinath Sridhar
   - Leonidas J Guibas
-  publisher: International Conference on Computer Vision (ICCV)
   date: '2021-10-11'
-  link: https://arxiv.org/abs/2105.04668
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/rempe2021humor.jpg
+  link: https://arxiv.org/abs/2105.04668
   buttons:
   - type: source
     link: https://github.com/davrempe/humor
@@ -433,24 +405,22 @@
     link: https://geometry.stanford.edu/projects/humor/
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2111.13171
-  title: Intrinsic dimension, persistent homology and generalization in neural networks
+- title: Intrinsic dimension, persistent homology and generalization in neural networks
   authors:
   - Tolga Birdal
   - Aaron Lou
   - Leonidas J Guibas
   - Umut Simsekli
-  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2021-12-06'
-  link: https://arxiv.org/abs/2111.13171
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/birdal2021intrinsic.jpg
+  link: https://arxiv.org/abs/2111.13171
   buttons:
   - type: source
     link: https://github.com/tolgabirdal/PHDimGeneralization
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR46437.2021.00703
-  title: 'Multibodysync: Multi-body segmentation and motion estimation via 3d scan
+- title: 'Multibodysync: Multi-body segmentation and motion estimation via 3d scan
     synchronization'
   authors:
   - Jiahui Huang
@@ -460,44 +430,42 @@
   - Federica Arrigoni
   - Shi-Min Hu
   - Leonidas J Guibas
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2021-06-19'
-  link: https://arxiv.org/abs/2101.06605
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/huang2021multibodysync.jpg
+  link: https://arxiv.org/abs/2101.06605
   buttons:
   - type: source
     link: https://github.com/huangjh-pub/multibody-sync
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR46437.2021.01290
-  title: Quantum permutation synchronization
+- title: Quantum permutation synchronization
   authors:
   - Tolga Birdal
   - Vladislav Golyanik
   - Christian Theobalt
   - Leonidas J Guibas
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2021-06-19'
-  link: https://arxiv.org/abs/2101.07755
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/birdal2021quantum.jpg
+  link: https://arxiv.org/abs/2101.07755
   buttons:
   - type: website
     text: Website
     link: https://quantumcomputervision.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR46437.2021.00565
-  title: Weakly supervised learning of rigid 3D scene flow
+- title: Weakly supervised learning of rigid 3D scene flow
   authors:
   - Zan Gojcic
   - Or Litany
   - Andreas Wieser
   - Leonidas J Guibas
   - Tolga Birdal
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2021-06-19'
-  link: https://arxiv.org/abs/2102.08945
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/gojcic2021weakly.jpg
+  link: https://arxiv.org/abs/2102.08945
   buttons:
   - type: source
     link: https://github.com/zgojcic/Rigid3DSceneFlow
@@ -506,8 +474,7 @@
     link: https://3dsceneflow.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/s11263-022-01619-3
-  title: 'Deep bingham networks: Dealing with uncertainty and ambiguity in pose estimation'
+- title: 'Deep bingham networks: Dealing with uncertainty and ambiguity in pose estimation'
   authors:
   - Haowen Deng
   - Mai Bui
@@ -515,10 +482,10 @@
   - Leonidas Guibas
   - Slobodan Ilic
   - Tolga Birdal
-  publisher: International Journal of Computer Vision (IJCV)
   date: '2022-04-18'
-  link: https://arxiv.org/abs/2012.11002
+  publisher: International Journal of Computer Vision (IJCV)
   image: https://circle-group.github.io/images/publication_preview/deng2022deep.jpg
+  link: https://arxiv.org/abs/2012.11002
   buttons:
   - type: source
     link: https://github.com/Multimodal3DVision/torch_bingham
@@ -527,18 +494,17 @@
     link: https://multimodal3dvision.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/tpami.2022.3164653
-  title: Multiway non-rigid point cloud registration via learned functional map synchronization
+- title: Multiway non-rigid point cloud registration via learned functional map synchronization
   authors:
   - Jiahui Huang
   - Tolga Birdal
   - Zan Gojcic
   - Leonidas J Guibas
   - Shi-Min Hu
-  publisher: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   date: '2022-02-01'
-  link: https://arxiv.org/abs/2111.12878
+  publisher: IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
   image: https://circle-group.github.io/images/publication_preview/huang2022multiway.jpg
+  link: https://arxiv.org/abs/2111.12878
   buttons:
   - type: source
     link: https://github.com/huangjh-pub/synorim
@@ -547,8 +513,7 @@
     link: https://huangjh-pub.github.io/publication/synorim/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR52688.2022.00652
-  title: Projective manifold gradient layer for deep rotation regression
+- title: Projective manifold gradient layer for deep rotation regression
   authors:
   - Jiayi Chen
   - Yingda Yin
@@ -556,10 +521,10 @@
   - Baoquan Chen
   - Leonidas J Guibas
   - He Wang
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2022-06-19'
-  link: https://arxiv.org/abs/2110.11657
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/chen2022projective.jpg
+  link: https://arxiv.org/abs/2110.11657
   buttons:
   - type: source
     link: https://github.com/jychen18/RPMG
@@ -568,8 +533,7 @@
     link: https://jychen18.github.io/RPMG/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR52688.2022.01154
-  title: 'Point2cyl: Reverse engineering 3d objects from point clouds to extrusion
+- title: 'Point2cyl: Reverse engineering 3d objects from point clouds to extrusion
     cylinders'
   authors:
   - Mikaela Angelina Uy
@@ -579,10 +543,10 @@
   - Joseph G Lambourne
   - Tolga Birdal
   - Leonidas J Guibas
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2022-06-19'
-  link: https://arxiv.org/abs/2112.09329
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/uy2022point2cyl.jpg
+  link: https://arxiv.org/abs/2112.09329
   buttons:
   - type: source
     link: https://github.com/mikacuy/point2cyl
@@ -591,24 +555,22 @@
     link: https://point2cyl.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/978-3-031-20077-9_21
-  title: 'Q-FW: A hybrid classical-quantum Frank-Wolfe for quadratic binary optimization'
+- title: 'Q-FW: A hybrid classical-quantum Frank-Wolfe for quadratic binary optimization'
   authors:
   - Alp Yurtsever
   - Tolga Birdal
   - Vladislav Golyanik
-  publisher: European Conference on Computer Vision (ECCV)
   date: '2022-10-23'
-  link: https://arxiv.org/abs/2203.12633
+  publisher: European Conference on Computer Vision (ECCV)
   image: https://circle-group.github.io/images/publication_preview/yurtsever2022q.jpg
+  link: https://arxiv.org/abs/2203.12633
   buttons:
   - type: website
     text: Website
     link: https://quantumcomputervision.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2207.06333
-  title: 6d camera relocalization in visually ambiguous extreme environments
+- title: 6d camera relocalization in visually ambiguous extreme environments
   authors:
   - Yang Zheng
   - Tolga Birdal
@@ -616,14 +578,13 @@
   - Yanchao Yang
   - Yueqi Duan
   - Leonidas J Guibas
-  publisher: arXiv preprint arXiv:2207.06333
   date: '2022-07-13'
-  link: https://arxiv.org/abs/2207.06333
+  publisher: arXiv preprint arXiv:2207.06333
   image: https://circle-group.github.io/images/publication_preview/zheng20226d.jpg
+  link: https://arxiv.org/abs/2207.06333
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1007/s11263-022-01632-6
-  title: '3dpointcaps++: Learning 3d representations with capsule networks'
+- title: '3dpointcaps++: Learning 3d representations with capsule networks'
   authors:
   - Yongheng Zhao
   - Guangchi Fang
@@ -631,10 +592,10 @@
   - Leonidas Guibas
   - Federico Tombari
   - Tolga Birdal
-  publisher: International Journal of Computer Vision (IJCV)
   date: '2022-07-01'
-  link: https://link.springer.com/article/10.1007/s11263-022-01632-6
+  publisher: International Journal of Computer Vision (IJCV)
   image: https://circle-group.github.io/images/publication_preview/zhao20223dpointcaps.jpg
+  link: https://link.springer.com/article/10.1007/s11263-022-01632-6
   buttons:
   - type: source
     link: https://github.com/yongheng1991/3D-point-capsule-networks
@@ -643,8 +604,7 @@
     link: https://3dcapsulenetworks.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2211.02980
-  title: Disentangling Content and Motion for Text-Based Neural Video Manipulation
+- title: Disentangling Content and Motion for Text-Based Neural Video Manipulation
   authors:
   - Levent Karacan
   - "Tolga Kerimo\u011Flu"
@@ -652,10 +612,10 @@
   - Tolga Birdal
   - Erkut Erdem
   - Aykut Erdem
-  publisher: British Machine Vision Conference (BMVC)
   date: '2022-11-21'
-  link: https://arxiv.org/abs/2211.02980
+  publisher: British Machine Vision Conference (BMVC)
   image: https://circle-group.github.io/images/publication_preview/karacan2022disentangling.jpg
+  link: https://arxiv.org/abs/2211.02980
   buttons:
   - type: source
     link: https://github.com/leventkaracan/dicomogan
@@ -664,22 +624,20 @@
     link: https://cyberiada.github.io/DiCoMoGAN/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/CVPR52729.2023.00376
-  title: Chordal averaging on flag manifolds and its applications
+- title: Chordal averaging on flag manifolds and its applications
   authors:
   - Nathan Mankovich
   - Tolga Birdal
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2023-06-18'
-  link: https://arxiv.org/abs/2303.13501
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/mankovich2023chordal.jpg
+  link: https://arxiv.org/abs/2303.13501
   buttons:
   - type: source
     link: https://github.com/nmank/FlagAveraging
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/ICCV51070.2023.00693
-  title: 'Vidstyleode: Disentangled video editing via stylegan and neuralodes'
+- title: 'Vidstyleode: Disentangled video editing via stylegan and neuralodes'
   authors:
   - Moayed Haji Ali
   - Andrew Bond
@@ -688,10 +646,10 @@
   - Levent Karacan
   - Erkut Erdem
   - Aykut Erdem
-  publisher: International Conference on Computer Vision (ICCV)
   date: '2023-10-02'
-  link: https://arxiv.org/abs/2304.06020
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/ali2023vidstyleode.jpg
+  link: https://arxiv.org/abs/2304.06020
   buttons:
   - type: source
     link: https://github.com/MoayedHajiAli/VidStyleODE-official
@@ -700,8 +658,7 @@
     link: https://cyberiada.github.io/VidStyleODE/
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2206.00606
-  title: 'Topological Deep Learning: Going Beyond Graph Data'
+- title: 'Topological Deep Learning: Going Beyond Graph Data'
   authors:
   - Mustafa Hajij
   - Ghada Zamzmi
@@ -714,10 +671,10 @@
   - Soham Mukherjee
   - Shreyas N Samaga
   - others
-  publisher: arXiv preprint arXiv:2206.00606
   date: '2023-06-01'
-  link: https://arxiv.org/abs/2206.00606
+  publisher: arXiv preprint arXiv:2206.00606
   image: https://circle-group.github.io/images/publication_preview/hajij2023topological.jpg
+  link: https://arxiv.org/abs/2206.00606
   buttons:
   - type: source
     link: https://pyt-team.github.io/
@@ -726,8 +683,7 @@
     link: https://tdlbook.org/
   plugin: sources.py
   file: sources.yaml
-- id: doi:10.1109/ieeeconf59524.2023.10477018
-  title: 'Combinatorial complexes: bridging the gap between cell complexes and hypergraphs'
+- title: 'Combinatorial complexes: bridging the gap between cell complexes and hypergraphs'
   authors:
   - Mustafa Hajij
   - Ghada Zamzmi
@@ -735,22 +691,21 @@
   - AIdo Guzman-Saenz
   - Tolga Birdal
   - Michael T Schaub
-  publisher: Asilomar Conference on Signals, Systems, and Computers
   date: '2023-10-29'
-  link: https://arxiv.org/abs/2312.09504
+  publisher: Asilomar Conference on Signals, Systems, and Computers
   image: https://circle-group.github.io/images/publication_preview/hajij2023combinatorial.jpg
+  link: https://arxiv.org/abs/2312.09504
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2408.16762
-  title: UV-free Texture Generation with Denoising and Geodesic Heat Diffusions
+- title: UV-free Texture Generation with Denoising and Geodesic Heat Diffusions
   authors:
   - Simone Foti
   - Stefanos Zafeiriou
   - Tolga Birdal
-  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2024-12-09'
-  link: https://arxiv.org/abs/2408.16762
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/foti2024uv.jpg
+  link: https://arxiv.org/abs/2408.16762
   buttons:
   - type: source
     link: https://github.com/simofoti/UV3-TeD
@@ -759,8 +714,218 @@
     link: https://uv3ted.github.io/
   plugin: sources.py
   file: sources.yaml
-- id: arxiv:2407.08723
-  title: Topological generalization bounds for discrete-time stochastic optimization
+- title: Topological Generalization Bounds for Discrete-Time Stochastic Optimization
+    Algorithms
+  authors:
+  - Rayna Andreeva
+  - Benjamin Dupuis
+  - Rik Sarkar
+  - Tolga Birdal
+  - "Umut \u015Eim\u015Fekli"
+  date: '2024-12-09'
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
+  link: https://arxiv.org/abs/2407.08723
+  buttons:
+  - type: source
+    link: https://github.com/rorondre/TDAGeneralization
+  plugin: sources.py
+  file: sources.yaml
+- title: Generative Fractional Diffusion Models
+  authors:
+  - Gabriel Nobis
+  - Marco Aversa
+  - Maximilian Springenberg
+  - Michael Detzel
+  - Stefano Ermon
+  - Shinichi Nakajima
+  - Roderick Murray-Smith
+  - Sebastian Lapuschkin
+  - Christoph Knochenhauer
+  - Luis Oala
+  - others
+  date: '2024-12-09'
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  image: https://circle-group.github.io/images/publication_preview/nobis2023generative.jpg
+  link: https://arxiv.org/abs/2310.17638
+  buttons:
+  - type: source
+    link: https://github.com/rorondre/TDAGeneralization
+  plugin: sources.py
+  file: sources.yaml
+- title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
+  authors:
+  - Maximilian Krahn
+  - Michelle Sasdelli
+  - Fengyi Yang
+  - Vladislav Golyanik
+  - Juho Kannala
+  - Tat-Jun Chin
+  - Tolga Birdal
+  date: '2024-11-25'
+  publisher: British Machine Vision Conference (BMVC)
+  image: https://circle-group.github.io/images/publication_preview/krahn2023projected.jpg
+  link: https://arxiv.org/abs/2310.15128
+  buttons:
+  - type: source
+    link: https://github.com/mk2510/QPSBGD
+  - type: website
+    text: Website
+    link: https://qpsbgd.github.io
+  plugin: sources.py
+  file: sources.yaml
+- title: 'Attending to Topological Spaces: The Cellular Transformer'
+  authors:
+  - "Rub\xE9n Ballester"
+  - "Pablo Hern\xE1ndez-Garc\xEDa"
+  - Mathilde Papillon
+  - Claudio Battiloro
+  - Nina Miolane
+  - Tolga Birdal
+  - Carles Casacuberta
+  - Sergio Escalera
+  - Mustafa Hajij
+  date: '2024-05-27'
+  publisher: arXiv preprint arXiv:2405.14094
+  image: https://circle-group.github.io/images/publication_preview/ballester2024attending.jpg
+  link: https://arxiv.org/abs/2405.14094
+  plugin: sources.py
+  file: sources.yaml
+- title: 'Alignist: CAD-Informed Orientation Distribution Estimation by Fusing Shape
+    and Correspondences'
+  authors:
+  - Shishir R. Vutukur
+  - Rasmus L. Haugaard
+  - Junwen Huang
+  - Benjamin Busam
+  - Tolga Birdal
+  date: '2024-09-29'
+  publisher: European Conference on Computer Vision (ECCV)
+  image: https://circle-group.github.io/images/publication_preview/vutukur2024alignist.jpg
+  link: https://arxiv.org/abs/2409.06683
+  plugin: sources.py
+  file: sources.yaml
+- title: 'SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and
+    Benchmark'
+  authors:
+  - Zhengdi Yu
+  - Shaoli Huang
+  - Yongkang Cheng
+  - Tolga Birdal
+  date: '2024-09-29'
+  publisher: European Conference on Computer Vision (ECCV)
+  image: https://circle-group.github.io/images/publication_preview/yu2023signavatars.jpg
+  link: https://arxiv.org/abs/2310.20436
+  buttons:
+  - type: source
+    link: https://github.com/ZhengdiYu/SignAvatars
+  - type: website
+    text: Website
+    link: https://signavatars.github.io/
+  plugin: sources.py
+  file: sources.yaml
+- title: 'Position: Topological Deep Learning is the New Frontier for Relational Learning'
+  authors:
+  - Theodore Papamarkou
+  - Tolga Birdal
+  - Michael M Bronstein
+  - Gunnar E Carlsson
+  - Justin Curry
+  - Yue Gao
+  - Mustafa Hajij
+  - Roland Kwitt
+  - Pietro Lio
+  - Paolo Di Lorenzo
+  - others
+  date: '2024-07-21'
+  publisher: International Conference on Machine Learning  (ICML)
+  image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
+  link: https://arxiv.org/abs/2402.08871
+  plugin: sources.py
+  file: sources.yaml
+- title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
+  authors:
+  - Yannan He
+  - Garvita Tiwari
+  - Tolga Birdal
+  - Jan Eric Lenssen
+  - Gerard Pons-Moll
+  date: '2024-06-17'
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/he2024nrdf.jpg
+  link: https://arxiv.org/abs/2403.03122
+  buttons:
+  - type: source
+    link: https://github.com/hynann/NRDF
+  - type: website
+    text: Website
+    link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
+  plugin: sources.py
+  file: sources.yaml
+- title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
+    for Enhanced 3D Text2Shape Generation'
+  authors:
+  - Zhiying Leng
+  - Tolga Birdal
+  - Xiaohui Liang
+  - Federico Tombari
+  date: '2024-06-17'
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/leng2024hypersdfusion.jpg
+  link: https://arxiv.org/abs/2403.00372
+  buttons:
+  - type: source
+    link: https://github.com/M-leng/HyperSDFusion-Text2Shape
+  - type: website
+    text: Website
+    link: https://hypersdfusion.github.io/
+  plugin: sources.py
+  file: sources.yaml
+- title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
+  authors:
+  - Nathan Mankovich
+  - Gustau Camps-Valls
+  - Tolga Birdal
+  date: '2024-06-17'
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/mankovich2024fun.jpg
+  link: https://arxiv.org/abs/2401.04071
+  buttons:
+  - type: source
+    link: https://github.com/nmank/FunWithFlags
+  plugin: sources.py
+  file: sources.yaml
+- title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
+  authors:
+  - Jan-Nico Zaech
+  - Martin Danelljan
+  - Tolga Birdal
+  - Luc Van Gool
+  date: '2024-06-17'
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
+  link: https://arxiv.org/abs/2310.12153
+  plugin: sources.py
+  file: sources.yaml
+- title: Variational Inference for SDEs Driven by Fractional Noise
+  authors:
+  - Rembert Daems
+  - Manfred Opper
+  - Guillaume Crevecoeur
+  - Tolga Birdal
+  date: '2024-05-07'
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/daemsvariational2024.jpg
+  link: https://arxiv.org/abs/2310.12975
+  buttons:
+  - type: source
+    link: https://github.com/VideoNeuralSDE/MAFBM
+  - type: website
+    text: Website
+    link: https://videoneuralsde.github.io/
+  plugin: sources.py
+  file: sources.yaml
+- title: Topological generalization bounds for discrete-time stochastic optimization
     algorithms
   authors:
   - Rayna Andreeva
@@ -768,10 +933,10 @@
   - Rik Sarkar
   - Tolga Birdal
   - Umut Simsekli
-  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2024-12-09'
-  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/0886e50806c3faf55e557bd63ba3e70c-Paper-Conference.pdf
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
+  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/0886e50806c3faf55e557bd63ba3e70c-Paper-Conference.pdf
   buttons:
   - type: preprint
     link: https://arxiv.org/abs/2407.08723
@@ -779,8 +944,21 @@
     link: https://github.com/rorondre/TDAGeneralization
   plugin: sources.py
   file: sources-new.yaml
-- id: arxiv:2310.17638
-  title: Generative Fractional Diffusion Models
+- title: Convex formulations for training two-layer ReLU neural networks
+  authors:
+  - Karthik Prakhya
+  - Tolga Birdal
+  - Alp Yurtsever
+  date: '2025-05-05'
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/prakhya2025convex.jpg
+  link: https://arxiv.org/abs/2410.22311
+  buttons:
+  - type: source
+    link: https://github.com/KarthikPrakhya/SDPNN-IW
+  plugin: sources.py
+  file: sources-new.yaml
+- title: Generative Fractional Diffusion Models
   authors:
   - Gabriel Nobis
   - Maximilian Springenberg
@@ -796,10 +974,10 @@
   - Christoph Knochenhauer
   - Luis Oala
   - Wojciech Samek
-  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   date: '2024-12-09'
-  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/2d2cf241331d7e71a6f20e9ed798a06b-Paper-Conference.pdf
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/nobis2024generative.jpg
+  link: https://proceedings.neurips.cc/paper_files/paper/2024/file/2d2cf241331d7e71a6f20e9ed798a06b-Paper-Conference.pdf
   buttons:
   - type: preprint
     link: https://arxiv.org/abs/2310.17638
@@ -807,213 +985,15 @@
     link: https://github.com/GabrielNobis/gfdm
   plugin: sources.py
   file: sources-new.yaml
-- id: arxiv:2310.15128
-  title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
-  authors:
-  - Maximilian Krahn
-  - Michelle Sasdelli
-  - Fengyi Yang
-  - Vladislav Golyanik
-  - Juho Kannala
-  - Tat-Jun Chin
-  - Tolga Birdal
-  publisher: British Machine Vision Conference (BMVC)
-  date: '2024-11-25'
-  link: https://arxiv.org/abs/2310.15128
-  image: https://circle-group.github.io/images/publication_preview/krahn2023projected.jpg
-  buttons:
-  - type: source
-    link: https://github.com/mk2510/QPSBGD
-  - type: website
-    text: Website
-    link: https://qpsbgd.github.io
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2405.14094
-  title: 'Attending to Topological Spaces: The Cellular Transformer'
-  authors:
-  - "Rub\xE9n Ballester"
-  - "Pablo Hern\xE1ndez-Garc\xEDa"
-  - Mathilde Papillon
-  - Claudio Battiloro
-  - Nina Miolane
-  - Tolga Birdal
-  - Carles Casacuberta
-  - Sergio Escalera
-  - Mustafa Hajij
-  publisher: arXiv preprint arXiv:2405.14094
-  date: '2024-05-27'
-  link: https://arxiv.org/abs/2405.14094
-  image: https://circle-group.github.io/images/publication_preview/ballester2024attending.jpg
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2409.06683
-  title: 'Alignist: CAD-Informed Orientation Distribution Estimation by Fusing Shape
-    and Correspondences'
-  authors:
-  - Shishir R. Vutukur
-  - Rasmus L. Haugaard
-  - Junwen Huang
-  - Benjamin Busam
-  - Tolga Birdal
-  publisher: European Conference on Computer Vision (ECCV)
-  date: '2024-09-29'
-  link: https://arxiv.org/abs/2409.06683
-  image: https://circle-group.github.io/images/publication_preview/vutukur2024alignist.jpg
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2310.20436
-  title: 'SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and
-    Benchmark'
-  authors:
-  - Zhengdi Yu
-  - Shaoli Huang
-  - Yongkang Cheng
-  - Tolga Birdal
-  publisher: European Conference on Computer Vision (ECCV)
-  date: '2024-09-29'
-  link: https://arxiv.org/abs/2310.20436
-  image: https://circle-group.github.io/images/publication_preview/yu2023signavatars.jpg
-  buttons:
-  - type: source
-    link: https://github.com/ZhengdiYu/SignAvatars
-  - type: website
-    text: Website
-    link: https://signavatars.github.io/
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2402.08871
-  title: 'Position: Topological Deep Learning is the New Frontier for Relational Learning'
-  authors:
-  - Theodore Papamarkou
-  - Tolga Birdal
-  - Michael M Bronstein
-  - Gunnar E Carlsson
-  - Justin Curry
-  - Yue Gao
-  - Mustafa Hajij
-  - Roland Kwitt
-  - Pietro Lio
-  - Paolo Di Lorenzo
-  - others
-  publisher: International Conference on Machine Learning  (ICML)
-  date: '2024-07-21'
-  link: https://arxiv.org/abs/2402.08871
-  image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.1109/cvpr52733.2024.00164
-  title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
-  authors:
-  - Yannan He
-  - Garvita Tiwari
-  - Tolga Birdal
-  - Jan Eric Lenssen
-  - Gerard Pons-Moll
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
-  date: '2024-06-17'
-  link: https://arxiv.org/abs/2403.03122
-  image: https://circle-group.github.io/images/publication_preview/he2024nrdf.jpg
-  buttons:
-  - type: source
-    link: https://github.com/hynann/NRDF
-  - type: website
-    text: Website
-    link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.1109/cvpr52733.2024.01862
-  title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
-    for Enhanced 3D Text2Shape Generation'
-  authors:
-  - Zhiying Leng
-  - Tolga Birdal
-  - Xiaohui Liang
-  - Federico Tombari
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
-  date: '2024-06-17'
-  link: https://arxiv.org/abs/2403.00372
-  image: https://circle-group.github.io/images/publication_preview/leng2024hypersdfusion.jpg
-  buttons:
-  - type: source
-    link: https://github.com/M-leng/HyperSDFusion-Text2Shape
-  - type: website
-    text: Website
-    link: https://hypersdfusion.github.io/
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.1109/cvpr52733.2024.00039
-  title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
-  authors:
-  - Nathan Mankovich
-  - Gustau Camps-Valls
-  - Tolga Birdal
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
-  date: '2024-06-17'
-  link: https://arxiv.org/abs/2401.04071
-  image: https://circle-group.github.io/images/publication_preview/mankovich2024fun.jpg
-  buttons:
-  - type: source
-    link: https://github.com/nmank/FunWithFlags
-  plugin: sources.py
-  file: sources.yaml
-- id: doi:10.1109/cvpr52733.2024.02475
-  title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
-  authors:
-  - Jan-Nico Zaech
-  - Martin Danelljan
-  - Tolga Birdal
-  - Luc Van Gool
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
-  date: '2024-06-17'
-  link: https://arxiv.org/abs/2310.12153
-  image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2310.12975
-  title: Variational Inference for SDEs Driven by Fractional Noise
-  authors:
-  - Rembert Daems
-  - Manfred Opper
-  - Guillaume Crevecoeur
-  - Tolga Birdal
-  publisher: International Conference on Learning Representations (ICLR)
-  date: '2024-05-07'
-  link: https://arxiv.org/abs/2310.12975
-  image: https://circle-group.github.io/images/publication_preview/daemsvariational2024.jpg
-  buttons:
-  - type: source
-    link: https://github.com/VideoNeuralSDE/MAFBM
-  - type: website
-    text: Website
-    link: https://videoneuralsde.github.io/
-  plugin: sources.py
-  file: sources.yaml
-- id: arxiv:2410.22311
-  title: Convex formulations for training two-layer ReLU neural networks
-  authors:
-  - Karthik Prakhya
-  - Tolga Birdal
-  - Alp Yurtsever
-  publisher: International Conference on Learning Representations (ICLR)
-  date: '2025-05-05'
-  link: https://arxiv.org/abs/2410.22311
-  image: https://circle-group.github.io/images/publication_preview/prakhya2025convex.jpg
-  buttons:
-  - type: source
-    link: https://github.com/KarthikPrakhya/SDPNN-IW
-  plugin: sources.py
-  file: sources-new.yaml
-- id: arxiv:2412.12861
-  title: 'Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera'
+- title: 'Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera'
   authors:
   - Zhengdi Yu
   - Stefanos Zafeiriou
   - Tolga Birdal
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2025-06-17'
-  link: https://arxiv.org/abs/2412.12861
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/yu2025dyn.jpg
+  link: https://arxiv.org/abs/2412.12861
   buttons:
   - type: source
     link: https://github.com/ZhengdiYu/Dyn-HaMR
@@ -1022,53 +1002,62 @@
     link: https://dyn-hamr.github.io/
   plugin: sources.py
   file: sources-new.yaml
-- id: arxiv:2502.07782
-  title: A Flag Decomposition for Hierarchical Datasets
+- title: A Flag Decomposition for Hierarchical Datasets
   authors:
   - Nathan Mankovich
   - Ignacio Santamaria
   - Gustau Camps-Valls
   - Tolga Birdal
-  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   date: '2025-06-17'
-  link: https://arxiv.org/abs/2502.07782
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/mankovich2025flag.jpg
+  link: https://arxiv.org/abs/2502.07782
   buttons:
   - type: source
     link: https://github.com/nmank/FD
   plugin: sources.py
   file: sources-new.yaml
-- id: arxiv:2501.04697
-  title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations
+- title: Grokking at the Edge of Numerical Stability
+  authors:
+  - Lucas Prieto
+  - Melih Barsbey
+  - Pedro AM Mediano
+  - Tolga Birdal
+  date: '2025-05-05'
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/prieto2025grokking.jpg
+  link: https://arxiv.org/abs/2501.04697
+  buttons:
+  - type: source
+    link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
+  plugin: sources.py
+  file: sources-new.yaml
+- title: Efficient training of neural SDEs using stochastic optimal control
+  authors:
+  - Rembert Daems
+  - Manfred Opper
+  - Guillaume Crevecoeur
+  - Tolga Birdal
+  date: '2025-10-08'
+  publisher: European Symposium on Artificial Neural Networks (ESANN)
+  image: https://circle-group.github.io/images/publication_preview/daems2025efficient.jpg
+  link: https://www.esann.org/
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2505.17150
+  plugin: sources.py
+  file: sources-new.yaml
+- title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations
     and Compressibility
   authors:
   - Melih Barsbey
   - Lucas Prieto
   - Stefanos Zafeiriou
   - Tolga Birdal
-  publisher: International Conference on Computer Vision (ICCV)
   date: '2025-10-04'
-  link: https://arxiv.org/abs/2501.04697
+  publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/barsbey2025large.jpg
-  buttons:
-  - type: source
-    link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
-  plugin: sources.py
-  file: sources-new.yaml
-- id: arxiv:2505.17150
-  title: Efficient training of neural SDEs using stochastic optimal control
-  authors:
-  - Rembert Daems
-  - Manfred Opper
-  - Guillaume Crevecoeur
-  - Tolga Birdal
-  publisher: European Symposium on Artificial Neural Networks (ESANN)
-  date: '2025-10-08'
-  link: https://www.esann.org/
-  image: https://circle-group.github.io/images/publication_preview/daems2025efficient.jpg
-  buttons:
-  - type: preprint
-    link: https://arxiv.org/abs/2505.17150
+  link: https://arxiv.org/abs/2501.04697
   plugin: sources.py
   file: sources-new.yaml
 - title: 'CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations'
