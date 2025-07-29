@@ -100,7 +100,7 @@ We are a fortunate to be in a world-class team composed of individuals from dive
 %}
 
 {% include section.html %}
-
+<!--
 {% capture text %}
 ## {% include icon.html icon="fa-solid fa-bullhorn" %}Latest news
 
@@ -132,9 +132,10 @@ We are a fortunate to be in a world-class team composed of individuals from dive
 
 %}
 
+
 {% endcapture %}
 
-{% include section.html %}
+{% include section.html %}-->
 
 #### Our funders
 
