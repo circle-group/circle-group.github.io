@@ -23,38 +23,3 @@ We are fortunate to oftenly receive visitors and collaborate with various resear
 {% include list.html data="members" component="portrait" filter="role == 'visitor'" %}
 
 {% include section.html %}
-
-
-{% capture col1 %}
-{%
-  include figure.html
-  image="images/logml.jpeg"
-  caption="LOGML in front of Royal Albert Hall"
-%}
-{% endcapture %}
-
-{% capture col2 %}
-<!--<img src="images/logml.jpeg">-->
-{%
-  include figure.html
-  image="images/team.jpeg"
-  caption="Team dinner"
-%}
-{% endcapture %}
-
-{% capture col3 %}
-<!--<img src="images/logml.jpeg">-->
-{%
-  include figure.html
-  image="images/team.jpeg"
-  caption="Team dinner"
-%}
-{% endcapture %}
-
-<!--{% capture content %}
-{% include figure.html image="images/team.jpeg" style="margin-top: 20px;" %}-->
-{% include cols.html col1=col1 col2=col2 col3=col3%}
-
-<!--{% endcapture %}-->
-
-<!--{% include section.html dark=true %}-->
