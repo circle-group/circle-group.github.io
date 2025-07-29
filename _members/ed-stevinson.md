@@ -1,8 +1,8 @@
 ---
 name: Edward Stevinson
-image: images/photo.jpg
-description: Lead Programmer
-role: programmer
+image: images/prof_pic_ed.jpg
+description: PhD Student
+role: PhD Student
 links:
   github: Stevinson
 ---

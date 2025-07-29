@@ -1,8 +1,8 @@
 ---
 name: Simone Foti
 image: images/prof_pic_simone.jpg
-role: Postdoc
-group: principal-investigator
+role: Postdoctoral Research Associate
+group: postdoc
 links:
   github: simofoti
 ---

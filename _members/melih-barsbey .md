@@ -1,8 +1,8 @@
 ---
 name: Melih Barsbey
 image: images/prof_pic_melih.jpg
-description: Postdoc
-role: principal-investigator
+description: Postdoctoral Research Associate
+role: postdoc
 links:
   github: mbarsbey
 ---

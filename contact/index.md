@@ -38,8 +38,8 @@ We are located at the Huxley Building of Imperial College London. For any inquir
 
 {%
   include figure.html
-  image="images/location.jpg"
-  caption="Our location"
+  image="images/logml.jpeg"
+  caption="Royal Albert Hall (@LOGML)"
 %}
 
 {% endcapture %}
