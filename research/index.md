@@ -15,7 +15,7 @@ We actively publish at the top venues of computer vision and machine learning, i
 
 ## Highlighted
 
-{% include citation.html lookup="Open collaborative writing with Manubot" style="rich" %}
+{% include citation.html lookup="UV-free Texture Generation with Denoising and Geodesic Heat Diffusions" style="rich" %}
 
 {% include section.html %}
 
