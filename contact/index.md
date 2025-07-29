@@ -7,7 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-regular fa-envelope" %}Contact
 
-We operate under the Department of Computing of Imperial College London and are located within the Huxley Building. For any inquiries: 
+We operate under the <a href="https://www.imperial.ac.uk/computing/">Department of Computing</a> of <a href="https://www.imperial.ac.uk/">Imperial College London</a> and are located within the Huxley Building. For any inquiries: 
 
 {%
   include button.html
