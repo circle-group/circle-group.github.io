@@ -21,7 +21,7 @@ We are drawn to deep priors and structural inductive biases—the kind that brid
 
 {% include section.html %}
 
-## Explorations Across Disciplines
+## Exploratory Research Across Disciplines
 
 {% include list.html component="card" data="projects" filter="!group" style="small" %}
 
