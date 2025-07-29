@@ -11,20 +11,26 @@
 
 
 - title: 3 papers accepted at ICCV 2025
-  date: 2025-22-07
+  date: 2025
   description: Caner, Melih and Lennart have accepted papers at ICCV 2025 taking place in Honolulu.
+  url: https://circle-group.github.io/research/
+
+- title: London Geometry and Machine Learning (LOGML) takes place at Imperial
+  date: 2025
+  description: LOGML successfully brought together mathematicians and computer scientists to collaborate on various subjects at the intersection of geometry and machine learning. Kudos to Simone Foti for being a lead organizer.
+  url: https://www.logml.ai/
 
 - title: 2 papers accepted at CVPR 2025
-  date: 2025-05-01
+  date: 2025
   description: Check out Zhengdi's DynHaMR, a highlight at CVPR. 
   url: https://dyn-hamr.github.io
 
 - title: UKRI Future Leaders Fellowship
-  date: 2024-07-04
+  date: 2024
   description: Tolga Birdal has been awarded the prestigious UKRI Future Leaders Fellowship.
   url: https://www.imperial.ac.uk/news/254977/four-imperial-academics-awarded-future-leaders/
 
 - title: Joining at Imperial College London
-  date: 2022-07-04
+  date: 2022
   description: Tolga Birdal has joined the Department of Computing at Imperial College London an assistant professor (Lecturer).
   url: https://profiles.imperial.ac.uk/t.birdal
