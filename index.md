@@ -154,4 +154,12 @@ We are a fortunate to be in a world-class team composed of individuals from dive
 <img src="images/funders/meta.svg" style="max-width: 180px;">
 {% endcapture %}
 
-{% include colsfunders.html col1=col1 col2=col2 col3=col3 col4=col4%}
+{% capture col5 %}
+<img src="images/funders/google.svg" style="max-width: 180px;">
+{% endcapture %}
+
+{% capture col6 %}
+<img src="images/funders/AWS.svg" style="max-width: 180px;">
+{% endcapture %}
+
+{% include cols.html col1=col1 col2=col2 col3=col3 col4=col4 col5=col5 col6=col6%}

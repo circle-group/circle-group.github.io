@@ -6,7 +6,7 @@
   #description: A new way to work with higher-order, complex data in the context of deep learning.
   repo: https://pyt-team.github.io/
 
-- title: 3D/4D Generative Priors & Models
+- title: 3D/4D Computer Vision
   subtitle: A new family of versatile generative models that allow for reconstruction, sampling, analysis and generation of 3D/4D shapes.
   group: featured
   image: images/GenPriors.jpg
