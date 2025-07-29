@@ -7,7 +7,7 @@
   date: '2015-04-19'
   publisher: International Conference on Acoustics, Speech, and Signal Processing
     (ICASSP)
-  image: images/publication_preview/csimcsekli2015unified.JPG
+  image: https://circle-group.github.io/images/publication_preview/csimcsekli2015unified.JPG
   link: https://ieeexplore.ieee.org/document/7178310
   plugin: sources.py
   file: sources.yaml
@@ -17,9 +17,11 @@
   - Slobodan Ilic
   date: '2015-10-19'
   publisher: Int. Conf. on 3D Vision (3DV)
-  image: images/publication_preview/birdal2015point.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2015point.JPG
   link: https://ieeexplore.ieee.org/document/7335522
-  pdf: https://campar.in.tum.de/pub/tbirdal20153dv/tbirdal20153dv.pdf
+  buttons:
+  - type: paper
+    link: https://campar.in.tum.de/pub/tbirdal20153dv/tbirdal20153dv.pdf
   plugin: sources.py
   file: sources.yaml
 - title: Online inspection of 3d parts via a locally overlapping camera network
@@ -30,9 +32,11 @@
   - Slobodan Ilic
   date: '2016-03-02'
   publisher: Winter Conference on Applications of Computer Vision (WACV)
-  image: images/publication_preview/birdal2016online.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2016online.JPG
   link: http://ieeexplore.ieee.org/document/7477630/
-  pdf: https://campar.in.tum.de/pub/tbirdal2016wacv/tbirdal2016wacv.pdf
+  buttons:
+  - type: paper
+    link: https://campar.in.tum.de/pub/tbirdal2016wacv/tbirdal2016wacv.pdf
   plugin: sources.py
   file: sources.yaml
 - title: X-tag A fiducial tag for flexible and accurate bundle adjustment
@@ -42,9 +46,11 @@
   - Slobodan Ilic
   date: '2016-10-25'
   publisher: Int. Conf. on 3D Vision (3DV)
-  image: images/publication_preview/birdal2016x.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2016x.JPG
   link: http://ieeexplore.ieee.org/document/7785131/
-  pdf: https://campar.in.tum.de/pub/tbirdal20163dv/tbirdal20163dv.pdf
+  buttons:
+  - type: paper
+    link: https://campar.in.tum.de/pub/tbirdal20163dv/tbirdal20163dv.pdf
   plugin: sources.py
   file: sources.yaml
 - title: A point sampling algorithm for 3d matching of irregular geometries
@@ -53,9 +59,11 @@
   - Slobodan Ilic
   date: '2017-09-24'
   publisher: International Conference on Intelligent Robots and Systems
-  image: images/publication_preview/birdal2017point.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2017point.JPG
   link: https://ieeexplore.ieee.org/abstract/document/8206609/
-  pdf: https://tolgabirdal.github.io/downloads/tolga-birdal-iros-2017-cad-sampling.pdf
+  buttons:
+  - type: paper
+    link: https://tolgabirdal.github.io/downloads/tolga-birdal-iros-2017-cad-sampling.pdf
   plugin: sources.py
   file: sources.yaml
 - title: Cad priors for accurate and flexible instance reconstruction
@@ -64,7 +72,7 @@
   - Slobodan Ilic
   date: '2017-10-22'
   publisher: Int. Conf. Computer Vision (ICCV)
-  image: images/publication_preview/birdal2017cad.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2017cad.JPG
   link: https://arxiv.org/abs/1705.03111
   plugin: sources.py
   file: sources.yaml
@@ -76,7 +84,7 @@
   - Nassir Navab
   date: '2017-10-22'
   publisher: Int. Conf. Computer Vision Workshops (ICCW)
-  image: images/publication_preview/busam2017camera.JPG
+  image: https://circle-group.github.io/images/publication_preview/busam2017camera.JPG
   link: https://arxiv.org/abs/1704.07072
   plugin: sources.py
   file: sources.yaml
@@ -89,9 +97,12 @@
   - Slobodan Ilic
   date: '2018-12-03'
   publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: images/publication_preview/birdal2018bayesian.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2018bayesian.JPG
   link: https://arxiv.org/abs/1805.12279
-  website: https://synchinvision.github.io/probsync/
+  buttons:
+  - type: website
+    text: Website
+    link: https://synchinvision.github.io/probsync/
   plugin: sources.py
   file: sources.yaml
 - title: Ppfnet Global context aware local features for robust 3d point matching
@@ -101,7 +112,7 @@
   - Slobodan Ilic
   date: '2018-06-18'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/deng2018ppfnet.JPG
+  image: https://circle-group.github.io/images/publication_preview/deng2018ppfnet.JPG
   link: https://arxiv.org/abs/1802.02669
   plugin: sources.py
   file: sources.yaml
@@ -114,7 +125,7 @@
   - Peter Sturm
   date: '2018-06-18'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/birdal2018minimalist.JPG
+  image: https://circle-group.github.io/images/publication_preview/birdal2018minimalist.JPG
   link: https://arxiv.org/abs/1803.07191
   plugin: sources.py
   file: sources.yaml
@@ -125,7 +136,7 @@
   - Slobodan Ilic
   date: '2018-09-08'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/deng2018ppf.JPG
+  image: https://circle-group.github.io/images/publication_preview/deng2018ppf.JPG
   link: https://arxiv.org/abs/1808.10322
   plugin: sources.py
   file: sources.yaml
@@ -137,10 +148,14 @@
   - Slobodan Ilic
   date: '2018-09-05'
   publisher: Int. Conf. on 3D Vision (3DV)
-  image: images/publication_preview/haarbach2018survey.JPG
+  image: https://circle-group.github.io/images/publication_preview/haarbach2018survey.JPG
   link: https://ieeexplore.ieee.org/document/8490989/
-  code: https://github.com/adrelino/interpolation-methods
-  website: http://www.adrian-haarbach.de/interpolation-methods/
+  buttons:
+  - type: source
+    link: https://github.com/adrelino/interpolation-methods
+  - type: website
+    text: Website
+    link: http://www.adrian-haarbach.de/interpolation-methods/
   plugin: sources.py
   file: sources.yaml
 - title: Geometric Methods for 3D Reconstruction from Large Point Clouds
@@ -148,7 +163,7 @@
   - Tolga Birdal
   date: '2018-01-01'
   publisher: "Technische Universit\xE4t M\xFCnchen"
-  image: images/publication_preview/birdal2018geometric.jpg
+  image: https://circle-group.github.io/images/publication_preview/birdal2018geometric.jpg
   plugin: sources.py
   file: sources.yaml
 - title: Generic primitive detection in point clouds using novel minimal quadric fits
@@ -160,9 +175,11 @@
   - Peter Sturm
   date: '2019-01-08'
   publisher: IEEE Trans. on Pattern Analysis and Machine Intelligence (TPAMI)
-  image: images/publication_preview/birdal2019generic.jpg
+  image: https://circle-group.github.io/images/publication_preview/birdal2019generic.jpg
   link: https://arxiv.org/abs/1901.01255
-  code: https://github.com/tolgabirdal/SphereDetection3D
+  buttons:
+  - type: source
+    link: https://github.com/tolgabirdal/SphereDetection3D
   plugin: sources.py
   file: sources.yaml
 - title: Probabilistic permutation synchronization using the riemannian structure
@@ -172,9 +189,12 @@
   - Umut Simsekli
   date: '2019-06-16'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/birdal2019probabilistic.jpg
+  image: https://circle-group.github.io/images/publication_preview/birdal2019probabilistic.jpg
   link: https://arxiv.org/abs/1904.05814
-  website: https://synchinvision.github.io/probsync/
+  buttons:
+  - type: website
+    text: Website
+    link: https://synchinvision.github.io/probsync/
   plugin: sources.py
   file: sources.yaml
 - title: 3D point capsule networks
@@ -185,10 +205,14 @@
   - Federico Tombari
   date: '2019-06-16'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/zhao20193d.jpg
+  image: https://circle-group.github.io/images/publication_preview/zhao20193d.jpg
   link: https://arxiv.org/abs/1812.10775
-  code: https://github.com/yongheng1991/3D-point-capsule-networks
-  website: https://3dcapsulenetworks.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/yongheng1991/3D-point-capsule-networks
+  - type: website
+    text: Website
+    link: https://3dcapsulenetworks.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: 3D Local Features for Direct Pairwise Registration
@@ -198,7 +222,7 @@
   - Slobodan Ilic
   date: '2019-06-16'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/deng20193d.jpg
+  image: https://circle-group.github.io/images/publication_preview/deng20193d.jpg
   link: https://arxiv.org/abs/1904.04281
   plugin: sources.py
   file: sources.yaml
@@ -213,7 +237,7 @@
   - Federico Tombari
   date: '2019-10-27'
   publisher: Int. Conf. Computer Vision (ICCV)
-  image: images/publication_preview/manhardt2019explaining.jpg
+  image: https://circle-group.github.io/images/publication_preview/manhardt2019explaining.jpg
   link: https://arxiv.org/abs/1812.00287
   plugin: sources.py
   file: sources.yaml
@@ -227,10 +251,14 @@
   - Leonidas J Guibas
   date: '2020-12-06'
   publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: images/publication_preview/rempe2020caspr.jpg
+  image: https://circle-group.github.io/images/publication_preview/rempe2020caspr.jpg
   link: http://arxiv.org/abs/2008.02792
-  code: https://github.com/davrempe/caspr
-  website: https://geometry.stanford.edu/projects/caspr/
+  buttons:
+  - type: source
+    link: https://github.com/davrempe/caspr
+  - type: website
+    text: Website
+    link: https://geometry.stanford.edu/projects/caspr/
   plugin: sources.py
   file: sources.yaml
 - title: Deformation-aware 3d model embedding and retrieval
@@ -242,10 +270,14 @@
   - Leonidas Guibas
   date: '2020-08-23'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/uy2020deformation.jpg
+  image: https://circle-group.github.io/images/publication_preview/uy2020deformation.jpg
   link: https://arxiv.org/abs/2004.01228
-  code: https://github.com/mikacuy/deformation_aware_embedding
-  website: https://deformscan2cad.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/mikacuy/deformation_aware_embedding
+  - type: website
+    text: Website
+    link: https://deformscan2cad.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: Synchronizing probability measures on rotations via optimal transport
@@ -256,10 +288,14 @@
   - Leonidas J Guibas
   date: '2020-06-14'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/birdal2020synchronizing.jpg
+  image: https://circle-group.github.io/images/publication_preview/birdal2020synchronizing.jpg
   link: https://arxiv.org/abs/2004.00663
-  code: https://github.com/MichaelArbel/OT-sync
-  website: https://synchinvision.github.io/probsync/
+  buttons:
+  - type: source
+    link: https://github.com/MichaelArbel/OT-sync
+  - type: website
+    text: Website
+    link: https://synchinvision.github.io/probsync/
   plugin: sources.py
   file: sources.yaml
 - title: Learning multiview 3d point cloud registration
@@ -271,9 +307,11 @@
   - Tolga Birdal
   date: '2020-06-14'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/gojcic2020learning.jpg
+  image: https://circle-group.github.io/images/publication_preview/gojcic2020learning.jpg
   link: https://arxiv.org/abs/2001.05119
-  code: https://github.com/zgojcic/3D_multiview_reg
+  buttons:
+  - type: source
+    link: https://github.com/zgojcic/3D_multiview_reg
   plugin: sources.py
   file: sources.yaml
 - title: 6D Camera Relocalization in Ambiguous Scenes via Continuous Multimodal Inference
@@ -287,10 +325,14 @@
   - Nassir Navab
   date: '2020-08-23'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/bui20206d.jpg
+  image: https://circle-group.github.io/images/publication_preview/bui20206d.jpg
   link: https://arxiv.org/abs/2004.04807
-  code: https://github.com/Multimodal3DVision/torch_bingham
-  website: https://multimodal3dvision.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/Multimodal3DVision/torch_bingham
+  - type: website
+    text: Website
+    link: https://multimodal3dvision.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: Quaternion equivariant capsule networks for 3d point clouds
@@ -303,10 +345,14 @@
   - Federico Tombari
   date: '2020-08-23'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/zhao2020quaternion.jpg
+  image: https://circle-group.github.io/images/publication_preview/zhao2020quaternion.jpg
   link: https://arxiv.org/abs/1912.12098
-  code: https://github.com/tolgabirdal/qecnetworks
-  website: https://3dcapsulenetworks.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/tolgabirdal/qecnetworks
+  - type: website
+    text: Website
+    link: https://3dcapsulenetworks.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: From planes to corners Multi-purpose primitive detection in unorganized 3d
@@ -319,9 +365,11 @@
   - Tolga Birdal
   date: '2020-02-27'
   publisher: IEEE Robotics and Automation Letters
-  image: images/publication_preview/sommer2020planes.jpg
+  image: https://circle-group.github.io/images/publication_preview/sommer2020planes.jpg
   link: https://arxiv.org/abs/2001.07360
-  code: https://github.com/c-sommer/orthogonal-planes
+  buttons:
+  - type: source
+    link: https://github.com/c-sommer/orthogonal-planes
   plugin: sources.py
   file: sources.yaml
 - title: Continuous geodesic convolutions for learning on 3d shapes
@@ -333,7 +381,7 @@
   - Leonidas Guibas
   date: '2021-01-05'
   publisher: Winter Conference on Applications of Computer Vision (WACV)
-  image: images/publication_preview/yang2021continuous.jpg
+  image: https://circle-group.github.io/images/publication_preview/yang2021continuous.jpg
   link: https://arxiv.org/abs/2002.02506
   plugin: sources.py
   file: sources.yaml
@@ -347,10 +395,14 @@
   - Leonidas J Guibas
   date: '2021-10-11'
   publisher: Int. Conf. Computer Vision (ICCV)
-  image: images/publication_preview/rempe2021humor.jpg
+  image: https://circle-group.github.io/images/publication_preview/rempe2021humor.jpg
   link: https://arxiv.org/abs/2105.04668
-  code: https://github.com/davrempe/humor
-  website: https://geometry.stanford.edu/projects/humor/
+  buttons:
+  - type: source
+    link: https://github.com/davrempe/humor
+  - type: website
+    text: Website
+    link: https://geometry.stanford.edu/projects/humor/
   plugin: sources.py
   file: sources.yaml
 - title: Intrinsic dimension, persistent homology and generalization in neural networks
@@ -361,9 +413,11 @@
   - Umut Simsekli
   date: '2021-12-06'
   publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: images/publication_preview/birdal2021intrinsic.jpg
+  image: https://circle-group.github.io/images/publication_preview/birdal2021intrinsic.jpg
   link: https://arxiv.org/abs/2111.13171
-  code: https://github.com/tolgabirdal/PHDimGeneralization
+  buttons:
+  - type: source
+    link: https://github.com/tolgabirdal/PHDimGeneralization
   plugin: sources.py
   file: sources.yaml
 - title: 'Multibodysync: Multi-body segmentation and motion estimation via 3d scan
@@ -378,9 +432,11 @@
   - Leonidas J Guibas
   date: '2021-06-19'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/huang2021multibodysync.jpg
+  image: https://circle-group.github.io/images/publication_preview/huang2021multibodysync.jpg
   link: https://arxiv.org/abs/2101.06605
-  code: https://github.com/huangjh-pub/multibody-sync
+  buttons:
+  - type: source
+    link: https://github.com/huangjh-pub/multibody-sync
   plugin: sources.py
   file: sources.yaml
 - title: Quantum permutation synchronization
@@ -391,9 +447,12 @@
   - Leonidas J Guibas
   date: '2021-06-19'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/birdal2021quantum.jpg
+  image: https://circle-group.github.io/images/publication_preview/birdal2021quantum.jpg
   link: https://arxiv.org/abs/2101.07755
-  website: https://quantumcomputervision.github.io/
+  buttons:
+  - type: website
+    text: Website
+    link: https://quantumcomputervision.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: Weakly supervised learning of rigid 3D scene flow
@@ -405,10 +464,14 @@
   - Tolga Birdal
   date: '2021-06-19'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/gojcic2021weakly.jpg
+  image: https://circle-group.github.io/images/publication_preview/gojcic2021weakly.jpg
   link: https://arxiv.org/abs/2102.08945
-  code: https://github.com/zgojcic/Rigid3DSceneFlow
-  website: https://3dsceneflow.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/zgojcic/Rigid3DSceneFlow
+  - type: website
+    text: Website
+    link: https://3dsceneflow.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: 'Deep bingham networks: Dealing with uncertainty and ambiguity in pose estimation'
@@ -421,10 +484,14 @@
   - Tolga Birdal
   date: '2022-04-18'
   publisher: Int. Journal of Computer Vision (IJCV)
-  image: images/publication_preview/deng2022deep.jpg
+  image: https://circle-group.github.io/images/publication_preview/deng2022deep.jpg
   link: https://arxiv.org/abs/2012.11002
-  code: https://github.com/Multimodal3DVision/torch_bingham
-  website: https://multimodal3dvision.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/Multimodal3DVision/torch_bingham
+  - type: website
+    text: Website
+    link: https://multimodal3dvision.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: Multiway non-rigid point cloud registration via learned functional map synchronization
@@ -436,10 +503,14 @@
   - Shi-Min Hu
   date: '2022-02-01'
   publisher: IEEE Trans. on Pattern Analysis and Machine Intelligence (TPAMI)
-  image: images/publication_preview/huang2022multiway.jpg
+  image: https://circle-group.github.io/images/publication_preview/huang2022multiway.jpg
   link: https://arxiv.org/abs/2111.12878
-  code: https://github.com/huangjh-pub/synorim
-  website: https://huangjh-pub.github.io/publication/synorim/
+  buttons:
+  - type: source
+    link: https://github.com/huangjh-pub/synorim
+  - type: website
+    text: Website
+    link: https://huangjh-pub.github.io/publication/synorim/
   plugin: sources.py
   file: sources.yaml
 - title: Projective manifold gradient layer for deep rotation regression
@@ -452,10 +523,14 @@
   - He Wang
   date: '2022-06-19'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/chen2022projective.jpg
+  image: https://circle-group.github.io/images/publication_preview/chen2022projective.jpg
   link: https://arxiv.org/abs/2110.11657
-  code: https://github.com/jychen18/RPMG
-  website: https://jychen18.github.io/RPMG/
+  buttons:
+  - type: source
+    link: https://github.com/jychen18/RPMG
+  - type: website
+    text: Website
+    link: https://jychen18.github.io/RPMG/
   plugin: sources.py
   file: sources.yaml
 - title: 'Point2cyl: Reverse engineering 3d objects from point clouds to extrusion
@@ -470,10 +545,14 @@
   - Leonidas J Guibas
   date: '2022-06-19'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/uy2022point2cyl.jpg
+  image: https://circle-group.github.io/images/publication_preview/uy2022point2cyl.jpg
   link: https://arxiv.org/abs/2112.09329
-  code: https://github.com/mikacuy/point2cyl
-  website: https://point2cyl.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/mikacuy/point2cyl
+  - type: website
+    text: Website
+    link: https://point2cyl.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: 'Q-FW: A hybrid classical-quantum Frank-Wolfe for quadratic binary optimization'
@@ -483,9 +562,12 @@
   - Vladislav Golyanik
   date: '2022-10-23'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/yurtsever2022q.jpg
+  image: https://circle-group.github.io/images/publication_preview/yurtsever2022q.jpg
   link: https://arxiv.org/abs/2203.12633
-  website: https://quantumcomputervision.github.io/
+  buttons:
+  - type: website
+    text: Website
+    link: https://quantumcomputervision.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: 6d camera relocalization in visually ambiguous extreme environments
@@ -498,7 +580,7 @@
   - Leonidas J Guibas
   date: '2022-07-13'
   publisher: arXiv preprint arXiv:2207.06333
-  image: images/publication_preview/zheng20226d.jpg
+  image: https://circle-group.github.io/images/publication_preview/zheng20226d.jpg
   link: https://arxiv.org/abs/2207.06333
   plugin: sources.py
   file: sources.yaml
@@ -512,10 +594,14 @@
   - Tolga Birdal
   date: '2022-07-01'
   publisher: Int. Journal of Computer Vision (IJCV)
-  image: images/publication_preview/zhao20223dpointcaps.jpg
+  image: https://circle-group.github.io/images/publication_preview/zhao20223dpointcaps.jpg
   link: https://link.springer.com/article/10.1007/s11263-022-01632-6
-  code: https://github.com/yongheng1991/3D-point-capsule-networks
-  website: https://3dcapsulenetworks.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/yongheng1991/3D-point-capsule-networks
+  - type: website
+    text: Website
+    link: https://3dcapsulenetworks.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: Disentangling Content and Motion for Text-Based Neural Video Manipulation
@@ -528,10 +614,14 @@
   - Aykut Erdem
   date: '2022-11-21'
   publisher: Brit. Mach. Vision Conf. (BMVC)
-  image: images/publication_preview/karacan2022disentangling.jpg
+  image: https://circle-group.github.io/images/publication_preview/karacan2022disentangling.jpg
   link: https://arxiv.org/abs/2211.02980
-  code: https://github.com/leventkaracan/dicomogan
-  website: https://cyberiada.github.io/DiCoMoGAN/
+  buttons:
+  - type: source
+    link: https://github.com/leventkaracan/dicomogan
+  - type: website
+    text: Website
+    link: https://cyberiada.github.io/DiCoMoGAN/
   plugin: sources.py
   file: sources.yaml
 - title: Chordal averaging on flag manifolds and its applications
@@ -540,9 +630,11 @@
   - Tolga Birdal
   date: '2023-06-18'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/mankovich2023chordal.jpg
+  image: https://circle-group.github.io/images/publication_preview/mankovich2023chordal.jpg
   link: https://arxiv.org/abs/2303.13501
-  code: https://github.com/nmank/FlagAveraging
+  buttons:
+  - type: source
+    link: https://github.com/nmank/FlagAveraging
   plugin: sources.py
   file: sources.yaml
 - title: 'Vidstyleode: Disentangled video editing via stylegan and neuralodes'
@@ -556,10 +648,14 @@
   - Aykut Erdem
   date: '2023-10-02'
   publisher: Int. Conf. Computer Vision (ICCV)
-  image: images/publication_preview/ali2023vidstyleode.jpg
+  image: https://circle-group.github.io/images/publication_preview/ali2023vidstyleode.jpg
   link: https://arxiv.org/abs/2304.06020
-  code: https://github.com/MoayedHajiAli/VidStyleODE-official
-  website: https://cyberiada.github.io/VidStyleODE/
+  buttons:
+  - type: source
+    link: https://github.com/MoayedHajiAli/VidStyleODE-official
+  - type: website
+    text: Website
+    link: https://cyberiada.github.io/VidStyleODE/
   plugin: sources.py
   file: sources.yaml
 - title: 'Topological Deep Learning: Going Beyond Graph Data'
@@ -577,10 +673,14 @@
   - others
   date: '2023-06-01'
   publisher: arXiv preprint arXiv:2206.00606
-  image: images/publication_preview/hajij2023topological.jpg
+  image: https://circle-group.github.io/images/publication_preview/hajij2023topological.jpg
   link: https://arxiv.org/abs/2206.00606
-  code: https://pyt-team.github.io/
-  website: https://tdlbook.org/
+  buttons:
+  - type: source
+    link: https://pyt-team.github.io/
+  - type: website
+    text: Website
+    link: https://tdlbook.org/
   plugin: sources.py
   file: sources.yaml
 - title: 'Combinatorial complexes: bridging the gap between cell complexes and hypergraphs'
@@ -593,7 +693,7 @@
   - Michael T Schaub
   date: '2023-10-29'
   publisher: Asilomar Conference on Signals, Systems, and Computers
-  image: images/publication_preview/hajij2023combinatorial.jpg
+  image: https://circle-group.github.io/images/publication_preview/hajij2023combinatorial.jpg
   link: https://arxiv.org/abs/2312.09504
   plugin: sources.py
   file: sources.yaml
@@ -604,10 +704,14 @@
   - Tolga Birdal
   date: '2024-12-09'
   publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: images/publication_preview/foti2024uv.jpg
+  image: https://circle-group.github.io/images/publication_preview/foti2024uv.jpg
   link: https://arxiv.org/abs/2408.16762
-  code: https://github.com/simofoti/UV3-TeD
-  website: https://uv3ted.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/simofoti/UV3-TeD
+  - type: website
+    text: Website
+    link: https://uv3ted.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: Topological Generalization Bounds for Discrete-Time Stochastic Optimization
@@ -620,9 +724,11 @@
   - "Umut \u015Eim\u015Fekli"
   date: '2024-12-09'
   publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: images/publication_preview/andreeva2024topological.jpg
+  image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
   link: https://arxiv.org/abs/2407.08723
-  code: https://github.com/rorondre/TDAGeneralization
+  buttons:
+  - type: source
+    link: https://github.com/rorondre/TDAGeneralization
   plugin: sources.py
   file: sources.yaml
 - title: Generative Fractional Diffusion Models
@@ -640,9 +746,11 @@
   - others
   date: '2024-12-09'
   publisher: Adv. Neural Inform. Process. Systems (NeurIPS)
-  image: images/publication_preview/nobis2023generative.jpg
+  image: https://circle-group.github.io/images/publication_preview/nobis2023generative.jpg
   link: https://arxiv.org/abs/2310.17638
-  code: https://github.com/rorondre/TDAGeneralization
+  buttons:
+  - type: source
+    link: https://github.com/rorondre/TDAGeneralization
   plugin: sources.py
   file: sources.yaml
 - title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
@@ -656,10 +764,14 @@
   - Tolga Birdal
   date: '2024-11-25'
   publisher: Brit. Mach. Vision Conf. (BMVC)
-  image: images/publication_preview/krahn2023projected.jpg
+  image: https://circle-group.github.io/images/publication_preview/krahn2023projected.jpg
   link: https://arxiv.org/abs/2310.15128
-  code: https://github.com/mk2510/QPSBGD
-  website: https://qpsbgd.github.io
+  buttons:
+  - type: source
+    link: https://github.com/mk2510/QPSBGD
+  - type: website
+    text: Website
+    link: https://qpsbgd.github.io
   plugin: sources.py
   file: sources.yaml
 - title: 'Attending to Topological Spaces: The Cellular Transformer'
@@ -675,7 +787,7 @@
   - Mustafa Hajij
   date: '2024-05-27'
   publisher: arXiv preprint arXiv:2405.14094
-  image: images/publication_preview/ballester2024attending.jpg
+  image: https://circle-group.github.io/images/publication_preview/ballester2024attending.jpg
   link: https://arxiv.org/abs/2405.14094
   plugin: sources.py
   file: sources.yaml
@@ -689,7 +801,7 @@
   - Tolga Birdal
   date: '2024-09-29'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/vutukur2024alignist.jpg
+  image: https://circle-group.github.io/images/publication_preview/vutukur2024alignist.jpg
   link: https://arxiv.org/abs/2409.06683
   plugin: sources.py
   file: sources.yaml
@@ -702,10 +814,14 @@
   - Tolga Birdal
   date: '2024-09-29'
   publisher: Eur. Conf. Computer Vision (ECCV)
-  image: images/publication_preview/yu2023signavatars.jpg
+  image: https://circle-group.github.io/images/publication_preview/yu2023signavatars.jpg
   link: https://arxiv.org/abs/2310.20436
-  code: https://github.com/ZhengdiYu/SignAvatars
-  website: https://signavatars.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/ZhengdiYu/SignAvatars
+  - type: website
+    text: Website
+    link: https://signavatars.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: 'Position: Topological Deep Learning is the New Frontier for Relational Learning'
@@ -723,7 +839,7 @@
   - others
   date: '2024-07-21'
   publisher: Int. Conf. Machine Learning (ICML)
-  image: images/publication_preview/papamarkou2024position.jpg
+  image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
   link: https://arxiv.org/abs/2402.08871
   plugin: sources.py
   file: sources.yaml
@@ -736,10 +852,14 @@
   - Gerard Pons-Moll
   date: '2024-06-17'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/he2024nrdf.jpg
+  image: https://circle-group.github.io/images/publication_preview/he2024nrdf.jpg
   link: https://arxiv.org/abs/2403.03122
-  code: https://github.com/hynann/NRDF
-  website: https://virtualhumans.mpi-inf.mpg.de/nrdf/
+  buttons:
+  - type: source
+    link: https://github.com/hynann/NRDF
+  - type: website
+    text: Website
+    link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
   plugin: sources.py
   file: sources.yaml
 - title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
@@ -751,10 +871,14 @@
   - Federico Tombari
   date: '2024-06-17'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/leng2024hypersdfusion.jpg
+  image: https://circle-group.github.io/images/publication_preview/leng2024hypersdfusion.jpg
   link: https://arxiv.org/abs/2403.00372
-  code: https://github.com/M-leng/HyperSDFusion-Text2Shape
-  website: https://hypersdfusion.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/M-leng/HyperSDFusion-Text2Shape
+  - type: website
+    text: Website
+    link: https://hypersdfusion.github.io/
   plugin: sources.py
   file: sources.yaml
 - title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
@@ -764,9 +888,11 @@
   - Tolga Birdal
   date: '2024-06-17'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/mankovich2024fun.jpg
+  image: https://circle-group.github.io/images/publication_preview/mankovich2024fun.jpg
   link: https://arxiv.org/abs/2401.04071
-  code: https://github.com/nmank/FunWithFlags
+  buttons:
+  - type: source
+    link: https://github.com/nmank/FunWithFlags
   plugin: sources.py
   file: sources.yaml
 - title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
@@ -777,7 +903,7 @@
   - Luc Van Gool
   date: '2024-06-17'
   publisher: IEEE Conf. Computer Vision Pattern Recognition (CVPR)
-  image: images/publication_preview/zaech2024probabilistic.jpg
+  image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
   link: https://arxiv.org/abs/2310.12153
   plugin: sources.py
   file: sources.yaml
@@ -789,9 +915,13 @@
   - Tolga Birdal
   date: '2024-05-07'
   publisher: Int. Conf. Learn. Represent. (ICLR)
-  image: images/publication_preview/daemsvariational2024.jpg
+  image: https://circle-group.github.io/images/publication_preview/daemsvariational2024.jpg
   link: https://arxiv.org/abs/2310.12975
-  code: https://github.com/VideoNeuralSDE/MAFBM
-  website: https://videoneuralsde.github.io/
+  buttons:
+  - type: source
+    link: https://github.com/VideoNeuralSDE/MAFBM
+  - type: website
+    text: Website
+    link: https://videoneuralsde.github.io/
   plugin: sources.py
   file: sources.yaml
