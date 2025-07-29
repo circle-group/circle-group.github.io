@@ -23,7 +23,7 @@
   repo: https://github.com/tolgabirdal/PHDimGeneralization
 
 - title: AI-driven<br/>Structural Biology
-  subtitle: Topological deep learning enables higher-order modeling of molecules for generative AI.
+  subtitle: Topological deep learning enables higher-order modeling of molecules and generative AI in structural biology.
   image: images/molecule.jpg
   link: https://arxiv.org/abs/2502.04308
   #description: Algebraic topology combined with topological deep learning allows for learning richer representations that are informed by the higher-order structures (e.g. motifs) within the structural biological data.
