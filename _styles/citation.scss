@@ -21,6 +21,7 @@ $wrap: 800px;
   position: relative;
   width: $thumb-size;
   flex-shrink: 0;
+  margin-left: 20px;
   // box-shadow: var(--shadow);
 }
 
@@ -40,7 +41,7 @@ $wrap: 800px;
   max-width: 100%;
   height: min-content;
   padding: 20px;
-  padding-left: 30px;
+  padding-left: 20px;
   text-align: left;
   overflow-wrap: break-word;
   z-index: 0;
