@@ -733,11 +733,252 @@
   - Ghada Zamzmi
   - Theodore Papamarkou
   - AIdo Guzman-Saenz
-  - ToIga Birdal
+  - Tolga Birdal
   - Michael T Schaub
   publisher: Asilomar Conference on Signals, Systems, and Computers
   date: '2023-10-29'
   link: https://arxiv.org/abs/2312.09504
   image: https://circle-group.github.io/images/publication_preview/hajij2023combinatorial.jpg
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2408.16762
+  title: UV-free Texture Generation with Denoising and Geodesic Heat Diffusions
+  authors:
+  - Simone Foti
+  - Stefanos Zafeiriou
+  - Tolga Birdal
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2024-12-09'
+  link: https://arxiv.org/abs/2408.16762
+  image: https://circle-group.github.io/images/publication_preview/foti2024uv.jpg
+  buttons:
+  - type: source
+    link: https://github.com/simofoti/UV3-TeD
+  - type: website
+    text: Website
+    link: https://uv3ted.github.io/
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2407.08723
+  title: Topological Generalization Bounds for Discrete-Time Stochastic Optimization
+    Algorithms
+  authors:
+  - Rayna Andreeva
+  - Benjamin Dupuis
+  - Rik Sarkar
+  - Tolga Birdal
+  - "Umut \u015Eim\u015Fekli"
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2024-12-09'
+  link: https://arxiv.org/abs/2407.08723
+  image: https://circle-group.github.io/images/publication_preview/andreeva2024topological.jpg
+  buttons:
+  - type: source
+    link: https://github.com/rorondre/TDAGeneralization
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2310.17638
+  title: Generative Fractional Diffusion Models
+  authors:
+  - Gabriel Nobis
+  - Marco Aversa
+  - Maximilian Springenberg
+  - Michael Detzel
+  - Stefano Ermon
+  - Shinichi Nakajima
+  - Roderick Murray-Smith
+  - Sebastian Lapuschkin
+  - Christoph Knochenhauer
+  - Luis Oala
+  - others
+  publisher: Conference on Neural Information Processing Systems (NeurIPS)
+  date: '2024-12-09'
+  link: https://arxiv.org/abs/2310.17638
+  image: https://circle-group.github.io/images/publication_preview/nobis2023generative.jpg
+  buttons:
+  - type: source
+    link: https://github.com/rorondre/TDAGeneralization
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2310.15128
+  title: Projected Stochastic Gradient Descent with Quantum Annealed Binary Gradients
+  authors:
+  - Maximilian Krahn
+  - Michelle Sasdelli
+  - Fengyi Yang
+  - Vladislav Golyanik
+  - Juho Kannala
+  - Tat-Jun Chin
+  - Tolga Birdal
+  publisher: British Machine Vision Conference (BMVC)
+  date: '2024-11-25'
+  link: https://arxiv.org/abs/2310.15128
+  image: https://circle-group.github.io/images/publication_preview/krahn2023projected.jpg
+  buttons:
+  - type: source
+    link: https://github.com/mk2510/QPSBGD
+  - type: website
+    text: Website
+    link: https://qpsbgd.github.io
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2405.14094
+  title: 'Attending to Topological Spaces: The Cellular Transformer'
+  authors:
+  - "Rub\xE9n Ballester"
+  - "Pablo Hern\xE1ndez-Garc\xEDa"
+  - Mathilde Papillon
+  - Claudio Battiloro
+  - Nina Miolane
+  - Tolga Birdal
+  - Carles Casacuberta
+  - Sergio Escalera
+  - Mustafa Hajij
+  publisher: arXiv preprint arXiv:2405.14094
+  date: '2024-05-27'
+  link: https://arxiv.org/abs/2405.14094
+  image: https://circle-group.github.io/images/publication_preview/ballester2024attending.jpg
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2409.06683
+  title: 'Alignist: CAD-Informed Orientation Distribution Estimation by Fusing Shape
+    and Correspondences'
+  authors:
+  - Shishir R. Vutukur
+  - Rasmus L. Haugaard
+  - Junwen Huang
+  - Benjamin Busam
+  - Tolga Birdal
+  publisher: European Conference on Computer Vision (ECCV)
+  date: '2024-09-29'
+  link: https://arxiv.org/abs/2409.06683
+  image: https://circle-group.github.io/images/publication_preview/vutukur2024alignist.jpg
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2310.20436
+  title: 'SignAvatars: A Large-scale 3D Sign Language Holistic Motion Dataset and
+    Benchmark'
+  authors:
+  - Zhengdi Yu
+  - Shaoli Huang
+  - Yongkang Cheng
+  - Tolga Birdal
+  publisher: European Conference on Computer Vision (ECCV)
+  date: '2024-09-29'
+  link: https://arxiv.org/abs/2310.20436
+  image: https://circle-group.github.io/images/publication_preview/yu2023signavatars.jpg
+  buttons:
+  - type: source
+    link: https://github.com/ZhengdiYu/SignAvatars
+  - type: website
+    text: Website
+    link: https://signavatars.github.io/
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2402.08871
+  title: 'Position: Topological Deep Learning is the New Frontier for Relational Learning'
+  authors:
+  - Theodore Papamarkou
+  - Tolga Birdal
+  - Michael M Bronstein
+  - Gunnar E Carlsson
+  - Justin Curry
+  - Yue Gao
+  - Mustafa Hajij
+  - Roland Kwitt
+  - Pietro Lio
+  - Paolo Di Lorenzo
+  - others
+  publisher: International Conference on Machine Learning  (ICML)
+  date: '2024-07-21'
+  link: https://arxiv.org/abs/2402.08871
+  image: https://circle-group.github.io/images/publication_preview/papamarkou2024position.jpg
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/cvpr52733.2024.00164
+  title: 'Nrdf: Neural riemannian distance fields for learning articulated pose priors'
+  authors:
+  - Yannan He
+  - Garvita Tiwari
+  - Tolga Birdal
+  - Jan Eric Lenssen
+  - Gerard Pons-Moll
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  date: '2024-06-17'
+  link: https://arxiv.org/abs/2403.03122
+  image: https://circle-group.github.io/images/publication_preview/he2024nrdf.jpg
+  buttons:
+  - type: source
+    link: https://github.com/hynann/NRDF
+  - type: website
+    text: Website
+    link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/cvpr52733.2024.01862
+  title: 'HyperSDFusion: Bridging Hierarchical Structures in Language and Geometry
+    for Enhanced 3D Text2Shape Generation'
+  authors:
+  - Zhiying Leng
+  - Tolga Birdal
+  - Xiaohui Liang
+  - Federico Tombari
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  date: '2024-06-17'
+  link: https://arxiv.org/abs/2403.00372
+  image: https://circle-group.github.io/images/publication_preview/leng2024hypersdfusion.jpg
+  buttons:
+  - type: source
+    link: https://github.com/M-leng/HyperSDFusion-Text2Shape
+  - type: website
+    text: Website
+    link: https://hypersdfusion.github.io/
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/cvpr52733.2024.00039
+  title: 'Fun with Flags: Robust Principal Directions via Flag Manifolds'
+  authors:
+  - Nathan Mankovich
+  - Gustau Camps-Valls
+  - Tolga Birdal
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  date: '2024-06-17'
+  link: https://arxiv.org/abs/2401.04071
+  image: https://circle-group.github.io/images/publication_preview/mankovich2024fun.jpg
+  buttons:
+  - type: source
+    link: https://github.com/nmank/FunWithFlags
+  plugin: sources.py
+  file: sources.yaml
+- id: doi:10.1109/cvpr52733.2024.02475
+  title: Probabilistic Sampling of Balanced K-Means using Adiabatic Quantum Computing
+  authors:
+  - Jan-Nico Zaech
+  - Martin Danelljan
+  - Tolga Birdal
+  - Luc Van Gool
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  date: '2024-06-17'
+  link: https://arxiv.org/abs/2310.12153
+  image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
+  plugin: sources.py
+  file: sources.yaml
+- id: arxiv:2310.12975
+  title: Variational Inference for SDEs Driven by Fractional Noise
+  authors:
+  - Rembert Daems
+  - Manfred Opper
+  - Guillaume Crevecoeur
+  - Tolga Birdal
+  publisher: International Conference on Learning Representations (ICLR)
+  date: '2024-05-07'
+  link: https://arxiv.org/abs/2310.12975
+  image: https://circle-group.github.io/images/publication_preview/daemsvariational2024.jpg
+  buttons:
+  - type: source
+    link: https://github.com/VideoNeuralSDE/MAFBM
+  - type: website
+    text: Website
+    link: https://videoneuralsde.github.io/
   plugin: sources.py
   file: sources.yaml
