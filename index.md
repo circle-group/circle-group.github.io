@@ -139,19 +139,19 @@ We are a fortunate to be in a world-class team composed of individuals from dive
 #### Our funders
 
 {% capture col1 %}
-<img src="images/funders/imperial.svg">
+<img src="images/funders/imperial.svg" style="max-width: 120px;">
 {% endcapture %}
 
 {% capture col2 %}
-<img src="images/funders/ukri.svg">
+<img src="images/funders/ukri.svg" style="max-width: 120px;">
 {% endcapture %}
 
 {% capture col3 %}
-<img src="images/funders/RS.svg">
+<img src="images/funders/RS.svg" style="max-width: 120px;">
 {% endcapture %}
 
 {% capture col4 %}
-<img src="images/funders/meta.svg">
+<img src="images/funders/meta.svg" style="max-width: 120px;">
 {% endcapture %}
 
 {% include cols.html col1=col1 col2=col2 col3=col3 col4=col4%}
