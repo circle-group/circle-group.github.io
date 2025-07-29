@@ -3,11 +3,11 @@
   group: featured
   image: images/TDL.jpeg
   link: https://pyt-team.github.io/
-  description: A new way to work with higher-order, complex data in the context of deep learning.
+  #description: A new way to work with higher-order, complex data in the context of deep learning.
   repo: https://pyt-team.github.io/
   tags:
     - resource
-    - software
+    - website
 
 - title: 3D/4D Generative Priors & Models
   subtitle: A new family of versatile generative models that allow for reconstruction, sampling, analysis and generation of 3D/4D shapes.
@@ -18,7 +18,7 @@
   repo: https://virtualhumans.mpi-inf.mpg.de/nrdf/
   tags:
     - publication
-    - software
+    - website
 
 - title: Quantum Computer Vision & Machine Learning
   subtitle: A new computational paradigm for addressing vision and learning problems.
@@ -29,6 +29,7 @@
   repo: https://quantumcomputervision.github.io/
   tags:
     - resource
+    - website
 
 - title: Higher-order Generative Models of Molecules
   subtitle: TDL meets molecule generation
@@ -37,8 +38,7 @@
   #description: Algebraic topology combined with topological deep learning allows for learning richer representations that are informed by the higher-order structures (e.g. motifs) within the structural biological data.
   #repo: greenelab/lab-website-template
   tags:
-    - resource
-    - software
+    - publication
 
 - title: Topological Complexity Measures
   subtitle: A new suite of statistical learning theory informed by the topology of representations
@@ -47,4 +47,4 @@
   #description: A new suite of statistical learning theory informed by the topology of representations
   repo: https://github.com/tolgabirdal/PHDimGeneralization
   tags:
-    - resource
+    - publication
