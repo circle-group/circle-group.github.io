@@ -147,7 +147,7 @@
   date: 2018-01-01
   publisher: Technische Universität München
   image: https://circle-group.github.io/images/publication_preview/birdal2018geometric.jpg
-- id: doi:10.1109/TPAMI.2019.2892113
+- id: doi:10.1109/tpami.2019.2900309
   title: Generic primitive detection in point clouds using novel minimal quadric fits
   authors:
     - Tolga Birdal
@@ -324,7 +324,7 @@
     - type: website
       text: Website
       link: https://3dcapsulenetworks.github.io/
-- id: doi:10.1109/LRA.2020.2972414
+- id: doi:10.1109/lra.2020.2969936
   title: From planes to corners Multi-purpose primitive detection in unorganized 3d point clouds
   authors:
     - Christiane Sommer
@@ -339,7 +339,7 @@
   buttons:
     - type: source
       link: https://github.com/c-sommer/orthogonal-planes
-- id: doi:10.1109/WACV45572.2021.00019
+- id: 10.1109/wacv48630.2021.00018
   title: Continuous geodesic convolutions for learning on 3d shapes
   authors:
     - Zhangsihao Yang
@@ -453,7 +453,7 @@
     - type: website
       text: Website
       link: https://multimodal3dvision.github.io/
-- id: doi:10.1109/TPAMI.2022.3142598
+- id: doi:10.1109/tpami.2022.3164653
   title: Multiway non-rigid point cloud registration via learned functional map synchronization
   authors:
     - Jiahui Huang
@@ -631,7 +631,7 @@
     - type: website
       text: Website
       link: https://tdlbook.org/
-- id: doi:10.1109/ASILOMAR59924.2023.10443224
+- id: doi:10.1109/ieeeconf59524.2023.10477018
   title: 'Combinatorial complexes: bridging the gap between cell complexes and hypergraphs'
   authors:
     - Mustafa Hajij
