@@ -7,6 +7,8 @@ group: postdoc
 links:
   email: ehd4585@gmail.com
   home-page: https://dshan4585.github.io/
+  google-scholar: h1hMIKcAAAAJ
+  github: dshan4585
   twitter: DongSigHan
 ---
 
