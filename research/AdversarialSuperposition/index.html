@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<style type="text/css">
+	.layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+		box-shadow:
+		0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+		5px 5px 0 0px #fff, /* The second layer */
+		5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+		10px 10px 0 0px #fff, /* The third layer */
+		10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+		margin-left: 10px;
+		margin-right: 45px;
+	}
+
+	hr
+	{
+		border: 0;
+		height: 1px;
+		background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+	}
+</style>
+
+<style>
+.results-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-box {
+    flex: 1;
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.y-box h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel p {
+    font-size: 0.9rem;
+    text-align: center;
+    color: #555;
+}
+</style>
+
+<style>
+    /* Title Shadow */
+    .title-shadow {
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2); /* Softer shadow */
+        font-weight: bold; /* Ensure the title is bold */
+        font-size: 3rem; /* Slightly larger font for emphasis */
+        font-family: 'Arial', sans-serif; /* Consistent font */
+        color: #333; /* Darker gray for softer appearance */
+    }
+
+    /* Button Styles */
+    .custom-button {
+        display: inline-block;
+        background-color: #000; /* Black color */
+        color: white; /* White text */
+        font-family: 'Arial', sans-serif;
+        font-size: 1rem;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 25px; /* Rounded corners */
+        cursor: pointer;
+        text-decoration: none; /* Remove underline for links */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+        transition: all 0.3s ease; /* Smooth hover effect */
+    }
+
+    .custom-button:hover {
+	    background-color: #eee;  /* White background */
+	    color: #000;             /* Black text */
+	    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+	    transform: scale(1.05);  /* “Expand and float” effect remains */
+    }
+
+    .button-container {
+        display: flex;
+        justify-content: center; /* Center buttons horizontally */
+        gap: 18px; /* Increased space between buttons */
+        margin-top: 20px; /* Space above the buttons */
+    }
+
+    .panel-style {
+            background-color: #fafafa;
+            padding: 20px;
+            margin: 20px auto;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+        }
+</style>
+
+<style>
+  .title-box {
+    border: 2px solid #333;         /* Solid border */
+    background-color: #f9f9f9;      /* Light background */
+    padding: 20px;                  /* Spacing around the title */
+    margin: 20px auto;              /* Center horizontally + top/bottom spacing */
+    border-radius: 10px;            /* Rounded corners */
+    max-width: 800px;               /* Optional, keeps box from being too wide */
+    text-align: center;             /* Center the title text */
+  }
+</style>
+
+
+<style>
+  .abstract-container {
+    max-width: 800px; /* Set the maximum width for the block */
+    margin: 0 auto; /* Center the block horizontally */
+    background-color: #f5f5f5; /* Light gray background */
+    padding: 20px; /* Add padding inside the block */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow intensity */
+    text-align: justify; /* Align text for better readability */
+  }
+
+  .abstract-container h2 {
+    text-align: center; /* Center the Abstract heading */
+    font-weight: bold; /* Make the heading bold */
+    font-size: 2rem; /* Increase font size for the heading */
+    margin-bottom: 15px; /* Add spacing below the heading */
+  }
+</style>
+
+<style>
+    /* Audio Section Styling */
+    .audio-section {
+        max-width: 600px; /* Limit the width */
+        margin: 30px auto; /* Center align */
+        background-color: #f9f9f9; /* Light background */
+        padding: 20px; /* Add padding inside the section */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+        text-align: center; /* Center align text and content */
+    }
+
+    /* Audio Player Styling */
+    .audio-section audio {
+        width: 100%; /* Make the audio player responsive */
+        border-radius: 5px; /* Slightly rounded corners for the audio player */
+        outline: none; /* Remove default focus outline */
+    }
+
+    /* Caption Styling */
+    .audio-caption {
+        font-family: 'Arial', sans-serif; /* Consistent font */
+        font-size: 1rem; /* Standard font size */
+        color: #666; /* Subtle text color */
+        margin-top: 15px; /* Add spacing above the caption */
+        display: flex; /* Flexbox for alignment */
+        align-items: center; /* Center vertically */
+        justify-content: center; /* Center horizontally */
+        gap: 10px; /* Space between icon and text */
+    }
+
+    .audio-caption i {
+        font-size: 1.2rem; /* Slightly larger icon */
+        color: #007bff; /* Blue color for the icon */
+    }
+</style>
+
+<style>
+  .bibtex-block {
+    background: #0f172a;
+    color: #e2e8f0;
+    padding: 1rem 1.25rem;
+    border-radius: 12px;
+    overflow-x: auto;
+    margin: 0; /* Remove margin space */
+    line-height: 1.4;
+    white-space: pre-wrap; /* Wrap text if needed */
+  }
+
+  .bibtex-wrap {
+    position: relative;
+    display: inline-block;
+  }
+
+  .bibtex-wrap pre {
+    padding-bottom: 0.75rem; /* slightly less padding to avoid large empty space */
+  }
+
+  .copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 12px;
+    background: rgba(255,255,255,0.15);
+    border: 1px solid rgba(255,255,255,0.4);
+    color: rgba(255,255,255,0.85);
+    padding: 0.25rem 0.65rem;
+    border-radius: 4px;
+    font-size: 0.75rem;
+    cursor: pointer;
+    line-height: 1.2;
+    transition: all 0.15s ease;
+  }
+
+  .copy-btn:hover,
+  .copy-btn:focus {
+    background: rgba(255,255,255,0.25);
+    color: #fff;
+  }
+</style>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriately as they are your "business card" -->
+  <!-- Replace the content tag with appropriate information -->
+  <meta name="description" content="Adversarial Attacks Leverage Interference Between Features in Superposition">
+  <meta property="og:title" content="AdversarialSuperposition"/>
+  <meta property="og:description" content="Adversarial Attacks Leverage Interference Between Features in Superposition"/>
+  <meta property="og:url" content="URL OF THE WEBSITE"/>
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+  <meta property="og:image" content="static/image/your_banner_image.png" />
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+
+  <meta name="twitter:title" content="Adversarial Attacks Leverage Interference Between Features in Superposition">
+  <meta name="twitter:description" content="Preprint (Under Review) — Imperial College London">
+  <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+  <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <!-- Keywords for your paper to be indexed by-->
+  <meta name="keywords" content="KEYWORDS SHOULD BE PLACED HERE">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>Adversarial Attacks Leverage Interference Between Features in Superposition</title>
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Custom Style for Font Change -->
+  <!-- <style>
+    body, h1, h2, h3, h4, h5, h6, p, span, a {
+        font-family: Arial, sans-serif !important; /* Apply Arial globally */
+    }
+  </style> -->
+  <style>
+    /* Light blue page background */
+    body {
+      background: linear-gradient(180deg, #f8fafc 0%, #eef2f7 100%);
+    }
+  
+    /* Use Inter only for the top hero: title, authors, and buttons */
+    .hero .publication-title,
+    .hero .publication-authors,
+    .hero .button-container .custom-button {
+      font-family: Inter, system-ui, Arial, sans-serif !important;
+    }
+  
+    /* Title weight/metrics to match the screenshot feel */
+    .hero .publication-title {
+      font-weight: 800;          /* Bold, crisp */
+      line-height: 1.15;
+      letter-spacing: .2px;
+      text-shadow: 0 1px 0 rgba(255,255,255,.6); /* subtle lift */
+    }
+  
+    /* Slightly stronger authors line for readability */
+    /* .hero .publication-authors {
+      font-weight: 600;
+    } */
+  
+    /* Buttons: keep your style, just ensure Inter weight shows nicely */
+    .hero .button-container .custom-button {
+      font-weight: 700;
+    }
+  </style>
+
+  <!-- <style>
+    :root{
+      --bibx-surface:#fff;
+      --bibx-ring:rgba(0,0,0,.07);
+      --bibx-shadow:0 12px 28px rgba(0,0,0,.08);
+      --bibx-shadow-hover:0 16px 36px rgba(0,0,0,.12);
+      --bibx-success:#22c55e;
+      --bibx-radius:18px;
+    }
+
+    .bibx-card{
+      background:#fff;              /* was var(--bibx-surface) */
+      border:1px solid rgba(0,0,0,.07);
+      border-radius:18px;
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
+      padding:20px 18px 10px 18px;
+      transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .bibx-card:hover{ box-shadow:var(--bibx-shadow-hover); transform:translateY(-1px); border-color:rgba(0,0,0,.12); }
+
+    .bibx-pre{
+      background:#fff;              /* was #f6f7f9 */
+      border:1px solid rgba(0,0,0,.05);
+      border-radius:12px;
+      margin:0;
+      padding:18px 16px;
+      overflow:auto;
+      line-height:1.75;
+      font-size:15px;
+      color:#1f2937;
+      font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,Monaco,monospace;
+    }
+  </style> -->
+
+  <style>
+    /* BibTeX card + button */
+    .bibx-card{
+      position:relative;
+      background:#fff;
+      border:1px solid rgba(0,0,0,.07);
+      border-radius:18px;
+      box-shadow:0 12px 28px rgba(0,0,0,.08);
+      padding:20px 18px 10px 18px;
+      transition:box-shadow .2s ease, transform .2s ease, border-color .2s ease;
+    }
+    .bibx-card:hover{
+      box-shadow:0 16px 36px rgba(0,0,0,.12);
+      transform:translateY(-1px);
+      border-color:rgba(0,0,0,.12);
+    }
+
+    .bibx-pre{
+      margin: 0;
+      padding: 20px;                 /* keep some breathing room */
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0;
+      overflow: auto;
+      line-height: 1.75;
+      font-size: 15px;
+      color: #1f2937;
+      font-family: ui-monospace,SFMono-Regular,Menlo,Consolas,Monaco,monospace;
+    }
+
+    /* Tiny toast that says “Copied!” */
+    .bibx-toast{
+      position: absolute;
+      top: 12px;
+      right: 56px;                   /* sits left of the button */
+      background: #111;              /* dark chip */
+      color: #fff;
+      padding: 6px 8px;
+      border-radius: 8px;
+      font-size: 12px;
+      line-height: 1;
+      opacity: 0;
+      transform: translateY(-4px);
+      pointer-events: none;
+      transition: opacity .2s ease, transform .2s ease;
+    }
+    .bibx-toast.show{
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .bibx-toast::after{
+      content: "";
+      position: absolute;
+      top: 50%;
+      right: -6px;
+      transform: translateY(-50%);
+      border: 6px solid transparent;
+      border-left-color: #111;       /* little arrow toward button */
+    }
+
+    .bibx-copy{
+      position:absolute; top:10px; right:12px;
+      width:36px; height:36px; display:grid; place-items:center;
+      border-radius:999px; border:1px solid rgba(0,0,0,.14);
+      background:#ffffff; cursor:pointer; z-index:5; pointer-events:auto;
+      box-shadow:0 4px 10px rgba(0,0,0,.10);
+      transition:transform .15s ease, box-shadow .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .bibx-card:hover .bibx-copy{ box-shadow:0 6px 16px rgba(0,0,0,.14); }
+    .bibx-copy:focus-visible{ outline:2px solid #93B3E5; outline-offset:2px; }
+
+    .bibx-clip, .bibx-check{ fill:#0f172a; opacity:.95; }
+    .bibx-check{ display:none; }
+
+    @keyframes bibx-spin{ to{ transform:rotate(360deg); } }
+    .bibx-copy.spinning .bibx-clip{ animation:bibx-spin .6s linear; }
+
+    .bibx-copy.copied{
+      background:#ecfdf5; border-color:rgba(34,197,94,.45);
+      box-shadow:0 6px 16px rgba(34,197,94,.18);
+    }
+    .bibx-copy.copied .bibx-clip{ display:none; }
+    .bibx-copy.copied .bibx-check{ display:block; fill:#22c55e; }
+  </style>
+
+  <script>
+    // Supports multiple BibTeX cards if you add more later
+    (function(){
+      document.querySelectorAll('.bibx-card').forEach(card=>{
+        const btn  = card.querySelector('.bibx-copy');
+        const code = card.querySelector('code');
+        if(!btn || !code) return;
+
+        btn.addEventListener('click', async ()=>{
+          const text = code.innerText.trim();
+          btn.classList.add('spinning');
+
+          try {
+            await navigator.clipboard.writeText(text);
+          } catch (e) {
+            // fallback
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+
+          setTimeout(()=>{
+            btn.classList.remove('spinning');
+            btn.classList.add('copied');
+          }, 250);
+
+          setTimeout(()=>{
+            btn.classList.remove('copied');
+          }, 1600);
+        });
+      });
+    })();
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script type="text/javascript" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+  </script>
+</head>
+<body>
+
+<section class="hero">
+    <div class="hero-body">
+        <div class="container is-max-desktop">
+            <div class="columns is-centered">
+                <div class="column has-text-centered">
+                    <!-- Title Section -->
+                    <h1 class="title is-1 publication-title title-shadow">Adversarial Attacks Leverage Interference Between Features in Superposition</h1>
+                    <div class="is-size-5 publication-authors">
+                      <div>
+                        <span class="author-block"><a href="https://stevinson.github.io/" target="_blank"><strong>Edward Stevinson</strong></a></span>
+                        <span> · </span>
+                        <span class="author-block"><a href="https://safeandtrustedai.org/person/lucas-prieto/" target="_blank"><strong>Lucas Prieto</strong></a></span>
+                        <span> · </span>
+                        <span class="author-block"><a href="https://scholar.google.com.tr/citations?user=cmDBJlEAAAAJ&hl=en" target="_blank"><strong>Melih Barsbey</strong></a></span>
+                        <span> · </span>
+                        <span class="author-block"><a href="https://tolgabirdal.github.io/" target="_blank"><strong>Tolga Birdal</strong></a></span>
+                      </div>
+                    </div>
+                    <div class="is-size-5 publication-authors">
+                      <strong>Imperial College London</strong>
+                    </div>
+                    <div class="is-size-6" style="margin-top: 6px; color:#000; font-weight: 700;">Under Review</div>
+
+                    <!-- Buttons Section: show Code and arXiv only -->
+                    <div class="button-container">
+                        <a href="https://github.com/Stevinson/Adversarial-Superposition" class="custom-button" title="View code repository">
+                            <i class="fab fa-github"></i> Code
+                        </a>
+                        <a href="#" class="custom-button" title="arXiv link coming soon">
+                            <i class="ai ai-arxiv"></i> arXiv
+                        </a>
+                        <!--
+                        <a href="#" class="custom-button"><i class="fas fa-file-pdf"></i> Paper</a>
+                        <a href="#" class="custom-button"><i class="fas fa-video"></i> Video</a>
+                        <a href="#" class="custom-button"><i class="fas fa-image"></i> Poster</a>
+                        -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Code availability note -->
+<section class="section" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
+  <div class="container is-max-desktop">
+    <p style="text-align:center; font-size:1.05rem;">
+      Code, along with guidance on how reproduce the main results of the paper,
+      will be published upon publication.
+    </p>
+  </div>
+  </section>
+
+<!-- Teaser video-->
+<!-- <section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+
+      <div class="column">
+        <div class="content">
+          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
+            <source src="static/videos/global.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+
+      <div class="column">
+        <div class="content">
+           <video id="matting-video" autoplay controls muted loop playsinline height="100%">
+             <source src="static/videos/wild.mp4"
+                     type="video/mp4">
+           </video>
+         </div>
+       </div>
+      </div>
+    </div>
+  </div>
+</section> -->
+<!-- End teaser video -->
+
+<!-- Abstract Section Combined with AI-generated Voice -->
+<!-- <section class="section">
+<div class="abstract-container">
+    <h2>Abstract</h2>
+    <p>
+        We introduce <strong><span style="color:#93B3E5;">Neural Riemannian Motion Fields (NRMF)</span></strong>, a novel 3D generative human motion prior that enables robust, temporally consistent, and physically plausible 3D motion recovery. Unlike existing VAE or diffusion-based methods, our higher-order motion prior explicitly models the human motion in the zero level set of a collection of neural distance fields (NDFs) corresponding to pose, transition (velocity), and acceleration dynamics. Our framework is rigorous in the sense that our NDFs are constructed on the product space of joint rotations, their angular velocities, and angular accelerations, respecting the geometry of the underlying articulations. We further introduce: (i) a novel adaptive-step hybrid algorithm for projecting onto the set of plausible motions, and (ii) a novel geometric integrator to “roll out” realistic motion trajectories during test-time-optimization and generation. Our experiments show significant and consistent gains: trained on the AMASS dataset, NRMF remarkably generalizes across multiple input modalities and to diverse tasks ranging from denoising to motion in-betweening and fitting to partial 2D / 3D observations.
+    </p>
+
+    <audio controls style="width: 100%; border-radius: 5px;">
+        <source src="static/audio/ai_generated_intro.wav" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <p style="font-family: 'Arial', sans-serif; font-size: 0.9rem; color: #666; font-weight: bold; text-align: center; margin-top: 10px;">
+        <i class="fas fa-microphone-alt" style="font-size: 1rem; color: #007bff; margin-right: 5px;"></i>
+        AI-generated Podcast (Paper Introduction)
+    </p>
+</div>
+</section> -->
+	
+
+<!-- Applications/Poster/Misc removed for preprint landing page -->
+
+<!-- ===== BibTeX with EXACT-style Copy button ===== -->
+<section class="section" id="BibTeX">
+  <!-- <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+
+    <div class="bibtex-wrap">
+      <pre id="bibtexEntry" class="bibtex-block">@article{yu2025nrmf,
+        title = {Geometric Neural Distance Fields for Learning Human Motion Priors},
+        author = {Yu, Zhengdi and Foti, Simone and Zhang, Linguang and Zhao, Amy and Keskin, Cem and Zafeiriou, Stefanos and Birdal, Tolga},
+        journal = {arXiv preprint arXiv:2509.09667},
+        year = {2025}
+      }</pre>      
+      <button id="copyBibtex" class="copy-btn">Copy</button>
+    </div>
+  </div>
+</section> -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop">
+    <h2 class="title">Citation</h2>
+    <p>If you found the paper useful, please consider citing:</p>
+
+    <div class="bibx-card">
+      <button class="bibx-copy" aria-label="Copy BibTeX" title="Copy BibTeX">
+        <svg class="bibx-clip" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M16 4h-1.18A3 3 0 0 0 12 2a3 3 0 0 0-2.82 2H8a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm-4-1a1 1 0 0 1 1 1h-2a1 1 0 0 1 1-1Zm4 17H8V6h1.18A3 3 0 0 0 12 8a3 3 0 0 0 2.82-2H16v14Z"/></svg>
+        <svg class="bibx-check" viewBox="0 0 24 24" width="20" height="20" aria-hidden="true"><path d="M9 16.2 4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4Z"/></svg>
+      </button>
+
+      <span class="bibx-toast" aria-live="polite" aria-atomic="true">Copied!</span>
+      <pre class="bibx-pre"><code>@article{stevinson2025adversarialsuperposition,
+  title={Adversarial Attacks Leverage Interference Between Features in Superposition},
+  author={Stevinson, Edward and Prieto, Lucas and Barsbey, Melih and Birdal, Tolga},
+  year={2025},
+  archivePrefix={arXiv},
+  primaryClass={cs.CV}
+}</code></pre>
+    </div>
+  </div>
+</section>
+
+
+<!--End BibTex citation -->
+
+<!-- Acknowledgements removed for preprint landing page -->
+
+<!-- Contact Section -->
+<section class="section" id="contact" style="padding-top: 1.2rem;">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Contact</h2>
+    <p>
+      Please contact 
+      <a href="mailto:e.stevinson22@imperial.ac.uk">e.stevinson22@imperial.ac.uk</a>
+      for any inquiries related to this work.
+    </p>
+  </div>
+</section>
+<!-- End Contact -->
+
+<!-- Footer removed for preprint landing page -->
+
+<!-- Copy-to-clipboard (works without permissions) -->
+<script>
+  (function(){
+    const btn = document.getElementById('copyBibtex');
+    const pre = document.getElementById('bibtexEntry');
+    if (btn && pre) {
+      btn.addEventListener('click', async () => {
+        const text = pre.innerText.trim();
+        try {
+          await navigator.clipboard.writeText(text);
+        } catch(e) {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta);
+          ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+        }
+        const old = btn.textContent;
+        btn.textContent = 'Copied!';
+        setTimeout(()=> btn.textContent = old, 1400);
+      });
+    }
+  })();
+</script>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+<script>
+  // Delegated click so it survives re-renders
+  document.addEventListener('click', async (e) => {
+  const btn = e.target.closest('.bibx-copy');
+  if (!btn) return;
+
+  const card = btn.closest('.bibx-card');
+  const code = card?.querySelector('code');
+  if (!code) return;
+
+  const text = code.innerText.trim();
+  btn.classList.add('spinning');
+
+  try {
+    await navigator.clipboard.writeText(text);
+  } catch {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy'); ta.remove();
+  }
+
+  setTimeout(() => {
+    btn.classList.remove('spinning');
+    btn.classList.add('copied');
+
+    // Show the Copied! toast
+    const toast = card.querySelector('.bibx-toast');
+    if (toast){
+      toast.classList.add('show');
+      // optional: customize message
+      // toast.textContent = 'Copied!';
+      setTimeout(() => toast.classList.remove('show'), 1200);
+    }
+  }, 250);
+
+  setTimeout(() => btn.classList.remove('copied'), 1600);
+});
+
+</script>
+  </body>
+  </html>
