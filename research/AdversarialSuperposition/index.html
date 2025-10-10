@@ -128,10 +128,10 @@
   .abstract-container {
     max-width: 800px; /* Set the maximum width for the block */
     margin: 0 auto; /* Center the block horizontally */
-    background-color: #f5f5f5; /* Light gray background */
-    padding: 20px; /* Add padding inside the block */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Increase shadow intensity */
+    background-color: transparent; /* Remove background */
+    padding: 0; /* Remove padding */
+    border-radius: 0; /* Remove rounded corners */
+    box-shadow: none; /* Remove shadow */
     text-align: justify; /* Align text for better readability */
   }
 
@@ -238,7 +238,7 @@
   <meta property="og:image:height" content="630"/>
 
   <meta name="twitter:title" content="Adversarial Attacks Leverage Interference Between Features in Superposition">
-  <meta name="twitter:description" content="Preprint (Under Review) — Imperial College London">
+  <meta name="twitter:description" content="Imperial College London">
   <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
   <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
   <meta name="twitter:card" content="summary_large_image">
@@ -494,7 +494,6 @@
                     <div class="is-size-5 publication-authors">
                       <strong>Imperial College London</strong>
                     </div>
-                    <div class="is-size-6" style="margin-top: 6px; color:#000; font-weight: 700;">Under Review</div>
 
                     <!-- Buttons Section: show Code and arXiv only -->
                     <div class="button-container">
@@ -510,22 +509,37 @@
                         <a href="#" class="custom-button"><i class="fas fa-image"></i> Poster</a>
                         -->
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 
 
-<!-- Code availability note -->
+<!-- Abstract Section -->
+<section class="section" style="padding-top: 1.25rem; padding-bottom: 2.25rem;">
+  <div class="abstract-container">
+      <h2>Abstract</h2>
+      <p>Fundamental questions remain about when and why adversarial examples arise in neural networks, 
+      with competing views characterising them either as artifacts of the irregularities in the decision 
+      landscape or as products of sensitivity to non-robust input features. In this paper, we instead argue 
+      that adversarial vulnerability can stem from efficient information encoding in neural networks. 
+      Specifically, we show how superposition -- where networks represent more features than they have 
+      dimensions -- creates arrangements of latent representations that adversaries can exploit. We 
+      demonstrate that adversarial perturbations leverage interference between superposed features, 
+      making attack patterns predictable from feature arrangements. Our framework provides a mechanistic explanation for two known phenomena: adversarial attack transferability between models with similar training regimes and class-specific vulnerability patterns. In synthetic settings with precisely controlled superposition, we establish that superposition suffices to create adversarial vulnerability. We then demonstrate that these findings persist in a ViT trained on CIFAR-10. These findings reveal adversarial vulnerability can be a byproduct of networks' representational compression, rather than flaws in the learning process or non-robust inputs.</p>
+    </div>
+</section>
+
+<!-- Code availability note
 <section class="section" style="padding-top: 1.5rem; padding-bottom: 1.5rem;">
   <div class="container is-max-desktop">
     <p style="text-align:center; font-size:1.05rem;">
       Code, along with guidance on how reproduce the main results of the paper,
       will be published upon publication.
     </p>
-  </div>
-  </section>
+    </div>
+</section> -->
 
 <!-- Teaser video-->
 <!-- <section class="hero teaser">
