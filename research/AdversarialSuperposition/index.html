@@ -517,17 +517,17 @@
 
 
 <!-- Abstract Section -->
-<section class="section" style="padding-top: 1.25rem; padding-bottom: 2.25rem;">
+<section class="section" style="padding-top: 1.25rem; padding-bottom: 0.5rem;">
   <div class="abstract-container">
       <h2>Abstract</h2>
       <p>Fundamental questions remain about when and why adversarial examples arise in neural networks, 
       with competing views characterising them either as artifacts of the irregularities in the decision 
       landscape or as products of sensitivity to non-robust input features. In this paper, we instead argue 
-      that adversarial vulnerability can stem from efficient information encoding in neural networks. 
+      that adversarial vulnerability can stem from <em>efficient</em> information encoding in neural networks. 
       Specifically, we show how superposition -- where networks represent more features than they have 
       dimensions -- creates arrangements of latent representations that adversaries can exploit. We 
       demonstrate that adversarial perturbations leverage interference between superposed features, 
-      making attack patterns predictable from feature arrangements. Our framework provides a mechanistic explanation for two known phenomena: adversarial attack transferability between models with similar training regimes and class-specific vulnerability patterns. In synthetic settings with precisely controlled superposition, we establish that superposition suffices to create adversarial vulnerability. We then demonstrate that these findings persist in a ViT trained on CIFAR-10. These findings reveal adversarial vulnerability can be a byproduct of networks' representational compression, rather than flaws in the learning process or non-robust inputs.</p>
+      making attack patterns predictable from feature arrangements. Our framework provides a mechanistic explanation for two known phenomena: adversarial attack transferability between models with similar training regimes and class-specific vulnerability patterns. In synthetic settings with precisely controlled superposition, we establish that superposition <em>suffices</em> to create adversarial vulnerability. We then demonstrate that these findings persist in a ViT trained on CIFAR-10. These findings reveal adversarial vulnerability can be a byproduct of networks' representational compression, rather than flaws in the learning process or non-robust inputs.</p>
     </div>
 </section>
 
@@ -592,7 +592,7 @@
 <!-- Applications/Poster/Misc removed for preprint landing page -->
 
 <!-- ===== BibTeX with EXACT-style Copy button ===== -->
-<section class="section" id="BibTeX">
+<section class="section" id="BibTeX" style="padding-top: 0.5rem;">
   <!-- <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
 
@@ -610,7 +610,7 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop">
     <h2 class="title">Citation</h2>
-    <p>If you found the paper useful, please consider citing:</p>
+    <p style="margin-bottom: 1.0rem;">If you found the paper useful, please consider citing:</p>
 
     <div class="bibx-card">
       <button class="bibx-copy" aria-label="Copy BibTeX" title="Copy BibTeX">
