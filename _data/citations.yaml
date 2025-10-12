@@ -239,7 +239,7 @@
   - Wojciech Samek
   date: '2025-10-10'
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
-  image: https://circle-group.github.io/images/publication_preview/nobis2025fractional.jpg
+  image: https://circle-group.github.io/images/publication_preview/nobis2025Fractional.jpg
   link: https://neurips.cc/virtual/2025/poster/118878
   plugin: sources.py
   file: sources-new.yaml
