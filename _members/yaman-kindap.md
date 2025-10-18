@@ -1,9 +1,9 @@
 ---
 name: Yaman Kindap
 image: images/prof-pic-yaman.jpeg
-description: Visitor
-role: visitor
-group: visitor
+description: Postdoctoral Research Fellow
+role: postdoc
+group: postdoc
 links:
   email: byamankindap@gmail.com
   google-scholar: YngID0kAAAAJ
