@@ -112,7 +112,7 @@
     - type: preprint
       link: https://arxiv.org/abs/2505.17150
 
-- title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations and Compressibility
+- title: 'Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations and Compressibility'
   authors:
     - Melih Barsbey
     - Lucas Prieto
@@ -134,7 +134,7 @@
   image: https://circle-group.github.io/images/publication_preview/korkmaz2025CuMPerLay.jpg
   link: https://iccv2025.thecvf.com/
 
-- title: Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)
+- title: 'Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)'
   authors:
     - Lennart Bastian
     - Mohammad Rashed
@@ -210,7 +210,7 @@
     - type: source
       link: https://github.com/minghu0830/OphNet-3D
 
-- title: Fractional Diffusion Bridge Models
+- title: 'Fractional Diffusion Bridge Models'
   authors:
     - Gabriel Nobis
     - Maximilian Springenberg
@@ -225,7 +225,7 @@
   image: https://circle-group.github.io/images/publication_preview/nobis2025Fractional.jpg
   link: https://neurips.cc/virtual/2025/poster/118878
 
-  - title: Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms
+  - title: 'Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms'
   authors:
     - Natacha Kuete Meli
     - Shuteng Wang
@@ -240,7 +240,7 @@
   image: https://circle-group.github.io/images/publication_preview/meli2026quantum.jpeg
   link: https://arxiv.org/abs/2510.07317
 
-  - title: Geometric Neural Distance Fields for Learning Human Motion Priors
+  - title: 'Geometric Neural Distance Fields for Learning Human Motion Priors'
   authors:
     - Zhengdi Yu
     - Simone Foti
@@ -253,3 +253,11 @@
   publisher: Under Review
   image: https://circle-group.github.io/images/publication_preview/yu2026geometric.jpg
   link: https://arxiv.org/abs/2510.07317
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2407.08723
+    - type: website
+      text: Website
+      link: https://circle-group.github.io/research/NRMF/
+    - type: source
+      link: https://github.com/ZhengdiYu/NRMF

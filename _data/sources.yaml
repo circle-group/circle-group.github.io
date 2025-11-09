@@ -421,7 +421,7 @@
     - type: website
       text: Website
       link: https://multimodal3dvision.github.io/
-- title: Multiway non-rigid point cloud registration via learned functional map synchronization
+- title: 'Multiway non-rigid point cloud registration via learned functional map synchronization'
   authors:
     - Jiahui Huang
     - Tolga Birdal
@@ -438,7 +438,7 @@
     - type: website
       text: Website
       link: https://huangjh-pub.github.io/publication/synorim/
-- title: Projective manifold gradient layer for deep rotation regression
+- title: 'Projective manifold gradient layer for deep rotation regression'
   authors:
     - Jiayi Chen
     - Yingda Yin
