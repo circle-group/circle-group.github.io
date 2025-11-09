@@ -122,6 +122,16 @@
     link: https://arxiv.org/abs/2505.17150
   plugin: sources.py
   file: sources-new.yaml
+- title: 'HOG-Diff: Higher-Order Guided Diffusion for Graph Generation'
+  authors:
+  - Yiming Huang
+  - Tolga Birdal
+  date: '2025-10-07'
+  publisher: arXiv preprint
+  image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
+  link: https://arxiv.org/abs/2502.04308
+  plugin: sources.py
+  file: sources-new.yaml
 - title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations
     and Compressibility
   authors:
@@ -188,16 +198,6 @@
   - type: website
     text: Website
     link: https://proceedings.neurips.cc/paper_files/paper/2024/file/0886e50806c3faf55e557bd63ba3e70c-Paper-Conference.pdf
-  plugin: sources.py
-  file: sources-new.yaml
-- title: 'HOG-Diff: Higher-Order Guided Diffusion for Graph Generation'
-  authors:
-  - Yiming Huang
-  - Tolga Birdal
-  date: '2025-10-07'
-  publisher: arXiv preprint
-  image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
-  link: https://arxiv.org/abs/2502.04308
   plugin: sources.py
   file: sources-new.yaml
 - title: Towards dynamic 3d reconstruction of hand-instrument interaction in ophthalmic
