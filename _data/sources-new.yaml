@@ -225,7 +225,7 @@
   image: https://circle-group.github.io/images/publication_preview/nobis2025Fractional.jpg
   link: https://neurips.cc/virtual/2025/poster/118878
 
-  - title: 'Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms'
+- title: 'Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms'
   authors:
     - Natacha Kuete Meli
     - Shuteng Wang
@@ -240,7 +240,7 @@
   image: https://circle-group.github.io/images/publication_preview/meli2026quantum.jpeg
   link: https://arxiv.org/abs/2510.07317
 
-  - title: 'Geometric Neural Distance Fields for Learning Human Motion Priors'
+- title: 'Geometric Neural Distance Fields for Learning Human Motion Priors'
   authors:
     - Zhengdi Yu
     - Simone Foti
