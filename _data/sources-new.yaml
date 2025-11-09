@@ -164,7 +164,7 @@
     - Nastaran Shahmansouri
     - Adrian Lew
     - others
-  date: 2025-05-31
+  date: 2025-12-01
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/hajij2025copresheaf.jpg
   link: https://proceedings.neurips.cc/paper_files/paper/2024/file/0886e50806c3faf55e557bd63ba3e70c-Paper-Conference.pdf
@@ -197,7 +197,7 @@
     - Tolga Birdal
     - Kaijing Zhou
     - Zongyuan Ge
-  date: 2025-10-31
+  date: 2025-12-01
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/hu2025towards.jpg
   link: https://neurips.cc/virtual/2025/poster/115963
@@ -220,7 +220,36 @@
     - Manfred Opper
     - Tolga Birdal
     - Wojciech Samek
-  date: 2025-10-10
+  date: 2025-12-01
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/nobis2025Fractional.jpg
   link: https://neurips.cc/virtual/2025/poster/118878
+
+  - title: Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms
+  authors:
+    - Natacha Kuete Meli
+    - Shuteng Wang
+    - Marcel Seelbach Benkner
+    - Michele Sasdelli
+    - Tat-Jun Chin
+    - Tolga Birdal
+    - Michael Moeller
+    - Vladislav Golyanik
+  date: 2026-01-01
+  publisher: Under Review
+  image: https://circle-group.github.io/images/publication_preview/meli2026quantum.jpeg
+  link: https://arxiv.org/abs/2510.07317
+
+  - title: Geometric Neural Distance Fields for Learning Human Motion Priors
+  authors:
+    - Zhengdi Yu
+    - Simone Foti
+    - Linguang Zhan
+    - Amy Zhao
+    - Cem Keskin
+    - Stefanos Zafeiriou
+    - Tolga Birdal
+  date: 2026-01-01
+  publisher: Under Review
+  image: https://circle-group.github.io/images/publication_preview/yu2026geometric.jpg
+  link: https://arxiv.org/abs/2510.07317
