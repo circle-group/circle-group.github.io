@@ -1012,8 +1012,8 @@
   authors:
   - Yiming Huang
   - Tolga Birdal
-  date: '2025-10-07'
-  publisher: arXiv preprint
+  date: '2026-04-01'
+  publisher: International Conference on Learning Representations (ICLR)
   image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
   link: https://arxiv.org/abs/2502.04308
   plugin: sources.py
@@ -1166,5 +1166,37 @@
     link: https://circle-group.github.io/research/NRMF/
   - type: source
     link: https://github.com/ZhengdiYu/NRMF
+  plugin: sources.py
+  file: sources-new.yaml
+- title: Correlations in the Data Lead to Semantically Rich Feature Geometry Under
+    Superposition
+  authors:
+  - Lucas Prieto
+  - Edward Stevinson
+  - Melih Barsbey
+  - Pedro AM Mediano
+  - Tolga Birdal
+  date: '2026-04-01'
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/prieto2025bows.jpg
+  link: https://openreview.net/pdf?id=7akSRQS5Xh
+  buttons:
+  - type: source
+    link: null
+  plugin: sources.py
+  file: sources-new.yaml
+- title: On the Interaction of Compressibility and Adversarial Robustness
+  authors:
+  - Melih Barsbey
+  - "Ant\xF4nio H. Ribeiro"
+  - "Umut \u015Eim\u015Fekli"
+  - Tolga Birdal
+  date: '2026-04-01'
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/barsbey2026robocomp.jpg
+  link: https://openreview.net/pdf?id=zSsNzxjWP4
+  buttons:
+  - type: source
+    link: null
   plugin: sources.py
   file: sources-new.yaml
