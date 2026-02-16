@@ -1008,16 +1008,6 @@
     link: https://arxiv.org/abs/2505.17150
   plugin: sources.py
   file: sources-new.yaml
-- title: 'HOG-Diff: Higher-Order Guided Diffusion for Graph Generation'
-  authors:
-  - Yiming Huang
-  - Tolga Birdal
-  date: '2026-04-01'
-  publisher: International Conference on Learning Representations (ICLR)
-  image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
-  link: https://arxiv.org/abs/2502.04308
-  plugin: sources.py
-  file: sources-new.yaml
 - title: Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations
     and Compressibility
   authors:
@@ -1166,6 +1156,16 @@
     link: https://circle-group.github.io/research/NRMF/
   - type: source
     link: https://github.com/ZhengdiYu/NRMF
+  plugin: sources.py
+  file: sources-new.yaml
+- title: 'HOG-Diff: Higher-Order Guided Diffusion for Graph Generation'
+  authors:
+  - Yiming Huang
+  - Tolga Birdal
+  date: '2026-04-01'
+  publisher: International Conference on Learning Representations (ICLR)
+  image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
+  link: https://arxiv.org/abs/2502.04308
   plugin: sources.py
   file: sources-new.yaml
 - title: Correlations in the Data Lead to Semantically Rich Feature Geometry Under
