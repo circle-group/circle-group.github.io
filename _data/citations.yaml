@@ -194,8 +194,8 @@
   authors:
   - Yiming Huang
   - Tolga Birdal
-  date: '2025-10-07'
-  publisher: arXiv preprint
+  date: '2026-04-01'
+  publisher: International Conference on Learning Representations (ICLR)
   image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
   link: https://arxiv.org/abs/2502.04308
   plugin: sources.py
