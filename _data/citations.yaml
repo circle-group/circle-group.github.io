@@ -954,8 +954,10 @@
   date: '2025-06-17'
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/yu2025dyn.jpg
-  link: https://arxiv.org/abs/2412.12861
+  link: https://cvpr.thecvf.com/virtual/2025/poster/33016
   buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2412.12861
   - type: source
     link: https://github.com/ZhengdiYu/Dyn-HaMR
   - type: website
@@ -972,8 +974,10 @@
   date: '2025-06-17'
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/mankovich2025flag.jpg
-  link: https://arxiv.org/abs/2502.07782
+  link: https://cvpr.thecvf.com/virtual/2025/poster/33004
   buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2502.07782
   - type: source
     link: https://github.com/nmank/FD
   plugin: sources.py
@@ -987,8 +991,10 @@
   date: '2025-05-05'
   publisher: International Conference on Learning Representations (ICLR)
   image: https://circle-group.github.io/images/publication_preview/prieto2025grokking.jpg
-  link: https://arxiv.org/abs/2501.04697
+  link: https://openreview.net/pdf?id=TvfkSyHZRA
   buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2501.04697
   - type: source
     link: https://github.com/LucasPrietoAl/grokking-at-the-edge-of-numerical-stability
   plugin: sources.py
@@ -1018,7 +1024,10 @@
   date: '2025-10-04'
   publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/barsbey2025large.jpg
-  link: https://arxiv.org/abs/2501.04697
+  link: https://openaccess.thecvf.com/content/ICCV2025/html/Barsbey_Large_Learning_Rates_Simultaneously_Achieve_Robustness_to_Spurious_Correlations_and_ICCV_2025_paper.html
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2507.17748
   plugin: sources.py
   file: sources-new.yaml
 - title: 'CuMPerLay: Learning Cubical Multiparameter Persistence Vectorizations'
@@ -1030,7 +1039,12 @@
   date: '2025-10-04'
   publisher: International Conference on Computer Vision (ICCV)
   image: https://circle-group.github.io/images/publication_preview/korkmaz2025CuMPerLay.jpg
-  link: https://iccv2025.thecvf.com/
+  link: https://openaccess.thecvf.com/content/ICCV2025/html/Korkmaz_CuMPerLay_Learning_Cubical_Multiparameter_Persistence_Vectorizations_ICCV_2025_paper.html
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2510.12795
+  - type: source
+    link: https://github.com/circle-group/cumperlay
   plugin: sources.py
   file: sources-new.yaml
 - title: Forecasting Continuous Non-Conservative Dynamical Systems in SO(3)
@@ -1094,7 +1108,7 @@
   image: https://circle-group.github.io/images/publication_preview/hu2025towards.jpg
   link: https://neurips.cc/virtual/2025/poster/115963
   buttons:
-  - type: arxiv
+  - type: preprint
     link: https://arxiv.org/abs/2505.21251
   - type: website
     text: Website
@@ -1117,6 +1131,11 @@
   publisher: Conference on Neural Information Processing Systems (NeurIPS)
   image: https://circle-group.github.io/images/publication_preview/nobis2025Fractional.jpg
   link: https://neurips.cc/virtual/2025/poster/118878
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2511.01795
+  - type: source
+    link: https://github.com/mspringe/FDBM_unpaired
   plugin: sources.py
   file: sources-new.yaml
 - title: 'Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms'
@@ -1165,7 +1184,15 @@
   date: '2026-04-01'
   publisher: International Conference on Learning Representations (ICLR)
   image: https://circle-group.github.io/images/publication_preview/huang2025hogdiff.jpg
-  link: https://arxiv.org/abs/2502.04308
+  link: https://openreview.net/pdf?id=FZJow6BWiM
+  buttons:
+  - type: source
+    link: https://github.com/Yiminghh/HOG-Diff
+  - type: website
+    text: Website
+    link: https://circle-group.github.io/research/hog-diff
+  - type: preprint
+    link: https://arxiv.org/abs/2502.04308
   plugin: sources.py
   file: sources-new.yaml
 - title: Correlations in the Data Lead to Semantically Rich Feature Geometry Under
@@ -1180,9 +1207,6 @@
   publisher: International Conference on Learning Representations (ICLR)
   image: https://circle-group.github.io/images/publication_preview/prieto2025bows.jpg
   link: https://openreview.net/pdf?id=7akSRQS5Xh
-  buttons:
-  - type: source
-    link: null
   plugin: sources.py
   file: sources-new.yaml
 - title: On the Interaction of Compressibility and Adversarial Robustness
@@ -1196,7 +1220,7 @@
   image: https://circle-group.github.io/images/publication_preview/barsbey2026robocomp.jpg
   link: https://openreview.net/pdf?id=zSsNzxjWP4
   buttons:
-  - type: source
-    link: null
+  - type: preprint
+    link: https://arxiv.org/abs/2507.17725
   plugin: sources.py
   file: sources-new.yaml
