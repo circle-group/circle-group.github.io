@@ -13,7 +13,7 @@
 
 .citation-image {
   position: relative;
-  width: 180px;
+  width: 200px;
   flex-shrink: 0;
   margin-left: 20px;
 }
@@ -57,7 +57,7 @@
   right: 20px;
   color: var(--light-gray);
   opacity: 0.5;
-  font-size: 30px;
+  font-size: 45px;
   z-index: -1;
 }
 
@@ -85,13 +85,13 @@
   margin: 0;
 }
 
-@container (max-width: 800px) {
+@container (max-width: 1000px) {
   .citation {
     flex-direction: column;
   }
   .citation-image {
     width: unset;
-    height: 180px;
+    height: 200px;
   }
 }
 
