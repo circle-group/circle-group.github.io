@@ -13,7 +13,7 @@
 
 .citation-image {
   position: relative;
-  width: 200px;
+  width: 190px;
   flex-shrink: 0;
   margin-left: 20px;
 }
@@ -85,13 +85,13 @@
   margin: 0;
 }
 
-@container (max-width: 1000px) {
+@container (max-width: 800px) {
   .citation {
     flex-direction: column;
   }
   .citation-image {
     width: unset;
-    height: 200px;
+    height: 190px;
   }
 }
 
