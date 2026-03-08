@@ -9,6 +9,11 @@
 # Otherwise, leave `link` blank.
 # Please add the new entries on the top although these are sorted by date. 
 
+- title: UKRI Isambard AI Grant
+  date: 2026-03
+  description: CIRCLE is awarded 300,000 GPUh of compute on the Isambard-AI AIRR service for AI4Science
+  url: https://www.ukri.org/opportunity/airr-compute-opportunity-ai-for-science/
+
 - title: 4 papers accepted at CVPR 2026
   date: 2026-03
   description: Zhengdi, Caner, and Simone have accepted papers at CVPR 2026 taking place in Denver.
@@ -18,6 +23,11 @@
   date: 2026-01
   description: Melih, Ed, Lucas and Yiming have accepted papers at ICLR 2026 taking place in Brasil.
   url: https://circle-group.github.io/research/
+
+- title: Royal Society Newton International Fellowship for Lennart Bastian
+  date: 2025-11
+  description: Lenart Bastian starts as an RS Newton Fellow within the CIRCLE Group
+  url: https://royalsociety.org/news/2025/11/early-career-fellowships-2025/
 
 - title: 3 papers accepted at NeurIPS 2025
   date: 2025-10
