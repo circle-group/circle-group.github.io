@@ -5,7 +5,7 @@ nav:
   tooltip: Prospective
 ---
 
-# {% include icon.html icon="fa-regular fa-user-graduate" %}Prospective Students
+# {% include icon.html icon="fa-regular fa-user-school" %}Prospective Students
 
 ## Applying as a PhD Student
 
