@@ -1183,6 +1183,9 @@
   publisher: International Conference on Learning Representations (ICLR)
   image: https://circle-group.github.io/images/publication_preview/prieto2025bows.jpg
   link: https://openreview.net/pdf?id=7akSRQS5Xh
+  buttons:
+  - type: source
+    link: https://github.com/LucasPrietoAl/correlations-feature-geometry
   plugin: sources.py
   file: sources-new.yaml
 - title: On the Interaction of Compressibility and Adversarial Robustness
@@ -1196,8 +1199,8 @@
   image: https://circle-group.github.io/images/publication_preview/barsbey2026robocomp.jpg
   link: https://openreview.net/pdf?id=zSsNzxjWP4
   buttons:
-  - type: preprint
-    link: https://arxiv.org/abs/2507.17725
+  - type: source
+    link: https://github.com/mbarsbey/advcomp
   plugin: sources.py
   file: sources-new.yaml
 - title: Parallelised Differentiable Straightest Geodesics for 3D Meshes
@@ -1212,13 +1215,9 @@
   image: https://circle-group.github.io/images/publication_preview/verninas2026DSG.jpg
   link: https://cvpr.thecvf.com/virtual/2025/poster/33016
   buttons:
-  - type: preprint
-    link: null
-  - type: source
-    link: null
   - type: website
     text: Website
-    link: null
+    link: https://circle-group.github.io/research/digeo
   plugin: sources.py
   file: sources-new.yaml
 - title: "MoLingo: Motion\u2013Language Alignment for Text-to-Human Motion Generation"
