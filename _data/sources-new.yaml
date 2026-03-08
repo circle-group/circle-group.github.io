@@ -249,28 +249,6 @@
   image: https://circle-group.github.io/images/publication_preview/meli2026quantum.jpeg
   link: https://arxiv.org/abs/2510.07317
 
-- title: 'Geometric Neural Distance Fields for Learning Human Motion Priors'
-  authors:
-    - Zhengdi Yu
-    - Simone Foti
-    - Linguang Zhan
-    - Amy Zhao
-    - Cem Keskin
-    - Stefanos Zafeiriou
-    - Tolga Birdal
-  date: 2026-01-01
-  publisher: Under Review
-  image: https://circle-group.github.io/images/publication_preview/yu2026geometric.jpg
-  link: https://arxiv.org/abs/2510.07317
-  buttons:
-    - type: preprint
-      link: https://arxiv.org/abs/2407.08723
-    - type: website
-      text: Website
-      link: https://circle-group.github.io/research/NRMF/
-    - type: source
-      link: https://github.com/ZhengdiYu/NRMF
-
 - title: 'HOG-Diff: Higher-Order Guided Diffusion for Graph Generation'
   authors:
     - Yiming Huang
@@ -288,7 +266,7 @@
     - type: preprint
       link: https://arxiv.org/abs/2502.04308
 
-- title: Correlations in the Data Lead to Semantically Rich Feature Geometry Under Superposition
+- title: 'From Data Statistics to Feature Geometry: How Correlations Shape Superposition'
   authors:
   - Lucas Prieto
   - Edward Stevinson
@@ -314,4 +292,84 @@
   - type: preprint
     link: https://arxiv.org/abs/2507.17725
 
-  
+  title: 'Parallelised Differentiable Straightest Geodesics for 3D Meshes'
+  authors:
+    - Hippolyte Verninas
+    - Caner Korkmaz
+    - Stefanos Zafeiriou
+    - Tolga Birdal
+    - Simone Foti
+  date: 2026-03-08
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/verninas2026DSG.jpg
+  link: https://cvpr.thecvf.com/virtual/2025/poster/33016
+  buttons:
+    - type: preprint
+      link: 
+    - type: source
+      link: 
+    - type: website
+      text: Website
+      link: 
+
+  title: 'MoLingo: Motion–Language Alignment for Text-to-Human Motion Generation'
+  authors:
+    - Yannan He
+    - Garvita Tiwari
+    - Xiaohan Zhang
+    - Pankaj Bora
+    - Tolga Birdal
+    - Jan Eric Lenssen
+    - Gerard Pons-Moll
+  date: 2026-03-08
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/he2026molingo.jpg
+  link: https://hynann.github.io/molingo/MoLingo.html
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/pdf/2512.13840
+    - type: source
+      link: https://github.com/hynann/MoLingo
+    - type: website
+      text: Website
+      link: https://hynann.github.io/molingo/MoLingo.html
+
+title: 'PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose'
+  authors:
+    - Jebastin Nadar
+    - Simone Foti
+    - Tolga Birdal
+  date: 2026-03-08
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/nadar2026PoseDFlow.jpg
+  link: https://circle-group.github.io/research/PoseDFlow
+  buttons:
+    - type: preprint
+      link: 
+    - type: source
+      link: 
+    - type: website
+      text: Website
+      link: https://circle-group.github.io/research/PoseDFlow
+
+- title: 'Geometric Neural Distance Fields for Learning Human Motion Priors'
+  authors:
+    - Zhengdi Yu
+    - Simone Foti
+    - Linguang Zhan
+    - Amy Zhao
+    - Cem Keskin
+    - Stefanos Zafeiriou
+    - Tolga Birdal
+  date: 2026-01-01
+  publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
+  image: https://circle-group.github.io/images/publication_preview/yu2026geometric.jpg
+  link: https://circle-group.github.io/research/NRMF/
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2407.08723
+    - type: website
+      text: Website
+      link: https://circle-group.github.io/research/NRMF/
+    - type: source
+      link: https://github.com/ZhengdiYu/NRMF
