@@ -299,7 +299,7 @@
     - Stefanos Zafeiriou
     - Tolga Birdal
     - Simone Foti
-  date: 2026-03-08
+  date: 2026-06-01
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/verninas2026DSG.jpg
   link: https://cvpr.thecvf.com/virtual/2025/poster/33016
@@ -321,7 +321,7 @@
     - Tolga Birdal
     - Jan Eric Lenssen
     - Gerard Pons-Moll
-  date: 2026-03-08
+  date: 2026-06-01
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/he2026molingo.jpg
   link: https://hynann.github.io/molingo/MoLingo.html
@@ -339,7 +339,7 @@
     - Jebastin Nadar
     - Simone Foti
     - Tolga Birdal
-  date: 2026-03-08
+  date: 2026-06-01
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/nadar2026PoseDFlow.jpg
   link: https://circle-group.github.io/research/PoseDFlow
@@ -361,7 +361,7 @@
     - Cem Keskin
     - Stefanos Zafeiriou
     - Tolga Birdal
-  date: 2026-01-01
+  date: 2026-06-01
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/yu2026geometric.jpg
   link: https://circle-group.github.io/research/NRMF/
@@ -373,4 +373,3 @@
       link: https://circle-group.github.io/research/NRMF/
     - type: source
       link: https://github.com/ZhengdiYu/NRMF
-      
