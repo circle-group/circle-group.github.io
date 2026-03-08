@@ -9,6 +9,11 @@
 # Otherwise, leave `link` blank.
 # Please add the new entries on the top although these are sorted by date. 
 
+- title: 4 papers accepted at CVPR 2026
+  date: 2026-03
+  description: Zhengdi, Caner, and Simone have accepted papers at CVPR 2026 taking place in Denver.
+  url: https://circle-group.github.io/research/
+
 - title: 3 papers accepted at ICLR 2026
   date: 2026-01
   description: Melih, Ed, Lucas and Yiming have accepted papers at ICLR 2026 taking place in Brasil.
