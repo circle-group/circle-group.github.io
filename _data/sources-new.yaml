@@ -292,7 +292,7 @@
   - type: preprint
     link: https://arxiv.org/abs/2507.17725
 
-  title: 'Parallelised Differentiable Straightest Geodesics for 3D Meshes'
+- title: 'Parallelised Differentiable Straightest Geodesics for 3D Meshes'
   authors:
     - Hippolyte Verninas
     - Caner Korkmaz
@@ -312,7 +312,7 @@
       text: Website
       link: 
 
-  title: 'MoLingo: Motion–Language Alignment for Text-to-Human Motion Generation'
+- title: 'MoLingo: Motion–Language Alignment for Text-to-Human Motion Generation'
   authors:
     - Yannan He
     - Garvita Tiwari
@@ -334,7 +334,7 @@
       text: Website
       link: https://hynann.github.io/molingo/MoLingo.html
 
-title: 'PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose'
+- title: 'PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose'
   authors:
     - Jebastin Nadar
     - Simone Foti
@@ -373,3 +373,4 @@ title: 'PoseD-Flow: Versatile and Guided Flow Matching Model of Human Pose'
       link: https://circle-group.github.io/research/NRMF/
     - type: source
       link: https://github.com/ZhengdiYu/NRMF
+      
