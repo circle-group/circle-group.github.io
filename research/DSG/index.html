@@ -632,12 +632,15 @@
                 <span class="author-block"><a href="https://profiles.imperial.ac.uk/s.zafeiriou/"
                     target="_blank">Stefanos Zafeiriou</a>,</span>
                 <span class="author-block"><a href="https://tolgabirdal.github.io/" target="_blank">Tolga
-                    Birdal</a>,</span>
-                <span class="author-block"><a href="https://www.simofoti.com/" target="_blank">Simone Foti</a></span>
+                    Birdal</a>*,</span>
+                <span class="author-block"><a href="https://www.simofoti.com/" target="_blank">Simone Foti</a>*</span>
               </div>
             </div>
             <div class="is-size-5 publication-authors">
               Imperial College London
+            </div>
+            <div class="is-size-6 publication-authors">
+              * Joint senior authors, equal contribution
             </div>
 
             <!-- Buttons Section -->
@@ -699,17 +702,21 @@
                 centroidal Voronoi tessellation.
               </p>
 
+              <p>
+                Try our method and more with digeo, our differential geometry library for learning on meshes: <code>pip install digeo</code>
+              </p>
+
               <!-- AI-generated Voice Section -->
               <!-- <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;"> -->
-              <!-- <audio controls style="width: 100%; border-radius: 5px;">
-                <source src="static/audio/ai_generated_intro.wav" type="audio/mpeg">
+              <audio controls style="width: 100%; border-radius: 5px;">
+                <source src="static/audio/dsg.m4a" type="audio/mpeg">
                 Your browser does not support the audio element.
               </audio>
               <p
                 style="font-family: 'Arial', sans-serif; font-size: 0.9rem; color: #666; font-weight: bold; text-align: center; margin-top: 10px;">
                 <i class="fas fa-microphone-alt" style="font-size: 1rem; color: #007bff; margin-right: 5px;"></i>
                 AI-generated Podcast (Paper Introduction)
-              </p> -->
+              </p>
             </div>
           </div>
         </div>
@@ -739,7 +746,7 @@
     <span>$$\nabla_{\dot{\gamma}(t)}\dot{\gamma}(t)=0$$</span></p>
 
     <p>On discrete 3D meshes, this concept is adapted using the <strong>angle preservation criteria</strong>. To maintain a straight path, the left and right surface angles must remain equal
-    <span>($\theta_l = \theta_r$)</span> for every point <em>p</em> along the curve as it iteratively crosses faces, edges, and vertices.</p>
+    <span>($\theta_l = \theta_r$)</span> for every point $p$ along the curve as it iteratively crosses faces, edges, and vertices.</p>
 
     <div style="text-align: center; margin: 20px 0;">
       <img src="static/images/angles.svg" style="width: 30%; border: none;">
@@ -748,7 +755,7 @@
     <p>Because straightest geodesics consist of piecewise linear segments across discrete faces, the derivative is discontinuous
     <span>($\dot{\gamma}_v(t) \notin \mathcal{C}^1$ at face transitions)</span>. Standard automatic differentiation also fails due to the discrete combinatorial choices made during the tracing algorithm.</p>
 
-    <p>To enable end-to-end backpropagation, we derive two distinct methods for computing the Jacobians <span>$J_{Exp}^v$</span> and <span>$J_{Exp}^p$</span>:</p>
+    <p>To enable end-to-end backpropagation, we derive two distinct methods for computing the Jacobians $J_{Exp}^v$ and $J_{Exp}^p$.</p>
 
     <h4>Extrinsic Proxy (EP)</h4>
 
@@ -756,11 +763,11 @@
       <img src="static/images/EP_info.svg" style="width: 30%; border: none;">
     </div>
 
-    <p>EP is a fast method that relies on an analytical formulation to approximate gradients with respect to the initial vector <em>v</em>. It emulates the tracing result in Euclidean space by using the cumulative rotation <em>R</em> accumulated by the geodesic path:</p>
+    <p>EP is a fast method that relies on an analytical formulation to approximate gradients with respect to the initial vector $v$. It emulates the tracing result in Euclidean space by using the cumulative rotation $R$ accumulated by the geodesic path:</p>
 
     <p>$$\varphi(p,v) = p_{proxy}^{\prime} = [R^{fix} \cdot (p+v)] + t^{fix}$$</p>
 
-    <p>During the backward pass, <em>R<sup>fix</sup></em> effectively backward parallel-transports the upstream Jacobian from the destination point <em>p'</em> back to the start point <em>p</em>.</p>
+    <p>During the backward pass, $R^{fix}$ effectively backward parallel-transports the upstream Jacobian from the destination point $p'$ back to the start point $p$.</p>
 
     <h4>Geodesic Finite Differences (GFD)</h4>
 
@@ -769,9 +776,9 @@
       <img src="static/images/Jv_info.svg" style="width: 30%; border: none;">
     </div>
 
-    <p>For applications requiring high accuracy for both <em>p</em> and <em>v</em>, we use GFD. This method adapts finite differences to respect the mesh geometry by perturbing inputs along a local non-orthogonal barycentric coordinate system and projecting the results via a pseudoinverse <em>M<sup>†</sup></em>.</p>
+    <p>For applications requiring high accuracy for both $p$ and $v$, we use GFD. This method adapts finite differences to respect the mesh geometry by perturbing inputs along a local non-orthogonal barycentric coordinate system and projecting the results via a pseudoinverse $M^\dagger$.</p>
 
-    <p>For example, the Jacobian for <em>v</em> evaluates perturbations along its parallel <em>ê<sub>||</sub></em> and perpendicular <em>ê<sub>⊥</sub></em> axes:</p>
+    <p>For example, the Jacobian for $v$ evaluates perturbations along its parallel $\hat{e}_{||}$ and perpendicular $\hat{e}_{⊥}$ axes:</p>
 
     <p>$$J_{Exp}^v \approx M_{p'}^{\dagger} \cdot \left[ \frac{Exp(p, v+\epsilon_v \hat{e}_{||}) - p'}{\epsilon_v} \quad \frac{Exp(p, v+\epsilon_v \hat{e}_{\perp}) - p'}{\epsilon_v} \right]$$</p>
 
