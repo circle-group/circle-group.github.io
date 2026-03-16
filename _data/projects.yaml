@@ -9,7 +9,7 @@
 - title: 3D/4D Computer Vision
   subtitle: Our generative models allow for reconstruction, analysis and sampling of 3D/4D shapes.
   group: featured
-  image: images/GenPriors.jpg
+  image: images/CV.jpeg
   link: https://virtualhumans.mpi-inf.mpg.de/nrdf/
   #description: A new family of versatile generative models that allow for reconstruction, sampling, analysis and generation of 3D/4D shapes.
   repo: https://virtualhumans.mpi-inf.mpg.de/nrdf/
@@ -31,7 +31,7 @@
 
 - title: Quantum Computer Vision & Machine Learning
   subtitle: A new computational paradigm for addressing vision and learning problems.<br/>
-  image: images/QCVML.jpg
+  image: images/QCVML.jpeg
   link: https://quantumcomputervision.github.io/
   #description: A new computational paradigm for addressing vision and learning problems.
   repo: https://quantumcomputervision.github.io/
