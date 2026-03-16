@@ -3,7 +3,7 @@
   ![on-pull-request](../../actions/workflows/on-pull-request.yaml/badge.svg)
   ![on-schedule](../../actions/workflows/on-schedule.yaml/badge.svg)
 
-  # circle-group's Website
+  # Imperial College London CIRCLE Group's Official Website
 
   Visit **[circle-group.github.io](https://circle-group.github.io)** 
 
