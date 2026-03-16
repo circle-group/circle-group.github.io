@@ -93,7 +93,7 @@ We are a fortunate to be in a world-class team composed of individuals from dive
 
 {%
   include feature.html
-  image="images/team.jpg"
+  image="images/circle_team.jpg"
   link="team"
   title="Our Team"
   text=text
