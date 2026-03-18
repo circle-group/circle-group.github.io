@@ -645,7 +645,7 @@
             <!-- Buttons Section -->
             <div class="button-container">
               <!-- Paper Button -->
-              <a href="https://arxiv.org/pdf/" target="_blank" class="custom-button">
+              <a href="https://arxiv.org/pdf/2603.15780" target="_blank" class="custom-button">
                 <i class="fas fa-file-pdf"></i> Paper
               </a>
 
@@ -780,6 +780,15 @@
     <p>For example, the Jacobian for $v$ evaluates perturbations along its parallel $\hat{e}_{||}$ and perpendicular $\hat{e}_{⊥}$ axes:</p>
 
     <p>$$J_{Exp}^v \approx M_{p'}^{\dagger} \cdot \left[ \frac{Exp(p, v+\epsilon_v \hat{e}_{||}) - p'}{\epsilon_v} \quad \frac{Exp(p, v+\epsilon_v \hat{e}_{\perp}) - p'}{\epsilon_v} \right]$$</p>
+
+    <h4>GPU Parallelisation</h4>
+
+    <p>We implement both methods in CUDA, parallelising the tracing of multiple geodesics across the mesh. This allows us to efficiently compute the exponential map and its Jacobians for large batches of points and vectors, making it practical for integration into deep learning pipelines.</p>
+
+    <div style="text-align: center; margin: 20px 0;">
+      <img src="static/images/benchmark_batch_size.svg" style="width: 45%; border: none; margin-right: 30px;">
+      <img src="static/images/benchmark_facecount.svg" style="width: 45%; border: none;">
+    </div>
 
   </div>
 
