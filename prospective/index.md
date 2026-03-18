@@ -12,7 +12,7 @@ nav:
 
 We usually have multiple <u><a href="https://circle-group.github.io/prospective/circlejobs-postdoc.pdf">PostDoc positions</a></u> available. It is recommended to contact Tolga Birdal in advance, so that your application is not missed. For the current opening:
 
-<u><a href="https://circle-group.github.io/prospective/circlejobs-postdoc.pdf">https://www.imperial.ac.uk/jobs//search-internal/description/index.php?nPostingId=17353&nPostingTargetId=27320&id=PWTFK026203F3VBQB8NLOV425&LG=UK&languageSelect=UK&mask=int
+<u><a href="https://circle-group.github.io/prospective/circlejobs-postdoc.pdf">https://www.imperial.ac.uk/jobs/search-jobs/description/index.php?jobId=27321&jobTitle=Research+Associate+in+Topological+Deep+Learning+for+AI4Science
 </a></u>
 
 If you are seeking a sponsor for an application to a post-doctoral fellowship or other schemes, don’t hesitate to get in touch with us to discuss this further. We are always interested in sponsoring students for schemes such as Marie-Curie actions, EPSRC postdoctoral fellowships, or fellowships by UK charities (e.g., Royal Society).
