@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="HOG-Diff: Higher-Order Guided Diffusion for Graph Generation (ICLR 2026)." />
+  <meta property="og:title" content="HOG-Diff: Higher-Order Guided Diffusion for Graph Generation" />
+  <meta property="og:description" content="A topology-aware, coarse-to-fine diffusion framework for graph generation." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="HOG-Diff: Higher-Order Guided Diffusion for Graph Generation" />
+  <meta name="twitter:description" content="ICLR 2026 conference paper." />
+  <title>HOG-Diff | ICLR 2026</title>
+
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico" />
+  <link rel="stylesheet" href="static/css/bulma.min.css" />
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+
+  <style>
+    :root {
+      --bg: #f7f9fc;
+      --ink: #1f2a37;
+      --muted: #5e6a78;
+      --card: #ffffff;
+      --brand: #1057d0;
+      --brand-soft: #e8f0ff;
+      --line: #d8e1ec;
+      --shadow: 0 10px 28px rgba(17, 24, 39, 0.08);
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top left, #eef4ff 0%, #f7f9fc 35%, #f7f9fc 100%);
+      color: var(--ink);
+      font-family: "Segoe UI", Arial, sans-serif;
+    }
+
+    .hero-wrap {
+      background: linear-gradient(180deg, #ffffff 0%, #f2f7ff 100%);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .paper-tag {
+      display: inline-block;
+      margin-bottom: 0.9rem;
+      border-radius: 999px;
+      padding: 0.35rem 0.9rem;
+      background: var(--brand-soft);
+      color: var(--brand);
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .title-main {
+      font-size: clamp(1.9rem, 2.5vw, 3rem);
+      line-height: 1.18;
+      letter-spacing: 0.02rem;
+      font-weight: 800;
+      margin-bottom: 0.8rem;
+    }
+
+    .authors {
+      font-size: 1.08rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .author-grid {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      margin: 0.6rem 0 0.9rem 0;
+    }
+
+    .author-card {
+      width: 170px;
+      text-align: center;
+    }
+
+    .author-photo {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: center top;
+      border: 2px solid #d4e4ff;
+      box-shadow: 0 10px 20px rgba(16, 87, 208, 0.16);
+      display: block;
+      margin: 0 auto 0.55rem auto;
+      background: #e8eef8;
+    }
+
+    .author-name {
+      font-size: 1.02rem;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .author-link {
+      color: #2a8fe3;
+      text-decoration: none;
+    }
+
+    .author-link:hover {
+      text-decoration: underline;
+    }
+
+    .meta {
+      color: var(--muted);
+      font-size: 0.96rem;
+      margin-bottom: 1.15rem;
+    }
+
+    .custom-button {
+      display: inline-block;
+      background-color: #000; /* Black color */
+      color: white; /* White text */
+      font-family: 'Arial', sans-serif;
+      font-size: 1rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px; /* Rounded corners */
+      cursor: pointer;
+      text-decoration: none; /* Remove underline for links */
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Enhanced shadow */
+      transition: all 0.3s ease; /* Smooth hover effect */
+    }
+
+    .custom-button:hover {
+      background-color: #eee;  /* White background */
+      color: #000;             /* Black text */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+      transform: scale(1.05);  /* "Expand and float" effect remains */
+    }
+
+    .button-container {
+      display: flex;
+      justify-content: center; /* Center buttons horizontally */
+      gap: 18px; /* Increased space between buttons */
+      margin-top: 20px; /* Space above the buttons */
+    }
+
+    .section-card {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: var(--card);
+      box-shadow: var(--shadow);
+      padding: 1.25rem 1.4rem;
+    }
+
+    .section-title {
+      margin-bottom: 0.85rem;
+      font-size: 1.45rem;
+      font-weight: 700;
+    }
+
+    .lead {
+      color: #2c3a4a;
+      line-height: 1.7;
+      font-size: 1.02rem;
+      text-align: justify;
+    }
+
+    .dataset-tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      margin-top: 0.55rem;
+    }
+
+    .dataset-btn {
+      border: 1px solid #c7d6f2;
+      border-radius: 999px;
+      padding: 0.38rem 0.9rem;
+      font-size: 0.9rem;
+      color: #1f4b95;
+      background: #f6f9ff;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-weight: 600;
+    }
+
+    .dataset-btn:hover {
+      background: #e9f1ff;
+      border-color: #98b7ea;
+    }
+
+    .dataset-btn.is-active {
+      background: #165bcf;
+      color: #fff;
+      border-color: #165bcf;
+      box-shadow: 0 6px 14px rgba(22, 91, 207, 0.25);
+    }
+
+    .dataset-results {
+      margin-top: 1rem;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #fcfdff;
+      padding: 0.95rem 1rem;
+    }
+
+    .dataset-panel {
+      display: none;
+    }
+
+    .dataset-panel.is-active {
+      display: block;
+    }
+
+    .dataset-title {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.45rem;
+      color: #163e7e;
+    }
+
+    .dataset-desc {
+      margin-bottom: 0.55rem;
+      color: #2f3f55;
+      line-height: 1.55;
+      font-size: 0.95rem;
+    }
+
+    .metrics-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.48rem;
+      margin: 0.25rem 0 0.7rem 0;
+    }
+
+    .metric-item {
+      border: 1px solid #cfe0ff;
+      background: #fff;
+      border-radius: 8px;
+      padding: 0.26rem 0.56rem;
+      font-size: 0.86rem;
+      color: #163e7e;
+      font-weight: 600;
+    }
+
+    .dataset-footnote {
+      font-size: 0.85rem;
+      color: #667a95;
+    }
+
+    .results-table-wrap {
+      margin-top: 0.8rem;
+      border: 1px solid #d9e4f8;
+      border-radius: 10px;
+      overflow-x: auto;
+      background: #fff;
+    }
+
+    .results-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 620px;
+    }
+
+    .results-table th,
+    .results-table td {
+      padding: 0.5rem 0.62rem;
+      border-bottom: 1px solid #edf2fb;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .results-table th:first-child,
+    .results-table td:first-child {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    .results-table thead th {
+      background: #f5f9ff;
+      color: #173e7a;
+      font-weight: 700;
+      border-bottom: 1px solid #dce8fb;
+    }
+
+    .results-table tr:last-child td {
+      border-bottom: 0;
+    }
+
+    .results-table .hogdiff-row td {
+      background: #edf4ff;
+      font-weight: 700;
+      color: #0e3a82;
+    }
+
+    .results-table .best {
+      font-weight: 700;
+    }
+
+    .results-table .second {
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+
+    .dataset-figure {
+      margin-top: 0.85rem;
+      border-radius: 10px;
+      border: 1px solid #d9e4f8;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .dataset-figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .dataset-figure figcaption {
+      font-size: 0.86rem;
+      color: #647892;
+      background: #f7fbff;
+      border-top: 1px solid #e1eaf9;
+      padding: 0.52rem 0.72rem;
+    }
+
+    .figure {
+      margin: 0;
+      border: 0;
+      border-radius: 14px;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: none;
+    }
+
+    .figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .figure figcaption {
+      padding: 0.75rem 1rem;
+      color: var(--muted);
+      font-size: 0.92rem;
+      line-height: 1.5;
+      border-top: 1px solid var(--line);
+      background: #fbfdff;
+    }
+
+    .bib-box {
+      position: relative;
+      border-radius: 12px;
+      border: 1px solid #27395e;
+      background: #0d1626;
+      color: #d8e7ff;
+      overflow: hidden;
+    }
+
+    .bib-copy {
+      position: absolute;
+      top: 0.6rem;
+      right: 0.6rem;
+      border-radius: 8px;
+      border: 1px solid #34517f;
+      background: #15233a;
+      color: #d8e7ff;
+      cursor: pointer;
+      padding: 0.28rem 0.56rem;
+      font-size: 0.83rem;
+    }
+
+    .bib-copy:hover {
+      background: #1a2f4d;
+    }
+
+    .bib-box pre {
+      margin: 0;
+      padding: 1rem 1rem 1rem 1rem;
+      overflow-x: auto;
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+
+    .poster-frame {
+      border: 0;
+      border-radius: 0;
+      overflow: visible;
+      background: transparent;
+    }
+
+    .poster-section {
+      background: transparent;
+      border: 0;
+      box-shadow: none;
+    }
+
+    .poster-frame img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .misc-box {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      background: #f7f9fc;
+      padding: 1rem;
+    }
+
+    .misc-title {
+      font-size: 2rem;
+      font-weight: 600;
+      text-align: center;
+      margin-bottom: 0.75rem;
+    }
+
+    .misc-divider {
+      border: 0;
+      height: 1px;
+      margin: 0 0 1rem 0;
+      background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 0.75),
+        rgba(0, 0, 0, 0)
+      );
+    }
+
+    .misc-paper-img {
+      max-width: 220px;
+      border-radius: 8px;
+      box-shadow:
+        0px 0px 1px 1px rgba(0, 0, 0, 0.35),
+        5px 5px 0 0px #fff,
+        5px 5px 1px 1px rgba(0, 0, 0, 0.35),
+        10px 10px 0 0px #fff,
+        10px 10px 1px 1px rgba(0, 0, 0, 0.35);
+      margin: 0 40px 0 12px;
+    }
+
+    .misc-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      background: #1f5bc0;
+      color: #fff;
+      border-radius: 999px;
+      padding: 0.45rem 0.95rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background 0.2s ease;
+    }
+
+    .misc-link:hover {
+      background: #1a4ca0;
+      color: #fff;
+    }
+
+    .footer-note {
+      color: var(--muted);
+      text-align: center;
+      margin-top: 2rem;
+      padding-bottom: 2rem;
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero-wrap">
+    <div class="container is-max-desktop has-text-centered px-4 py-6">
+      <span class="paper-tag">Published as a Conference Paper at ICLR 2026</span>
+      <h1 class="title-main">HOG-Diff: Higher-Order Guided Diffusion for Graph Generation</h1>
+      <div class="author-grid">
+        <div class="author-card">
+          <a href="https://yimingh.top/" target="_blank">
+            <img class="author-photo" src="static/images/authors/yiming-huang.jpg" alt="Yiming Huang avatar" />
+          </a>
+          <p class="author-name">
+            <a class="author-link" href="https://yimingh.top/" target="_blank">Yiming Huang</a>
+          </p>
+        </div>
+        <div class="author-card">
+          <a href="https://tolgabirdal.github.io/" target="_blank">
+            <img class="author-photo" src="static/images/authors/tolga-birdal.jpg" alt="Tolga Birdal avatar" />
+          </a>
+          <p class="author-name">
+            <a class="author-link" href="https://tolgabirdal.github.io/" target="_blank">Tolga Birdal</a>
+          </p>
+        </div>
+      </div>
+      <p class="meta">Department of Computing, Imperial College London, UK</p>
+
+      <div class="button-container">
+        <a href="static/pdfs/hog-diff.pdf" target="_blank" class="custom-button">
+          <i class="fas fa-file-pdf"></i> Paper
+        </a>
+        <a href="https://github.com/Yiminghh/HOG-Diff" target="_blank" class="custom-button">
+          <i class="fab fa-github"></i> Code
+        </a>
+        <a href="https://arxiv.org/pdf/2502.04308" target="_blank" class="custom-button">
+          <i class="ai ai-arxiv"></i> arXiv
+        </a>
+        <a href="#poster" class="custom-button">
+          <i class="fas fa-image"></i> Poster
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <main class="container is-max-desktop px-4 py-5">
+    <section class="mb-5" id="framework-overview">
+      <figure class="figure teaser-figure">
+        <img src="static/images/framework-radar.svg" alt="Overview of the HOG-Diff framework and its performance" />
+        <figcaption>
+          Overview of the <strong>HOG-Diff</strong> framework and its performance.
+          (<strong>Left</strong>) The dashed trajectory above illustrates the classical generation process, where graphs rapidly
+          degrade into structureless randomness. In contrast, as shown in the coloured region below, HOG-Diff adopts
+          a coarse-to-fine generation curriculum via a diffusion bridge, explicitly learning higher-order structures
+          during intermediate steps. (<strong>Middle</strong> and <strong>right</strong>) Relative improvements over prior
+          state-of-the-art on pairwise and higher-order topological metrics.
+        </figcaption>
+      </figure>
+    </section>
+
+    <section class="section-card mb-5" id="abstract">
+      <h2 class="section-title">Abstract</h2>
+      <p class="lead">
+        Graph generation is a critical yet challenging task, as empirical analyses require a deep understanding of complex, non-Euclidean structures. 
+Diffusion models have recently made significant achievements in graph generation, but these models are typically adapted from image generation frameworks and overlook inherent higher-order topology, limiting their ability to capture graph topology.
+In this work, we propose <strong>Higher-order Guided
+Diffusion (HOG-Diff)</strong>, a principled framework that progressively generates plausible graphs with inherent topological structures.
+HOG-Diff follows a coarse-to-fine generation curriculum, guided by higher-order topology and implemented via diffusion bridges.
+We further prove that our model admits stronger theoretical guarantees than classical diffusion frameworks.
+Extensive experiments across eight graph generation benchmarks, spanning diverse domains and including large-scale settings, demonstrate the scalability of our method and its superior performance on both pairwise and higher-order topological metrics.
+      </p>
+      <h2 class="section-title mt-5">Core Contributions</h2>
+      <div class="content">
+        <ul>
+          <li>Introduces cell complex filtering to extract higher-order skeletons from graphs as informative generation guides.</li>
+          <li>Proposes a coarse-to-fine graph generation framework guided by higher-order topology via a generalized OU diffusion bridge.</li>
+          <li>Provides theoretical analysis showing faster score-matching convergence and tighter reconstruction bounds.</li>
+          <li>Demonstrates state-of-the-art performance on molecular and generic graph benchmarks under both pairwise and higher-order metrics.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section-card mb-5" id="experiments">
+      <h2 class="section-title">Experiments</h2>
+      <p class="lead">
+        The paper evaluates HOG-Diff on eight benchmarks across molecular and generic graph domains, including
+        large-scale settings. The reported results show consistent gains over strong baselines on both distributional
+        fidelity and higher-order structural metrics.
+      </p>
+
+      <div class="mt-4">
+        <p><strong>Molecular Benchmarks</strong></p>
+        <div class="dataset-tabs">
+          <button type="button" class="dataset-btn is-active" data-dataset="qm9">QM9</button>
+          <button type="button" class="dataset-btn" data-dataset="zinc250k">ZINC250k</button>
+          <button type="button" class="dataset-btn" data-dataset="moses">MOSES</button>
+          <button type="button" class="dataset-btn" data-dataset="guacamol">GuacaMol</button>
+        </div>
+      </div>
+
+      <div class="mt-4">
+        <p><strong>Generic Graph Benchmarks</strong></p>
+        <div class="dataset-tabs">
+          <button type="button" class="dataset-btn" data-dataset="community-small">Community-small</button>
+          <button type="button" class="dataset-btn" data-dataset="ego-small">Ego-small</button>
+          <button type="button" class="dataset-btn" data-dataset="enzymes">Enzymes</button>
+          <button type="button" class="dataset-btn" data-dataset="sbm">SBM</button>
+        </div>
+      </div>
+
+      <div class="dataset-results" id="dataset-results"></div>
+    </section>
+
+    <section class="mb-5 poster-section" id="poster">
+      <h2 class="section-title has-text-centered">Poster</h2>
+      <div class="poster-frame">
+        <img src="static/images/hog-diff-poster.png" alt="HOG-Diff poster" />
+      </div>
+    </section>
+
+    <section class="mb-5" id="miscellaneous">
+      <h2 class="title is-3 has-text-centered misc-title">Miscellaneous</h2>
+      <hr class="misc-divider">
+      <div class="misc-box">
+        <div class="columns is-vcentered is-multiline">
+          <div class="column is-one-third has-text-centered">
+            <img class="misc-paper-img" src="static/images/paper-cover.png?v=2" alt="HOG-Diff paper cover" />
+          </div>
+          <div class="column is-two-thirds">
+            <p class="lead" style="margin-bottom: 0.85rem;">
+              <strong>HOG-Diff: Higher-Order Guided Diffusion for Graph Generation</strong><br />
+              <span>Yiming Huang, Tolga Birdal</span><br />
+              <span>ICLR 2026</span>
+            </p>
+            <a href="static/pdfs/hog-diff.pdf" target="_blank" class="misc-link">
+              <i class="fas fa-file-pdf"></i>
+              <span>View PDF</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="mb-5" id="bibtex">
+      <h2 class="title is-3">BibTeX</h2>
+      <div class="bib-box">
+        <button id="copyBibtex" class="bib-copy" type="button">Copy</button>
+        <pre><code id="bibtexText">@inproceedings{huang2026hogdiff,
+  title     = {HOG-Diff: Higher-Order Guided Diffusion for Graph Generation},
+  author    = {Huang, Yiming and Birdal, Tolga},
+  booktitle = {International Conference on Learning Representations (ICLR)},
+  year      = {2026}
+}</code></pre>
+      </div>
+    </section>
+
+    <section class="mb-5" id="contact">
+      <h2 class="title is-3">Contact</h2>
+      <p class="lead" style="text-align: left;">
+        Please contact
+        <a href="mailto:y.huang24@imperial.ac.uk" target="_blank" rel="noopener noreferrer">y.huang24@imperial.ac.uk</a>
+        or
+        <a href="mailto:yimingh999@gmail.com" target="_blank" rel="noopener noreferrer">yimingh999@gmail.com</a>
+        for any inquiries related to this work.
+      </p>
+    </section>
+  </main>
+
+  <p class="footer-note">
+    This page was inspired by the <a href="https://nerfies.github.io/" target="_blank" rel="noopener noreferrer">Nerfies website</a>.
+  </p>
+
+  <script>
+    const copyButton = document.getElementById("copyBibtex");
+    const bibText = document.getElementById("bibtexText");
+    const datasetButtons = document.querySelectorAll(".dataset-btn");
+    const datasetResults = document.getElementById("dataset-results");
+
+    if (copyButton && bibText) {
+      copyButton.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(bibText.innerText);
+          copyButton.textContent = "Copied";
+          setTimeout(() => { copyButton.textContent = "Copy"; }, 1200);
+        } catch (error) {
+          copyButton.textContent = "Failed";
+          setTimeout(() => { copyButton.textContent = "Copy"; }, 1200);
+        }
+      });
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/\"/g, "&quot;")
+        .replace(/'/g, "&#39;");
+    }
+
+    function renderDatasetPanels(datasets) {
+      const activeButton = document.querySelector(".dataset-btn.is-active");
+      const activeId = activeButton ? activeButton.dataset.dataset : datasets[0]?.id;
+
+      datasetResults.innerHTML = datasets.map((dataset) => {
+        const tableHead = dataset.headers
+          .map((header) => `<th>${escapeHtml(header)}</th>`)
+          .join("");
+        const tableBody = dataset.rows
+          .map((row) => {
+            const rowClass = row.rowClass ? ` class="${escapeHtml(row.rowClass)}"` : "";
+            const rowCells = row.cells
+              .map((cell) => {
+                const cellClass = cell.className ? ` class="${escapeHtml(cell.className)}"` : "";
+                return `<td${cellClass}>${escapeHtml(cell.text)}</td>`;
+              })
+              .join("");
+            return `<tr${rowClass}>${rowCells}</tr>`;
+          })
+          .join("");
+        const panelClass = dataset.id === activeId ? "dataset-panel is-active" : "dataset-panel";
+
+        return `
+          <div class="${panelClass}" data-panel="${escapeHtml(dataset.id)}">
+            <div class="dataset-title">${escapeHtml(dataset.title)}</div>
+            <div class="results-table-wrap">
+              <table class="results-table">
+                <thead><tr>${tableHead}</tr></thead>
+                <tbody>${tableBody}</tbody>
+              </table>
+            </div>
+          </div>
+        `;
+      }).join("");
+    }
+
+    function bindDatasetTabs() {
+      datasetButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+          const target = button.dataset.dataset;
+          const panels = document.querySelectorAll(".dataset-panel");
+          datasetButtons.forEach((b) => b.classList.toggle("is-active", b === button));
+          panels.forEach((panel) => {
+            panel.classList.toggle("is-active", panel.dataset.panel === target);
+          });
+        });
+      });
+    }
+
+    async function loadExperimentTables() {
+      if (!datasetResults) return;
+      datasetResults.innerHTML = "<p>Loading experiment tables...</p>";
+      try {
+        const response = await fetch("static/data/experiments.json");
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const payload = await response.json();
+        renderDatasetPanels(payload.datasets || []);
+      } catch (error) {
+        datasetResults.innerHTML = "<p>Failed to load experiment tables.</p>";
+      }
+    }
+
+    bindDatasetTabs();
+    loadExperimentTables();
+  </script>
+</body>
+</html>
