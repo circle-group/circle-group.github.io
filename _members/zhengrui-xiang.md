@@ -1,6 +1,6 @@
 ---
-name: Zhengdi Yu
-image: images/prof_pic_zhengdi.jpg
+name: Zhengrui Xiang
+image: images/prof_pic_zhengrui.jpg
 description: PhD Student
 role: phd
 group: phd
