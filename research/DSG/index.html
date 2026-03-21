@@ -132,10 +132,25 @@
     display: flex;
     justify-content: center;
     /* Center buttons horizontally */
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller widths */
     gap: 18px;
     /* Increased space between buttons */
     margin-top: 20px;
     /* Space above the buttons */
+  }
+
+  @media (max-width: 640px) {
+    .button-container {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .button-container .custom-button {
+      width: 100%;
+      max-width: 280px;
+      text-align: center;
+    }
   }
 
   .panel-style {
@@ -144,6 +159,59 @@
     margin: 20px auto;
     border: 1px solid #ccc;
     border-radius: 8px;
+  }
+
+  .media-single {
+    text-align: center;
+    margin: 20px auto;
+    --media-landscape-width: 60%;
+  }
+
+  .media-single img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .media-pair {
+    text-align: center;
+    margin: 20px auto;
+  }
+
+  .media-pair img + img {
+    margin-left: 30px;
+  }
+
+  @media (max-width: 768px) {
+    .media-pair {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .media-pair img {
+      width: 90% !important;
+      max-width: 360px;
+      margin: 0 auto !important;
+    }
+
+    .media-pair img + img {
+      margin-left: 0;
+    }
+  }
+
+  @media (orientation: landscape) {
+    .media-single img {
+      width: var(--media-landscape-width);
+    }
+  }
+
+  @media (orientation: portrait) {
+    .media-single img {
+      width: 100%;
+    }
   }
 </style>
 
@@ -738,8 +806,8 @@
     <p>On discrete 3D meshes, this concept is adapted using the <strong>angle preservation criteria</strong>. To maintain a straight path, the left and right surface angles must remain equal
     <span>($\theta_l = \theta_r$)</span> for every point $p$ along the curve as it iteratively crosses faces, edges, and vertices.</p>
 
-    <div style="text-align: center; margin: 20px 0;">
-      <img src="static/images/angles.svg" style="width: 30%; border: none;">
+    <div class="media-single" style="--media-landscape-width:30%;">
+      <img src="static/images/angles.svg">
     </div>
 
     <p>Because straightest geodesics consist of piecewise linear segments across discrete faces, the derivative is discontinuous
@@ -749,8 +817,8 @@
 
     <h4>Extrinsic Proxy (EP)</h4>
 
-    <div style="text-align: center; margin: 20px 0;">
-      <img src="static/images/EP_info.svg" style="width: 30%; border: none;">
+    <div class="media-single" style="--media-landscape-width:30%;">
+      <img src="static/images/EP_info.svg">
     </div>
 
     <p>EP is a fast method that relies on an analytical formulation to approximate gradients with respect to the initial vector $v$. It emulates the tracing result in Euclidean space by using the cumulative rotation $R$ accumulated by the geodesic path:</p>
@@ -761,8 +829,8 @@
 
     <h4>Geodesic Finite Differences (GFD)</h4>
 
-    <div style="text-align: center; margin: 20px 0;">
-      <img src="static/images/Jp_info.svg" style="width: 30%; border: none; margin-right: 30px;">
+    <div class="media-pair">
+      <img src="static/images/Jp_info.svg" style="width: 30%; border: none;">
       <img src="static/images/Jv_info.svg" style="width: 30%; border: none;">
     </div>
 
@@ -776,8 +844,8 @@
 
     <p>We implement both methods in CUDA, parallelising the tracing of multiple geodesics across the mesh. This allows us to efficiently compute the exponential map and its Jacobians for large batches of points and vectors, making it practical for integration into deep learning pipelines.</p>
 
-    <div style="text-align: center; margin: 20px 0;">
-      <img src="static/images/benchmark_batch_size.svg" style="width: 45%; border: none; margin-right: 30px;">
+    <div class="media-pair">
+      <img src="static/images/benchmark_batch_size.svg" style="width: 45%; border: none;">
       <img src="static/images/benchmark_facecount.svg" style="width: 45%; border: none;">
     </div>
 
@@ -795,16 +863,16 @@
             Adaptive Geodesic Convolution
           </span></strong></h3>
 
-          <div style="text-align: center; margin: 20px 0;">
-            <img src="static/images/agcn_filters.svg" style="width: 35%; border: none;">
+          <div class="media-single" style="--media-landscape-width:35%;">
+            <img src="static/images/agcn_filters.svg">
           </div>
 
           <p>
             Adaptive Geodesic Convolutions enhance standard Geodesic Convolutional Neural Networks (GCNN) by introducing learnable receptive fields. While GCNN and other methods rely on a fixed patch size determined by precomputed distances, AGC leverages the differentiable straightest geodesics to dynamically adjust the patch size for each channel and layer during the training process. This flexibility allows the model to adapt its filters based on the underlying surface geometry, capturing features at the most relevant scales. When tested on human body part segmentation, this approach outperformed fixed-patch methods and reached higher accuracy levels, particularly when using Heat Kernel Signatures as input.
           </p>
 
-          <div style="text-align: center; margin: 20px 0;">
-            <img src="static/images/agcnn_seg.png" style="width: 30%; border: none;">
+          <div class="media-single" style="--media-landscape-width:30%;">
+            <img src="static/images/agcnn_seg.png">
           </div>
 
         </div>
@@ -823,8 +891,8 @@
             </span></strong>
           </h3>
 
-          <div style="text-align: center; margin: 20px 0;">
-            <img src="static/images/duck_distrib.svg" style="width: 30%; border: none;">
+          <div class="media-single" style="--media-landscape-width:30%;">
+            <img src="static/images/duck_distrib.svg">
           </div>
 
           <p>
@@ -845,8 +913,8 @@
             Mesh-LBFGS
           </span></strong></h3>
 
-          <div style="text-align: center; margin: 20px 0;">
-            <img src="static/images/CVT_combined.svg" style="width: 55%; border: none;">
+          <div class="media-single" style="--media-landscape-width:55%;">
+            <img src="static/images/CVT_combined.svg">
           </div>
 
           <p>
