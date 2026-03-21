@@ -5,10 +5,15 @@ description: Postdoctoral Research Fellow
 role: postdoc
 group: postdoc
 links:
-  home-page: https://www.cs.cit.tum.de/en/camp/members/lennart-bastian/
+  email: l.bastian@imperial.ac.uk
+  home-page: https://bastianlb.github.io/
   google-scholar: huXOVHgAAAAJ
   github: bastianlb
   twitter: lennart_bastian
 ---
 
-<strong>Lennart Bastian</strong> has recently joined CIRCLE group as a Royal Society Newton Fellow following his PhD studies at the CAMP group of TU MUnich. His interests involve topological deep learning, surgical data science & workflows, shape understanding and applications, and 3D computer vision. 
+<strong>Lennart Bastian</strong> is a Royal Society Newton Fellow at Imperial College London. I works at the CIRCLE group, where he pursues topics at the intersection of geometry, topology, and machine learning.
+
+He completed his PhD with highest distinction (summa cum laude) at the Chair for Computer Aided Medical Procedures (CAMP) in Munich, supervised by Prof. Nassir Navab, where he also coordinated research of the Surgical Data Science team. Prior to this, he conducted his M.Sc. in Applied Mathematics at the Technical University of Munich with an emphasis on optimization and statistics, and Bachelor's in Mathematics and Computer Science from New York University's Courant Institute.
+
+He also had previous stints in software and data science at H2oMetrics, a cloud water management startup, and as a research assistant at the MSKCC Levine Lab, developing computational tools for the genetic analysis of patients with myeloid leukemias.
