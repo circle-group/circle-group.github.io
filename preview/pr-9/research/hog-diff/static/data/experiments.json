@@ -1,0 +1,2338 @@
+{
+  "datasets": [
+    {
+      "id": "qm9",
+      "title": "QM9",
+      "headers": [
+        "Method",
+        "Val. ↑",
+        "Uni. ↑",
+        "Nov. ↑",
+        "FCD ↓",
+        "NSPDK ↓"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphAF",
+              "className": ""
+            },
+            {
+              "text": "74.43",
+              "className": ""
+            },
+            {
+              "text": "88.64",
+              "className": ""
+            },
+            {
+              "text": "86.59",
+              "className": ""
+            },
+            {
+              "text": "5.625",
+              "className": ""
+            },
+            {
+              "text": "0.021",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphDF",
+              "className": ""
+            },
+            {
+              "text": "93.88",
+              "className": ""
+            },
+            {
+              "text": "98.58",
+              "className": ""
+            },
+            {
+              "text": "98.54",
+              "className": ""
+            },
+            {
+              "text": "10.928",
+              "className": ""
+            },
+            {
+              "text": "0.064",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphArm",
+              "className": ""
+            },
+            {
+              "text": "90.25",
+              "className": ""
+            },
+            {
+              "text": "95.62",
+              "className": ""
+            },
+            {
+              "text": "70.39",
+              "className": ""
+            },
+            {
+              "text": "1.220",
+              "className": ""
+            },
+            {
+              "text": "0.002",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "MiCaM",
+              "className": ""
+            },
+            {
+              "text": "99.93",
+              "className": "best"
+            },
+            {
+              "text": "93.89",
+              "className": ""
+            },
+            {
+              "text": "83.25",
+              "className": ""
+            },
+            {
+              "text": "1.045",
+              "className": ""
+            },
+            {
+              "text": "0.001",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "SPECTRE",
+              "className": ""
+            },
+            {
+              "text": "87.30",
+              "className": ""
+            },
+            {
+              "text": "35.70",
+              "className": ""
+            },
+            {
+              "text": "97.28",
+              "className": "best"
+            },
+            {
+              "text": "47.960",
+              "className": ""
+            },
+            {
+              "text": "0.163",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GSDM",
+              "className": ""
+            },
+            {
+              "text": "99.90",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "2.650",
+              "className": ""
+            },
+            {
+              "text": "0.003",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "EDP-GNN",
+              "className": ""
+            },
+            {
+              "text": "47.52",
+              "className": ""
+            },
+            {
+              "text": "99.25",
+              "className": ""
+            },
+            {
+              "text": "86.58",
+              "className": ""
+            },
+            {
+              "text": "2.680",
+              "className": ""
+            },
+            {
+              "text": "0.005",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GDSS",
+              "className": ""
+            },
+            {
+              "text": "95.72",
+              "className": ""
+            },
+            {
+              "text": "98.46",
+              "className": ""
+            },
+            {
+              "text": "86.27",
+              "className": ""
+            },
+            {
+              "text": "2.900",
+              "className": ""
+            },
+            {
+              "text": "0.003",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "99.00",
+              "className": ""
+            },
+            {
+              "text": "96.66",
+              "className": ""
+            },
+            {
+              "text": "33.40",
+              "className": ""
+            },
+            {
+              "text": "0.360",
+              "className": ""
+            },
+            {
+              "text": "0.0005",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "MoFlow",
+              "className": ""
+            },
+            {
+              "text": "91.36",
+              "className": ""
+            },
+            {
+              "text": "98.65",
+              "className": ""
+            },
+            {
+              "text": "94.72",
+              "className": ""
+            },
+            {
+              "text": "4.467",
+              "className": ""
+            },
+            {
+              "text": "0.017",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "Cometh",
+              "className": ""
+            },
+            {
+              "text": "99.59",
+              "className": ""
+            },
+            {
+              "text": "96.75",
+              "className": ""
+            },
+            {
+              "text": "72.06",
+              "className": ""
+            },
+            {
+              "text": "0.248",
+              "className": ""
+            },
+            {
+              "text": "0.0005",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "CatFlow",
+              "className": ""
+            },
+            {
+              "text": "99.81",
+              "className": ""
+            },
+            {
+              "text": "99.95",
+              "className": "best"
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "0.441",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DeFoG",
+              "className": ""
+            },
+            {
+              "text": "99.26",
+              "className": ""
+            },
+            {
+              "text": "96.61",
+              "className": ""
+            },
+            {
+              "text": "72.57",
+              "className": ""
+            },
+            {
+              "text": "0.268",
+              "className": ""
+            },
+            {
+              "text": "0.0005",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "98.74",
+              "className": ""
+            },
+            {
+              "text": "97.10",
+              "className": ""
+            },
+            {
+              "text": "75.12",
+              "className": ""
+            },
+            {
+              "text": "0.172",
+              "className": "best"
+            },
+            {
+              "text": "0.0003",
+              "className": "best"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "zinc250k",
+      "title": "ZINC250k",
+      "headers": [
+        "Method",
+        "Val. ↑",
+        "Uni. ↑",
+        "Nov. ↑",
+        "FCD ↓",
+        "NSPDK ↓"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphAF",
+              "className": ""
+            },
+            {
+              "text": "68.47",
+              "className": ""
+            },
+            {
+              "text": "98.64",
+              "className": ""
+            },
+            {
+              "text": "99.99",
+              "className": ""
+            },
+            {
+              "text": "16.023",
+              "className": ""
+            },
+            {
+              "text": "0.044",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphDF",
+              "className": ""
+            },
+            {
+              "text": "90.61",
+              "className": ""
+            },
+            {
+              "text": "99.63",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "33.546",
+              "className": ""
+            },
+            {
+              "text": "0.177",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphArm",
+              "className": ""
+            },
+            {
+              "text": "88.23",
+              "className": ""
+            },
+            {
+              "text": "99.46",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "16.260",
+              "className": ""
+            },
+            {
+              "text": "0.055",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "MiCaM",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": "best"
+            },
+            {
+              "text": "88.48",
+              "className": ""
+            },
+            {
+              "text": "99.98",
+              "className": ""
+            },
+            {
+              "text": "31.495",
+              "className": ""
+            },
+            {
+              "text": "0.166",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "SPECTRE",
+              "className": ""
+            },
+            {
+              "text": "90.20",
+              "className": ""
+            },
+            {
+              "text": "67.05",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "18.440",
+              "className": ""
+            },
+            {
+              "text": "0.109",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GSDM",
+              "className": ""
+            },
+            {
+              "text": "92.70",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "12.956",
+              "className": ""
+            },
+            {
+              "text": "0.017",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "EDP-GNN",
+              "className": ""
+            },
+            {
+              "text": "82.97",
+              "className": ""
+            },
+            {
+              "text": "99.79",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "16.737",
+              "className": ""
+            },
+            {
+              "text": "0.049",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GDSS",
+              "className": ""
+            },
+            {
+              "text": "97.01",
+              "className": ""
+            },
+            {
+              "text": "99.64",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "14.656",
+              "className": ""
+            },
+            {
+              "text": "0.019",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "91.02",
+              "className": ""
+            },
+            {
+              "text": "81.23",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "23.060",
+              "className": ""
+            },
+            {
+              "text": "0.082",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "MoFlow",
+              "className": ""
+            },
+            {
+              "text": "63.11",
+              "className": ""
+            },
+            {
+              "text": "99.99",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "20.931",
+              "className": ""
+            },
+            {
+              "text": "0.046",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "CatFlow",
+              "className": ""
+            },
+            {
+              "text": "99.95",
+              "className": ""
+            },
+            {
+              "text": "99.99",
+              "className": "best"
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "13.211",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DeFoG",
+              "className": ""
+            },
+            {
+              "text": "94.97",
+              "className": ""
+            },
+            {
+              "text": "99.98",
+              "className": ""
+            },
+            {
+              "text": "100.00",
+              "className": ""
+            },
+            {
+              "text": "2.030",
+              "className": ""
+            },
+            {
+              "text": "0.002",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "98.56",
+              "className": ""
+            },
+            {
+              "text": "99.96",
+              "className": ""
+            },
+            {
+              "text": "99.53",
+              "className": ""
+            },
+            {
+              "text": "1.633",
+              "className": "best"
+            },
+            {
+              "text": "0.001",
+              "className": "best"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "moses",
+      "title": "MOSES",
+      "headers": [
+        "Method",
+        "Val. ↑",
+        "Uni. ↑",
+        "Nov. ↑",
+        "Filters ↑",
+        "FCD ↓",
+        "SNN",
+        "Scaf"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphINVENT",
+              "className": ""
+            },
+            {
+              "text": "96.4",
+              "className": ""
+            },
+            {
+              "text": "99.8",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            },
+            {
+              "text": "95.0",
+              "className": ""
+            },
+            {
+              "text": "1.22",
+              "className": ""
+            },
+            {
+              "text": "0.54",
+              "className": ""
+            },
+            {
+              "text": "12.7",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "85.7",
+              "className": ""
+            },
+            {
+              "text": "100.0",
+              "className": "best"
+            },
+            {
+              "text": "95.0",
+              "className": ""
+            },
+            {
+              "text": "97.1",
+              "className": ""
+            },
+            {
+              "text": "1.19",
+              "className": ""
+            },
+            {
+              "text": "0.52",
+              "className": ""
+            },
+            {
+              "text": "14.8",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DisCo",
+              "className": ""
+            },
+            {
+              "text": "88.3",
+              "className": ""
+            },
+            {
+              "text": "100.0",
+              "className": "best"
+            },
+            {
+              "text": "97.7",
+              "className": "best"
+            },
+            {
+              "text": "95.6",
+              "className": ""
+            },
+            {
+              "text": "1.44",
+              "className": ""
+            },
+            {
+              "text": "0.50",
+              "className": ""
+            },
+            {
+              "text": "15.1",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "Cometh",
+              "className": ""
+            },
+            {
+              "text": "90.5",
+              "className": ""
+            },
+            {
+              "text": "99.9",
+              "className": ""
+            },
+            {
+              "text": "92.6",
+              "className": ""
+            },
+            {
+              "text": "99.1",
+              "className": "best"
+            },
+            {
+              "text": "1.27",
+              "className": ""
+            },
+            {
+              "text": "0.54",
+              "className": ""
+            },
+            {
+              "text": "16.0",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DeFoG",
+              "className": ""
+            },
+            {
+              "text": "92.8",
+              "className": ""
+            },
+            {
+              "text": "99.9",
+              "className": ""
+            },
+            {
+              "text": "92.1",
+              "className": ""
+            },
+            {
+              "text": "98.9",
+              "className": ""
+            },
+            {
+              "text": "1.95",
+              "className": ""
+            },
+            {
+              "text": "0.55",
+              "className": ""
+            },
+            {
+              "text": "14.4",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "99.7",
+              "className": "best"
+            },
+            {
+              "text": "100.0",
+              "className": "best"
+            },
+            {
+              "text": "89.1",
+              "className": ""
+            },
+            {
+              "text": "96.7",
+              "className": ""
+            },
+            {
+              "text": "0.94",
+              "className": "best"
+            },
+            {
+              "text": "0.52",
+              "className": ""
+            },
+            {
+              "text": "8.6",
+              "className": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "guacamol",
+      "title": "GuacaMol",
+      "headers": [
+        "Method",
+        "Val. ↑",
+        "Uni. ↑",
+        "Nov. ↑",
+        "FCD score ↑",
+        "KL div. ↑"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "85.2",
+              "className": ""
+            },
+            {
+              "text": "100.0",
+              "className": "best"
+            },
+            {
+              "text": "99.9",
+              "className": "best"
+            },
+            {
+              "text": "68.0",
+              "className": ""
+            },
+            {
+              "text": "92.9",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DisCo",
+              "className": ""
+            },
+            {
+              "text": "86.6",
+              "className": ""
+            },
+            {
+              "text": "86.6",
+              "className": ""
+            },
+            {
+              "text": "86.5",
+              "className": ""
+            },
+            {
+              "text": "59.7",
+              "className": ""
+            },
+            {
+              "text": "92.6",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "Cometh",
+              "className": ""
+            },
+            {
+              "text": "98.9",
+              "className": ""
+            },
+            {
+              "text": "98.9",
+              "className": ""
+            },
+            {
+              "text": "97.6",
+              "className": ""
+            },
+            {
+              "text": "72.7",
+              "className": ""
+            },
+            {
+              "text": "96.7",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DeFoG",
+              "className": ""
+            },
+            {
+              "text": "99.0",
+              "className": ""
+            },
+            {
+              "text": "99.0",
+              "className": ""
+            },
+            {
+              "text": "97.9",
+              "className": ""
+            },
+            {
+              "text": "73.8",
+              "className": ""
+            },
+            {
+              "text": "97.7",
+              "className": "best"
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "99.1",
+              "className": "best"
+            },
+            {
+              "text": "100.0",
+              "className": "best"
+            },
+            {
+              "text": "97.0",
+              "className": ""
+            },
+            {
+              "text": "78.5",
+              "className": "best"
+            },
+            {
+              "text": "96.9",
+              "className": ""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "community-small",
+      "title": "Community-small",
+      "headers": [
+        "Method",
+        "Deg. ↓",
+        "Clus. ↓",
+        "Orbit ↓",
+        "Avg. ↓"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphRNN",
+              "className": ""
+            },
+            {
+              "text": "0.080",
+              "className": ""
+            },
+            {
+              "text": "0.120",
+              "className": ""
+            },
+            {
+              "text": "0.040",
+              "className": ""
+            },
+            {
+              "text": "0.080",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphAF",
+              "className": ""
+            },
+            {
+              "text": "0.180",
+              "className": ""
+            },
+            {
+              "text": "0.200",
+              "className": ""
+            },
+            {
+              "text": "0.020",
+              "className": ""
+            },
+            {
+              "text": "0.133",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphDF",
+              "className": ""
+            },
+            {
+              "text": "0.060",
+              "className": ""
+            },
+            {
+              "text": "0.120",
+              "className": ""
+            },
+            {
+              "text": "0.030",
+              "className": ""
+            },
+            {
+              "text": "0.070",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphVAE",
+              "className": ""
+            },
+            {
+              "text": "0.350",
+              "className": ""
+            },
+            {
+              "text": "0.980",
+              "className": ""
+            },
+            {
+              "text": "0.540",
+              "className": ""
+            },
+            {
+              "text": "0.623",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GNF",
+              "className": ""
+            },
+            {
+              "text": "0.200",
+              "className": ""
+            },
+            {
+              "text": "0.200",
+              "className": ""
+            },
+            {
+              "text": "0.110",
+              "className": ""
+            },
+            {
+              "text": "0.170",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "EDP-GNN",
+              "className": ""
+            },
+            {
+              "text": "0.053",
+              "className": ""
+            },
+            {
+              "text": "0.144",
+              "className": ""
+            },
+            {
+              "text": "0.026",
+              "className": ""
+            },
+            {
+              "text": "0.074",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GPrinFlowNet",
+              "className": ""
+            },
+            {
+              "text": "0.021",
+              "className": "second"
+            },
+            {
+              "text": "0.068",
+              "className": ""
+            },
+            {
+              "text": "0.021",
+              "className": ""
+            },
+            {
+              "text": "0.037",
+              "className": "second"
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "SPECTRE",
+              "className": ""
+            },
+            {
+              "text": "0.048",
+              "className": ""
+            },
+            {
+              "text": "0.049",
+              "className": ""
+            },
+            {
+              "text": "0.016",
+              "className": ""
+            },
+            {
+              "text": "0.038",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GDSS",
+              "className": ""
+            },
+            {
+              "text": "0.045",
+              "className": ""
+            },
+            {
+              "text": "0.086",
+              "className": ""
+            },
+            {
+              "text": "0.007",
+              "className": "second"
+            },
+            {
+              "text": "0.046",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "0.047",
+              "className": ""
+            },
+            {
+              "text": "0.041",
+              "className": "second"
+            },
+            {
+              "text": "0.026",
+              "className": ""
+            },
+            {
+              "text": "0.038",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "0.006",
+              "className": "best"
+            },
+            {
+              "text": "0.022",
+              "className": "best"
+            },
+            {
+              "text": "0.002",
+              "className": "best"
+            },
+            {
+              "text": "0.010",
+              "className": "best"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ego-small",
+      "title": "Ego-small",
+      "headers": [
+        "Method",
+        "Deg. ↓",
+        "Clus. ↓",
+        "Orbit ↓",
+        "Avg. ↓"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphRNN",
+              "className": ""
+            },
+            {
+              "text": "0.090",
+              "className": ""
+            },
+            {
+              "text": "0.220",
+              "className": ""
+            },
+            {
+              "text": "0.003",
+              "className": ""
+            },
+            {
+              "text": "0.104",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphAF",
+              "className": ""
+            },
+            {
+              "text": "0.030",
+              "className": ""
+            },
+            {
+              "text": "0.110",
+              "className": ""
+            },
+            {
+              "text": "0.001",
+              "className": "best"
+            },
+            {
+              "text": "0.047",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphDF",
+              "className": ""
+            },
+            {
+              "text": "0.040",
+              "className": ""
+            },
+            {
+              "text": "0.130",
+              "className": ""
+            },
+            {
+              "text": "0.010",
+              "className": ""
+            },
+            {
+              "text": "0.060",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphVAE",
+              "className": ""
+            },
+            {
+              "text": "0.130",
+              "className": ""
+            },
+            {
+              "text": "0.170",
+              "className": ""
+            },
+            {
+              "text": "0.050",
+              "className": ""
+            },
+            {
+              "text": "0.117",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GNF",
+              "className": ""
+            },
+            {
+              "text": "0.030",
+              "className": ""
+            },
+            {
+              "text": "0.100",
+              "className": ""
+            },
+            {
+              "text": "0.001",
+              "className": "best"
+            },
+            {
+              "text": "0.044",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "EDP-GNN",
+              "className": ""
+            },
+            {
+              "text": "0.052",
+              "className": ""
+            },
+            {
+              "text": "0.093",
+              "className": ""
+            },
+            {
+              "text": "0.007",
+              "className": ""
+            },
+            {
+              "text": "0.051",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "SPECTRE",
+              "className": ""
+            },
+            {
+              "text": "0.078",
+              "className": ""
+            },
+            {
+              "text": "0.078",
+              "className": ""
+            },
+            {
+              "text": "0.007",
+              "className": ""
+            },
+            {
+              "text": "0.054",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GDSS",
+              "className": ""
+            },
+            {
+              "text": "0.021",
+              "className": ""
+            },
+            {
+              "text": "0.024",
+              "className": "best"
+            },
+            {
+              "text": "0.007",
+              "className": ""
+            },
+            {
+              "text": "0.017",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "0.015",
+              "className": "best"
+            },
+            {
+              "text": "0.029",
+              "className": ""
+            },
+            {
+              "text": "0.005",
+              "className": ""
+            },
+            {
+              "text": "0.016",
+              "className": "best"
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "0.015",
+              "className": "best"
+            },
+            {
+              "text": "0.027",
+              "className": "second"
+            },
+            {
+              "text": "0.004",
+              "className": ""
+            },
+            {
+              "text": "0.016",
+              "className": "best"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "enzymes",
+      "title": "Enzymes",
+      "headers": [
+        "Method",
+        "Deg. ↓",
+        "Clus. ↓",
+        "Orbit ↓",
+        "Avg. ↓"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphRNN",
+              "className": ""
+            },
+            {
+              "text": "0.017",
+              "className": ""
+            },
+            {
+              "text": "0.062",
+              "className": ""
+            },
+            {
+              "text": "0.046",
+              "className": ""
+            },
+            {
+              "text": "0.042",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphAF",
+              "className": ""
+            },
+            {
+              "text": "1.669",
+              "className": ""
+            },
+            {
+              "text": "1.283",
+              "className": ""
+            },
+            {
+              "text": "0.266",
+              "className": ""
+            },
+            {
+              "text": "1.073",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphDF",
+              "className": ""
+            },
+            {
+              "text": "1.503",
+              "className": ""
+            },
+            {
+              "text": "1.061",
+              "className": ""
+            },
+            {
+              "text": "0.202",
+              "className": ""
+            },
+            {
+              "text": "0.922",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphVAE",
+              "className": ""
+            },
+            {
+              "text": "1.369",
+              "className": ""
+            },
+            {
+              "text": "0.629",
+              "className": ""
+            },
+            {
+              "text": "0.191",
+              "className": ""
+            },
+            {
+              "text": "0.730",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "EDP-GNN",
+              "className": ""
+            },
+            {
+              "text": "0.023",
+              "className": ""
+            },
+            {
+              "text": "0.268",
+              "className": ""
+            },
+            {
+              "text": "0.082",
+              "className": ""
+            },
+            {
+              "text": "0.124",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GPrinFlowNet",
+              "className": ""
+            },
+            {
+              "text": "0.021",
+              "className": ""
+            },
+            {
+              "text": "0.088",
+              "className": ""
+            },
+            {
+              "text": "0.009",
+              "className": ""
+            },
+            {
+              "text": "0.039",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "SPECTRE",
+              "className": ""
+            },
+            {
+              "text": "0.136",
+              "className": ""
+            },
+            {
+              "text": "0.195",
+              "className": ""
+            },
+            {
+              "text": "0.125",
+              "className": ""
+            },
+            {
+              "text": "0.152",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GDSS",
+              "className": ""
+            },
+            {
+              "text": "0.026",
+              "className": ""
+            },
+            {
+              "text": "0.061",
+              "className": "best"
+            },
+            {
+              "text": "0.009",
+              "className": ""
+            },
+            {
+              "text": "0.032",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DiGress",
+              "className": ""
+            },
+            {
+              "text": "0.004",
+              "className": "best"
+            },
+            {
+              "text": "0.083",
+              "className": ""
+            },
+            {
+              "text": "0.002",
+              "className": "best"
+            },
+            {
+              "text": "0.030",
+              "className": "second"
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "0.011",
+              "className": "second"
+            },
+            {
+              "text": "0.061",
+              "className": "best"
+            },
+            {
+              "text": "0.007",
+              "className": "second"
+            },
+            {
+              "text": "0.027",
+              "className": "best"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sbm",
+      "title": "SBM",
+      "headers": [
+        "Method",
+        "Deg. ↓",
+        "Clus. ↓",
+        "Orb. ↓",
+        "Spec. ↓",
+        "Avg. ↓",
+        "V.U.N. ↑"
+      ],
+      "rows": [
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GraphRNN",
+              "className": ""
+            },
+            {
+              "text": "0.0055",
+              "className": ""
+            },
+            {
+              "text": "0.0584",
+              "className": ""
+            },
+            {
+              "text": "0.0785",
+              "className": ""
+            },
+            {
+              "text": "0.0065",
+              "className": ""
+            },
+            {
+              "text": "0.0372",
+              "className": ""
+            },
+            {
+              "text": "0.05",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GRAN",
+              "className": ""
+            },
+            {
+              "text": "0.0113",
+              "className": ""
+            },
+            {
+              "text": "0.0553",
+              "className": ""
+            },
+            {
+              "text": "0.0540",
+              "className": ""
+            },
+            {
+              "text": "0.0054",
+              "className": "second"
+            },
+            {
+              "text": "0.0315",
+              "className": ""
+            },
+            {
+              "text": "0.25",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "EDP-GNN",
+              "className": ""
+            },
+            {
+              "text": "0.0011",
+              "className": "second"
+            },
+            {
+              "text": "0.0552",
+              "className": ""
+            },
+            {
+              "text": "0.0520",
+              "className": ""
+            },
+            {
+              "text": "0.0070",
+              "className": ""
+            },
+            {
+              "text": "0.0288",
+              "className": ""
+            },
+            {
+              "text": "-",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "SPECTRE",
+              "className": ""
+            },
+            {
+              "text": "0.0015",
+              "className": ""
+            },
+            {
+              "text": "0.0521",
+              "className": ""
+            },
+            {
+              "text": "0.0412",
+              "className": "best"
+            },
+            {
+              "text": "0.0056",
+              "className": ""
+            },
+            {
+              "text": "0.0251",
+              "className": "second"
+            },
+            {
+              "text": "0.53",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GDSS",
+              "className": ""
+            },
+            {
+              "text": "0.0212",
+              "className": ""
+            },
+            {
+              "text": "0.0646",
+              "className": ""
+            },
+            {
+              "text": "0.0894",
+              "className": ""
+            },
+            {
+              "text": "0.0128",
+              "className": ""
+            },
+            {
+              "text": "0.0470",
+              "className": ""
+            },
+            {
+              "text": "0.05",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "RefineGen",
+              "className": ""
+            },
+            {
+              "text": "0.0141",
+              "className": ""
+            },
+            {
+              "text": "0.0528",
+              "className": ""
+            },
+            {
+              "text": "0.0809",
+              "className": ""
+            },
+            {
+              "text": "0.0071",
+              "className": ""
+            },
+            {
+              "text": "0.0387",
+              "className": ""
+            },
+            {
+              "text": "0.75",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "GruM",
+              "className": ""
+            },
+            {
+              "text": "0.0015",
+              "className": ""
+            },
+            {
+              "text": "0.0589",
+              "className": ""
+            },
+            {
+              "text": "0.0450",
+              "className": ""
+            },
+            {
+              "text": "0.0077",
+              "className": ""
+            },
+            {
+              "text": "0.0283",
+              "className": ""
+            },
+            {
+              "text": "0.85",
+              "className": "best"
+            }
+          ]
+        },
+        {
+          "rowClass": "",
+          "cells": [
+            {
+              "text": "DeFoG",
+              "className": ""
+            },
+            {
+              "text": "0.0006",
+              "className": "best"
+            },
+            {
+              "text": "0.0517",
+              "className": ""
+            },
+            {
+              "text": "0.0556",
+              "className": ""
+            },
+            {
+              "text": "0.0054",
+              "className": "second"
+            },
+            {
+              "text": "0.0283",
+              "className": ""
+            },
+            {
+              "text": "0.80",
+              "className": ""
+            }
+          ]
+        },
+        {
+          "rowClass": "hogdiff-row",
+          "cells": [
+            {
+              "text": "HOG-Diff",
+              "className": ""
+            },
+            {
+              "text": "0.0028",
+              "className": ""
+            },
+            {
+              "text": "0.0500",
+              "className": "second"
+            },
+            {
+              "text": "0.0428",
+              "className": "second"
+            },
+            {
+              "text": "0.0043",
+              "className": "best"
+            },
+            {
+              "text": "0.0249",
+              "className": "best"
+            },
+            {
+              "text": "0.83",
+              "className": "second"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
