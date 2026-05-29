@@ -9,6 +9,11 @@
 # Otherwise, leave `link` blank.
 # Please add the new entries on the top although these are sorted by date. 
 
+- title: 3 papers accepted at ICML 2026
+  date: 2026-03
+  description: Max, Lennart, Ed, Lucas and Melih have accepted papers at ICML 2026 taking place in Seoul, Korea.
+  url: https://circle-group.github.io/research/
+
 - title: UKRI Isambard AI Grant
   date: 2026-03
   description: CIRCLE is awarded 300,000 GPUh of compute on the Isambard-AI AIRR service for AI4Science
