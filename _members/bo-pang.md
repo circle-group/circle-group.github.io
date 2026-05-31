@@ -1,9 +1,9 @@
 ---
 name: Bo Pang
 image: images/prof_pic_bo.jpg
-description: Visitor
-role: visitor
-group: visitor
+description: Alumni
+role: alumni
+group: alumni
 links:
   email: bo98@stu.pku.edu.cn
   home-page: https://skinboc.github.io/my_webpage/
@@ -11,4 +11,4 @@ links:
   linkedin: bo-pang-a4b88a32
 ---
 
-<strong>Bo Pang</strong> is currently a PhD candidate at School of CS, Peking University and a visiting student at CIRCLE. His major research interest include Geometry processing, Computer Graphics, 3D Learning, Neural Representation, etc.
+<strong>Bo Pang</strong> is currently a PhD candidate at School of CS, Peking University and was a visiting student at CIRCLE. His major research interests include Geometry processing, Computer Graphics, 3D Learning, Neural Representation, etc.
