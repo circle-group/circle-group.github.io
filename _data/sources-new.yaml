@@ -117,7 +117,7 @@
   buttons:
     - type: preprint
       link: https://arxiv.org/abs/2505.17150
-  
+
 - title: 'Large Learning Rates Simultaneously Achieve Robustness to Spurious Correlations and Compressibility'
   authors:
     - Melih Barsbey
@@ -313,7 +313,7 @@
   buttons:
     - type: website
       text: Website
-      link: https://circle-group.github.io/research/digeo
+      link: https://circle-group.github.io/research/DSG
 
 - title: 'MoLingo: Motion–Language Alignment for Text-to-Human Motion Generation'
   authors:
@@ -348,9 +348,9 @@
   link: https://circle-group.github.io/research/PoseDFlow
   buttons:
     - type: preprint
-      link: 
+      link:
     - type: source
-      link: 
+      link:
     - type: website
       text: Website
       link: https://circle-group.github.io/research/PoseDFlow

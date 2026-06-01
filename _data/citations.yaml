@@ -331,7 +331,7 @@
   buttons:
   - type: website
     text: Website
-    link: https://circle-group.github.io/research/digeo
+    link: https://circle-group.github.io/research/DSG
   plugin: sources.py
   file: sources-new.yaml
 - title: "MoLingo: Motion\u2013Language Alignment for Text-to-Human Motion Generation"
