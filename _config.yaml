@@ -1,6 +1,6 @@
 # site properties and page defaults
 title: CIRCLE Group
-subtitle: 
+subtitle:
 description: Pioneering the future of intelligent perception by fusing deep learning, topology, geometry, and pyhsics to teach machines how to see and understand the world.
 header: images/background.jpg
 footer: images/footer.jpg
@@ -51,6 +51,14 @@ plugins:
   - jekyll-redirect-from
   - jekyll-feed
   - jekyll-last-modified-at
+
+# jekyll-spaceship configuration
+# Override the MathJax processor's default scripts to drop the compromised
+# polyfill.io
+jekyll-spaceship:
+  mathjax-processor:
+    src:
+      - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 # code block syntax highlighting
 highlighter: rouge
