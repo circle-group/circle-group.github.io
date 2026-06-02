@@ -247,7 +247,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <title>NRMF</title>
+  <title>Topological Neural Operators</title>
   <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
@@ -533,7 +533,7 @@
                         <!-- AI-generated Voice Section -->
                         <!-- <hr style="margin: 20px 0; border: none; border-top: 1px solid #ddd;"> -->
                         <audio controls style="width: 100%; border-radius: 5px;">
-                            <source src="static/audio/ai_generated_intro.wav" type="audio/mpeg">
+                            <source src="static/audio/ai_generated_intro.m4a" type="audio/mpeg">
                             Your browser does not support the audio element.
                         </audio>
                         <p style="font-family: 'Arial', sans-serif; font-size: 0.9rem; color: #666; font-weight: bold; text-align: center; margin-top: 10px;">
@@ -576,35 +576,6 @@
 </section> -->
 <!-- End teaser video -->
 
-<!-- Abstract Section Combined with AI-generated Voice -->
-<!-- <section class="section">
-<div class="abstract-container">
-    <h2>Abstract</h2>
-    <p>
-        We introduce <strong><span style="color:#93B3E5;">Neural Riemannian Motion Fields (NRMF)</span></strong>, a novel 3D generative human motion prior that enables robust, temporally consistent, and physically plausible 3D motion recovery. Unlike existing VAE or diffusion-based methods, our higher-order motion prior explicitly models the human motion in the zero level set of a collection of neural distance fields (NDFs) corresponding to pose, transition (velocity), and acceleration dynamics. Our framework is rigorous in the sense that our NDFs are constructed on the product space of joint rotations, their angular velocities, and angular accelerations, respecting the geometry of the underlying articulations. We further introduce: (i) a novel adaptive-step hybrid algorithm for projecting onto the set of plausible motions, and (ii) a novel geometric integrator to “roll out” realistic motion trajectories during test-time-optimization and generation. Our experiments show significant and consistent gains: trained on the AMASS dataset, NRMF remarkably generalizes across multiple input modalities and to diverse tasks ranging from denoising to motion in-betweening and fitting to partial 2D / 3D observations.
-    </p>
-
-    <audio controls style="width: 100%; border-radius: 5px;">
-        <source src="static/audio/ai_generated_intro.wav" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p style="font-family: 'Arial', sans-serif; font-size: 0.9rem; color: #666; font-weight: bold; text-align: center; margin-top: 10px;">
-        <i class="fas fa-microphone-alt" style="font-size: 1rem; color: #007bff; margin-right: 5px;"></i>
-        AI-generated Podcast (Paper Introduction)
-    </p>
-</div>
-</section> -->
-	
-<!-- Video Section -->
-<!-- <div class="video-section" style="max-width: 800px; margin: 40px auto; text-align: center;">
-    <video controls style="width: 100%; border-radius: 10px; aspect-ratio: 16 / 9;">
-        <source src="static/videos/presentation.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>-->
-    <!-- <p style="font-family: 'Arial', sans-serif; font-size: 1.2rem; color: #444; font-weight: bold; margin-top: 15px;">
-        Video Presentation
-    </p> -->
-<!-- </div>-->
 
 <!-- Method Overview Section -->
 <div class="method-container" style="max-width: 800px; margin: 40px auto; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);">
@@ -615,6 +586,17 @@
     </p>
     <div style="text-align: center; margin-top: 20px;">
         <img src="static/images/teaser.jpg" alt="Method Overview Diagram" style="width: 100%; max-width: 700px; border-radius: 10px;">
+    </div>
+</div>
+
+<div class="method-container" style="max-width: 800px; margin: 40px auto; background: #ffffff; padding: 20px; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);">
+    <!-- Image in Method Overview -->
+    <h2 style="text-align: center; font-size: 2rem; font-weight: bold;">How Well Does It Perform?</h2>
+    <p style="text-align: justify;">
+      Qualitative results across three models: Vanilla MPNN vs. TNO (no harmonics) vs. TNO with harmonics / copresheaves on Anisotropic Darcy (left) and Advection Diffusion (right), for which we depict model inputs and targets (col. 1), model predictions (col. 2), and model errors (col. 3).
+    </p>
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="static/images/results.jpg" alt="Results Overview" style="width: 100%; max-width: 700px; border-radius: 10px;">
     </div>
 </div>
 
@@ -630,12 +612,12 @@
           <!-- Content -->
           <div class="column">
             <div class="content">
-              <div class="poster-static-content">
-                <!-- Replace the video with an image or screenshot -->
+              To appear...
+              <!--<div class="poster-static-content">
                 <img src="" alt="Presentation Poster">
               </div>
             </div>
-          </div>
+          </div>-->
         </div>
       </div>
     </div>
@@ -708,22 +690,7 @@
   </div>
 </section>
 
-<!-- ===== BibTeX with EXACT-style Copy button ===== -->
-<section class="section" id="BibTeX">
-  <!-- <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
 
-    <div class="bibtex-wrap">
-      <pre id="bibtexEntry" class="bibtex-block">@article{yu2025nrmf,
-        title = {Geometric Neural Distance Fields for Learning Human Motion Priors},
-        author = {Yu, Zhengdi and Foti, Simone and Zhang, Linguang and Zhao, Amy and Keskin, Cem and Zafeiriou, Stefanos and Birdal, Tolga},
-        journal = {arXiv preprint arXiv:2509.09667},
-        year = {2025}
-      }</pre>      
-      <button id="copyBibtex" class="copy-btn">Copy</button>
-    </div>
-  </div>
-</section> -->
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop">
     <h2 class="title">Bibtex</h2>
