@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collapsed Effective Operators for Higher-order Structures</title>
+  <meta name="description" content="Collapsed Effective Operators condense higher-order degrees of freedom into a single vertex-level operator via Schur complementation of a graded Laplacian. ICML 2026." />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Collapsed Effective Operators for Higher-order Structures" />
+  <meta property="og:description" content="Condensing higher-order topology into a single, principled vertex-level spectral operator. ICML 2026." />
+  <meta property="og:image" content="https://circle-group.github.io/research/CollapsedEffectiveOperators/static/images/teaser.jpg" />
+  <meta property="og:url" content="https://circle-group.github.io/research/CollapsedEffectiveOperators/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="static/css/style.css" />
+
+  <!-- MathJax -->
+  <script>
+    window.MathJax = {
+      tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+      svg: { fontCache: 'global' }
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+</head>
+<body>
+
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <div class="nav__inner">
+      <a class="nav__brand" href="#top">
+        <span class="nav__mark" aria-hidden="true"></span>
+        Collapsed Effective Operators
+      </a>
+      <nav class="nav__links">
+        <a href="#abstract">Abstract</a>
+        <a href="#idea">Idea</a>
+        <a href="#method">Method</a>
+        <a href="#results">Results</a>
+        <a href="#bibtex">BibTeX</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="wrap">
+        <div class="venue">
+          <span class="venue__pill">ICML 2026</span>
+          <span class="venue__sep">International Conference on Machine Learning</span>
+        </div>
+
+        <h1 class="title">
+          Collapsed Effective Operators<br />
+          <span class="title__sub">for Higher-order Structures</span>
+        </h1>
+
+        <ul class="authors">
+          <li class="author">
+            <a href="https://github.com/mk2510" target="_blank" rel="noopener">
+              <img class="author__img" src="static/images/authors/krahn.jpg" alt="Maximilian Krahn" loading="lazy" />
+              <span class="author__name">Maximilian Krahn<sup class="mark">&#42;</sup></span>
+            </a>
+            <span class="author__aff">Imperial</span>
+          </li>
+          <li class="author">
+            <a href="https://bastianlb.github.io" target="_blank" rel="noopener">
+              <img class="author__img" src="static/images/authors/bastian.jpg" alt="Lennart Bastian" loading="lazy" />
+              <span class="author__name">Lennart Bastian<sup class="mark">&#42;</sup></span>
+            </a>
+            <span class="author__aff">Imperial · TUM · MCML</span>
+          </li>
+          <li class="author">
+            <a href="https://users.aalto.fi/~gargv3/" target="_blank" rel="noopener">
+              <img class="author__img" src="static/images/authors/garg.jpg" alt="Vikas Garg" loading="lazy" />
+              <span class="author__name">Vikas Garg<sup class="mark">&dagger;</sup></span>
+            </a>
+            <span class="author__aff">Aalto · YaiYai</span>
+          </li>
+          <li class="author">
+            <a href="http://www.schuller.it/" target="_blank" rel="noopener">
+              <img class="author__img" src="static/images/authors/schuller.jpg" alt="Björn Schuller" loading="lazy" />
+              <span class="author__name">Björn Schuller<sup class="mark">&dagger;</sup></span>
+            </a>
+            <span class="author__aff">Imperial · TUM · MCML</span>
+          </li>
+          <li class="author">
+            <a href="https://tolgabirdal.github.io" target="_blank" rel="noopener">
+              <img class="author__img" src="static/images/authors/birdal.jpg" alt="Tolga Birdal" loading="lazy" />
+              <span class="author__name">Tolga Birdal<sup class="mark">&dagger;</sup></span>
+            </a>
+            <span class="author__aff">Imperial</span>
+          </li>
+        </ul>
+
+        <p class="affils">
+          Imperial College London &nbsp;·&nbsp; Aalto University &nbsp;·&nbsp; Technical University of Munich (TUM)
+          &nbsp;·&nbsp; Munich Center for Machine Learning (MCML) &nbsp;·&nbsp; YaiYai Ltd
+        </p>
+
+        <p class="contrib"><span>&#42;</span> Equal contribution &nbsp;·&nbsp; <span>&dagger;</span> Equal senior authorship</p>
+
+        <div class="actions">
+          <span class="btn btn--soon" aria-disabled="true">
+            <span class="btn__ico">📄</span> arXiv <span class="btn__tag">coming soon</span>
+          </span>
+          <a class="btn btn--primary" href="https://github.com/mk2510/CollapsedEffectiveOperators" target="_blank" rel="noopener">
+            <span class="btn__ico">&lt;/&gt;</span> Code
+          </a>
+          <a class="btn" href="#bibtex">
+            <span class="btn__ico">&#10078;</span> BibTeX
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== ABSTRACT ===================== -->
+    <section class="section" id="abstract">
+      <div class="wrap wrap--narrow">
+        <h2 class="h2"><span class="h2__num">01</span> Abstract</h2>
+        <p class="lede">
+          Higher-order structures are powerful relational modeling tools, yet existing spectral operators decompose the
+          topology into separate ranks, leaving practitioners to fuse the information back to vertices through ad hoc choices.
+        </p>
+        <p>
+          We introduce <em>Collapsed Effective Operators</em>, which condense higher-order degrees of freedom into a single
+          vertex-level operator via Schur complementation of a graded Laplacian. This yields a (generally dense) operator
+          that encodes long-range interactions mediated by topology and is applicable to arbitrary higher-order constructs.
+          We show it preserves positive semi-definiteness with a spectral upper bound relative to the rank-0 Hodge Laplacian,
+          effectively lowering system energy under higher-order connectivity. Empirically, our operator improves spectral
+          clustering, signal smoothing, and enables the inclusion of topological features in neural network architectures via
+          positional encoding.
+        </p>
+      </div>
+
+      <figure class="teaser">
+        <picture>
+          <source srcset="static/images/teaser.webp" type="image/webp" />
+          <img src="static/images/teaser.jpg" alt="Spectral embeddings of protein 1A0C colored by the collapsed effective operator versus the graph Laplacian." loading="lazy" />
+        </picture>
+        <figcaption>
+          <strong>Collapsed effective operators reveal secondary-structure-aware spectral modes.</strong>
+          On protein 1A0C (437 residues), residues are colored by the leading spectral embedding of our collapsed operator
+          \(\mathbf{S}\) versus the graph Laplacian \(\mathbf{L}^{G}\).
+          <em>Left&nbsp;→&nbsp;right:</em> (I)&nbsp;ground-truth secondary structure; (II)&nbsp;\(\mathbf{L}^{G}\) yields smoother, backbone-sequential modes;
+          (III)&nbsp;modes from \(\mathbf{S}\) organize around secondary-structure elements; (IV)&nbsp;the backbone graph behind \(\mathbf{L}^{G}\);
+          (V)&nbsp;\(\mathbf{S}\) as a vertex-level operator, with higher-order cells collapsed into within-cell couplings
+          (helix&nbsp;<span class="dot dot--red"></span>, sheet&nbsp;<span class="dot dot--blue"></span>, coil&nbsp;<span class="dot dot--grey"></span>).
+        </figcaption>
+      </figure>
+    </section>
+
+    <!-- ===================== BACKGROUND ===================== -->
+    <section class="section section--tint" id="background">
+      <div class="wrap">
+        <h2 class="h2"><span class="h2__num">02</span> Higher-order structures, one signal</h2>
+        <div class="split">
+          <div class="split__text">
+            <p>
+              Graphs have emerged as a universal language for relational data, but they are fundamentally <em>dyadic</em>
+              and cannot represent higher-order interactions directly. The collective behavior of complex systems, from
+              protein complexes and chemical reactions to neural circuits and collaborative networks, is instead
+              <em>polyadic</em>: it emerges from the simultaneous interaction of many components. Hypergraphs, simplicial
+              complexes, and combinatorial complexes capture this richness.
+            </p>
+            <p>
+              Yet across these settings, the signal of interest usually lives on one specific rank, the vertices.
+              Classical spectral operators such as the Hodge Laplacian decompose the topology rank by rank, which leaves a
+              persistent <em>fusion problem</em>: how should rank-specific representations be combined to inform node-level
+              predictions? Collapsed effective operators remove this question by construction.
+            </p>
+          </div>
+          <figure class="split__fig">
+            <img src="static/images/concept_cc.svg" alt="Topological domains of increasing flexibility: graph, hypergraph, simplicial complex, cell complex, and combinatorial complex." />
+            <figcaption>Topological domains of increasing flexibility, from graphs to combinatorial complexes.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== KEY IDEA ===================== -->
+    <section class="section" id="idea">
+      <div class="wrap">
+        <h2 class="h2"><span class="h2__num">03</span> The idea in one operator</h2>
+        <div class="idea">
+          <div class="idea__text">
+            <p>
+              Our approach is inspired by the physics of <em>effective theories</em>, where a system is simplified by
+              <strong>integrating out</strong> the degrees of freedom that are not directly observable. We apply the same
+              idea to signals on topological structures: rather than computing dynamics across every cell rank, we
+              <strong>marginalize</strong> the higher-order cells onto the vertices through the Schur complement of a
+              graded Laplacian:
+            </p>
+            <div class="eq">
+              \[ \mathbf{S} \;=\; \mathbf{A} \;-\; \mathbf{X}\,\mathbf{C}^{-1}\mathbf{X}^{\!\top} \]
+            </div>
+            <p>
+              We split each signal into the vertex part we keep and the higher-order part we eliminate, leaving the vertex
+              block \(\mathbf{A}\), the internal edge-, face-, and higher-cell dynamics \(\mathbf{C}\), and their coupling
+              \(\mathbf{X}\). For a fixed vertex signal, the collapse chooses the higher-order values that make the total
+              energy as small as possible; substituting them back, \(\mathbf{X}\mathbf{C}^{-1}\mathbf{X}^{\!\top}\) records
+              the vertex-level energy absorbed by the eliminated cells. The result acts on the nodes alone, is positive
+              semi-definite, and carries a clear energy interpretation, with \( \mathbf{0} \preceq \mathbf{S} \preceq \mathbf{A} \).
+            </p>
+          </div>
+          <figure class="idea__fig">
+            <img src="static/images/schur_collapse.svg" alt="A higher-order cell with a hidden interior node is replaced, via the Schur complement, by dense couplings among its boundary vertices." />
+            <figcaption>A higher-order cell is eliminated, leaving dense couplings among the vertices it touched.</figcaption>
+          </figure>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <span class="card__k">A single vertex operator</span>
+            <p>An effective operator on the vertices that captures the influence of the higher-order structure, without handcrafted aggregation schemes or domain-specific heuristics.</p>
+          </article>
+          <article class="card">
+            <span class="card__k">An interpretable spectrum</span>
+            <p>The operator is positive semi-definite and admits a clear spectral interpretation, reducing the effective conductance between nodes that share a common cell.</p>
+          </article>
+          <article class="card">
+            <span class="card__k">Beyond rank limits</span>
+            <p>It aggregates topological features such as isolated cells down to the node level, which existing Laplacians cannot easily model.</p>
+          </article>
+          <article class="card">
+            <span class="card__k">Efficient by construction</span>
+            <p>We never form \(\mathbf{S}\) explicitly; a regularized solver applies its action through the sparse block structure of the lifted space.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== METHOD ===================== -->
+    <section class="section section--tint" id="method">
+      <div class="wrap">
+        <h2 class="h2"><span class="h2__num">04</span> Method</h2>
+        <div class="split split--rev">
+          <div class="split__text">
+            <p>
+              We assemble a <strong>graded Laplacian</strong> \(\mathbf{L}^{\star}\), a symmetric, block-tridiagonal
+              operator over the graded cochain space. Its diagonal blocks are weighted rank-local (Hodge) Laplacians, and
+              its off-diagonal blocks couple adjacent ranks through the boundary maps. Unlike the Hodge Laplacians, which
+              act separately at each rank, \(\mathbf{L}^{\star}\) is a single operator on the entire complex.
+            </p>
+            <p>
+              Splitting \(\mathbf{L}^{\star}\) into the vertex block \(\mathbf{A}\), the higher-order block \(\mathbf{C}\), and
+              their coupling \(\mathbf{X}\), we marginalize the higher-order cells by Schur complementation. In practice
+              \(\mathbf{C}\) can be singular, since its kernel encodes homology. We therefore apply a regularized form with
+              controlled error, and never form the operator explicitly:
+            </p>
+            <div class="eq">
+              \[ \mathbf{S}_{\varepsilon} \;=\; \mathbf{A} \;-\; \mathbf{X}\,(\mathbf{C} + \varepsilon\mathbf{I})^{-1}\mathbf{X}^{\!\top} \]
+            </div>
+            <p>
+              Its action \(\mathbf{S}_{\varepsilon}\mathbf{v}\) reduces to sparse, preconditioned conjugate-gradient solves,
+              amortizing the higher-order cost to preprocessing while preserving the sparsity of the boundary structure.
+            </p>
+          </div>
+          <figure class="split__fig">
+            <picture>
+              <source srcset="static/images/pipeline.webp" type="image/webp" />
+              <img src="static/images/pipeline.png" alt="Pipeline: cell labels and heat-kernel signatures are encoded as positional encodings and fed to a transformer." />
+            </picture>
+            <figcaption>Spectral features of \(\mathbf{S}_{\varepsilon}\) serve as positional encodings in downstream architectures.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== RESULTS ===================== -->
+    <section class="section" id="results">
+      <div class="wrap">
+        <h2 class="h2"><span class="h2__num">05</span> Results</h2>
+
+        <!-- clustering -->
+        <div class="result">
+          <div class="result__media">
+            <picture>
+              <source srcset="static/images/clustering.webp" type="image/webp" />
+              <img src="static/images/clustering.jpg" alt="Unsupervised protein secondary-structure segmentation: ground truth, graph Laplacian (46.9%), and our operator (70.9%)." />
+            </picture>
+          </div>
+          <div class="result__text">
+            <h3 class="h3">Recovering protein secondary structure</h3>
+            <p>
+              On the Topotein benchmark, we segment protein secondary structure by clustering Heat Kernel Signatures.
+              The graph Laplacian cannot capture interleaved helices and sheets; our effective operator recovers these
+              non-local structures, raising accuracy from <strong>46.9%</strong> to <strong>70.9%</strong> without
+              supervision.
+            </p>
+          </div>
+        </div>
+
+        <!-- smoothing -->
+        <div class="result result--rev">
+          <div class="result__media result__media--pad">
+            <picture>
+              <source srcset="static/images/smoothing.webp" type="image/webp" />
+              <img src="static/images/smoothing.png" alt="A noisy graph signal at t=0 smoothed by the operator at t=3." />
+            </picture>
+          </div>
+          <div class="result__text">
+            <h3 class="h3">A topologically selective filter</h3>
+            <p>
+              As a smoothing operator, \(\mathbf{S}_{\varepsilon}\) suppresses noise while preserving higher-order structure.
+              When spurious shortcut edges are injected into a geometric graph, the graph Laplacian's reconstruction error
+              climbs ~50%, while ours stays nearly flat.
+            </p>
+            <table class="tbl">
+              <thead>
+                <tr><th>Shortcut edges</th><th>\(\mathbf{L}^{G}\)</th><th>\(\mathbf{L}^{\text{mult}}\)</th><th>\(\mathbf{S}_{\varepsilon}\)</th></tr>
+              </thead>
+              <tbody>
+                <tr><td>0</td><td>0.066</td><td>0.074</td><td class="win">0.066</td></tr>
+                <tr><td>100</td><td>0.082</td><td>0.081</td><td class="win">0.074</td></tr>
+                <tr><td>150</td><td>0.092</td><td>0.088</td><td class="win">0.072</td></tr>
+                <tr><td>200</td><td>0.099</td><td>0.094</td><td class="win">0.073</td></tr>
+              </tbody>
+            </table>
+            <p class="cap">Reconstruction MSE on a random geometric graph (lower is better).</p>
+          </div>
+        </div>
+
+        <!-- node classification -->
+        <div class="result">
+          <div class="result__text result__text--full">
+            <h3 class="h3">Topology as positional encoding</h3>
+            <p>
+              Spectral positional encodings from \(\mathbf{S}_{\varepsilon}\) (<em>SchurPE</em>) improve node classification on
+              proteins, beating standard Laplacian encodings across both GCN and Graph&nbsp;Transformer backbones on the
+              <em>Contact</em> and <em>ResType</em> tasks.
+            </p>
+            <div class="tbl-scroll">
+              <table class="tbl tbl--wide">
+                <thead>
+                  <tr><th>Model + PE</th><th>Contact</th><th>ResType</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>GCN + NoPE</td><td>0.471</td><td>0.524</td></tr>
+                  <tr><td>GCN + LaplacePE</td><td>0.480</td><td>0.582</td></tr>
+                  <tr><td>GCN + <strong>SchurPE</strong></td><td class="win">0.494</td><td class="win">0.666</td></tr>
+                  <tr class="tbl__rule"><td>GT + NoPE</td><td>0.463</td><td>0.773</td></tr>
+                  <tr><td>GT + LaplacePE</td><td>0.551</td><td>0.762</td></tr>
+                  <tr><td>GT + <strong>SchurPE</strong></td><td class="win">0.573</td><td class="win">0.789</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="cap">Node-classification accuracy on proteins-as-combinatorial-complexes. Best per block in bold.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== BIBTEX ===================== -->
+    <section class="section section--tint" id="bibtex">
+      <div class="wrap wrap--narrow">
+        <h2 class="h2"><span class="h2__num">06</span> Citation</h2>
+        <div class="bib">
+          <button class="bib__copy" id="copyBtn" type="button">Copy</button>
+          <pre id="bibtex"><code>@inproceedings{krahn2026collapsed,
+  title     = {Collapsed Effective Operators for Higher-order Structures},
+  author    = {Krahn, Maximilian and Bastian, Lennart and Garg, Vikas
+               and Schuller, Bj{\"o}rn and Birdal, Tolga},
+  booktitle = {Proceedings of the 43rd International Conference
+               on Machine Learning (ICML)},
+  year      = {2026},
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="footer__links">
+        <a href="https://arxiv.org/abs/7725694" target="_blank" rel="noopener">arXiv</a>
+        <a href="https://github.com/mk2510/CollapsedEffectiveOperators" target="_blank" rel="noopener">Code</a>
+        <a href="#bibtex">BibTeX</a>
+      </div>
+      <p class="footer__note">
+        Accepted to ICML 2026.
+      </p>
+    </div>
+  </footer>
+
+  <script src="static/js/main.js"></script>
+</body>
+</html>

@@ -376,3 +376,18 @@
       link: https://circle-group.github.io/research/NRMF/
     - type: source
       link: https://github.com/ZhengdiYu/NRMF
+
+- title: Collapsed Effective Operators for Higher-order Structures
+  authors:
+    - Maximilian Krahn
+    - Lennart Bastian
+    - Vikas Garg
+    - Björn Schuller
+    - Tolga Birdal
+  date: 2026-07-01
+  publisher: International Conference on Machine Learning (ICML)
+  image: /images/publication_preview/krahn2026collapsed.jpg
+  link: /research/CollapsedEffectiveOperators/
+  buttons:
+    - type: source
+      link: https://github.com/mk2510/CollapsedEffectiveOperators
