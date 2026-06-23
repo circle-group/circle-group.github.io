@@ -1297,6 +1297,8 @@
   image: /images/publication_preview/krahn2026collapsed.jpg
   link: /research/CollapsedEffectiveOperators/
   buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2606.23517
   - type: source
     link: https://github.com/mk2510/CollapsedEffectiveOperators
   plugin: sources.py
