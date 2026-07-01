@@ -9,6 +9,11 @@
 # Otherwise, leave `link` blank.
 # Please add the new entries on the top although these are sorted by date.
 
+- title: 2 papers accepted at ECCV 2026
+  date: 2026-06
+  description: Bo, Caner, and Simone have accepted papers at ECCV 2026 taking place in Malmö, Sweden.
+  url: https://circle-group.github.io/research/?search=ECCV
+
 - title: UKRI Isambard AI Grant
   date: 2026-03
   description: CIRCLE is awarded 300,000 GPUh of compute on the Isambard-AI AIRR service for AI4Science
