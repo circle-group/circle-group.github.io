@@ -77,13 +77,12 @@
         <div class="affiliation-block">
             <div class="authors">
                 <a href="https://yzhanglp.com" rel="external">Yuhao&nbsp;Zhang</a><sup>1</sup>,
-                <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html" rel="external">Gerard&nbsp;Pons-Moll</a><sup>2,3</sup>,
+                <a href="https://virtualhumans.mpi-inf.mpg.de/people/pons-moll.html" rel="external">Gerard&nbsp;Pons-Moll</a><sup>2</sup>,
                 <a href="https://tolgabirdal.github.io/" rel="external">Tolga&nbsp;Birdal</a><sup>1</sup>
             </div>
             <div class="affils">
                 <sup>1</sup> Imperial College London &nbsp;·&nbsp;
-                <sup>2</sup> University of Tübingen &nbsp;·&nbsp;
-                <sup>3</sup> Max Planck Institute for Informatics
+                <sup>2</sup> University of Tübingen, Tübingen AI Center
             </div>
         </div>
 
@@ -260,6 +259,29 @@
             <div class="pipeline-side">
                 <div class="pipeline-side-label">Source motion</div>
                 <img src="./supplementary_material/mesh_animation/octopus/source_skel.gif" alt="source skeleton">
+                <div class="pipeline-side-foot">Humanoid<br><span>cross-topology transfer</span></div>
+            </div>
+        </div>
+
+        <!-- Robot -->
+        <div class="pipeline-char-row">Robot <span class="tag tag-xfer">Transfer</span></div>
+        <div class="pipeline-row-with-side">
+            <div class="pipeline-main">
+                <div class="pipeline">
+                    <div class="pipeline-step"><img src="./supplementary_material/mesh_animation/robot/photo.png" alt="Robot photo"><div class="step-label">AI-generated photo</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step"><img src="./supplementary_material/mesh_animation/robot/mesh_tex.png" alt="Textured mesh"><div class="step-label">AI-generated mesh</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step"><img src="./supplementary_material/mesh_animation/robot/mesh_overlay.png" alt="Skeleton overlay"><div class="step-label">Auto-rig + skeleton</div></div>
+                    <div class="pipeline-arrow">→</div>
+                    <div class="pipeline-step"><img src="./supplementary_material/mesh_animation/robot/lbs_front.gif" alt="LBS front"><div class="step-label">SAMoR + LBS (front)</div></div>
+                    <div class="pipeline-arrow" style="visibility:hidden;">·</div>
+                    <div class="pipeline-step"><img src="./supplementary_material/mesh_animation/robot/lbs_side.gif" alt="LBS side"><div class="step-label">SAMoR + LBS (side)</div></div>
+                </div>
+            </div>
+            <div class="pipeline-side">
+                <div class="pipeline-side-label">Source motion</div>
+                <img src="./supplementary_material/mesh_animation/robot/source_skel.gif" alt="source skeleton">
                 <div class="pipeline-side-foot">Humanoid<br><span>cross-topology transfer</span></div>
             </div>
         </div>
