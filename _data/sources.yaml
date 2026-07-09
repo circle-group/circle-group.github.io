@@ -753,6 +753,7 @@
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/zaech2024probabilistic.jpg
   link: https://arxiv.org/abs/2310.12153
+
 - title: Variational Inference for SDEs Driven by Fractional Noise
   authors:
     - Rembert Daems
