@@ -1378,3 +1378,18 @@
     link: https://arxiv.org/abs/2601.09698
   plugin: sources.py
   file: sources-new.yaml
+- title: Generalization at the Edge of Stability
+  authors:
+  - Mario Tuci
+  - Caner Korkmaz
+  - "Umut \u015Eim\u015Fekli"
+  - Tolga Birdal
+  date: '2026-07-01'
+  publisher: Preprint (2026)
+  image: /images/publication_preview/tuci2026generalization.jpg
+  link: https://circle-group.github.io/research/GATES
+  buttons:
+  - type: preprint
+    link: https://arxiv.org/abs/2604.19740
+  plugin: sources.py
+  file: sources-new.yaml
