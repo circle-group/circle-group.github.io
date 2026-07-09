@@ -345,15 +345,11 @@
   date: 2026-06-01
   publisher: IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)
   image: https://circle-group.github.io/images/publication_preview/nadar2026PoseDFlow.jpg
-  link: https://circle-group.github.io/research/PoseDFlow
+  link: https://cvpr.thecvf.com/virtual/2026/poster/39570
   buttons:
-    - type: preprint
-      link:
-    - type: source
-      link:
     - type: website
       text: Website
-      link: https://circle-group.github.io/research/PoseDFlow
+      link: https://cvpr.thecvf.com/virtual/2026/poster/39570
 
 - title: 'Geometric Neural Distance Fields for Learning Human Motion Priors'
   authors:
@@ -393,3 +389,81 @@
       link: https://arxiv.org/abs/2606.23517
     - type: source
       link: https://github.com/mk2510/CollapsedEffectiveOperators
+
+
+- title: Adversarial Attacks Leverage Interference Between Features in Superposition
+  authors:
+    - Edward Stevinson
+    - Lucas Prieto
+    - Melih Barsbey
+    - Tolga Birdal
+  date: 2026-07-01
+  publisher: International Conference on Machine Learning (ICML)
+  image: /images/publication_preview/stevinson2026adversarial.jpg
+  link: /research/CollapsedEffectiveOperators/
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2606.23517
+    - type: source
+      link: https://github.com/Stevinson/adversarial-mechinterp
+
+
+- title: TopoOR: A Unified Topological Scene Representation for the Operating Room
+  authors:
+    - Tony Danjun Wang
+    - Ka Young Kim
+    - Tolga Birdal
+    - Nassir Navab
+    - Lennart Bastian
+  date: 2026-07-01
+  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
+  image: /images/publication_preview/wang2026topo.jpg
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2603.09466
+
+- title: DisPOSE: Projected Polystochastic Diffusion for Self-Supervised 3D Multi-View Human Pose Estimation
+  authors:
+    - Tony Danjun Wang
+    - Tolga Birdal
+    - Nassir Navab
+    - Lennart Bastian
+  date: 2026-07-01
+  publisher: International Conference on Machine Learning (ICML)
+  image: /images/publication_preview/wang2026DisPOSE.jpg
+  link: https://wngtn.github.io/DisPOSE/
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2606.07419
+    - type: source
+      link: https://github.com/wngTn/DisPOSE
+      
+- title: Topological Neural Operators
+  authors:
+    - Lennart Bastian
+    - Samuel Leventhal 
+    - Mustafa Hajij 
+    - Tolga Birdal
+  date: 2026-07-01
+  publisher: Preprint (arXiv)
+  image: /images/publication_preview/bastian2026TNO.jpg
+  link: https://circle-group.github.io/research/TNO
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2606.09806
+
+
+- title: COMPOSE: Hypergraph Cover Optimization for Multi-view 3D Human Pose Estimation
+  authors:
+    - Tony Danjun Wang
+    - Tolga Birdal
+    - Nassir Navab
+    - Lennart Bastian
+  date: 2026-07-01
+  publisher: European Conference on Computer Vision (ECCV)
+  image: /images/publication_preview/wang2026COMPOSE.jpg
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2601.09698
+
+
