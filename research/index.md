@@ -7,7 +7,7 @@ nav:
 
 # {% include icon.html icon="fa-solid fa-microscope" %}Publications
 
-We actively publish at the top venues of computer vision and machine learning, including CVPR, NeurIPS, ICLR, ICCV, ECCV, ICML and 3DV. A curated list of publications can be found below.
+We actively publish at all the top venues of machine learning and computer vision, including CVPR, NeurIPS, ICLR, ICCV, ECCV, and ICML along with T-PAMI, JMLR and IJCV. A curated list of publications can be found below.
 
 {% include section.html %}
 

@@ -402,7 +402,7 @@
   link: /research/AdversarialSuperposition/
   buttons:
     - type: preprint
-      link: https://arxiv.org/abs/2606.23517
+      link: https://arxiv.org/abs/2510.11709
     - type: source
       link: https://github.com/Stevinson/adversarial-mechinterp
 
@@ -457,11 +457,32 @@
     - Nassir Navab
     - Lennart Bastian
   date: 2026-07-01
-  publisher: European Conference on Computer Vision (ECCV)
+  publisher: Preprint (2026)
   image: /images/publication_preview/wang2026COMPOSE.jpg
   buttons:
     - type: preprint
       link: https://arxiv.org/abs/2601.09698
+
+- title: 'Heat Kernel Textures: the Geodesic Gaussians That Do Not Splat'
+  authors:
+    - Simone Foti*
+    - Caner Korkmaz*
+    - Stefanos Zafeiriou
+    - Tolga Birdal
+  date: 2026-07-01
+  publisher: European Conference on Computer Vision (ECCV)
+  image: /images/publication_preview/foti2026heat.jpg
+  link: https://circle-group.github.io/research/HeatKernelTextures
+
+- title: 'Learning Geometry-Aware Embedding Fields for Intrinsic Riemannian Mappings'
+  authors:
+    - Bo Pang
+    - Simone Foti
+    - Tolga Birdal
+  date: 2026-07-01
+  publisher: European Conference on Computer Vision (ECCV)
+  image: /images/publication_preview/pang2026learning.jpg
+  link: https://circle-group.github.io/research/LearningRiemannianGeomtery
 
 - title: 'Generalization at the Edge of Stability'
   authors:
@@ -476,3 +497,4 @@
   buttons:
     - type: preprint
       link: https://arxiv.org/abs/2604.19740
+
