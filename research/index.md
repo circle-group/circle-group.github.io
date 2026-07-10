@@ -18,7 +18,7 @@ We actively publish at all the top venues of machine learning and computer visio
 {% include citation.html lookup="Geometric Neural Distance Fields for Learning Human Motion Priors" style="rich" %}
 {% include citation.html lookup="Dyn-hamr: Recovering 4d interacting hand motion from a dynamic camera" style="rich" %}
 {% include citation.html lookup="Topological Neural Operators" style="rich" %}
-{% include citation.html lookup="Intrinsic dimension, persistent homology and generalization in neural networks" style="rich" %}
+{% include citation.html lookup="Generalization at the Edge of Stability" style="rich" %}
 {% include citation.html lookup="Quantum-enhanced Computer Vision: Going Beyond Classical Algorithms" style="rich" %}
 
 {% include section.html %}

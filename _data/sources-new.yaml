@@ -373,6 +373,20 @@
     - type: source
       link: https://github.com/ZhengdiYu/NRMF
 
+- title: 'TopoOR: A Unified Topological Scene Representation for the Operating Room'
+  authors:
+    - Tony Danjun Wang
+    - Ka Young Kim
+    - Tolga Birdal
+    - Nassir Navab
+    - Lennart Bastian
+  date: 2026-07-01
+  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
+  image: /images/publication_preview/wang2026topo.jpg
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2603.09466
+      
 - title: 'Collapsed Effective Operators for Higher-order Structures'
   authors:
     - Maximilian Krahn
@@ -406,20 +420,6 @@
     - type: source
       link: https://github.com/Stevinson/adversarial-mechinterp
 
-- title: 'TopoOR: A Unified Topological Scene Representation for the Operating Room'
-  authors:
-    - Tony Danjun Wang
-    - Ka Young Kim
-    - Tolga Birdal
-    - Nassir Navab
-    - Lennart Bastian
-  date: 2026-07-01
-  publisher: Medical Image Computing and Computer Assisted Intervention (MICCAI)
-  image: /images/publication_preview/wang2026topo.jpg
-  buttons:
-    - type: preprint
-      link: https://arxiv.org/abs/2603.09466
-
 - title: 'DisPOSE: Projected Polystochastic Diffusion for Self-Supervised 3D Multi-View Human Pose Estimation'
   authors:
     - Tony Danjun Wang
@@ -435,33 +435,19 @@
       link: https://arxiv.org/abs/2606.07419
     - type: source
       link: https://github.com/wngTn/DisPOSE
-      
-- title: 'Topological Neural Operators'
+  
+- title: 'Learning Geometry-Aware Embedding Fields for Intrinsic Riemannian Mappings'
   authors:
-    - Lennart Bastian
-    - Samuel Leventhal 
-    - Mustafa Hajij 
+    - Bo Pang
+    - Simone Foti
     - Tolga Birdal
   date: 2026-07-01
-  publisher: Preprint (arXiv)
-  image: /images/publication_preview/bastian2026TNO.jpg
-  link: https://circle-group.github.io/research/TNO
+  publisher: European Conference on Computer Vision (ECCV)
+  image: /images/publication_preview/pang2026learning.jpg
+  link: https://circle-group.github.io/research/LearningRiemannianGeomtery
   buttons:
     - type: preprint
-      link: https://arxiv.org/abs/2606.09806
-
-- title: 'COMPOSE: Hypergraph Cover Optimization for Multi-view 3D Human Pose Estimation'
-  authors:
-    - Tony Danjun Wang
-    - Tolga Birdal
-    - Nassir Navab
-    - Lennart Bastian
-  date: 2026-07-01
-  publisher: Preprint (2026)
-  image: /images/publication_preview/wang2026COMPOSE.jpg
-  buttons:
-    - type: preprint
-      link: https://arxiv.org/abs/2601.09698
+      link:
 
 - title: 'Heat Kernel Textures: the Geodesic Gaussians That Do Not Splat'
   authors:
@@ -477,18 +463,32 @@
     - type: preprint
       link:
 
-- title: 'Learning Geometry-Aware Embedding Fields for Intrinsic Riemannian Mappings'
+- title: 'COMPOSE: Hypergraph Cover Optimization for Multi-view 3D Human Pose Estimation'
   authors:
-    - Bo Pang
-    - Simone Foti
+    - Tony Danjun Wang
     - Tolga Birdal
+    - Nassir Navab
+    - Lennart Bastian
   date: 2026-07-01
-  publisher: European Conference on Computer Vision (ECCV)
-  image: /images/publication_preview/pang2026learning.jpg
-  link: https://circle-group.github.io/research/LearningRiemannianGeomtery
+  publisher: Preprint (2026)
+  image: /images/publication_preview/wang2026COMPOSE.jpg
   buttons:
     - type: preprint
-      link:
+      link: https://arxiv.org/abs/2601.09698
+      
+- title: 'Topological Neural Operators'
+  authors:
+    - Lennart Bastian
+    - Samuel Leventhal 
+    - Mustafa Hajij 
+    - Tolga Birdal
+  date: 2026-07-01
+  publisher: Preprint (arXiv)
+  image: /images/publication_preview/bastian2026TNO.jpg
+  link: https://circle-group.github.io/research/TNO
+  buttons:
+    - type: preprint
+      link: https://arxiv.org/abs/2606.09806
 
 - title: 'Generalization at the Edge of Stability'
   authors:
