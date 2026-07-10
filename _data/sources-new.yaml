@@ -386,14 +386,14 @@
   buttons:
     - type: preprint
       link: https://arxiv.org/abs/2603.09466
-      
+
 - title: 'Collapsed Effective Operators for Higher-order Structures'
   authors:
-    - Maximilian Krahn
-    - Lennart Bastian
-    - Vikas Garg
-    - Björn Schuller
-    - Tolga Birdal
+    - Maximilian Krahn&ast;
+    - Lennart Bastian&ast;
+    - Vikas Garg&#8224;
+    - Björn Schuller&#8224;
+    - Tolga Birdal&#8224;
   date: 2026-07-01
   publisher: International Conference on Machine Learning (ICML)
   image: /images/publication_preview/krahn2026collapsed.jpg
@@ -451,8 +451,8 @@
 
 - title: 'Heat Kernel Textures: the Geodesic Gaussians That Do Not Splat'
   authors:
-    - Simone Foti*
-    - Caner Korkmaz*
+    - Simone Foti&ast;
+    - Caner Korkmaz&ast;
     - Stefanos Zafeiriou
     - Tolga Birdal
   date: 2026-07-01
@@ -480,8 +480,8 @@
   authors:
     - Lennart Bastian
     - Samuel Leventhal 
-    - Mustafa Hajij 
-    - Tolga Birdal
+    - Mustafa Hajij&#8224;
+    - Tolga Birdal&#8224;
   date: 2026-07-01
   publisher: Preprint (arXiv)
   image: /images/publication_preview/bastian2026TNO.jpg
@@ -492,10 +492,10 @@
 
 - title: 'Generalization at the Edge of Stability'
   authors:
-    - Mario Tuci
-    - Caner Korkmaz
-    - Umut Şimşekli 
-    - Tolga Birdal
+    - Mario Tuci&ast;
+    - Caner Korkmaz&ast;
+    - Umut Şimşekli&#8224;
+    - Tolga Birdal&#8224;
   date: 2026-07-01
   publisher: Preprint (2026)
   image: /images/publication_preview/tuci2026generalization.jpg
