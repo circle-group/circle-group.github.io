@@ -1340,7 +1340,7 @@
   - Lennart Bastian
   date: '2026-07-01'
   publisher: International Conference on Machine Learning (ICML)
-  image: /images/publication_preview/wang2026DisPOSE.jpg
+  image: /images/publication_preview/wang2026DisPose.jpg
   link: https://wngtn.github.io/DisPOSE/
   buttons:
   - type: preprint
@@ -1388,6 +1388,9 @@
   publisher: European Conference on Computer Vision (ECCV)
   image: /images/publication_preview/foti2026heat.jpg
   link: https://circle-group.github.io/research/HeatKernelTextures
+  buttons:
+  - type: preprint
+    link: null
   plugin: sources.py
   file: sources-new.yaml
 - title: Learning Geometry-Aware Embedding Fields for Intrinsic Riemannian Mappings
@@ -1399,6 +1402,9 @@
   publisher: European Conference on Computer Vision (ECCV)
   image: /images/publication_preview/pang2026learning.jpg
   link: https://circle-group.github.io/research/LearningRiemannianGeomtery
+  buttons:
+  - type: preprint
+    link: null
   plugin: sources.py
   file: sources-new.yaml
 - title: Generalization at the Edge of Stability
