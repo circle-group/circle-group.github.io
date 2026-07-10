@@ -29,11 +29,11 @@
   #description: Algebraic topology combined with topological deep learning allows for learning richer representations that are informed by the higher-order structures (e.g. motifs) within the structural biological data.
   #repo: greenelab/lab-website-template
 
-- title: Collapsed Effective Operators
-  subtitle: Condensing higher-order topology into a single, principled vertex-level spectral operator. (ICML 2026)
-  image: images/collapsed.jpg
-  link: /research/CollapsedEffectiveOperators/
-  repo: https://github.com/mk2510/CollapsedEffectiveOperators
+#- title: Collapsed Effective Operators
+#  subtitle: Condensing higher-order topology into a single, principled vertex-level spectral operator. (ICML 2026)
+#  image: images/collapsed.jpg
+#  link: /research/CollapsedEffectiveOperators/
+#  repo: https://github.com/mk2510/CollapsedEffectiveOperators
 
 - title: Quantum Computer Vision & Machine Learning
   subtitle: A new computational paradigm for addressing vision and learning problems.<br/>

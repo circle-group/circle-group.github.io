@@ -44,7 +44,7 @@ We actively publish at the top venues of computer vision and machine learning, i
 
 {%
   include feature.html
-  image="images/research.jpg"
+  image="images/team-iclr.jpg"
   link="research"
   title="Our Publications"
   text=text
