@@ -1298,11 +1298,11 @@
   file: sources-new.yaml
 - title: Collapsed Effective Operators for Higher-order Structures
   authors:
-  - Maximilian Krahn
-  - Lennart Bastian
-  - Vikas Garg
-  - "Bj\xF6rn Schuller"
-  - Tolga Birdal
+  - Maximilian Krahn&ast;
+  - Lennart Bastian&ast;
+  - Vikas Garg&#8224;
+  - "Bj\xF6rn Schuller&#8224;"
+  - Tolga Birdal&#8224;
   date: '2026-07-01'
   publisher: International Conference on Machine Learning (ICML)
   image: /images/publication_preview/krahn2026collapsed.jpg
@@ -1365,8 +1365,8 @@
   file: sources-new.yaml
 - title: 'Heat Kernel Textures: the Geodesic Gaussians That Do Not Splat'
   authors:
-  - Simone Foti*
-  - Caner Korkmaz*
+  - Simone Foti&ast;
+  - Caner Korkmaz&ast;
   - Stefanos Zafeiriou
   - Tolga Birdal
   date: '2026-07-01'
@@ -1396,8 +1396,8 @@
   authors:
   - Lennart Bastian
   - Samuel Leventhal
-  - Mustafa Hajij
-  - Tolga Birdal
+  - Mustafa Hajij&#8224;
+  - Tolga Birdal&#8224;
   date: '2026-07-01'
   publisher: Preprint (arXiv)
   image: /images/publication_preview/bastian2026TNO.jpg
@@ -1409,10 +1409,10 @@
   file: sources-new.yaml
 - title: Generalization at the Edge of Stability
   authors:
-  - Mario Tuci
-  - Caner Korkmaz
-  - "Umut \u015Eim\u015Fekli"
-  - Tolga Birdal
+  - Mario Tuci&ast;
+  - Caner Korkmaz&ast;
+  - "Umut \u015Eim\u015Fekli&#8224;"
+  - Tolga Birdal&#8224;
   date: '2026-07-01'
   publisher: Preprint (2026)
   image: /images/publication_preview/tuci2026generalization.jpg
