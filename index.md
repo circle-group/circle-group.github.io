@@ -68,7 +68,7 @@ We publish in a variety of areas that cross-feed each other, including:
 
 {%
   include feature.html
-  image="images/projects.jpg"
+  image="images/research.jpg"
   link="projects"
   title="Our Research"
   flip=true

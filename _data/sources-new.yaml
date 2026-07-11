@@ -389,8 +389,8 @@
 
 - title: 'Collapsed Effective Operators for Higher-order Structures'
   authors:
-    - Maximilian Krahn&ast;
-    - Lennart Bastian&ast;
+    - Maximilian Krahn&#42;
+    - Lennart Bastian&#42;
     - Vikas Garg&#8224;
     - Björn Schuller&#8224;
     - Tolga Birdal&#8224;
@@ -451,8 +451,8 @@
 
 - title: 'Heat Kernel Textures: the Geodesic Gaussians That Do Not Splat'
   authors:
-    - Simone Foti&ast;
-    - Caner Korkmaz&ast;
+    - Simone Foti&#42;
+    - Caner Korkmaz&#42;
     - Stefanos Zafeiriou
     - Tolga Birdal
   date: 2026-07-01
@@ -492,8 +492,8 @@
 
 - title: 'Generalization at the Edge of Stability'
   authors:
-    - Mario Tuci&ast;
-    - Caner Korkmaz&ast;
+    - Mario Tuci&#42;
+    - Caner Korkmaz&#42;
     - Umut Şimşekli&#8224;
     - Tolga Birdal&#8224;
   date: 2026-07-01
