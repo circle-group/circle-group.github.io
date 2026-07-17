@@ -493,19 +493,17 @@
                       <strong>Imperial College London</strong>
                     </div>
 
-                    <!-- Buttons Section: show Code and arXiv only -->
+                    <!-- Buttons Section: show Code, arXiv and Poster -->
                     <div class="button-container">
-                        <a href="https://github.com/Stevinson/Adversarial-Superposition" class="custom-button" title="View code repository">
+                        <a href="https://github.com/Stevinson/adversarial-mechinterp/" target="_blank" class="custom-button" title="View code repository">
                             <i class="fab fa-github"></i> Code
                         </a>
                         <a href="#" class="custom-button" title="arXiv link coming soon">
                             <i class="ai ai-arxiv"></i> arXiv
                         </a>
-                        <!--
-                        <a href="#" class="custom-button"><i class="fas fa-file-pdf"></i> Paper</a>
-                        <a href="#" class="custom-button"><i class="fas fa-video"></i> Video</a>
-                        <a href="#" class="custom-button"><i class="fas fa-image"></i> Poster</a>
-                        -->
+                        <a href="#poster" class="custom-button" title="View poster">
+                            <i class="fas fa-image"></i> Poster
+                        </a>
                     </div>
                     </div>
                 </div>
@@ -514,18 +512,22 @@
 </section>
 
 
+<!-- Teaser Figure -->
+<section class="section" style="padding-top: 0.5rem; padding-bottom: 0.5rem;">
+  <div class="container is-max-desktop has-text-centered">
+    <figure class="image">
+      <img src="static/images/teaser-figure.png" alt="An adversarial attack exploiting superposition geometry" style="width: 100%; border-radius: 10px;">
+    </figure>
+  </div>
+</section>
+
+
 <!-- Abstract Section -->
 <section class="section" style="padding-top: 1.25rem; padding-bottom: 0.5rem;">
   <div class="abstract-container">
       <h2>Abstract</h2>
-      <p>Fundamental questions remain about when and why adversarial examples arise in neural networks, 
-      with competing views characterising them either as artifacts of the irregularities in the decision 
-      landscape or as products of sensitivity to non-robust input features. In this paper, we instead argue 
-      that adversarial vulnerability can stem from <em>efficient</em> information encoding in neural networks. 
-      Specifically, we show how superposition -- where networks represent more features than they have 
-      dimensions -- creates arrangements of latent representations that adversaries can exploit. We 
-      demonstrate that adversarial perturbations leverage interference between superposed features, 
-      making attack patterns predictable from feature arrangements. Our framework provides a mechanistic explanation for two known phenomena: adversarial attack transferability between models with similar training regimes and class-specific vulnerability patterns. In synthetic settings with precisely controlled superposition, we establish that superposition <em>suffices</em> to create adversarial vulnerability. We then demonstrate that these findings persist in a ViT trained on CIFAR-10. These findings reveal adversarial vulnerability can be a byproduct of networks' representational compression, rather than flaws in the learning process or non-robust inputs.</p>
+      <p>Why do adversarial examples exist, and why do they transfer between models? Existing explanations appeal to high-dimensional geometry, non-robust patterns in the input, and decision boundary structure, but none provides a representation-level mechanism that explains why specific perturbations succeed and why attacks transfer between models. In this paper, we show that adversarial vulnerability can stem from <em>efficient</em> information encoding in neural networks. Specifically, vulnerability can arise from <em>superposition</em> - the phenomenon where networks represent more concepts than they have dimensions, forcing non-orthogonal representation and thus interference. This interference causes perturbations targeting one representation to affect others, creating vulnerabilities determined by interference patterns. In synthetic settings with precisely controlled superposition, we establish that superposition <em>suffices</em> to create adversarial vulnerability. The resulting attacks are predictable: PGD-discovered perturbations align with theoretically optimal perturbations derived from the interference geometry. Models trained on similar data develop similar interference patterns, explaining attack transferability. We then show that successful attacks on image classifiers exhibit the structure predicted by our proposed mechanism. These findings reveal that adversarial vulnerability can be a byproduct of networks' representational compression, complementing existing explanations based on data properties or
+      architectural factors.</p>
     </div>
 </section>
 
@@ -539,73 +541,31 @@
     </div>
 </section> -->
 
-<!-- Teaser video-->
-<!-- <section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-
-      <div class="column">
-        <div class="content">
-          <video id="dollyzoom" autoplay controls muted loop playsinline height="100%">
-            <source src="static/videos/global.mp4"
-                    type="video/mp4">
-          </video>
+<!-- Poster Section -->
+<section class="hero is-small" id="poster">
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3" style="font-size: 32px; text-align: center;">Poster</h2>
+          <div class="column">
+            <div class="content">
+              <div class="poster-static-content">
+                <a href="static/images/icml-26-poster-stevinson-07-1.png" target="_blank">
+                  <img src="static/images/icml-26-poster-stevinson-07-1.png" alt="ICML 2026 Presentation Poster" style="width: 100%; border-radius: 10px; box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);">
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div class="column">
-        <div class="content">
-           <video id="matting-video" autoplay controls muted loop playsinline height="100%">
-             <source src="static/videos/wild.mp4"
-                     type="video/mp4">
-           </video>
-         </div>
-       </div>
       </div>
     </div>
   </div>
-</section> -->
-<!-- End teaser video -->
-
-<!-- Abstract Section Combined with AI-generated Voice -->
-<!-- <section class="section">
-<div class="abstract-container">
-    <h2>Abstract</h2>
-    <p>
-        We introduce <strong><span style="color:#93B3E5;">Neural Riemannian Motion Fields (NRMF)</span></strong>, a novel 3D generative human motion prior that enables robust, temporally consistent, and physically plausible 3D motion recovery. Unlike existing VAE or diffusion-based methods, our higher-order motion prior explicitly models the human motion in the zero level set of a collection of neural distance fields (NDFs) corresponding to pose, transition (velocity), and acceleration dynamics. Our framework is rigorous in the sense that our NDFs are constructed on the product space of joint rotations, their angular velocities, and angular accelerations, respecting the geometry of the underlying articulations. We further introduce: (i) a novel adaptive-step hybrid algorithm for projecting onto the set of plausible motions, and (ii) a novel geometric integrator to “roll out” realistic motion trajectories during test-time-optimization and generation. Our experiments show significant and consistent gains: trained on the AMASS dataset, NRMF remarkably generalizes across multiple input modalities and to diverse tasks ranging from denoising to motion in-betweening and fitting to partial 2D / 3D observations.
-    </p>
-
-    <audio controls style="width: 100%; border-radius: 5px;">
-        <source src="static/audio/ai_generated_intro.wav" type="audio/mpeg">
-        Your browser does not support the audio element.
-    </audio>
-    <p style="font-family: 'Arial', sans-serif; font-size: 0.9rem; color: #666; font-weight: bold; text-align: center; margin-top: 10px;">
-        <i class="fas fa-microphone-alt" style="font-size: 1rem; color: #007bff; margin-right: 5px;"></i>
-        AI-generated Podcast (Paper Introduction)
-    </p>
-</div>
-</section> -->
-	
-
-<!-- Applications/Poster/Misc removed for preprint landing page -->
+</section>
+<!-- End Poster -->
 
 <!-- ===== BibTeX with EXACT-style Copy button ===== -->
 <section class="section" id="BibTeX" style="padding-top: 0.5rem;">
-  <!-- <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-
-    <div class="bibtex-wrap">
-      <pre id="bibtexEntry" class="bibtex-block">@article{yu2025nrmf,
-        title = {Geometric Neural Distance Fields for Learning Human Motion Priors},
-        author = {Yu, Zhengdi and Foti, Simone and Zhang, Linguang and Zhao, Amy and Keskin, Cem and Zafeiriou, Stefanos and Birdal, Tolga},
-        journal = {arXiv preprint arXiv:2509.09667},
-        year = {2025}
-      }</pre>      
-      <button id="copyBibtex" class="copy-btn">Copy</button>
-    </div>
-  </div>
-</section> -->
-<section class="section" id="BibTeX">
   <div class="container is-max-desktop">
     <h2 class="title">Citation</h2>
     <p style="margin-bottom: 1.0rem;">If you found the paper useful, please consider citing:</p>
@@ -617,12 +577,11 @@
       </button>
 
       <span class="bibx-toast" aria-live="polite" aria-atomic="true">Copied!</span>
-      <pre class="bibx-pre"><code>@article{stevinson2025adversarialsuperposition,
-  title={Adversarial Attacks Leverage Interference Between Features in Superposition},
-  author={Stevinson, Edward and Prieto, Lucas and Barsbey, Melih and Birdal, Tolga},
-  year={2025},
-  archivePrefix={arXiv},
-  primaryClass={cs.CV}
+      <pre class="bibx-pre"><code>@inproceedings{stevinson2026adversarialsuperposition,
+  title     = {Adversarial Vulnerability from Interference Between Features in Superposition},
+  author    = {Stevinson, Edward and Prieto, Lucas and Barsbey, Melih and Birdal, Tolga},
+  booktitle = {Proceedings of the Forty-Third International Conference on Machine Learning},
+  year      = {2026},
 }</code></pre>
     </div>
   </div>
