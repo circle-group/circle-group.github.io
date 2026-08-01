@@ -19,9 +19,9 @@ We have multliple <u><a href="https://tolgabirdal.github.io/assets/pdf/circlejob
 
 {% include section.html background="images/background.jpg" dark=true %}
 
-We are fortunate to oftenly receive visitors and collaborate with various researchers:
+<!--We are fortunate to oftenly receive visitors and collaborate with various researchers:
 
-{% include list.html data="members" component="portrait" filter="role == 'visitor'" %}
+{% include list.html data="members" component="portrait" filter="role == 'visitor'" %}-->
 
 We are fortunate to have our paths crossed with:
 
