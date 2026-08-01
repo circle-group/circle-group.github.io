@@ -16,7 +16,7 @@
     <li><strong>Geometric & Topological Deep Learning</strong>: Learning on complex domains: graphs, manifolds, cell complexes and beyond</li>
     <li><strong>Learning Theory</strong>:Statistical & topological foundations of machine learning and mechanistic interpretability</li>
     <li><strong>Quantum Computer Vision and Machine Learning</strong>: Novel computational paradigms towards vision and learning</li>
-    <li><strong>AI-driven for Biochemistry</strong>: Designing molecules and proteins with symmetry and structure-aware higher-order priors</li>
+    <li><strong>AI-driven Biochemistry</strong>: Designing molecules and proteins with symmetry and structure-aware higher-order priors</li>
   </ul>
 
   <p>

@@ -1,9 +1,9 @@
 ---
 name: Nathalie Kirch
 image: images/prof-pic-nathalie.jpeg
-description: Visitor
-role: visitor
-group: visitor
+description: PhD Student
+role: phd
+group: phd
 links:
   home-page: https://safeandtrustedai.org/person/nathalie-kirch/
   email: n.kirch24@imperial.ac.uk
