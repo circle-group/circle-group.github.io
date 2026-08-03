@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 46 18"
+   width="46mm"
+   height="18mm"
+   version="1.1"
+   id="svg17"
+   sodipodi:docname="kron_collapse.svg"
+   inkscape:version="1.4.3 (0d15f75, 2025-12-25)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview17"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="3.2416389"
+     inkscape:cx="68.63812"
+     inkscape:cy="30.848593"
+     inkscape:window-width="1470"
+     inkscape:window-height="837"
+     inkscape:window-x="0"
+     inkscape:window-y="33"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg17" />
+  <defs
+     id="defs1">
+    <style
+       type="text/css"
+       id="style1"><![CDATA[
+      .vtx     { fill: #111827; stroke: none; }
+      .face    { fill: #f59e0b; fill-opacity: 0.25; stroke: none; }
+      .xline   { stroke: #b45309; stroke-width: 0.30; stroke-dasharray: 0.8 0.55; fill: none; }
+      .intN    { fill: #ffffff; stroke: #b45309; stroke-width: 0.40; }
+      .med     { stroke: #dc2626; stroke-width: 0.50; stroke-dasharray: 0.9 0.6; fill: none; stroke-linecap: round; }
+      .arr     { stroke: #111827; stroke-width: 0.40; fill: none; }
+      .lbl     { font-family: 'Helvetica', 'Arial', sans-serif; font-size: 2.2px; fill: #111827; }
+      .math    { font-family: 'Times New Roman', serif; font-size: 2.4px; font-style: italic; fill: #111827; }
+    ]]></style>
+    <marker
+       id="ah"
+       viewBox="0 0 10 10"
+       refX="8"
+       refY="5"
+       markerWidth="4.5"
+       markerHeight="4.5"
+       orient="auto-start-reverse">
+      <path
+         d="M 0 0 L 10 5 L 0 10 z"
+         fill="#111827"
+         id="path1" />
+    </marker>
+  </defs>
+  <!-- Y: higher-order DOF z coupled via X to boundary u -->
+  <g
+     transform="translate(2, 2)"
+     id="g8">
+    <polygon
+       class="face"
+       points="1.5,2 12.5,2 7,11.5"
+       id="polygon1" />
+    <path
+       class="xline"
+       d="M 7 5 L 1.5 2"
+       id="path2" />
+    <path
+       class="xline"
+       d="M 7 5 L 12.5 2"
+       id="path3" />
+    <path
+       class="xline"
+       d="M 7 5 L 7 11.5"
+       id="path4" />
+    <circle
+       class="intN"
+       cx="7"
+       cy="5"
+       r="1.0"
+       id="circle4" />
+    <circle
+       class="vtx"
+       cx="1.5"
+       cy="2"
+       r="0.8"
+       id="circle5" />
+    <circle
+       class="vtx"
+       cx="12.5"
+       cy="2"
+       r="0.8"
+       id="circle6" />
+    <circle
+       class="vtx"
+       cx="7"
+       cy="11.5"
+       r="0.8"
+       id="circle7" />
+    <text
+       x="8.6000004"
+       y="5.6999998"
+       class="math"
+       fill="#b45309"
+       id="text7"><tspan
+         style="font-style:normal;font-weight:bold"
+         id="tspan20">z</tspan></text>
+    <text
+       x="-1.2"
+       y="1.4"
+       class="math"
+       id="text8"><tspan
+         style="font-style:normal;font-weight:bold"
+         id="tspan19">u</tspan></text>
+  </g>
+  <!-- Arrow with Schur label above and mediated term below -->
+  <g
+     transform="translate(17.5, 7)"
+     id="g13">
+    <path
+       class="arr"
+       d="M 0 0 L 10.5 0"
+       marker-end="url(#ah)"
+       id="path8" />
+    <text
+       x="5.25"
+       y="-1.0"
+       class="lbl"
+       text-anchor="middle"
+       id="text9">Schur</text>
+    <text
+       x="5.25"
+       y="3.5999999"
+       class="math"
+       font-size="2.6px"
+       text-anchor="middle"
+       id="text13"><tspan
+         id="tspan9"
+         style="font-style:normal;font-weight:bold"
+         dx="0 0.55000001 0.2 0 0.55000001">XC<tspan
+   style="font-weight:normal;font-size:65%;baseline-shift:super"
+   id="tspan17">−1</tspan>X</tspan><tspan
+         baseline-shift="super"
+         font-size="1.8px"
+         dx="0.1"
+         id="tspan13">⊤</tspan></text>
+  </g>
+  <!-- Δ: clique on boundary, mediated couplings on u -->
+  <g
+     transform="translate(30, 2)"
+     id="g17">
+    <path
+       class="med"
+       d="M 1.5 2 L 12.5 2"
+       id="path13" />
+    <path
+       class="med"
+       d="M 1.5 2 L 7 11.5"
+       id="path14" />
+    <path
+       class="med"
+       d="M 12.5 2 L 7 11.5"
+       id="path15" />
+    <circle
+       class="vtx"
+       cx="1.5"
+       cy="2"
+       r="0.8"
+       id="circle15" />
+    <circle
+       class="vtx"
+       cx="12.5"
+       cy="2"
+       r="0.8"
+       id="circle16" />
+    <circle
+       class="vtx"
+       cx="7"
+       cy="11.5"
+       r="0.8"
+       id="circle17" />
+    <text
+       x="-1.2"
+       y="1.4"
+       class="math"
+       id="text17"><tspan
+         style="font-style:normal;font-weight:bold"
+         id="tspan18">u</tspan></text>
+  </g>
+</svg>
