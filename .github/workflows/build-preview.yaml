@@ -24,11 +24,22 @@ jobs:
       - name: Debug dump
         uses: crazy-max/ghaction-dump-context@v2
 
-      - name: Checkout branch contents
+      - name: Checkout pull request branch
+        if: github.event.action != 'closed'
         uses: actions/checkout@v4
         with:
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.head_ref }}
+
+      # The head branch may already be deleted when a pull request closes.
+      # Check out the stable base branch so the preview action can remove the
+      # temporary preview without trying to fetch a branch that no longer exists.
+      - name: Checkout base branch for preview cleanup
+        if: github.event.action == 'closed'
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.base.repo.full_name }}
+          ref: ${{ github.event.pull_request.base.ref }}
 
       - name: Install Ruby packages
         if: github.event.action != 'closed'
