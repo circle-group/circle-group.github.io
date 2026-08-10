@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Project page for Learning Riemannian Geometry on 3D Objects (ECCV 2026), a learning-based framework for exponential and logarithmic maps on raw 3D geometry.">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Learning Riemannian Geometry on 3D Objects">
+  <meta property="og:description" content="A continuous geometric embedding field for efficient exponential and logarithmic map queries on raw 3D geometry.">
+  <meta property="og:image" content="assets/images/overview.webp">
+  <meta property="og:url" content="https://circle-group.github.io/research/LearningReiemannianGeometry/">
+  <link rel="canonical" href="https://circle-group.github.io/research/LearningReiemannianGeometry/">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/images/overview.webp" as="image" type="image/webp">
+  <link rel="stylesheet" href="assets/css/site.css">
+  <title>Learning Riemannian Geometry on 3D Objects — ECCV 2026</title>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "name": "Learning Riemannian Geometry on 3D Objects",
+    "author": [
+      {"@type": "Person", "name": "Bo Pang"},
+      {"@type": "Person", "name": "Simone Foti"},
+      {"@type": "Person", "name": "Tolga Birdal"}
+    ],
+    "isPartOf": {"@type": "PublicationEvent", "name": "European Conference on Computer Vision 2026"},
+    "url": "https://circle-group.github.io/research/LearningReiemannianGeometry/",
+    "encoding": {"@type": "MediaObject", "contentUrl": "paper.pdf", "encodingFormat": "application/pdf"}
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="site-name" href="#top">Learning Riemannian Geometry</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open navigation</span>
+        <span></span><span></span><span></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary navigation">
+        <a href="#abstract">Abstract</a>
+        <a href="#method">Method</a>
+        <a href="#experiments">Experiments</a>
+        <a href="#results">Results</a>
+        <a href="#resources">Resources</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="paper-header" id="top">
+      <div class="container paper-header-inner">
+        <p class="venue">European Conference on Computer Vision (ECCV), 2026</p>
+        <h1>Learning Riemannian Geometry on 3D Objects</h1>
+        <div class="authors" aria-label="Authors">
+          <a href="https://orcid.org/0009-0007-3189-8430">Bo Pang<sup>1,2</sup></a>
+          <a href="https://orcid.org/0000-0003-3207-1965">Simone Foti<sup>1</sup></a>
+          <a href="https://orcid.org/0000-0001-7915-7964">Tolga Birdal<sup>1</sup></a>
+        </div>
+        <p class="affiliations"><sup>1</sup> Imperial College London &nbsp;&nbsp; <sup>2</sup> Peking University</p>
+        <div class="paper-links" aria-label="Project resources">
+          <a class="button primary" href="paper.pdf">Paper</a>
+          <a class="button" href="supplementary.pdf">Supplementary</a>
+          <button class="button" type="button" data-copy-bib>Copy BibTeX</button>
+        </div>
+      </div>
+    </section>
+
+    <figure class="container lead-figure scientific-figure">
+      <button class="figure-button" type="button" data-lightbox="assets/images/overview.webp" data-caption="Figure 1. Method overview. Raw point samples are encoded into a continuous Geometric Embedding Field. A source-point embedding modulates ExpNet and LogNet to predict exponential and logarithmic maps.">
+        <img src="assets/images/overview.webp" alt="Method overview from raw 3D point samples to a geometric embedding field and exponential and logarithmic map predictions" width="2295" height="635" decoding="async" fetchpriority="high">
+      </button>
+      <figcaption><strong>Figure 1.</strong> The method takes raw point samples without requiring manifold connectivity, encodes them into a continuous Geometric Embedding Field, and conditions lightweight decoders for exponential and logarithmic map queries.</figcaption>
+    </figure>
+
+    <section class="section" id="abstract">
+      <div class="container reading-width">
+        <h2>Abstract</h2>
+        <p class="abstract-text">Computing exponential and logarithmic maps on raw geometries is a fundamental yet challenging task in geometry processing, often hindered by the lack of explicit connectivity and the presence of noise. We present a learning-based framework that computes these maps efficiently by learning a continuous geometric embedding field directly from discrete point sets. The field encapsulates the intrinsic local geometry governing exponential and logarithmic maps. A sparse octree-based CNN encodes the input into a high-dimensional feature volume; for an arbitrary query point, its embedding modulates two specialized triplane-based neural networks that predict the maps in a single forward pass. This formulation avoids a requirement for mesh connectivity and is evaluated under irregular sampling, noise, non-manifold input geometry, non-rigid shapes, and real scans.</p>
+        <p class="keywords"><strong>Keywords:</strong> Geometry Processing · Geometric Learning · Neural Fields</p>
+      </div>
+    </section>
+
+    <section class="section ruled" aria-labelledby="contributions-title">
+      <div class="container">
+        <h2 id="contributions-title">Contributions</h2>
+        <ol class="contribution-list">
+          <li><span>1</span><p>A continuous geometric embedding field learned from discrete point sets for efficient evaluation of exponential and logarithmic maps.</p></li>
+          <li><span>2</span><p>A geometry-aware conditioning mechanism and geometric regularization terms that adapt a shared model to diverse local geometries without explicit connectivity.</p></li>
+          <li><span>3</span><p>Evaluation of accuracy, runtime, and robustness on remeshed and raw ShapeNet data, non-uniform and noisy samples, DFAUST, and Kinect-v2 scans.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="method">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Method</p>
+          <h2>Geometric embedding and hyper-modulation</h2>
+          <p>The pipeline separates a one-time shape encoding stage from repeated local map queries. A sparse octree U-Net produces a continuous volumetric feature field. At a source point <em>p</em>, the interpolated embedding <em>z</em><sub>p</sub> generates source-specific triplanes for ExpNet and LogNet.</p>
+        </div>
+
+        <dl class="method-summary">
+          <div><dt>Input</dt><dd>Coarse boundary point samples</dd></div>
+          <div><dt>Backbone</dt><dd>Sparse octree-based 3D U-Net</dd></div>
+          <div><dt>Local representation</dt><dd>Embedding-conditioned triplanes</dd></div>
+          <div><dt>Query coordinates</dt><dd>Relative ambient 3D coordinates</dd></div>
+          <div><dt>Outputs</dt><dd>Exp<sub>p</sub>(v) and Log<sub>p</sub>(q)</dd></div>
+          <div><dt>Connectivity</dt><dd>Not required at inference</dd></div>
+        </dl>
+
+        <figure class="scientific-figure large-figure">
+          <button class="figure-button" type="button" data-lightbox="assets/images/hyper-modulation.webp" data-caption="Figure 2. Hyper-modulation mechanism. The source embedding generates separate triplane representations for ExpNet and LogNet; sampled features are decoded by small MLPs.">
+            <img src="assets/images/hyper-modulation.webp" alt="Hyper-modulation architecture with triplane generators and small MLP decoders for exponential and logarithmic maps" width="2267" height="804" loading="lazy" decoding="async">
+          </button>
+          <figcaption><strong>Figure 2.</strong> The local geometric embedding generates separate triplane feature fields for exponential and logarithmic maps. Relative coordinates query these planes, and small MLPs produce the final outputs.</figcaption>
+        </figure>
+
+        <div class="method-columns">
+          <article>
+            <h3>Local coordinate representation</h3>
+            <p>The networks operate on relative coordinates in the ambient 3D coordinate system rather than on an arbitrarily oriented 2D tangent basis. This avoids basis-rotation ambiguity while retaining tangent-aligned inputs for ExpNet.</p>
+          </article>
+          <article>
+            <h3>Training data filtering</h3>
+            <p>Samples associated with non-injective regions are filtered when multiple distinct tangent vectors reach the same surface location. This excludes ambiguous supervision near or beyond the cut locus.</p>
+          </article>
+          <article>
+            <h3>Query complexity</h3>
+            <p>After the embedding field has been computed, each map evaluation consists of triplane interpolation and a small number of matrix multiplications. Queries can be batched and parallelized.</p>
+          </article>
+        </div>
+
+      </div>
+    </section>
+
+    
+
+    <section class="section" id="results">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Results</p>
+          <h2>Quantitative and qualitative evaluation</h2>
+          <p>For logarithmic maps, the paper reports mean distance distortion E<sub>MDD</sub> and mean angular error E<sub>θ</sub>. For exponential maps, it reports average Euclidean endpoint error E<sub>Exp</sub>. Lower is better for all three metrics.</p>
+        </div>
+
+        <div class="tabs" role="tablist" aria-label="Qualitative result figures">
+          <button id="tab-log" role="tab" aria-selected="true" aria-controls="panel-log" tabindex="0" data-tab="log">Logarithmic maps</button>
+          <button id="tab-exp" role="tab" aria-selected="false" aria-controls="panel-exp" tabindex="-1" data-tab="exp">Exponential maps</button>
+          <button id="tab-scans" role="tab" aria-selected="false" aria-controls="panel-scans" tabindex="-1" data-tab="scans">Real scans</button>
+        </div>
+
+        <div class="tab-panels">
+          <figure id="panel-log" class="tab-panel scientific-figure" role="tabpanel" aria-labelledby="tab-log" data-panel="log">
+            <button class="figure-button" type="button" data-lightbox="assets/images/log-qualitative.webp" data-caption="Figure 5. Logarithmic-map comparison on point-cloud inputs: input, Heat, projection, the proposed method, and reference ground truth.">
+              <img src="assets/images/log-qualitative.webp" alt="Logarithmic map comparisons on airplane, bunny, bust, and bear point-cloud inputs" width="1804" height="1436" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Figure 5.</strong> Logarithmic-map comparisons on point-cloud inputs. The rows include thin and highly curved structures; meshes are used only for visualization.</figcaption>
+          </figure>
+          <figure id="panel-exp" class="tab-panel scientific-figure" role="tabpanel" aria-labelledby="tab-exp" data-panel="exp" hidden>
+            <button class="figure-button" type="button" data-lightbox="assets/images/exp-qualitative.webp" data-caption="Figure 6. Exponential-map results for source points on the ear and neck, including heuristic tracing, the proposed prediction, the tangent plane, and endpoint-error visualization.">
+              <img src="assets/images/exp-qualitative.webp" alt="Exponential map results at source points on the ear and neck" width="3755" height="1530" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Figure 6.</strong> Exponential-map predictions at two source points, with tangent-plane queries and comparison to geodesic ground truth.</figcaption>
+          </figure>
+          <figure id="panel-scans" class="tab-panel scientific-figure" role="tabpanel" aria-labelledby="tab-scans" data-panel="scans" hidden>
+            <button class="figure-button" type="button" data-lightbox="assets/images/kinect.webp" data-caption="Figure 7. Logarithmic-map comparison on Kinect-v2 scans using Heat, the proposed method, and projection.">
+              <img src="assets/images/kinect.webp" alt="Logarithmic map comparison on noisy and incomplete Kinect-v2 scans" width="2829" height="1585" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Figure 7.</strong> Results on noisy and incomplete Kinect-v2 scans. The same ShapeNet-trained checkpoint is used without fine-tuning.</figcaption>
+          </figure>
+        </div>
+
+        <div class="table-section" aria-labelledby="table1-title">
+          <div class="table-heading">
+            <div><p class="section-label">Table 1</p><h3 id="table1-title">Main benchmark</h3></div>
+            <p>Runtime is average CPU time per query, measured on an Apple M4 Max without GPU parallelism. Best values within each input group and operator are bold.</p>
+          </div>
+          <div class="table-scroll" tabindex="0" aria-label="Scrollable quantitative benchmark table">
+            <table class="results-table">
+              <thead>
+                <tr>
+                  <th rowspan="2" scope="col">Input</th>
+                  <th rowspan="2" scope="col">N</th>
+                  <th rowspan="2" scope="col">Vertices</th>
+                  <th colspan="4" scope="colgroup">Logarithmic map</th>
+                  <th colspan="3" scope="colgroup">Exponential map</th>
+                </tr>
+                <tr>
+                  <th scope="col">Method</th><th scope="col">E<sub>MDD</sub> ↓</th><th scope="col">E<sub>θ</sub> ↓</th><th scope="col">Time (s) ↓</th>
+                  <th scope="col">Method</th><th scope="col">E<sub>Exp</sub> ↓</th><th scope="col">Time (s) ↓</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="group-start"><th rowspan="3" scope="rowgroup">ShapeNet</th><td rowspan="3">1000</td><td rowspan="3">16.6k</td><td>Heat</td><td>0.250</td><td>16.7</td><td>0.178</td><td>Tracing</td><td>0.036</td><td>0.396</td></tr>
+                <tr><td>Proj.</td><td>0.115</td><td>14.6</td><td><strong>0.001</strong></td><td>Proj.</td><td>0.049</td><td><strong>0.003</strong></td></tr>
+                <tr class="ours"><td>Ours</td><td><strong>0.110</strong></td><td><strong>11.1</strong></td><td>0.012</td><td>Ours</td><td><strong>0.026</strong></td><td>0.019</td></tr>
+
+                <tr class="group-start"><th rowspan="3" scope="rowgroup">RawShapeNet</th><td rowspan="3">200</td><td rowspan="3">10.0k</td><td>Heat</td><td>0.314</td><td>21.3</td><td>0.101</td><td>Tracing</td><td>0.050</td><td>0.374</td></tr>
+                <tr><td>Proj.</td><td><strong>0.166</strong></td><td>17.1</td><td><strong>0.001</strong></td><td>Proj.</td><td>0.048</td><td><strong>0.003</strong></td></tr>
+                <tr class="ours"><td>Ours</td><td>0.169</td><td><strong>15.4</strong></td><td>0.013</td><td>Ours</td><td><strong>0.036</strong></td><td>0.020</td></tr>
+
+                <tr class="group-start"><th rowspan="3" scope="rowgroup">Non-uniform</th><td rowspan="3">200</td><td rowspan="3">15.0k</td><td>Heat</td><td>0.339</td><td>22.4</td><td>0.051</td><td>Tracing</td><td>0.043</td><td>0.415</td></tr>
+                <tr><td>Proj.</td><td>0.155</td><td>16.3</td><td><strong>0.0005</strong></td><td>Proj.</td><td>0.047</td><td><strong>0.003</strong></td></tr>
+                <tr class="ours"><td>Ours</td><td><strong>0.152</strong></td><td><strong>14.0</strong></td><td>0.011</td><td>Ours</td><td><strong>0.030</strong></td><td>0.019</td></tr>
+
+                <tr class="group-start"><th rowspan="3" scope="rowgroup">Noisy</th><td rowspan="3">200</td><td rowspan="3">16.6k</td><td>Heat</td><td>0.326</td><td>21.1</td><td>0.101</td><td>Tracing</td><td>0.060</td><td>0.374</td></tr>
+                <tr><td>Proj.</td><td>0.203</td><td>19.4</td><td><strong>0.001</strong></td><td>Proj.</td><td>0.055</td><td><strong>0.003</strong></td></tr>
+                <tr class="ours"><td>Ours</td><td><strong>0.202</strong></td><td><strong>17.8</strong></td><td>0.013</td><td>Ours</td><td><strong>0.038</strong></td><td>0.020</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="interpretation"><strong>Interpretation.</strong> The proposed method has the lowest angular error and exponential-map error in all four input conditions. It has the lowest distance distortion in three conditions; on RawShapeNet, projection is slightly lower (0.166 versus 0.169). Projection is the fastest baseline, whereas the learned method is substantially faster than Heat or tracing while retaining higher accuracy on most reported metrics.</p>
+        </div>
+
+        <div class="table-section compact" aria-labelledby="table2-title">
+          <div class="table-heading">
+            <div><p class="section-label">Table 2</p><h3 id="table2-title">DFAUST and Kinect-v2 generalization</h3></div>
+            <p>The checkpoint trained for the ShapeNet experiments is used without retraining or fine-tuning.</p>
+          </div>
+          <div class="generalization-tables">
+            <div class="table-scroll" tabindex="0">
+              <table class="results-table compact-table">
+                <caption>Logarithmic map</caption>
+                <thead><tr><th>Method</th><th>DFAUST E<sub>MDD</sub> ↓</th><th>DFAUST E<sub>θ</sub> ↓</th><th>Kinect E<sub>MDD</sub> ↓</th><th>Kinect E<sub>θ</sub> ↓</th></tr></thead>
+                <tbody>
+                  <tr><th>Heat</th><td>0.23</td><td>25.47</td><td>0.12</td><td>8.45</td></tr>
+                  <tr><th>Proj.</th><td><strong>0.17</strong></td><td>19.04</td><td><strong>0.11</strong></td><td>9.29</td></tr>
+                  <tr class="ours"><th>Ours</th><td><strong>0.17</strong></td><td><strong>16.51</strong></td><td><strong>0.11</strong></td><td><strong>8.37</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="table-scroll" tabindex="0">
+              <table class="results-table compact-table">
+                <caption>Exponential map, E<sub>Exp</sub> ↓</caption>
+                <thead><tr><th>Method</th><th>DFAUST</th><th>Kinect-v2</th></tr></thead>
+                <tbody>
+                  <tr><th>Tracing</th><td><strong>0.033</strong></td><td>0.063</td></tr>
+                  <tr><th>Proj.</th><td>0.071</td><td>0.064</td></tr>
+                  <tr class="ours"><th>Ours</th><td>0.043</td><td><strong>0.060</strong></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section ruled" id="analysis">
+      <div class="container">
+        <div class="section-heading">
+          <p class="section-label">Analysis</p>
+          <h2>Robustness, extensions, and scope</h2>
+        </div>
+
+        <div class="analysis-grid">
+          <figure class="scientific-figure">
+            <button class="figure-button" type="button" data-lightbox="assets/images/cut-locus.webp" data-caption="Visualization of the cut locus on the Stanford Bunny. Ambiguous inverse-map samples are removed during training.">
+              <img src="assets/images/cut-locus.webp" alt="Cut locus visualization on the Stanford Bunny" width="1200" height="782" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Cut-locus filtering.</strong> Non-injectivity creates ambiguous Log supervision; the training pipeline filters such samples.</figcaption>
+          </figure>
+          <figure class="scientific-figure">
+            <button class="figure-button" type="button" data-lightbox="assets/images/representation-extension.webp" data-caption="Supplementary extension: SDF and occupancy representations are sampled into intermediate point clouds before being processed by the network.">
+              <img src="assets/images/representation-extension.webp" alt="Sampling signed distance and occupancy representations into intermediate point clouds" width="3232" height="1531" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Other 3D representations.</strong> The supplementary material describes sampling SDFs and occupancy fields into point clouds using projection or bisection before applying the same pipeline.</figcaption>
+          </figure>
+        </div>
+        
+
+        <div class="limitations">
+          <h3>Limitations stated in the paper</h3>
+          <ul>
+            <li>Training targets are produced by classical numerical methods, so the quality of the supervision bounds the learned model.</li>
+            <li>Finite octree and triplane resolution can smooth fine-scale geometric detail.</li>
+            <li>Large-scale parameterization currently requires a separate stitching algorithm rather than a single globally consistent end-to-end model.</li>
+          </ul>
+          <figure class="scientific-figure failure-figure">
+            <button class="figure-button" type="button" data-lightbox="assets/images/failure-case.webp" data-caption="Supplementary failure case near a thin articulated wrist-hand transition, where nearby Euclidean regions have different intrinsic geodesic behavior.">
+              <img src="assets/images/failure-case.webp" alt="Failure case near a thin articulated wrist and hand transition" width="1530" height="688" loading="lazy" decoding="async">
+            </button>
+            <figcaption><strong>Representative failure case.</strong> Thin articulated regions can be difficult when surfaces are close in Euclidean distance but differ in intrinsic geodesic behavior.</figcaption>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="resources">
+      <div class="container resources-grid">
+        <div>
+          <p class="section-label">Resources</p>
+          <h2>Paper and citation</h2>
+          <p>The PDFs are included locally so the page can be deployed as a self-contained GitHub Pages project.</p>
+          <div class="paper-links left">
+            <a class="button primary" href="paper.pdf">Paper PDF</a>
+            <a class="button" href="supplementary.pdf">Supplementary PDF</a>
+          </div>
+        </div>
+        <div class="bibtex-card">
+          <div class="bibtex-header"><span>BibTeX</span><button type="button" data-copy-bib>Copy</button></div>
+          <pre id="bibtex"><code>@inproceedings{pang2026riemannian,
+  title     = {Learning Riemannian Geometry on 3D Objects},
+  author    = {Pang, Bo and Foti, Simone and Birdal, Tolga},
+  booktitle = {European Conference on Computer Vision},
+  year      = {2026}
+}</code></pre>
+        </div>
+      </div>
+    </section>
+
+    <section class="acknowledgements">
+      <div class="container reading-width">
+        <h2>Acknowledgements</h2>
+        <p>T. Birdal was supported by a UKRI Future Leaders Fellowship (MR/Y018818/1). S. Foti and T. Birdal were supported by the EPSRC Project GNOMON (EP/X011364/1). S. Foti was also supported by the Turing AI Fellowship MAGAL (EP/Z534699/1).</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>Learning Riemannian Geometry on 3D Objects · ECCV 2026</p>
+      <a href="#top">Back to top</a>
+    </div>
+  </footer>
+
+  <dialog class="lightbox" aria-label="Expanded scientific figure">
+    <button class="lightbox-close" type="button" aria-label="Close expanded figure">×</button>
+    <figure><img alt=""><figcaption></figcaption></figure>
+  </dialog>
+  <div class="toast" role="status" aria-live="polite">BibTeX copied</div>
+
+  <script src="assets/js/site.js" defer></script>
+</body>
+</html>
