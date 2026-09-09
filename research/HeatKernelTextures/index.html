@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Heat Kernel Textures">
+  <meta name="keywords"
+    content="Heat Kernel Textures, Texture, Gaussian Splatting, PBR, Geodesic, Riemannian Geometry, Computer Vision, Computer Graphics">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Heat Kernel Textures</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+
+  <!-- <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script> -->
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2T5XHT019F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-2T5XHT019F');
+</script>
+
+
+<body>
+
+
+
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Heat Kernel Textures: the Geodesic Gaussians That Do Not Splat</h1>
+
+            <div class="is-size-4 publication-authors" style="padding-top: 10pt;">
+              <b> 🔥 ECCV 2026: Award Candidate and Long Oral 🔥</b>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://simofoti.com/">Simone Foti*</a>,</span>
+              <span class="author-block">
+                <a href="https://circle-group.github.io/members/caner-korkmaz.html">Caner Korkmaz*</a>,</span>
+              <span class="author-block">
+                <a href="https://profiles.imperial.ac.uk/s.zafeiriou">Stefanos Zafeiriou</a>,</span>
+              <span class="author-block">
+                <a href="https://tolgabirdal.com/">Tolga Birdal</a>
+              </span>
+
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">Imperial College London</span>
+            </div>
+
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://link.springer.com/chapter/10.1007/978-3-032-37595-7_17"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="http://arxiv.org/abs/2609.07557" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <span class="link-block">
+                  <a href="https://youtu.be/FA0QSIK1tNU" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/circle-group/hktex"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Poster Link. -->
+                <span class="link-block">
+                  <a href="./static/figures/poster.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-window-maximize"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser_video.mp4" type="video/mp4">
+        </video>
+
+        <div class="audio-player has-text-centered">
+          <p><b>AI Generated Podcast:</b></p>
+          <audio controls autoplay>
+            <source src="./static/audio/podcast.wav" type="audio/wav">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              3D Gaussian Splatting has recently revolutionised novel view synthesis as well as
+              many other 3D vision methods and applications. Drawing inspiration from this representation,
+              we now rethink textures to overcome the main issues of UV mapping while considerably lowering their memory
+              footprint. Heat Kernel Textures (HKTex) eliminate UV unwrapping as well as their persistent issues of
+              wasted UV
+              space, seams, distortions, vertex-duplication, and varying resolution. Grounded in discrete Riemannian
+              geometry and
+              intrinsically defined on any manifold surface discretised as a triangular mesh, HKTex uses anisotropic
+              heat kernels as geodesic equivalents to Gaussians. Like our kernels, also the optimisation of their
+              position and the
+              adaptive densification strategies were redefined to operate on the surface of the object to be
+              textureised. Our
+              novel
+              representation is also fully integrated with a physically based renderer and can be optimised either from
+              existing textures
+              or multi-view images.
+            </p>
+
+            <div class="publication-video">
+              <iframe width="560" height="315"
+                src="https://www.youtube-nocookie.com/embed/FA0QSIK1tNU?si=rWggPzbJ5ulKzgwO"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title">HKTex</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              <b>Heat Kernel Textures (HKTex)</b> is an intrinsic, UV-free texture representation where anisotropic
+              heat kernels act as geodesic equivalents to Gaussians that natively conform to mesh geometry.
+              Given a mesh, a set of known cameras, and an initialisation of our heat kernels, we continuously
+              evaluate our representation, and render it differentiably with a Mitsuba based ray tracer. Rendered
+              pixels are compared with the corresponding pixels in the mutliview GT images. Our method can also fit
+              existing UV textures by
+              directly evaluating the texture at arbitrary surface locations and comparing against corresponding
+              UV values. The loss is then
+              backpropagated to update the shape parameters of our kernels as well as their positions which are forced
+              to remain on the surface.
+
+
+            </p>
+          </div>
+
+          <img src="./static/figures/framework.png" class="padded-img" alt="HKTex Framework Overview" />
+
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="hktex-box has-text-justified">
+                <h3 class="title is-4">Kernel Modulation</h3>
+                <p>
+                  Each heat kernel is defined directly on the surface and parametrised by its source position, diffusion
+                  angle and anisotropy (controlling orientation and stretch), scale, sharpness, and RGB colour.
+                </p>
+                <div class="has-text-centered" style="margin-top: auto; padding-top: 1rem;">
+                  <img src="./static/figures/kernel_modulation.png" alt="HKTex Kernel Modulation"
+                    class="kernel-mod-img" />
+                </div>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="hktex-box has-text-justified">
+                <h3 class="title is-4">Optimization & Density Control</h3>
+                <p>
+                  Kernel positions are updated along the surface using Riemannian Gradient Descent with momentum (made
+                  possible only thanks to
+                  <a href="https://circle-group.github.io/research/DSG/" target="_blank"
+                    rel="noopener noreferrer"><b>digeo</b></a>).
+                  In tandem, manifold-aware controllers prune inactive kernels and dynamically densify
+                  under-reconstructed
+                  regions by cloning or splitting kernels along their principal axes on the manifold.
+                </p>
+                <div class="has-text-centered" style="margin-top: auto; padding-top: 1rem;">
+                  <a href="https://circle-group.github.io/research/DSG/" target="_blank" rel="noopener noreferrer"
+                    title="DiGeo: Discreetly Straight Geodesics">
+                    <img src="./static/figures/digeo.png" alt="DiGeo logo"
+                      style="max-width: 140px; height: auto; transition: transform 0.2s ease-in-out;"
+                      onmouseover="this.style.transform='scale(1.05)'" onmouseout="this.style.transform='scale(1)'" />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title">Results</h2>
+      <div class="has-text-centered" style="margin-bottom: 2rem;">
+        <img src="./static/figures/Spidergrams_combined.png" alt="Quantitative Spidergrams" />
+      </div>
+
+      <!-- Results Subsection 1: UV-Texture Fitting -->
+      <div id="results-uv" style="margin-top: 1.5rem;">
+        <div class="content has-text-centered">
+          <h3 class="title is-4">Fitting Existing UV-Textures</h3>
+          <p>
+            Simultaneous multi-view rotation and material rendering across all benchmark shapes fitted from standard UV
+            maps.
+            Use the <b>slider</b> to rotate all objects, or click the <b>material buttons</b> to switch materials.
+          </p>
+        </div>
+
+        <!-- Sticky Controls Card (UV) -->
+        <div class="results-controls-card">
+          <div class="results-controls-inner">
+            <div class="field has-text-centered" style="margin-bottom: 1.25rem;">
+              <label class="label is-small has-text-grey"
+                style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Material</label>
+              <div class="buttons is-centered are-small material-buttons">
+                <button class="button is-rounded is-info is-selected material-btn-uv"
+                  data-material="albedo">Albedo</button>
+                <button class="button is-rounded material-btn-uv" data-material="clearcoat_gloss"
+                  title="Clearcoat Gloss">Material 1</button>
+                <button class="button is-rounded material-btn-uv" data-material="gold_metallic"
+                  title="Gold Metallic">Material 2</button>
+                <button class="button is-rounded material-btn-uv" data-material="shiny_plastic"
+                  title="Shiny Plastic">Material 3</button>
+                <button class="button is-rounded material-btn-uv" data-material="brushed_anisotropic"
+                  title="Brushed Anisotropic">Material 4</button>
+                <button class="button is-rounded material-btn-uv" data-material="matte_chalk"
+                  title="Matte Chalk">Material
+                  5</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="is-flex is-justify-content-space-between is-align-items-center"
+                style="margin-bottom: 0.5rem;">
+                <span class="has-text-weight-semibold is-size-6">Rotation:</span>
+                <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+                  <button id="btn-auto-rotate-uv" class="button is-rounded is-small is-light" title="Auto-rotate views">
+                    <span class="icon is-small"><i class="fas fa-play"></i></span>
+                    <span>Auto-rotate</span>
+                  </button>
+                  <span id="view-angle-badge-uv" class="tag is-info is-light is-medium"
+                    style="font-weight: 600; min-width: 95px; text-align: center;">View 1 / 6</span>
+                </div>
+              </div>
+              <div class="rotation-slider-wrapper">
+                <input type="range" id="results-rotation-slider-uv" min="0" max="5" value="0" step="1"
+                  class="rotation-slider" />
+              </div>
+              <div class="is-flex is-justify-content-space-between has-text-grey is-size-7"
+                style="padding: 0 4px; margin-top: 4px;">
+                <span>0°</span>
+                <span>60°</span>
+                <span>120°</span>
+                <span>180°</span>
+                <span>240°</span>
+                <span>300°</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sticky Column Method Headers (UV - 9 columns) -->
+          <div class="results-method-headers">
+            <div class="method-header-cell">
+              <span class="method-title">Original GT</span>
+              <span class="method-subtitle">UV Textures</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">LR (GT)</span>
+              <span class="method-subtitle">UV Textures</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">MLP</span>
+              <span class="method-subtitle">Pos. Encoding</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">InstantNGP</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">Intrinsic</span>
+              <span class="method-subtitle">Neural Fields</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">(GT)</span>
+              <span class="method-subtitle">VTex</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">HR (GT)</span>
+              <span class="method-subtitle">VTex</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">ImageGS</span>
+            </div>
+            <div class="method-header-cell is-ours">
+              <span class="method-title">HKTex</span>
+              <span class="method-badge">ours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Render Image Display with Top-Cropper (UV) -->
+        <div class="results-image-cropper has-text-centered">
+          <img id="results-comparison-image-uv" src="./static/figures/results/uv/comparison_albedo_view_0000.webp"
+            alt="UV texture fitting results comparison" />
+        </div>
+      </div>
+
+      <!-- Results Subsection 2: Multi-View Inverse Rendering -->
+      <div id="results-mv" style="margin-top: 4.5rem;">
+        <div class="content has-text-centered">
+          <h3 class="title is-4">Multi-View Inverse Rendering</h3>
+          <p>
+            Novel view synthesis and material appearance decomposition optimized directly from multi-view image
+            observations.
+            Use the <b>slider</b> to rotate all objects, or click the <b>material buttons</b> to switch materials.
+          </p>
+        </div>
+
+        <!-- Sticky Controls Card (MV) -->
+        <div class="results-controls-card">
+          <div class="results-controls-inner">
+            <div class="field has-text-centered" style="margin-bottom: 1.25rem;">
+              <label class="label is-small has-text-grey"
+                style="text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.5rem;">Material</label>
+              <div class="buttons is-centered are-small material-buttons">
+                <button class="button is-rounded is-info is-selected material-btn-mv"
+                  data-material="albedo">Albedo</button>
+                <button class="button is-rounded material-btn-mv" data-material="clearcoat_gloss"
+                  title="Clearcoat Gloss">Material 1</button>
+                <button class="button is-rounded material-btn-mv" data-material="gold_metallic"
+                  title="Gold Metallic">Material 2</button>
+                <button class="button is-rounded material-btn-mv" data-material="shiny_plastic"
+                  title="Shiny Plastic">Material 3</button>
+                <button class="button is-rounded material-btn-mv" data-material="brushed_anisotropic"
+                  title="Brushed Anisotropic">Material 4</button>
+                <button class="button is-rounded material-btn-mv" data-material="matte_chalk"
+                  title="Matte Chalk">Material
+                  5</button>
+              </div>
+            </div>
+
+            <div class="field">
+              <div class="is-flex is-justify-content-space-between is-align-items-center"
+                style="margin-bottom: 0.5rem;">
+                <span class="has-text-weight-semibold is-size-6">Rotation:</span>
+                <div class="is-flex is-align-items-center" style="gap: 0.5rem;">
+                  <button id="btn-auto-rotate-mv" class="button is-rounded is-small is-light" title="Auto-rotate views">
+                    <span class="icon is-small"><i class="fas fa-play"></i></span>
+                    <span>Auto-rotate</span>
+                  </button>
+                  <span id="view-angle-badge-mv" class="tag is-info is-light is-medium"
+                    style="font-weight: 600; min-width: 95px; text-align: center;">View 1 / 6</span>
+                </div>
+              </div>
+              <div class="rotation-slider-wrapper">
+                <input type="range" id="results-rotation-slider-mv" min="0" max="5" value="0" step="1"
+                  class="rotation-slider" />
+              </div>
+              <div class="is-flex is-justify-content-space-between has-text-grey is-size-7"
+                style="padding: 0 4px; margin-top: 4px;">
+                <span>0°</span>
+                <span>60°</span>
+                <span>120°</span>
+                <span>180°</span>
+                <span>240°</span>
+                <span>300°</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sticky Column Method Headers (MV - 8 columns) -->
+          <div class="results-method-headers-mv">
+            <div class="method-header-cell">
+              <span class="method-title">VTex</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">MLP</span>
+              <span class="method-subtitle">Pos. Encoding</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">NvDiffRec*</span>
+            </div>
+            <div class="method-header-cell is-ours">
+              <span class="method-title">HKTex</span>
+              <span class="method-badge">ours</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">VTex</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">MLP</span>
+              <span class="method-subtitle">Pos. Encoding</span>
+            </div>
+            <div class="method-header-cell">
+              <span class="method-title">NvDiffRec*</span>
+            </div>
+            <div class="method-header-cell is-ours">
+              <span class="method-title">HKTex</span>
+              <span class="method-badge">ours</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Render Image Display with Top-Cropper (MV) -->
+        <div class="results-image-cropper-mv has-text-centered">
+          <img id="results-comparison-image-mv" src="./static/figures/results/mv/comparison_albedo_view_0000.webp"
+            alt="Multi-view results comparison" />
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{foti2026hktex,
+    author="Foti, Simone and Korkmaz, Caner and Zafeiriou, Stefanos and Birdal, Tolga",
+    title="Heat Kernel Textures the Geodesic Gaussians That Do Not Splat",
+    booktitle="Computer Vision -- ECCV 2026",
+    year="2026",
+    publisher="Springer Nature Switzerland",
+    address="Cham",
+    pages="306--323",
+    isbn="978-3-032-37595-7"
+  }</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link"
+          href="https://papers.nips.cc/paper_files/paper/2024/file/e70ffb3f05096e62b5077d8e1b62e668-Paper-Conference.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/simofoti" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the Nerfies website (<a
+                href="https://github.com/nerfies/nerfies.github.io">source code</a>), which is licensed under a <a
+                rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+                Attribution-ShareAlike 4.0 International License</a>.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
