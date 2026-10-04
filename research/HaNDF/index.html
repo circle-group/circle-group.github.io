@@ -12,7 +12,7 @@
   <meta property="og:url" content="https://circle-group.github.io/research/HaNDF/">
   <title>HaNDF</title>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Noto+Sans+Math" rel="stylesheet">
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
@@ -27,7 +27,7 @@
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields</h1>
           <div class="is-size-5 publication-authors">
-            <b>Accepted at NeurIPS 2026</b>
+            <b>NeurIPS 2026</b>
           </div>
           <br/>
           <div class="is-size-5 publication-authors">
@@ -76,7 +76,7 @@
     <div class="hero-body">
       <img src="./static/images/teaser.jpg" alt="Noisy hand poses descend the learned distance field toward plausible grasps on a camera and a bottle; side panels show generation, completion and in-the-wild recovery.">
       <p>
-        <b>Left:</b> We present <b>HaNDF</b>, an object-conditioned neural distance field whose zero level-set <i>S</i>(<b>z</b>) is the manifold of plausible hand poses for a given object <b>z</b>. A noisy pose <i>&theta;</i><sub>0</sub> is projected onto it by descending the field along geodesics, reaching a plausible grasp <i>&theta;</i><sub><i>T</i></sub>. <b>Right:</b> The same prior supports grasp generation, hand completion and in-the-wild hand recovery.
+        <b>Left:</b> HaNDF is a neural distance field <i>f</i><sub>&Phi;</sub>(<i>&theta;</i> | <b>z</b>) over hand poses <i>&theta;</i>, conditioned on an object code <b>z</b>. Its zero level-set <i>S</i>(<b>z</b>) is the set of plausible grasps of that object. A noisy pose <i>&theta;</i><sub>0</sub> is moved onto <i>S</i>(<b>z</b>) by geodesic gradient steps and ends at <i>&theta;</i><sub><i>T</i></sub>. <b>Right:</b> the same field is used for grasp generation, completion of partially observed hands, and hand recovery from images.
       </p>
     </div>
   </div>
@@ -106,10 +106,10 @@
         <h2 class="title is-3">Method</h2>
 
         <!-- Manifold. -->
-        <h3 class="title is-4">Hand poses on a Riemannian manifold</h3>
+        <h3 class="title is-4">Pose representation</h3>
         <div class="content has-text-justified">
           <p>
-            Each hand pose is a collection of <i>K</i> joint rotations, one unit quaternion per joint. The pose therefore lives on a product manifold of unit quaternions rather than in a flat Euclidean space, and distances between poses are geodesic. HaNDF learns its distance field with respect to this geodesic distance, so a small step in pose space is always a small, valid change of articulation.
+            Each hand pose is a point on a product manifold of unit quaternions, <i>M</i><sub><i>H</i></sub> = <span class="bb">&#8461;</span><sub>1</sub><sup><i>K</i></sup>, with one quaternion per joint. The distance field is learned with respect to the geodesic distance on this manifold.
           </p>
         </div>
         <div class="eqbox">
@@ -121,15 +121,15 @@
         </div>
         <div class="content has-text-justified">
           <p class="caption">
-            <b>Left:</b> the unit-quaternion sphere with its tangent space, a geodesic, and the Exp and Log maps that move between the two. <b>Right:</b> per-joint rotation distributions of a grasp on the hand manifold.
+            <b>Left:</b> the unit-quaternion sphere <span class="bb">&#8461;</span><sub>1</sub>, the tangent space at <b>q</b>, the geodesic from <b>q</b> to <b>p</b>, and the maps Exp<sub><b>q</b></sub> and Log<sub><b>q</b></sub>. <b>Right:</b> per-joint rotation distributions of one grasp.
           </p>
         </div>
 
         <!-- Field + projection. -->
-        <h3 class="title is-4 subsection">An object-conditioned distance field</h3>
+        <h3 class="title is-4 subsection">Object-conditioned distance field</h3>
         <div class="content has-text-justified">
           <p>
-            HaNDF is a network <i>f</i><sub>&Phi;</sub> that takes a hand pose <i>&theta;</i> and an object latent <b>z</b> and predicts the geodesic distance to the nearest plausible hand pose for that object. Plausible hands are exactly the zero level-set of the field. Changing the object latent moves and reshapes this level-set, so one network encodes an interaction manifold for every object.
+            <i>f</i><sub>&Phi;</sub>(<i>&theta;</i> | <b>z</b>) is a network that maps a pose <i>&theta;</i> and an object latent <b>z</b> to the geodesic distance from <i>&theta;</i> to the nearest plausible pose for that object. The plausible poses form the zero level-set <i>S</i>(<b>z</b>), which changes with <b>z</b>.
           </p>
         </div>
         <div class="eqbox">
@@ -137,7 +137,7 @@
         </div>
         <div class="content has-text-justified">
           <p>
-            Given a noisy pose, we descend the field along its Riemannian gradient. The exponential map turns each tangent step back into a point on the manifold, so every iterate is a valid hand pose. The step is scaled by the predicted distance, which makes the iteration move quickly far from the manifold and settle gently near it.
+            Projection onto the zero level-set is Riemannian gradient descent on the field. Each step moves along the normalized Riemannian gradient by a length proportional to the predicted distance, and the exponential map returns the result to the manifold, so every iterate is itself a hand pose.
           </p>
         </div>
         <div class="eqbox">
@@ -145,14 +145,14 @@
         </div>
         <figure class="fig-single">
           <img src="./static/images/projection.jpg" alt="A hand pose is projected step by step along the distance field toward a grasp on a pink camera" loading="lazy">
-          <figcaption class="caption">Projection onto the interaction manifold of a camera: each step follows the geodesic gradient of the field and ends at a plausible grasp.</figcaption>
+          <figcaption class="caption">Projection of a noisy pose <i>&theta;</i><sub>0</sub> onto <i>S</i>(<b>z</b><sub>1</sub>) for a camera; <i>&theta;</i><sub><i>T</i></sub> is the pose after <i>T</i> steps.</figcaption>
         </figure>
 
         <!-- Unified objective. -->
-        <h3 class="title is-4 subsection">One field, many tasks</h3>
+        <h3 class="title is-4 subsection">Optimization with the prior</h3>
         <div class="content has-text-justified">
           <p>
-            HaNDF can be used as a generative prior. Every downstream task, including denoising, completion, generation and reconstruction, is the same optimization: a task-specific data term plus the squared field value as a prior. Because the field is conditioned on the object, we can also optimize the object latent itself and recover a plausible condition for the observed hand.
+            Denoising, completion, generation and image-based recovery share the objective below: a task-specific data term plus the squared field value as a prior, minimized over the hand pose.
           </p>
         </div>
         <div class="eqbox">
@@ -173,7 +173,7 @@
         <h3 class="title is-4">Pose denoising</h3>
         <div class="content has-text-justified">
           <p>
-            We can denoise unrealistic hand poses by projecting them onto the object-conditioned manifold. Use the slider to step through the projection: <i>t</i> = 0 is the noisy initialization and <i>t</i> = 1000 the converged pose. The ground truth is shown on the right for reference.
+            Noisy poses are projected onto <i>S</i>(<b>z</b>) with the update above. The slider shows the pose after <i>t</i> = 0, 100, 300 and 1000 steps; the ground truth is on the right.
           </p>
         </div>
         <div class="interpolation-panel denoise-panel">
@@ -217,7 +217,7 @@
         <br/>
         <div class="content has-text-justified">
           <p>
-            <b>Comparison with other hand priors.</b> From left to right: ground truth, <a href="https://github.com/enesduran/HMP" target="_blank" rel="noopener">HMP</a>, H-NRDF (<a href="https://virtualhumans.mpi-inf.mpg.de/nrdf/" target="_blank" rel="noopener">NRDF</a> trained on hands) and HaNDF. HaNDF recovers the grasp closest to the ground truth, with contact restored and penetration removed.
+            <b>Denoising with different priors.</b> Columns: ground truth, <a href="https://github.com/enesduran/HMP" target="_blank" rel="noopener">HMP</a>, H-NRDF (<a href="https://virtualhumans.mpi-inf.mpg.de/nrdf/" target="_blank" rel="noopener">NRDF</a> trained on hand poses), HaNDF.
           </p>
         </div>
         <img src="./static/images/denoising_comparison.jpg" alt="Qualitative denoising comparison on a knife and a toy car: ground truth, HMP, H-NRDF and HaNDF" loading="lazy">
@@ -228,7 +228,7 @@
         <h3 class="title is-4">In-the-wild hand recovery</h3>
         <div class="content has-text-justified">
           <p>
-            HaNDF is a drop-in prior for hand&ndash;object reconstruction pipelines. We add it to <a href="https://lym29.github.io/EasyHOI-page/" target="_blank" rel="noopener">EasyHOI</a> and <a href="https://github.com/zerchen/AlignSDF" target="_blank" rel="noopener">AlignSDF</a> on HOI4D, OakInk and DexYCB. For a fair, hand-focused comparison the object ground truth is provided during inference. MPVPE and MPJPE are the mean per-vertex and per-joint position errors, I.V. the hand&ndash;object intersection volume; lower is better.
+            HaNDF is added as the hand prior to <a href="https://lym29.github.io/EasyHOI-page/" target="_blank" rel="noopener">EasyHOI</a> and <a href="https://github.com/zerchen/AlignSDF" target="_blank" rel="noopener">AlignSDF</a>; evaluation on HOI4D, OakInk and DexYCB. For hand-focused comparison, the object ground truth is provided during inference. MPVPE and MPJPE: mean per-vertex and per-joint position error of the hand. I.V.: hand&ndash;object intersection volume. Lower is better.
           </p>
         </div>
         <div class="table-container">
@@ -259,7 +259,7 @@
         <br/>
         <div class="content has-text-justified">
           <p>
-            Drag the handle to compare each baseline (left) with its HaNDF-refined result (right). Circles in the baseline results mark <span style="color:#e0218a; font-weight:600;">lacking contact</span>, <span style="color:#1aa64b; font-weight:600;">penetration</span> and <span style="color:#17a2b8; font-weight:600;">implausible rotation</span>; HaNDF removes these failure modes and closes the gap to the ground truth.
+            Left of the handle: the baseline. Right: the baseline with HaNDF. The circles are the annotations of the paper figure: <span style="color:#e0218a; font-weight:600;">lacking contact</span>, <span style="color:#1aa64b; font-weight:600;">penetration</span>, <span style="color:#17a2b8; font-weight:600;">implausible rotation</span>.
           </p>
         </div>
 

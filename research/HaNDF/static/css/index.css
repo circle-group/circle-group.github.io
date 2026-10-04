@@ -452,3 +452,9 @@ pre {
     grid-template-columns: 1fr;
   }
 }
+
+/* double-struck symbols in running text */
+.bb {
+  font-family: "Noto Sans Math", "STIX Two Math", "Cambria Math", serif;
+  font-style: normal;
+}
