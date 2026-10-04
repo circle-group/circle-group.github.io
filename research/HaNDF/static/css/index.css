@@ -349,9 +349,6 @@ pre {
   margin: 0.5rem auto;
 }
 
-.title.is-4.subsection {
-  margin-top: 3rem;
-}
 
 .caption {
   color: #6b6b6b;
@@ -458,3 +455,14 @@ pre {
   font-family: "Noto Sans Math", "STIX Two Math", "Cambria Math", serif;
   font-style: normal;
 }
+
+/* ---------- vertical rhythm ---------- */
+.section h3.title { margin-top: 3rem; }
+.section h2.title + h3.title { margin-top: 0; }
+.eqbox:last-child, .section .content:last-child, .section .fig-single:last-child { margin-bottom: 0; }
+.table-container { margin: 0 auto 1.5rem; }
+.columns.interpolation-panel { margin-top: 0 !important; margin-bottom: 0 !important; }
+.interpolation-panel + .interpolation-panel { margin-top: 1.5rem !important; }
+.hero .publication-links { margin-top: 1rem; }
+.denoise-panel { margin-bottom: 1.5rem; }
+.section .column > img { display: block; }
