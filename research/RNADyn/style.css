@@ -89,3 +89,27 @@ main>section.publication-section,main>section#citation.publication-section{margi
 
 /* Dataset figure explanation on the project homepage. */
 .project-page #dataset figcaption{color:#000;font-size:16px;line-height:1.7}
+
+/* Publication card and citation follow the HOG-Diff paper presentation. */
+.paper-card{display:grid;grid-template-columns:260px minmax(0,1fr);align-items:center;gap:40px;max-width:1000px;margin:0 auto;padding:30px;border:1px solid var(--line);border-radius:12px;background:#f7f9fc}
+.paper-cover{display:block;width:220px;margin:0 auto 10px}.paper-cover img{display:block;width:100%;height:auto;border-radius:8px;box-shadow:0 0 1px 1px #00000059,5px 5px 0 0 #fff,5px 5px 1px 1px #00000059,10px 10px 0 0 #fff,10px 10px 1px 1px #00000059}
+.paper-details h3{font-size:22px;line-height:1.4;margin-bottom:14px;text-wrap:initial}.paper-details p{margin-bottom:12px}.paper-status{color:var(--muted)}.paper-details .actions{margin-top:20px}
+.paper-pdf-link{display:inline-flex;align-items:center;gap:.45rem;background:#1f5bc0;color:#fff;border-radius:999px;padding:.45rem .95rem;text-decoration:none;font-weight:600;transition:background .2s ease}.paper-pdf-link:hover{background:#1a4ca0;color:#fff}
+.bib-box{position:relative;border-radius:12px;border:1px solid #27395e;background:#0d1626;color:#d8e7ff;overflow:hidden}
+.bib-copy{position:absolute;top:.6rem;right:.6rem;border-radius:8px;border:1px solid #34517f;background:#15233a;color:#d8e7ff;cursor:pointer;padding:.28rem .56rem;font-size:.83rem}.bib-copy:hover{background:#1a2f4d}
+.publication-section .bib-box .citation-content{margin:0;padding:3rem 1rem 1rem;min-height:0;background:transparent;color:inherit;border:0;white-space:pre;overflow-x:auto;font-size:.88rem;line-height:1.45}
+.bib-box code{background:transparent;color:inherit;padding:0}.bib-box .copy-status{position:absolute;right:5rem;top:.85rem;font-size:.83rem}
+@media(max-width:640px){.paper-card{grid-template-columns:1fr;gap:28px;padding:24px}.paper-cover{width:180px}.paper-details h3{font-size:20px}}
+
+/* Side-by-side paper and light citation panels, stacked on smaller screens. */
+.publication-layout{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px;align-items:stretch}
+.publication-layout>.publication-section,.publication-layout>#citation.publication-section{display:flex;flex-direction:column;min-width:0;margin:0;padding:0;border:0;background:transparent;border-radius:0}
+.publication-layout .paper-card{grid-template-columns:170px minmax(0,1fr);gap:24px;padding:24px;margin:0}
+.publication-layout .paper-cover{width:160px}
+.publication-layout .paper-details h3{font-size:18px;line-height:1.45}.publication-layout .paper-details p{font-size:14px}
+.publication-layout .paper-card,.publication-layout .bib-box{flex:1}
+.publication-layout .bib-box{border-color:#222;background:#f5f5f5;color:#222}
+.publication-layout .bib-copy{border-color:#222;background:#222;color:#fff;border-radius:5px;padding:4px 9px;font-size:12px;line-height:1.4}.publication-layout .bib-copy:hover{background:#000;border-color:#000}
+.publication-layout .bib-box .citation-content{white-space:pre;overflow-wrap:normal;font-size:13px;line-height:1.6}
+@media(max-width:900px){.publication-layout{grid-template-columns:1fr;gap:36px}.publication-layout .paper-card{grid-template-columns:180px minmax(0,1fr)}.publication-layout .paper-cover{width:160px}}
+@media(max-width:480px){.publication-layout .paper-card{grid-template-columns:1fr;gap:24px}.publication-layout .paper-cover{width:180px}}

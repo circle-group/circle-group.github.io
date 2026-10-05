@@ -1,1 +1,83 @@
-{"version":"RNADynBench-v0.1-20261001","trajectories":2585,"rnas":1469,"rna_count_basis":"Frozen manuscript RNA grouping; aggregate only","duration_ns":100,"total_us":258.5,"release_frames":1001,"release_stride_ps":100,"benchmark_frames":101,"benchmark_stride_ns":1,"splits":{"train":2248,"val":102,"test_struct":117,"test_flex":100,"guard":18},"paper":null,"code":null,"weights":null,"dataset_url":null,"license":null,"authors":null,"doi":null,"status":"Coming soon","catalog_status":"Metadata preview","packages":[{"name":"Metadata & Splits","description":"Canonical sample index, RNA identities, partitions and QC information.","status":"Coming soon","url":null,"bytes":null,"sha256":null},{"name":"Starter Pack","description":"A small selection with matched structures, mappings and a reading example.","status":"Coming soon","url":null,"bytes":null,"sha256":null},{"name":"RNA Trajectories","description":"RNA-only XTC coordinates with matching GRO and PDB structures.","status":"Coming soon","url":null,"bytes":null,"sha256":null},{"name":"Benchmark Pack","description":"101-frame reference grid, task labels and evaluation configuration.","status":"Coming soon","url":null,"bytes":null,"sha256":null},{"name":"Dynamics Descriptors","description":"MD-derived RMSF, covariance and NMC with residue mappings.","status":"Coming soon","url":null,"bytes":null,"sha256":null}],"hugging_face":{"repo_id":null,"revision":null}}
+{
+  "version": "RNADynBench-v0.1-20261001",
+  "trajectories": 2585,
+  "rnas": 1469,
+  "rna_count_basis": "Frozen manuscript RNA grouping; aggregate only",
+  "duration_ns": 100,
+  "total_us": 258.5,
+  "release_frames": 1001,
+  "release_stride_ps": 100,
+  "benchmark_frames": 101,
+  "benchmark_stride_ns": 1,
+  "splits": {
+    "train": 2248,
+    "val": 102,
+    "test_struct": 117,
+    "test_flex": 100,
+    "guard": 18
+  },
+  "paper": "https://arxiv.org/abs/2610.03712",
+  "code": null,
+  "weights": null,
+  "dataset_url": null,
+  "license": null,
+  "authors": "Yiming Huang, Lennart Bastian, Hanqun Cao, Luis Vollmers, Tolga Birdal",
+  "doi": null,
+  "status": "Coming soon",
+  "catalog_status": "Metadata preview",
+  "packages": [
+    {
+      "name": "Metadata & Splits",
+      "description": "Canonical sample index, RNA identities, partitions and QC information.",
+      "status": "Coming soon",
+      "url": null,
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "Starter Pack",
+      "description": "A small selection with matched structures, mappings and a reading example.",
+      "status": "Coming soon",
+      "url": null,
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "RNA Trajectories",
+      "description": "RNA-only XTC coordinates with matching GRO and PDB structures.",
+      "status": "Coming soon",
+      "url": null,
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "Benchmark Pack",
+      "description": "101-frame reference grid, task labels and evaluation configuration.",
+      "status": "Coming soon",
+      "url": null,
+      "bytes": null,
+      "sha256": null
+    },
+    {
+      "name": "Dynamics Descriptors",
+      "description": "MD-derived RMSF, covariance and NMC with residue mappings.",
+      "status": "Coming soon",
+      "url": null,
+      "bytes": null,
+      "sha256": null
+    }
+  ],
+  "hugging_face": {
+    "repo_id": null,
+    "revision": null
+  },
+  "publication": {
+    "title": "RNADyn: A Benchmark for Generating and Understanding RNA Dynamics",
+    "year": 2026,
+    "eprint": "2610.03712",
+    "primary_class": "cs.LG",
+    "pdf": "https://arxiv.org/pdf/2610.03712",
+    "cover": "/research/RNADyn/assets/paper-cover.png",
+    "bibtex": "@misc{huang2026rnadyn,\n  title         = {{RNADyn}: A Benchmark for Generating and Understanding {RNA} Dynamics},\n  author        = {Yiming Huang and Lennart Bastian and Hanqun Cao and Luis Vollmers and Tolga Birdal},\n  year          = {2026},\n  eprint        = {2610.03712},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.LG},\n  url           = {https://arxiv.org/abs/2610.03712}\n}"
+  }
+}
