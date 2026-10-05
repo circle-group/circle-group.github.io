@@ -8,8 +8,8 @@ window.sampleDownloadActions=function(entry){
 document.addEventListener('click',async event=>{
  const b=event.target.closest('[data-copy-command]');if(!b)return;
  const status=b.parentElement.querySelector('.copy-status');
- try{await navigator.clipboard.writeText(b.dataset.copyCommand);status.textContent=' Command copied.';}
- catch{status.textContent=' Clipboard unavailable. Select and copy the command above.';}
+ try{await navigator.clipboard.writeText(b.dataset.copyCommand);status.textContent=' Copied.';}
+ catch{status.textContent=' Clipboard unavailable. Select and copy the text manually.';}
 });
 
 document.querySelectorAll(".compact-menu a").forEach(a=>a.addEventListener("click",()=>{a.closest("details").open=false;}));
