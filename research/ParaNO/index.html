@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="ParaNO">
+  <meta name="keywords"
+    content="Paradifferential Neural Operators, Paradifferential Calculus, ParaNO, PDE, non-linear PDE, Bony, Paraproduct, AI4Science ">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Paradifferential Neural Operators</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/index.js"></script>
+  <!-- MathJax Configuration -->
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(', '\\)'], ['$', '$']],
+        displayMath: [['\\[', '\\]'], ['$$', '$$']],
+        processEscapes: true
+      },
+      options: {
+        skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    };
+  </script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Fonts for Better Call Bony -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-2T5XHT019F"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+
+  gtag('config', 'G-2T5XHT019F');
+</script>
+
+
+<body>
+
+
+
+  <section class="hero publication-header">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              Paradifferential Neural Operators:
+              <span class="saul-logo-inline">
+                <span class="left-text">Better Call</span>
+                <span class="right-text">Bony</span>
+              </span>
+              for Non-Linear PDEs
+            </h1>
+
+            <div class="is-size-4 publication-authors" style="padding-top: 10pt;">
+              <b> </b>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/danielsanchez-dss/">Daniel Sanchez</a> <sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://tolgabirdal.com/">Tolga Birdal</a> <sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://profiles.imperial.ac.uk/s.zafeiriou">Stefanos Zafeiriou</a> <sup>1</sup>,</span>
+              <span class="joint-authors-block">
+                <span class="author-block">
+                  <a href="https://simofoti.com/">Simone Foti</a> <sup>1,<span
+                      class="author-dagger">&#8224;</span></sup>,</span>
+                <span class="author-block">
+                  <a href="https://www.linkedin.com/in/massimilianoesposito/">Massimiliano Esposito</a> <sup>2,<span
+                      class="author-dagger">&#8224;</span></sup></span>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup> Imperial College London </span>
+              <span class="author-block"><sup>2</sup> Axiom Math </span>
+            </div>
+            <div class="is-size-6 publication-authors" style="margin-top: 0.25rem;">
+              <sup><span class="author-dagger">&#8224;</span></sup> Joint senior authors, equal contribution
+            </div>
+
+
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <!-- <span class="link-block">
+                  <a href=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span> -->
+                <span class="link-block">
+                  <a href="http://arxiv.org/abs/" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Video Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://youtu.be/FA0QSIK1tNU" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/danidss/ParaNO" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span>
+                <!-- Poster Link. -->
+                <!-- <span class="link-block">
+                  <a href="./static/figures/poster.pdf" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="far fa-window-maximize"></i>
+                    </span>
+                    <span>Poster</span>
+                  </a>
+                </span> -->
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <!-- <video id="teaser" autoplay muted loop playsinline height="100%">
+          <source src="./static/videos/teaser_video.mp4" type="video/mp4">
+        </video> -->
+
+        <div class="audio-player has-text-centered">
+          <p class="mb-2"><b>AI Generated Podcast:</b></p>
+          <audio controls preload="metadata">
+            <source src="./static/audio/ParaNO_Solves_Chaotic_Fluid_Dynamics.m4a" type="audio/mp4">
+            <source src="./static/audio/ParaNO_Solves_Chaotic_Fluid_Dynamics.m4a" type="audio/x-m4a">
+            Your browser does not support the audio element.
+          </audio>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <!-- Abstract. -->
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Neural Operators have emerged as powerful architectures for learning mappings between infinite-dimensional
+              function spaces.
+              While predominantly deployed as PDE surrogates, their broader promise in data-driven AI for Science
+              requires models capable of rigorously resolving complex non-linear dynamics.
+              To address this, we introduce ParaNO, a Fourier-based neural operator grounded in paradifferential
+              calculus. Crucially, ParaNO leverages Bony's decomposition to efficiently learn the cross-scale frequency
+              interactions caused by non-linearities.
+              Alongside our method, we introduce The Non-Linear Six (The NL6), a curated benchmark designed to
+              systematically isolate distinct classes of algebraic non-linearities without geometric confounding. ParaNO
+              improves over SotA baselines by 23% on Navier-Stokes and reduces errors by factors of 1.6x to 4.6x on the
+              NL6.
+            </p>
+
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title">ParaNO</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              <b>Paradifferential Neural Operators (ParaNO)</b> are Fourier-based neural operators explicitly designed
+              to handle non-linear PDEs through a theoretical grounding in Bony's paradifferential calculus. While
+              standard Fourier Neural Operators (FNOs) treat Fourier modes independently in their spectral convolution
+              layers, relying solely on pointwise activations for implicit frequency mixing, non-linear dynamics induce
+              critical cross-frequency couplings, cascades, and resonant interactions across spatial scales.
+            </p>
+            <p>
+              ParaNO translates the principle of paradifferential calculus into deep learning by employing dyadic
+              Littlewood–Paley decompositions to partition the frequency spectrum into exponentially scaled bands,
+              isolating low–high and high–low frequency modulations from resonant mixing. By combining this
+              scale-conditioned non-linear paradifferential branch with a dedicated linear spectral pathway, ParaNO
+              explicitly mirrors the algebraic structure of non-linear PDEs.
+            </p>
+          </div>
+
+          <!-- Framework Architecture Figure -->
+          <div class="has-text-centered my-5">
+            <img src="./static/figures/framework.png" alt="ParaNO Architecture Overview"
+              style="width: 100%; max-width: 950px; border-radius: 6px;" />
+            <p class="has-text-grey is-size-6 mt-2">
+              <b>The ParaNO architecture.</b> In each ParaLayer, the latent state \(h^{(l)}\) is mapped to
+              \(h^{(l+1)}\) by summing a residual skip connection with a linear branch \(S_\theta(h)\) and a non-linear
+              paradifferential branch \(P_\theta(u, v)\). The normalised latent state is split into bilinear operands
+              \(u, v\), decomposed across frequency octaves into Low–High, High–Low, and Remainder interactions, and
+              modulated by learned factorised spectral kernels \(K_m\).
+            </p>
+          </div>
+
+          <!-- Dyadic Littlewood-Paley Decomposition Figure -->
+          <div class="box my-5">
+            <h3 class="title is-4 has-text-centered">Dyadic Littlewood–Paley Decomposition</h3>
+            <p class="mb-3 has-text-justified">
+              ParaNO employs smooth dyadic partitions of unity in frequency space to partition the input field \(u\)
+              into scale-localised octaves \(\Delta_j u\), separating smooth macroscopic structures from fine
+              oscillatory details:
+            </p>
+            <div class="has-text-centered">
+              <img src="./static/figures/spectral_bands.png" alt="Dyadic Littlewood-Paley Decomposition"
+                style="width: 100%; max-width: 950px; border-radius: 6px;" />
+              <p class="has-text-grey is-size-6 mt-2">
+                <b>Dyadic Littlewood–Paley decomposition of a 2D scalar field.</b> Top: Partition of the
+                frequency domain into dyadic bands. Bottom: The corresponding band-pass filtered components \(\Delta_j
+                u\) isolating progressively finer spatial scales, which sum to reconstruct the original field (right):
+                \(u = \sum_{j=0}^{J-1} \Delta_j u\).
+              </p>
+            </div>
+          </div>
+
+          <div class="columns is-centered mt-4">
+            <div class="column is-6">
+              <div class="hktex-box has-text-justified">
+                <h3 class="title is-4">Bony's Paraproduct Decomposition</h3>
+                <p>
+                  Rather than treating frequency interactions as an unstructured dense sum, Bony's decomposition
+                  partitions non-linear interactions \(uv\) into three non-overlapping algebraic regimes:
+                </p>
+                <p class="has-text-centered my-3" style="font-size: 1.05rem;">
+                  \[ uv = \underbrace{T_u v}_{\text{low--high}} + \underbrace{T_v u}_{\text{high--low}} +
+                  \underbrace{R(u, v)}_{\text{resonant}} \]
+                </p>
+                <div class="has-text-centered my-3">
+                  <img src="./static/figures/bony_interaction_plane.png" alt="Bony's Interacting Octaves"
+                    style="max-width: 220px; width: 100%; border-radius: 6px" />
+                  <p class="is-size-7 has-text-grey mt-1">
+                    <b>Bony’s interacting octaves.</b>
+                  </p>
+                </div>
+                <p>
+                  The paraproducts \(T_u v\) and \(T_v u\) capture asymmetric modulations where slowly-varying low
+                  frequencies act as modulating coefficients on fine, oscillatory scales. The remainder \(R(u, v)\)
+                  isolates resonant interactions between comparable frequencies.
+                </p>
+              </div>
+            </div>
+
+            <div class="column is-6">
+              <div class="hktex-box has-text-justified">
+                <h3 class="title is-4">Factorised Spectral Kernels</h3>
+                <p>
+                  Instantiating dense \(C \times C\) weight tensors across all discrete frequency coordinates and \(J\)
+                  dyadic bands would incur an intractable \(\mathcal{O}(J C^2 M_x M_y)\) parameter footprint.
+                </p>
+                <p>
+                  To ensure parameter efficiency while maintaining high expressivity, ParaNO parametrises the discrete
+                  spectral kernels using a separable tensor factorisation:
+                </p>
+                <p class="has-text-centered my-3" style="font-size: 0.95rem;">
+                  \[ K_m^\alpha[k_x, k_y] = \sum_{r=1}^R X_m^\alpha[r, k_x] Y_m^\alpha[r, k_y] A[r] \]
+                </p>
+                <p>
+                  A shared channel-mixing tensor \(A \in \mathbb{C}^{R \times C \times C}\) is shared across bands,
+                  while band-specific 1D frequency profiles \(X_m^\alpha, Y_m^\alpha\) learn distinct, scale-dependent
+                  pseudo-differential responses.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section has-background-light">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <h2 class="title is-3">The Non-Linear Six (The NL6) Benchmark</h2>
+
+          <div class="content has-text-justified">
+            <p>
+              Existing PDE benchmarks (such as Geo-PDE, PDEBench, or The Well) often conflate geometry, multi-field
+              boundary conditions, and spatial meshes, making it difficult to attribute performance gains directly to a
+              model's handling of non-linearities.
+            </p>
+            <p>
+              We introduce <b>The Non-Linear Six (The NL6)</b>: a curated benchmark of six non-linear PDE learning tasks
+              simulated on periodic uniform grids, systematically isolating distinct mathematical classes of algebraic
+              non-linearities:
+            </p>
+
+            <div class="table-container my-4">
+              <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-left">
+                <thead>
+                  <tr style="background-color: #ebf6fa;">
+                    <th>PDE Name</th>
+                    <th>PDE Non-Linearity Type</th>
+                    <th>Input Formulation</th>
+                    <th>Target</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><b>Surface Quasi-Geostrophic</b> (SQG)</td>
+                    <td>Semi-linear (bilinear transport interaction)</td>
+                    <td>Surface buoyancy \([\theta]^{10}\)</td>
+                    <td>Next 10 frames</td>
+                  </tr>
+                  <tr>
+                    <td><b>Kuramoto–Sivashinsky</b> (KS)</td>
+                    <td>Semi-linear (quadratic gradient \(\frac{1}{2}|\nabla u|^2\))</td>
+                    <td>State \([u]^{10}\)</td>
+                    <td>Next 10 frames</td>
+                  </tr>
+                  <tr>
+                    <td><b>Shear-Thinning Flow</b> (STF)</td>
+                    <td>Quasi-linear (non-polynomial fractional gradients, Carreau–Yasuda)</td>
+                    <td>Velocity field \([u]^{10}\)</td>
+                    <td>Next 10 frames</td>
+                  </tr>
+                  <tr>
+                    <td><b>Viscoacoustic Waves</b> (VAW)</td>
+                    <td>Non-linear mapping (heterogeneous fractional Laplacians)</td>
+                    <td>Pressure \([p, \partial_t p]^{10}\), medium \((c_0, \log Q)\)</td>
+                    <td>Next 10 frames of \([p, \partial_t p]\)</td>
+                  </tr>
+                  <tr>
+                    <td><b>Dirichlet–Neumann Operator</b> (DNO)</td>
+                    <td>Non-local boundary operator (water waves)</td>
+                    <td>Surface state \([\eta, \psi]\)</td>
+                    <td>Normal flux \(G(\eta)\psi - |D|\psi\)</td>
+                  </tr>
+                  <tr>
+                    <td><b>Hyperelasticity</b> (HYP)</td>
+                    <td>Quasi-linear static operator (non-integer Ogden model)</td>
+                    <td>Displacement field \(u\)</td>
+                    <td>Divergence \(\mathrm{Div}\,P(F)\)</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3">Experimental Results</h2>
+      <div class="content has-text-justified">
+        <p>
+          ParaNO was evaluated against state-of-the-art neural operators across both <b>Geo-PDE</b> (Navier–Stokes,
+          Darcy, Plasticity, Airfoil, Pipe) and the newly proposed <b>NL6</b> benchmark. All models on NL6 are
+          standardised to a 2M parameter budget.
+        </p>
+      </div>
+
+      <!-- Figure 1: Navier-Stokes Scatter Plot -->
+      <div class="box my-5">
+        <div class="columns is-vcentered is-centered">
+          <div class="column is-5 has-text-centered">
+            <img src="./static/figures/ns_params_error.png" alt="Mean Error vs Parameters on 2D Navier-Stokes"
+              style="max-height: 260px; width: auto;" />
+          </div>
+          <div class="column is-7 content has-text-justified">
+            <h4 class="title is-5">Accuracy vs. Parameter Footprint on Navier–Stokes</h4>
+            <p>
+              <b>\(\ell_2\) error against model size on Navier–Stokes.</b> ParaNO achieves the lowest test error
+              (<b>23.87 \(\times 10^{-3}\)</b>) with only <b>2.0M
+                parameters</b>.
+            </p>
+            <p>
+              Compared to concurrent and state-of-the-art models, including HO-FNO (7.4M params, error 31.11), LaMO
+              (10.1M params, error 35.43), and Transolver (11.2M params, error 111.07), ParaNO delivers a <b>23% error
+                reduction</b> while operating with up to <b>5.6x fewer parameters</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Table 1: Full Geo-PDE Benchmarks -->
+      <div class="box my-4">
+        <h3 class="title is-5 has-text-centered">Comparison on Geo-PDE Benchmarks</h3>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-centered">
+            <thead>
+              <tr>
+                <th rowspan="2" style="vertical-align: middle; background-color: #f8fafc;">Model</th>
+                <th colspan="2" style="background-color: #f1f5f9; border-bottom: 2px solid #cbd5e1;">Native Grids</th>
+                <th colspan="3" style="background-color: #f8fafc; border-bottom: 2px solid #cbd5e1;">Interpolated
+                  Geometries</th>
+              </tr>
+              <tr style="background-color: #f8fafc;">
+                <th>Navier–Stokes</th>
+                <th>Darcy</th>
+                <th>Plasticity*</th>
+                <th>Airfoil</th>
+                <th>Pipe</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>Transolver</b></td>
+                <td>111.07 ± 32.16</td>
+                <td>5.44 ± 0.03</td>
+                <td>1.20</td>
+                <td>5.40 ± 0.46</td>
+                <td>4.71 ± 0.24</td>
+              </tr>
+              <tr>
+                <td><b>LaMO</b></td>
+                <td>35.43 ± 3.30</td>
+                <td>4.14 ± 0.19</td>
+                <td>0.70</td>
+                <td>4.58 ± 0.44</td>
+                <td>4.49 ± 0.33</td>
+              </tr>
+              <tr>
+                <td><b>SAOT</b></td>
+                <td>43.81 ± 0.80</td>
+                <td>5.00 ± 0.15</td>
+                <td>0.80</td>
+                <td>5.00 ± 0.17</td>
+                <td>6.29 ± 0.41</td>
+              </tr>
+              <tr>
+                <td><b>MSPT</b></td>
+                <td>53.36 ± 0.86</td>
+                <td>11.14 ± 0.46</td>
+                <td>1.00</td>
+                <td>6.59 ± 0.34</td>
+                <td><strong>3.98 ± 0.32</strong></td>
+              </tr>
+              <tr>
+                <td><b>CATO</b></td>
+                <td>41.86 ± 1.20</td>
+                <td><strong>3.87 ± 0.05</strong></td>
+                <td>0.50</td>
+                <td><strong>4.16 ± 0.04</strong></td>
+                <td>4.03 ± 0.14</td>
+              </tr>
+              <tr>
+                <td><b>HO-FNO</b></td>
+                <td>31.11 ± 0.08</td>
+                <td>5.72 ± 0.45</td>
+                <td>0.60</td>
+                <td>4.86 ± 0.06</td>
+                <td>5.55 ± 0.20</td>
+              </tr>
+              <tr style="background-color: #eff6ff; font-weight: bold;">
+                <td><b>ParaNO (Ours)</b></td>
+                <td><strong style="color: #1d4ed8;">23.87 ± 1.19</strong></td>
+                <td>4.90 ± 0.14</td>
+                <td><strong style="color: #1d4ed8;">0.39 ± 0.02</strong></td>
+                <td>5.70 ± 0.19</td>
+                <td>5.45 ± 0.16</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="is-size-7 has-text-grey mt-2">
+          Mean and standard deviation \(\ell_2\) errors \((\times 10^{-3})\) over three seeds on Geo-PDE. All baselines
+          retain their original codebase and configurations. <b>*</b> Plasticity reports published values for every
+          baseline. ParaNO excels on Native Grids with no confounding geometric factors, improving upon HO-FNO
+          by <b>23%</b> on Navier–Stokes, and establishes a new state-of-the-art on Plasticity (0.39 vs 0.50).
+        </p>
+      </div>
+
+
+
+      <!-- Table 2: The NL6 Benchmark Table -->
+      <div class="box my-5">
+        <h3 class="title is-5 has-text-centered">Comparison on The NL6 Benchmark</h3>
+        <div class="table-container">
+          <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth has-text-centered">
+            <thead>
+              <tr style="background-color: #f8fafc;">
+                <th>Model</th>
+                <th>DNO</th>
+                <th>HYP</th>
+                <th>KS</th>
+                <th>SQG</th>
+                <th>STF</th>
+                <th>VAW</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>LaMO</b></td>
+                <td>7.95 ± 0.23</td>
+                <td>6.86 ± 0.31</td>
+                <td>57.99 ± 2.19</td>
+                <td>56.54 ± 3.41</td>
+                <td>38.62 ± 4.32</td>
+                <td>12.59 ± 0.86</td>
+              </tr>
+              <tr>
+                <td><b>CATO</b></td>
+                <td>4.95 ± 0.61</td>
+                <td><strong>2.84 ± 0.30</strong></td>
+                <td>18.17 ± 2.69</td>
+                <td>19.12 ± 4.66</td>
+                <td>25.40 ± 0.62</td>
+                <td>3.25 ± 0.07</td>
+              </tr>
+              <tr>
+                <td><b>HO-FNO</b></td>
+                <td>5.22 ± 0.25</td>
+                <td>5.52 ± 0.10</td>
+                <td>15.66 ± 0.87</td>
+                <td>26.89 ± 10.40</td>
+                <td>14.48 ± 0.38</td>
+                <td>1.66 ± 0.09</td>
+              </tr>
+              <tr>
+                <td><b>FNO<sup>(+)</sup></b></td>
+                <td>5.03 ± 0.12</td>
+                <td>4.65 ± 0.12</td>
+                <td>17.10 ± 0.62</td>
+                <td>31.31 ± 6.50</td>
+                <td>17.83 ± 0.16</td>
+                <td>1.90 ± 0.01</td>
+              </tr>
+              <tr style="background-color: #eff6ff; font-weight: bold;">
+                <td><b>ParaNO (Ours)</b></td>
+                <td><strong style="color: #1d4ed8;">1.79 ± 0.09</strong></td>
+                <td>3.36 ± 0.15</td>
+                <td><strong style="color: #1d4ed8;">7.61 ± 0.15</strong></td>
+                <td><strong style="color: #1d4ed8;">4.13 ± 0.09</strong></td>
+                <td><strong style="color: #1d4ed8;">8.48 ± 0.06</strong></td>
+                <td><strong style="color: #1d4ed8;">1.02 ± 0.03</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="is-size-7 has-text-grey mt-2">
+          Mean and standard deviation \(\ell_2\) errors \((\times 10^{-3})\) over three seeds across the NL6 suite. All
+          models are strictly standardised to a 2M parameter budget. ParaNO strictly dominates five out of six tasks,
+          lowering errors by up to <b>4.6×</b> over CATO on SQG and <b>2×</b> over HO-FNO on KS. With
+          FNO<sup>(+)</sup> we indicate a modernised FNO baseline equipped with pre-norm and residual connections
+        </p>
+      </div>
+
+      <!-- Figure 5: Qualitative Results on NL6 & Navier-Stokes -->
+      <div class="box my-5">
+        <h3 class="title is-4 has-text-centered">Qualitative Error Maps on The NL6 and Navier–Stokes</h3>
+        <div class="has-text-centered">
+          <img src="./static/figures/final_plots_errors_median.png"
+            alt="Qualitative Error Maps on NL6 and Navier-Stokes" style="width: 100%; border-radius: 6px;" />
+          <p class="has-text-grey is-size-6 mt-3 has-text-justified">
+            <b>Error maps on the NL6 and Navier–Stokes on ParaNO’s median error sample.</b> For each PDE
+            (columns), we report the Ground Truth output (top) and pointwise relative \(\ell_2\) errors across baselines
+            (rows). Colour bars marked with \(*\) are clipped and scaled at 99.5%, while those with \(\dagger\) use a
+            symmetric logarithmic scale that is linear within 20% of the maximum absolute value. Overlaid numbers
+            indicate per-sample relative \(\ell_2\) error. ParaNO (bottom row) achieves near-zero error maps (uniform
+            flat grey) without the severe dispersion artifacts and boundary errors seen in existing baselines.
+          </p>
+        </div>
+      </div>
+
+
+    </div>
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@article{sanchez2026parano,
+  title     = {Paradifferential Neural Operators: Better Call Bony for Non-Linear PDEs},
+  author    = {Sanchez, Daniel and Birdal, Tolga and Zafeiriou, Stefanos and Foti, Simone and Esposito, Massimiliano},
+  journal   = {arXiv preprint},
+  year      = {2026}
+}</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <!-- <a class="icon-link"
+          href="https://papers.nips.cc/paper_files/paper/2024/file/e70ffb3f05096e62b5077d8e1b62e668-Paper-Conference.pdf">
+          <i class="fas fa-file-pdf"></i>
+        </a> -->
+        <a class="icon-link" href="https://github.com/danidss/ParaNO" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This page was built using the Nerfies website (<a
+                href="https://github.com/nerfies/nerfies.github.io">source code</a>), which is licensed under a <a
+                rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+                Attribution-ShareAlike 4.0 International License</a>.
+
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
