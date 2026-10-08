@@ -1,5 +1,5 @@
 {
-  "version": "RNADynBench-v0.1-20261001",
+  "version": "v1.0",
   "trajectories": 2585,
   "rnas": 1469,
   "rna_count_basis": "Frozen manuscript RNA grouping; aggregate only",
@@ -19,58 +19,22 @@
   "paper": "https://arxiv.org/abs/2610.03712",
   "code": null,
   "weights": null,
-  "dataset_url": null,
+  "dataset_url": "https://imperialcollegelondon.box.com/v/rnadynbench-v1",
   "license": null,
   "authors": "Yiming Huang, Lennart Bastian, Hanqun Cao, Luis Vollmers, Tolga Birdal",
   "doi": null,
-  "status": "Coming soon",
-  "catalog_status": "Metadata preview",
+  "status": "Available on Box",
+  "catalog_status": "Release catalog",
   "packages": [
     {
-      "name": "Metadata & Splits",
-      "description": "Canonical sample index, RNA identities, partitions and QC information.",
-      "status": "Coming soon",
-      "url": null,
-      "bytes": null,
-      "sha256": null
-    },
-    {
-      "name": "Starter Pack",
-      "description": "A small selection with matched structures, mappings and a reading example.",
-      "status": "Coming soon",
-      "url": null,
-      "bytes": null,
-      "sha256": null
-    },
-    {
       "name": "RNA Trajectories",
-      "description": "RNA-only XTC coordinates with matching GRO and PDB structures.",
-      "status": "Coming soon",
-      "url": null,
-      "bytes": null,
-      "sha256": null
-    },
-    {
-      "name": "Benchmark Pack",
-      "description": "101-frame reference grid, task labels and evaluation configuration.",
-      "status": "Coming soon",
-      "url": null,
-      "bytes": null,
-      "sha256": null
-    },
-    {
-      "name": "Dynamics Descriptors",
-      "description": "MD-derived RMSF, covariance and NMC with residue mappings.",
-      "status": "Coming soon",
-      "url": null,
+      "description": "2,585 sample folders, each containing matched rna.xtc, rna.gro and rna.pdb files.",
+      "status": "Available on Box",
+      "url": "https://imperialcollegelondon.box.com/v/rnadynbench-v1",
       "bytes": null,
       "sha256": null
     }
   ],
-  "hugging_face": {
-    "repo_id": null,
-    "revision": null
-  },
   "publication": {
     "title": "RNADyn: A Benchmark for Generating and Understanding RNA Dynamics",
     "year": 2026,
@@ -78,6 +42,10 @@
     "primary_class": "cs.LG",
     "pdf": "https://arxiv.org/pdf/2610.03712",
     "cover": "/research/RNADyn/assets/paper-cover.png",
-    "bibtex": "@misc{huang2026rnadyn,\n  title         = {{RNADyn}: A Benchmark for Generating and Understanding {RNA} Dynamics},\n  author        = {Yiming Huang and Lennart Bastian and Hanqun Cao and Luis Vollmers and Tolga Birdal},\n  year          = {2026},\n  eprint        = {2610.03712},\n  archivePrefix = {arXiv},\n  primaryClass  = {cs.LG},\n  url           = {https://arxiv.org/abs/2610.03712}\n}"
-  }
+    "bibtex": "@article{huang2026rnadyn,\n  title={RNADyn: A Benchmark for Generating and Understanding RNA Dynamics},\n  author={Huang, Yiming and Bastian, Lennart and Cao, Hanqun and Vollmers, Luis and Birdal, Tolga},\n  journal={arXiv preprint arXiv:2610.03712},\n  year={2026}\n}"
+  },
+  "box": {
+    "shared_url": "https://imperialcollegelondon.box.com/v/rnadynbench-v1"
+  },
+  "storage_version": "RNADynBench-v0.1-20261001"
 }

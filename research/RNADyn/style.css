@@ -24,8 +24,9 @@ main>section{padding:64px 0;border-bottom:1px solid var(--line)}.section-head{di
 .site-switch{background:rgba(229,234,243,.8);border-color:rgba(216,224,237,.7)}
 .site-switch a[aria-current=page]{background:#2563eb;box-shadow:0 3px 9px #2563eb24}
 .hero>.eyebrow{background:rgba(237,241,255,.72);border-color:#dfe4f8;color:#5d63a7}
-.hero h1{font-weight:750;line-height:1.18;letter-spacing:-.045em}
-.project-page .hero h1,.dataset-overview .page-title h1{background:none;color:#000;-webkit-text-fill-color:#000}
+.project-page .hero h1,.dataset-overview .page-title h1{font-family:inherit;font-size:clamp(38px,4.8vw,62px);font-weight:750;line-height:1.18;letter-spacing:-.045em;background:none;color:#000;-webkit-text-fill-color:#000}
+@media(max-width:900px){.project-page .hero h1,.dataset-overview .page-title h1{font-size:48px}}
+@media(max-width:640px){.project-page .hero h1,.dataset-overview .page-title h1{font-size:37px;line-height:1.2;letter-spacing:-.035em}}
 .hero .stats{background:rgba(255,255,255,.73);border-color:rgba(211,220,236,.8);box-shadow:0 10px 32px #53659b07}
 .hero .stat strong{color:#40558c}
 .hero>.actions button:disabled{background:rgba(233,237,246,.8);border-color:rgba(218,225,238,.8)}
@@ -79,6 +80,7 @@ main>section.publication-section,main>section#citation.publication-section{margi
 .project-page footer{margin-top:0}
 @media(max-width:640px){.project-page .hero{padding-left:20px;padding-right:20px}.project-page main>section{padding:44px 20px}.project-page main>section.publication-section,.project-page main>section#citation.publication-section{padding-left:20px;padding-right:20px}}
 
+#method > .lede{max-width:none}
 #method .method-training{margin-top:28px}
 
 .author-list a{color:inherit;text-decoration:underline;text-decoration-color:#c5cede;text-underline-offset:5px;text-decoration-thickness:1px}.author-list a:hover{color:var(--blue);text-decoration-color:currentColor}
@@ -88,7 +90,7 @@ main>section.publication-section,main>section#citation.publication-section{margi
 @media(min-width:768px){.trajectory-figure{max-width:600px;margin:28px auto;box-sizing:border-box}}
 
 /* Dataset figure explanation on the project homepage. */
-.project-page #dataset figcaption{color:#000;font-size:16px;line-height:1.7}
+.dataset-caption{color:#000;font-size:16px;line-height:1.7}
 
 /* Publication card and citation follow the HOG-Diff paper presentation. */
 .paper-card{display:grid;grid-template-columns:260px minmax(0,1fr);align-items:center;gap:40px;max-width:1000px;margin:0 auto;padding:30px;border:1px solid var(--line);border-radius:12px;background:#f7f9fc}
@@ -113,3 +115,19 @@ main>section.publication-section,main>section#citation.publication-section{margi
 .publication-layout .bib-box .citation-content{white-space:pre;overflow-wrap:normal;font-size:13px;line-height:1.6}
 @media(max-width:900px){.publication-layout{grid-template-columns:1fr;gap:36px}.publication-layout .paper-card{grid-template-columns:180px minmax(0,1fr)}.publication-layout .paper-cover{width:160px}}
 @media(max-width:480px){.publication-layout .paper-card{grid-template-columns:1fr;gap:24px}.publication-layout .paper-cover{width:180px}}
+
+/* Single-conformer results: figure and interpretation share one reading flow. */
+.prediction-story{margin-top:48px}.prediction-story>header{margin-bottom:26px}.prediction-story>header h3{font-size:28px}.prediction-story>header p{max-width:none}
+.prediction-grid{display:grid;grid-template-columns:minmax(0,3fr) minmax(0,2fr);gap:32px;align-items:start}.prediction-grid>figure{margin:0;padding:20px}.prediction-details{display:grid;gap:22px}.prediction-details h4{font-size:18px;margin:0 0 8px;line-height:1.4}.prediction-details p{margin:0}.prediction-summary{padding-top:22px;border-top:1px solid #cad5e5}.prediction-summary>p{font-size:14px;color:var(--muted)}.prediction-summary .table-wrap{margin:16px 0}.prediction-summary th,.prediction-summary td{padding:11px 10px}
+@media(max-width:800px){.prediction-grid{grid-template-columns:1fr;gap:26px}.prediction-story>header h3{font-size:24px}.prediction-grid>figure{padding:14px}}
+
+.generation-results .table-wrap{margin:16px 0}.generation-results table{min-width:940px}.generation-results th,.generation-results td{padding:12px}.generation-results .featured-method{background:#e5edff;font-weight:650}.generation-results .featured-method td{color:#173d80}.generation-results{margin-bottom:30px}
+
+/* Compact pill-shaped research resource links. */
+.hero>.resource-actions{gap:14px}.hero>.resource-actions .button,.hero>.resource-actions button,.paper-pdf-link{border:1px solid #000;border-radius:999px;background:#000;color:#fff;min-height:44px;padding:10px 20px;font-size:15px;font-weight:550;line-height:1.4;gap:7px;box-shadow:0 3px 8px #0002}
+.hero>.resource-actions .button:hover,.paper-pdf-link:hover{background:#262626;border-color:#262626;color:#fff;text-decoration:none}
+.hero>.resource-actions button:disabled{background:#d3d3d3;border-color:#d3d3d3;color:#545454;box-shadow:0 3px 8px #0001}
+.resource-actions svg,.paper-pdf-link svg{flex-shrink:0}
+@media(max-width:640px){.hero>.resource-actions{gap:10px}.hero>.resource-actions .button,.hero>.resource-actions button{font-size:14px;padding:10px 16px}}
+
+button.citation-copy-inline{display:inline;border:0;border-radius:0;padding:0;min-height:0;background:none;box-shadow:none;color:var(--blue);font:inherit;vertical-align:baseline;text-align:left}button.citation-copy-inline:hover{background:none;border:0;text-decoration:underline}
