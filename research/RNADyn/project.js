@@ -12,3 +12,14 @@ document.querySelectorAll('[data-generation-split]').forEach(button => button.ad
     panel.hidden = panel.dataset.generationPanel !== button.dataset.generationSplit;
   });
 }));
+
+const heroVideos=[...document.querySelectorAll('.hero-rna video')];
+if(heroVideos.length){
+ const reducedMotion=matchMedia('(prefers-reduced-motion: reduce)');
+ const pause=()=>{heroVideos.forEach(v=>v.pause());};
+ const play=async()=>{heroVideos[1].currentTime=heroVideos[0].currentTime;const results=await Promise.allSettled(heroVideos.map(v=>v.play()));if(results.some(r=>r.status==='rejected'))pause();};
+ heroVideos[0].addEventListener('timeupdate',()=>{if(!heroVideos[0].paused&&Math.abs(heroVideos[0].currentTime-heroVideos[1].currentTime)>.15)heroVideos[1].currentTime=heroVideos[0].currentTime;});
+ document.addEventListener('visibilitychange',()=>{if(document.hidden)pause();});
+ reducedMotion.addEventListener('change',()=>{if(reducedMotion.matches)pause();});
+ if(!reducedMotion.matches)play();
+}
