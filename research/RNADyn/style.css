@@ -131,3 +131,23 @@ main>section.publication-section,main>section#citation.publication-section{margi
 @media(max-width:640px){.hero>.resource-actions{gap:10px}.hero>.resource-actions .button,.hero>.resource-actions button{font-size:14px;padding:10px 16px}}
 
 button.citation-copy-inline{display:inline;border:0;border-radius:0;padding:0;min-height:0;background:none;box-shadow:none;color:var(--blue);font:inherit;vertical-align:baseline;text-align:left}button.citation-copy-inline:hover{background:none;border:0;text-decoration:underline}
+
+/* Hero D: softly masked trajectory backdrop, with compact author spacing. */
+.project-page .hero-motion{position:relative;overflow:hidden;max-width:1500px;padding-top:66px;padding-bottom:42px}
+.hero-motion>h1,.hero-motion>.research-team,.hero-motion>.actions{position:relative;z-index:1}
+.project-page .hero-motion h1{margin-bottom:24px}.hero-motion .research-team{margin-top:0}
+.hero-rna{position:absolute;top:-35px;width:430px;pointer-events:none;mix-blend-mode:multiply}
+.hero-rna.left{left:4%;transform:rotate(-13deg);mask-image:linear-gradient(to right,#000 15%,#0009 64%,transparent);-webkit-mask-image:linear-gradient(to right,#000 15%,#0009 64%,transparent)}
+.hero-rna.right{right:4%;transform:rotate(13deg);mask-image:linear-gradient(to left,#000 15%,#0009 64%,transparent);-webkit-mask-image:linear-gradient(to left,#000 15%,#0009 64%,transparent)}
+.hero-rna-crop{position:relative;aspect-ratio:640/880;overflow:hidden;opacity:.24;mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 70%,transparent);-webkit-mask-image:linear-gradient(to bottom,transparent,#000 12%,#000 70%,transparent)}
+.hero-rna video{position:absolute;width:223.4375%;max-width:none;height:auto;top:-21.59%;left:-6.25%}.hero-rna.right video{left:-117.97%}
+@media(max-width:1100px){.hero-rna{width:350px}.hero-rna.left{left:-5%}.hero-rna.right{right:-5%}}
+@media(max-width:640px){.project-page .hero-motion{padding-top:34px}.project-page .hero-motion h1{margin-bottom:20px}.hero-rna{width:260px;top:20px}.hero-rna.left{left:-85px}.hero-rna.right{right:-85px}}
+
+.dataset-overview .dataset-hero{position:relative;overflow:hidden;padding:62px 0 24px;text-align:center}
+.dataset-hero>.page-title{position:relative;z-index:1;padding:0}.dataset-overview .dataset-hero .page-title{padding-top:0}
+.dataset-hero .hero-rna{width:270px;top:-19px}.dataset-hero .hero-rna.left{left:0}.dataset-hero .hero-rna.right{right:0}
+.dataset-hero .page-title .lede{position:relative;color:var(--ink)}
+@media(max-width:640px){.dataset-overview .dataset-hero{padding-top:38px}.dataset-hero .hero-rna{width:200px;top:35px}.dataset-hero .hero-rna.left{left:-75px}.dataset-hero .hero-rna.right{right:-75px}}
+
+.dataset-overview .dataset-hero .page-title h1{margin-left:auto;margin-right:auto;text-align:center}
