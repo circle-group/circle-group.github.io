@@ -1,12 +1,12 @@
 ---
-name: Andjela Todorovic
+name: Angela Todorovic
 image: images/prof_pic_andjela.jpg
 description: PhD Student
 role: phd
 group: phd
 links:
   email: a.todorovic26@imperial.ac.uk
-  github: andjelatodorovic
+  github: angelatodorovic
   linkedin: angelatodorovic
   google-scholar: rkvVS-8AAAAJ
 ---
