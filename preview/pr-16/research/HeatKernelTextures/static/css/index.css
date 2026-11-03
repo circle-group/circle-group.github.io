@@ -1,0 +1,344 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.padded-img {
+  padding-bottom: 2rem;
+  padding-top: 2rem;
+}
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.dnerf {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+  padding-bottom: 0;
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-awards {
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
+}
+
+.publication-authors {}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.publication-body img {}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  /* margin: 5px; */
+  overflow: hidden;
+  /* border: 1px solid #bbb;
+  border-radius: 10px; */
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+.results-carousel img {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}
+
+#uv-vs-pcl {
+  width: 95%;
+  align-content: center;
+}
+
+.kernel-mod-img {
+  width: 38%;
+  height: auto;
+}
+
+.hktex-box {
+  background-color: #ebf6fa;
+  border-radius: 24px;
+  padding: 1.75rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #d8edf5;
+}
+
+/* Results Interactive Comparison Viewer */
+.results-controls-card {
+  position: sticky;
+  top: 15px;
+  z-index: 100;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid #d8edf5;
+  border-radius: 20px;
+  box-shadow: 0 8px 30px rgba(0, 50, 100, 0.08);
+  padding: 1.25rem 0 0.5rem 0;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.results-controls-inner {
+  padding: 0 1.5rem;
+}
+
+.results-method-headers {
+  display: grid;
+  grid-template-columns: repeat(9, 1fr);
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem 0 0.25rem 0;
+  border-top: 1px solid #e8f2f7;
+  text-align: center;
+}
+
+.method-header-cell {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.2rem 2px;
+  line-height: 1.15;
+}
+
+.method-header-cell .method-title {
+  font-weight: 700;
+  font-size: clamp(8.5px, 1.05vw, 12px);
+  color: #2c3e50;
+}
+
+.method-header-cell .method-subtitle {
+  font-size: clamp(7.5px, 0.85vw, 10.5px);
+  color: #7f8c8d;
+}
+
+.method-header-cell.is-ours {
+  background: rgba(50, 115, 220, 0.08);
+  border-radius: 6px;
+  border: 1px solid rgba(50, 115, 220, 0.25);
+  margin: 0 2px;
+}
+
+.method-header-cell.is-ours .method-title {
+  color: #19529b;
+  font-weight: 800;
+}
+
+.method-header-cell.is-ours .method-badge {
+  font-size: clamp(7.5px, 0.8vw, 9.5px);
+  background: #3273dc;
+  color: #ffffff;
+  padding: 1px 4px;
+  border-radius: 3px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-top: 2px;
+}
+
+.material-buttons .button {
+  transition: all 0.2s ease;
+  font-weight: 500;
+}
+
+.rotation-slider-wrapper {
+  width: 100%;
+}
+
+.rotation-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 8px;
+  border-radius: 5px;
+  background: #e2e8f0;
+  outline: none;
+  cursor: pointer;
+}
+
+.rotation-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3273dc;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(50, 115, 220, 0.4);
+  transition: transform 0.15s ease;
+}
+
+.rotation-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+.rotation-slider::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: #3273dc;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(50, 115, 220, 0.4);
+}
+
+.results-image-cropper {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.results-image-cropper img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -2.6%; /* Clips the baked-in titles from the UV image */
+}
+
+/* Multi-View 8-column layout */
+.results-method-headers-mv {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  width: 100%;
+  margin-top: 1rem;
+  padding: 0.6rem 0 0.25rem 0;
+  border-top: 1px solid #e8f2f7;
+  text-align: center;
+}
+
+.results-method-headers-mv .method-header-cell:nth-child(4) {
+  border-right: 2px dashed #d1d5db;
+}
+
+.results-image-cropper-mv {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+}
+
+.results-image-cropper-mv img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-top: -3.6%; /* Clips the baked-in titles from the MV image */
+}

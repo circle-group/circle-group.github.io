@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields. NeurIPS 2026.">
+  <meta name="keywords" content="HaNDF, hand pose prior, neural distance field, hand-object interaction, Riemannian manifold, NeurIPS 2026">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta property="og:title" content="HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields">
+  <meta property="og:description" content="An object-conditioned neural distance field on the Riemannian manifold of hand articulations. One learned field serves denoising, completion, generation and in-the-wild hand recovery. NeurIPS 2026.">
+  <meta property="og:image" content="https://circle-group.github.io/research/HaNDF/static/images/teaser.jpg">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://circle-group.github.io/research/HaNDF/">
+  <title>HaNDF</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro|Noto+Sans+Math" rel="stylesheet">
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <script defer src="./static/js/index.js"></script>
+</head>
+<body>
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-1 publication-title">HaNDF: Object-Conditioned Geometric Neural Hand Distance Fields</h1>
+          <div class="is-size-5 publication-authors">
+            <b>NeurIPS 2026</b>
+          </div>
+          <br/>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Zuhao Liu,</span>
+            <span class="author-block">Melih Darcan,</span>
+            <span class="author-block">Zhengdi Yu,</span>
+            <span class="author-block">Riza Alp Guler,</span>
+            <span class="author-block">Tolga Birdal</span>
+          </div>
+          <div class="is-size-5 publication-authors">
+            <span class="author-block">Imperial College London</span>
+          </div>
+
+          <div class="column has-text-centered">
+            <div class="publication-links">
+              <!-- arXiv (coming soon) -->
+              <span class="link-block">
+                <span class="button is-normal is-rounded is-soon" aria-disabled="true" title="arXiv version coming soon">
+                  <span class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>
+                  </span>
+                  <span>arXiv</span>
+                  <span class="soon-tag">soon</span>
+                </span>
+              </span>
+              <!-- Code -->
+              <span class="link-block">
+                <a class="external-link button is-normal is-rounded is-dark"
+                   href="https://github.com/circle-group/HaNDF" target="_blank" rel="noopener"
+                   title="Code and weights on GitHub">
+                  <span class="icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 18l6-6-6-6"/><path d="M8 6l-6 6 6 6"/></svg>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/teaser.jpg" alt="Noisy hand poses descend the learned distance field toward plausible grasps on a camera and a bottle; side panels show generation, completion and in-the-wild recovery.">
+      <p>
+        <b>Left:</b> HaNDF is a neural distance field <i>f</i><sub>&Phi;</sub>(<i>&theta;</i> | <b>z</b>) over hand poses <i>&theta;</i>, conditioned on an object code <b>z</b>. Its zero level-set <i>S</i>(<b>z</b>) is the set of plausible grasps of that object. A noisy pose <i>&theta;</i><sub>0</sub> is moved onto <i>S</i>(<b>z</b>) by geodesic gradient steps and ends at <i>&theta;</i><sub><i>T</i></sub>. <b>Right:</b> the same field is used for grasp generation, completion of partially observed hands, and hand recovery from images.
+      </p>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We propose, <b>HaNDF</b>, object-conditional neural distance fields as data-driven priors for modeling the plausible hand–object configurations, in the product manifold of hand articulations. While recent unconditional generative priors showed success in modeling human pose, hands are versatile articulated bodies often found in interaction with other objects. This makes it crucial to develop a generative prior which can model the plausible hand poses conditioned on the object under interaction. To this end, our HaNDF proposes a geometry-aware, object-conditioned neural distance field, representing the plausible articulations in the zero-level set of a conditional field. We leverage tools from Riemannian geometry to (i) <em>represent</em> plausible hands in the zero level-set of an object-induced neural field, and (ii) <em>project</em> a given pose onto the this field. Using HaNDF, we can also optimize for a plausible <em>condition</em>, determining the object under interaction. Our extensive evaluations demonstrate that our HaNDF provides a flexible and powerful prior for hand–object interaction, suitable for applications such as pose refinement, reconstruction under occlusion, and physically plausible manipulation synthesis.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Method</h2>
+
+        <!-- Manifold. -->
+        <h3 class="title is-4">Pose representation</h3>
+        <div class="content has-text-justified">
+          <p>
+            Each hand pose is a point on a product manifold of unit quaternions, <i>M</i><sub><i>H</i></sub> = <span class="bb">&#8461;</span><sub>1</sub><sup><i>K</i></sup>, with one quaternion per joint. The distance field is learned with respect to the geodesic distance on this manifold.
+          </p>
+        </div>
+        <div class="eqbox">
+          <img class="eq" src="./static/images/eq_manifold.svg" alt="theta is the set of K unit quaternions q_i, an element of the hand manifold M_H, the K-fold product of unit quaternions" width="354" height="34">
+        </div>
+        <div class="fig-row">
+          <img src="./static/images/quaternion_manifold.jpg" alt="Unit quaternion sphere with its tangent plane, a geodesic, and the exponential and logarithm maps" loading="lazy">
+          <img src="./static/images/joint_distributions.png" alt="A hand grasping a cylinder with per-joint rotation distributions drawn around each joint" loading="lazy">
+        </div>
+        <div class="content has-text-justified">
+          <p class="caption">
+            <b>Left:</b> the unit-quaternion sphere <span class="bb">&#8461;</span><sub>1</sub>, the tangent space at <b>q</b>, the geodesic from <b>q</b> to <b>p</b>, and the maps Exp<sub><b>q</b></sub> and Log<sub><b>q</b></sub>. <b>Right:</b> per-joint rotation distributions of one grasp.
+          </p>
+        </div>
+
+        <!-- Field + projection. -->
+        <h3 class="title is-4">Object-conditioned distance field</h3>
+        <div class="content has-text-justified">
+          <p>
+            <i>f</i><sub>&Phi;</sub>(<i>&theta;</i> | <b>z</b>) is a network that maps a pose <i>&theta;</i> and an object latent <b>z</b> to the geodesic distance from <i>&theta;</i> to the nearest plausible pose for that object. The plausible poses form the zero level-set <i>S</i>(<b>z</b>), which changes with <b>z</b>.
+          </p>
+        </div>
+        <div class="eqbox">
+          <img class="eq" src="./static/images/eq_levelset.svg" alt="S(z) is the set of poses theta in M_H with f_Phi(theta given z) equal to zero; f_Phi maps M_H times Z to the non-negative reals" width="653" height="31">
+        </div>
+        <div class="content has-text-justified">
+          <p>
+            Projection onto the zero-level set uses Riemannian gradient descent on the field. Each step follows the Riemannian gradient, with a step length proportional to the predicted distance. The exponential map returns the updated pose to the manifold, so every iterate remains a valid hand pose.
+          </p>
+        </div>
+        <div class="eqbox">
+          <img class="eq" src="./static/images/eq_projection.svg" alt="theta at step t plus 1 equals the exponential map at theta t of minus alpha times f_Phi times the Riemannian gradient of f_Phi divided by its norm plus epsilon" width="642" height="80">
+        </div>
+        <figure class="fig-single">
+          <img src="./static/images/projection.jpg" alt="A hand pose is projected step by step along the distance field toward a grasp on a pink camera" loading="lazy">
+          <figcaption class="caption">Projection of a noisy pose <i>&theta;</i><sub>0</sub> onto <i>S</i>(<b>z</b><sub>1</sub>) for a camera; <i>&theta;</i><sub><i>T</i></sub> is the pose after <i>T</i> steps.</figcaption>
+        </figure>
+
+        <!-- Unified objective. -->
+        <h3 class="title is-4">Optimization with the prior</h3>
+        <div class="content has-text-justified">
+          <p>
+            Denoising, completion, generation and image-based recovery share the objective below: a task-specific data term plus the squared field value as a prior, minimized over the hand pose.
+          </p>
+        </div>
+        <div class="eqbox">
+          <img class="eq" src="./static/images/eq_prior.svg" alt="minimize over theta in M_H and z in Z the data loss plus lambda_prior times f_Phi squared plus lambda_z times a regularizer on z" width="592" height="48">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column is-full-width has-text-centered">
+        <h2 class="title is-3">Results</h2>
+
+        <!-- Denoising. -->
+        <h3 class="title is-4">Pose denoising</h3>
+        <div class="content has-text-justified">
+          <p>
+            The slider shows the pose at <i>t</i> = 0, 100, 300, and 1000 projection steps, with the ground-truth pose on the right.
+          </p>
+        </div>
+        <div class="interpolation-panel denoise-panel">
+          <div class="denoise-grid">
+            <div class="cell">
+              <img src="./static/images/denoise/bowl_t0.jpg" alt="Noisy hand pose next to a bowl." loading="lazy">
+              <p>Noisy pose</p>
+            </div>
+            <div class="cell interpolation-video-column">
+              <div class="interpolation-image-wrapper" data-frames="./static/images/denoise/bowl_t0.jpg, ./static/images/denoise/bowl_t100.jpg, ./static/images/denoise/bowl_t300.jpg, ./static/images/denoise/bowl_t1000.jpg" data-alt="Projection step of a hand pose grasping a bowl">
+                <img src="./static/images/denoise/bowl_t0.jpg" alt="Projection step of a hand pose grasping a bowl">
+              </div>
+              <div class="slider-row">
+                <span class="frame-label">t = 0</span>
+                <input class="slider is-info is-circle" step="1" min="0" max="3" value="0" type="range" data-labels="t = 0, t = 100, t = 300, t = 1000" aria-label="Projection step, bowl example">
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/images/denoise/bowl_gt.jpg" alt="Ground-truth grasp of the bowl." loading="lazy">
+              <p><b>Ground truth</b></p>
+            </div>
+            <div class="cell">
+              <img src="./static/images/denoise/mug_t0.jpg" alt="Noisy hand pose next to a mug." loading="lazy">
+              <p>Noisy pose</p>
+            </div>
+            <div class="cell interpolation-video-column">
+              <div class="interpolation-image-wrapper" data-frames="./static/images/denoise/mug_t0.jpg, ./static/images/denoise/mug_t100.jpg, ./static/images/denoise/mug_t300.jpg, ./static/images/denoise/mug_t1000.jpg" data-alt="Projection step of a hand pose grasping a mug">
+                <img src="./static/images/denoise/mug_t0.jpg" alt="Projection step of a hand pose grasping a mug">
+              </div>
+              <div class="slider-row">
+                <span class="frame-label">t = 0</span>
+                <input class="slider is-info is-circle" step="1" min="0" max="3" value="0" type="range" data-labels="t = 0, t = 100, t = 300, t = 1000" aria-label="Projection step, mug example">
+              </div>
+            </div>
+            <div class="cell">
+              <img src="./static/images/denoise/mug_gt.jpg" alt="Ground-truth grasp of the mug." loading="lazy">
+              <p><b>Ground truth</b></p>
+            </div>
+          </div>
+        </div>
+<div class="content has-text-justified">
+          <p>
+            <b>Denoising with different priors.</b> Columns: ground truth, <a href="https://github.com/enesduran/HMP" target="_blank" rel="noopener">HMP</a>, H-NRDF (<a href="https://virtualhumans.mpi-inf.mpg.de/nrdf/" target="_blank" rel="noopener">NRDF</a> trained on hand poses), HaNDF.
+          </p>
+        </div>
+        <img src="./static/images/denoising_comparison.jpg" alt="Qualitative denoising comparison on a knife and a toy car: ground truth, HMP, H-NRDF and HaNDF" loading="lazy">
+
+<!--/ Denoising. -->
+
+        <!-- In the wild. -->
+        <h3 class="title is-4">In-the-wild hand recovery</h3>
+        <div class="content has-text-justified">
+          <p>
+            HaNDF is added as the hand prior to <a href="https://lym29.github.io/EasyHOI-page/" target="_blank" rel="noopener">EasyHOI</a> and <a href="https://github.com/zerchen/AlignSDF" target="_blank" rel="noopener">AlignSDF</a>; evaluation on HOI4D, OakInk and DexYCB. For hand-focused comparison, the object ground truth is provided during inference. MPVPE and MPJPE: mean per-vertex and per-joint position error of the hand. I.V.: hand&ndash;object intersection volume. Lower is better.
+          </p>
+        </div>
+        <div class="table-container">
+          <table class="table results is-narrow">
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="3" class="group">HOI4D</th>
+                <th colspan="3" class="group">OakInk</th>
+                <th colspan="3" class="group">DexYCB</th>
+              </tr>
+              <tr>
+                <th>Method</th>
+                <th>MPVPE &darr;</th><th>MPJPE &darr;</th><th>I.V. &darr;</th>
+                <th>MPVPE &darr;</th><th>MPJPE &darr;</th><th>I.V. &darr;</th>
+                <th>MPVPE &darr;</th><th>MPJPE &darr;</th><th>I.V. &darr;</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>iHOI</td><td>19.42</td><td>20.12</td><td>41.44</td><td>14.75</td><td>15.17</td><td>1.66</td><td>29.85</td><td>30.73</td><td>1.26</td></tr>
+              <tr><td>EasyHOI</td><td>16.64</td><td>17.06</td><td>13.28</td><td>13.17</td><td>13.48</td><td>0.93</td><td>29.64</td><td>30.08</td><td>2.61</td></tr>
+              <tr class="ours"><td>EasyHOI + HaNDF</td><td>13.98</td><td>14.33</td><td>11.40</td><td>12.85</td><td>13.12</td><td>0.89</td><td>28.31</td><td>28.78</td><td>2.43</td></tr>
+              <tr><td>AlignSDF</td><td>10.40</td><td>10.60</td><td>5.39</td><td>10.34</td><td>10.50</td><td class="best">0.82</td><td>16.82</td><td>17.19</td><td>0.99</td></tr>
+              <tr class="ours"><td>AlignSDF + HaNDF</td><td class="best">10.22</td><td class="best">10.43</td><td class="best">4.39</td><td class="best">9.98</td><td class="best">10.17</td><td>0.87</td><td class="best">16.59</td><td class="best">16.97</td><td class="best">0.98</td></tr>
+            </tbody>
+          </table>
+        </div>
+<div class="content has-text-justified">
+          <p>
+            Left: baseline reconstruction. Right: reconstruction with HaNDF. Circles mark <span style="color:#e0218a; font-weight:600;">missing hand&ndash;object contact</span>, <span style="color:#1aa64b; font-weight:600;">object penetration</span>, and <span style="color:#17a2b8; font-weight:600;">implausible hand rotation</span>.
+          </p>
+        </div>
+
+        <div class="columns is-vcentered interpolation-panel">
+          <div class="column is-2 has-text-centered">
+            <img src="./static/images/wild/ex1_input.jpg" class="interpolation-image" alt="Input photo: a hand holding a knife over a cutting board."/>
+            <p>Input</p>
+          </div>
+          <div class="column">
+            <div class="compare">
+              <img class="compare-before" src="./static/images/wild/ex1_easyhoi.jpg" alt="EasyHOI reconstruction of the knife grasp">
+              <img class="compare-after" src="./static/images/wild/ex1_easyhoi_handf.jpg" alt="EasyHOI plus HaNDF reconstruction of the knife grasp">
+              <div class="compare-handle"></div>
+              <span class="compare-label is-left">EasyHOI</span>
+              <span class="compare-label is-right">+ HaNDF</span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare EasyHOI with EasyHOI plus HaNDF, knife example">
+            </div>
+          </div>
+          <div class="column">
+            <div class="compare">
+              <img class="compare-before" src="./static/images/wild/ex1_alignsdf.jpg" alt="AlignSDF reconstruction of the knife grasp">
+              <img class="compare-after" src="./static/images/wild/ex1_alignsdf_handf.jpg" alt="AlignSDF plus HaNDF reconstruction of the knife grasp">
+              <div class="compare-handle"></div>
+              <span class="compare-label is-left">AlignSDF</span>
+              <span class="compare-label is-right">+ HaNDF</span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare AlignSDF with AlignSDF plus HaNDF, knife example">
+            </div>
+          </div>
+          <div class="column is-2 has-text-centered">
+            <img src="./static/images/wild/ex1_gt.jpg" class="interpolation-image" alt="Ground-truth hand and knife."/>
+            <p><b>Ground truth</b></p>
+          </div>
+        </div>
+<div class="columns is-vcentered interpolation-panel">
+          <div class="column is-2 has-text-centered">
+            <img src="./static/images/wild/ex2_input.jpg" class="interpolation-image" alt="Input photo: a hand holding a bottle on a table."/>
+            <p>Input</p>
+          </div>
+          <div class="column">
+            <div class="compare">
+              <img class="compare-before" src="./static/images/wild/ex2_easyhoi.jpg" alt="EasyHOI reconstruction of the bottle grasp">
+              <img class="compare-after" src="./static/images/wild/ex2_easyhoi_handf.jpg" alt="EasyHOI plus HaNDF reconstruction of the bottle grasp">
+              <div class="compare-handle"></div>
+              <span class="compare-label is-left">EasyHOI</span>
+              <span class="compare-label is-right">+ HaNDF</span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare EasyHOI with EasyHOI plus HaNDF, bottle example">
+            </div>
+          </div>
+          <div class="column">
+            <div class="compare">
+              <img class="compare-before" src="./static/images/wild/ex2_alignsdf.jpg" alt="AlignSDF reconstruction of the bottle grasp">
+              <img class="compare-after" src="./static/images/wild/ex2_alignsdf_handf.jpg" alt="AlignSDF plus HaNDF reconstruction of the bottle grasp">
+              <div class="compare-handle"></div>
+              <span class="compare-label is-left">AlignSDF</span>
+              <span class="compare-label is-right">+ HaNDF</span>
+              <input class="compare-range" type="range" min="0" max="100" value="50" aria-label="Compare AlignSDF with AlignSDF plus HaNDF, bottle example">
+            </div>
+          </div>
+          <div class="column is-2 has-text-centered">
+            <img src="./static/images/wild/ex2_gt.jpg" class="interpolation-image" alt="Ground-truth hand and bottle."/>
+            <p><b>Ground truth</b></p>
+          </div>
+        </div>
+        <!--/ In the wild. -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="acknowledgements">
+  <div class="container is-max-desktop content">
+    <h2 class="title">Acknowledgements</h2>
+    <p>We thank the authors of the following works for providing their valuable code and data:</p>
+    <p>
+      <a href="https://github.com/hynann/NRDF" target="_blank" rel="noopener">NRDF</a>: Neural Riemannian Distance Fields for Learning Articulated Pose Priors<br>
+      <a href="https://github.com/garvita-tiwari/PoseNDF" target="_blank" rel="noopener">PoseNDF</a>: Modeling Human Pose Manifolds with Neural Distance Fields<br>
+      <a href="https://github.com/lym29/EasyHOI" target="_blank" rel="noopener">EasyHOI</a>: Unleashing the Power of Large Models for Reconstructing Hand-Object Interactions in the Wild<br>
+      <a href="https://github.com/zerchen/AlignSDF" target="_blank" rel="noopener">AlignSDF</a>: Pose-Aligned Signed Distance Fields for Hand-Object Reconstruction<br>
+      <a href="https://github.com/enesduran/HMP" target="_blank" rel="noopener">HMP</a>: Hand Motion Priors for Pose and Shape Estimation from Video<br>
+      <a href="https://github.com/JudyYe/ihoi" target="_blank" rel="noopener">iHOI</a>: What's in your hands? 3D Reconstruction of Generic Objects in Hands<br>
+      <a href="https://hoi4d.github.io/" target="_blank" rel="noopener">HOI4D</a>: A 4D Egocentric Dataset for Category-Level Human-Object Interaction<br>
+      <a href="https://dex-ycb.github.io/" target="_blank" rel="noopener">DexYCB</a>: A Benchmark for Capturing Hand Grasping of Objects<br>
+      <a href="https://oakink.net/" target="_blank" rel="noopener">OakInk</a>: A Large-scale Knowledge Repository for Understanding Hand-Object Interaction
+    </p>
+    <p>T. Birdal was supported by a UKRI Future Leaders Fellowship [grant number MR/Y018818/1]. The authors acknowledge support from the UK AI Research Resource (AIRR Isambard AI) through grant 0251-4584-0945-1 - TopoFound.</p>
+  </div>
+</section>
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{liu2026handf,
+  title     = {{HaNDF}: Object-Conditioned Geometric Neural Hand Distance Fields},
+  author    = {Liu, Zuhao and Darcan, Melih and Yu, Zhengdi and Guler, Riza Alp and Birdal, Tolga},
+  booktitle = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year      = {2026}
+}</code></pre>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8 has-text-centered">
+        <img class="footer-logo" src="./static/images/imperial_logo.png" alt="Imperial College London">
+        <div class="content">
+          <p>
+            Website template borrowed from <a href="https://nerfies.github.io" target="_blank" rel="noopener">Nerfies</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
