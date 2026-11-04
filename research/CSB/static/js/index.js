@@ -1,0 +1,173 @@
+import { setupDelayedVideoLoops } from './video-loop.js';
+
+setupDelayedVideoLoops();
+
+$(document).ready(function() {
+  // Results Interactive Comparison Viewer Setup
+  function setupResultsViewer(config) {
+    var $slider = $(config.sliderId);
+    var $comparisonImg = $(config.imageId);
+    var $viewBadge = $(config.badgeId);
+    var $btnAutoRotate = $(config.autoRotateId);
+    var $materialButtons = $(config.materialButtonsClass);
+    var basePath = config.basePath;
+
+    if (!$slider.length || !$comparisonImg.length) return;
+
+    var currentMaterial = 'albedo';
+    var NUM_VIEWS = 6;
+    var imageCache = {};
+    var autoRotateTimer = null;
+
+    $materialButtons.attr('aria-pressed', 'false').filter('.is-selected').attr('aria-pressed', 'true');
+    $btnAutoRotate.attr('aria-pressed', 'false');
+
+    function preloadMaterialViews(material) {
+      if (!imageCache[material]) {
+        imageCache[material] = [];
+        for (var i = 0; i < NUM_VIEWS; i++) {
+          var viewStr = String(i).padStart(4, '0');
+          var img = new Image();
+          img.src = basePath + 'comparison_' + material + '_view_' + viewStr + '.webp';
+          imageCache[material].push(img);
+        }
+      }
+    }
+
+    // Preload active material
+    preloadMaterialViews(currentMaterial);
+
+    // Asynchronously preload other materials
+    setTimeout(function() {
+      $materialButtons.each(function() {
+        var mat = $(this).data('material');
+        if (mat) preloadMaterialViews(mat);
+      });
+    }, 1200);
+
+    function updateResultsDisplay() {
+      var viewIndex = parseInt($slider.val(), 10);
+      var viewStr = String(viewIndex).padStart(4, '0');
+      $comparisonImg.attr('src', basePath + 'comparison_' + currentMaterial + '_view_' + viewStr + '.webp');
+      if ($viewBadge.length) {
+        $viewBadge.text('View ' + (viewIndex + 1) + ' / ' + NUM_VIEWS);
+      }
+    }
+
+    $slider.on('input change', function() {
+      stopAutoRotate();
+      updateResultsDisplay();
+    });
+
+    $materialButtons.on('click', function() {
+      $materialButtons.removeClass('is-info is-selected').attr('aria-pressed', 'false');
+      $(this).addClass('is-info is-selected').attr('aria-pressed', 'true');
+      currentMaterial = $(this).data('material');
+      preloadMaterialViews(currentMaterial);
+      updateResultsDisplay();
+    });
+
+    function startAutoRotate() {
+      autoRotateTimer = setInterval(function() {
+        var nextVal = (parseInt($slider.val(), 10) + 1) % NUM_VIEWS;
+        $slider.val(nextVal);
+        updateResultsDisplay();
+      }, 800);
+      $btnAutoRotate.addClass('is-info').attr('aria-pressed', 'true');
+      $btnAutoRotate.html('<span class="icon is-small"><i class="fas fa-pause"></i></span><span>Pause</span>');
+    }
+
+    function stopAutoRotate() {
+      if (autoRotateTimer) {
+        clearInterval(autoRotateTimer);
+        autoRotateTimer = null;
+      }
+      $btnAutoRotate.removeClass('is-info').attr('aria-pressed', 'false');
+      $btnAutoRotate.html('<span class="icon is-small"><i class="fas fa-play"></i></span><span>Auto-rotate</span>');
+    }
+
+    $btnAutoRotate.on('click', function() {
+      if (autoRotateTimer) {
+        stopAutoRotate();
+      } else {
+        startAutoRotate();
+      }
+    });
+  }
+
+  // Initialize UV Texture Fitting Viewer
+  setupResultsViewer({
+    sliderId: '#results-rotation-slider-uv',
+    imageId: '#results-comparison-image-uv',
+    badgeId: '#view-angle-badge-uv',
+    autoRotateId: '#btn-auto-rotate-uv',
+    materialButtonsClass: '.material-btn-uv',
+    basePath: './static/fig/results/uv/'
+  });
+
+  // Initialize Multi-View Optimization Viewer
+  setupResultsViewer({
+    sliderId: '#results-rotation-slider-mv',
+    imageId: '#results-comparison-image-mv',
+    badgeId: '#view-angle-badge-mv',
+    autoRotateId: '#btn-auto-rotate-mv',
+    materialButtonsClass: '.material-btn-mv',
+    basePath: './static/fig/results/mv/'
+  });
+
+});
+
+// BibTeX copy feedback, adapted from TNO.
+async function copyText(text) {
+  try {
+    await navigator.clipboard.writeText(text);
+    return true;
+  } catch {
+    // Support browsers where the Clipboard API is unavailable or denied.
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.cssText = 'position: fixed; opacity: 0;';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+      return document.execCommand('copy');
+    } catch {
+      return false;
+    } finally {
+      textarea.remove();
+    }
+  }
+}
+
+document.querySelectorAll('.bibx-card').forEach((card) => {
+  const button = card.querySelector('.bibx-copy');
+  const code = card.querySelector('code');
+  const toast = card.querySelector('.bibx-toast');
+  if (!button || !code || !toast) return;
+
+  let resetTimer;
+  button.addEventListener('click', async () => {
+    clearTimeout(resetTimer);
+    button.disabled = true;
+    button.classList.remove('copied');
+    button.classList.add('spinning');
+    toast.classList.remove('show');
+    toast.textContent = '';
+
+    const copied = await copyText(code.textContent.trim());
+    await new Promise((resolve) => setTimeout(resolve, 250));
+
+    button.classList.remove('spinning');
+    button.classList.toggle('copied', copied);
+    button.disabled = false;
+    button.focus({ preventScroll: true });
+    toast.textContent = copied ? 'Copied!' : 'Copy failed. Please select and copy the citation.';
+    toast.classList.add('show');
+
+    resetTimer = setTimeout(() => {
+      button.classList.remove('copied');
+      toast.classList.remove('show');
+      toast.textContent = '';
+    }, copied ? 1600 : 4000);
+  });
+});
