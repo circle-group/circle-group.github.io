@@ -9,7 +9,9 @@ body {
   color: #000;
 }
 
-.link-block a {
+/* Applies to .button, not to `a`, so the outlined and filled buttons keep the
+   same box whether they are links yet or not. */
+.link-block .button {
   margin-top: 5px;
   margin-bottom: 5px;
 }
