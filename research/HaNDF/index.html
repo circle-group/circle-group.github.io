@@ -43,15 +43,16 @@
 
           <div class="column has-text-centered">
             <div class="publication-links">
-              <!-- arXiv (coming soon) -->
+              <!-- arXiv -->
               <span class="link-block">
-                <span class="button is-normal is-rounded is-soon" aria-disabled="true" title="arXiv version coming soon">
+                <a class="external-link button is-normal is-rounded is-dark"
+                   href="https://arxiv.org/abs/2611.08578" target="_blank" rel="noopener"
+                   title="arXiv preprint">
                   <span class="icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/><path d="M8 13h8M8 17h8"/></svg>
                   </span>
                   <span>arXiv</span>
-                  <span class="soon-tag">soon</span>
-                </span>
+                </a>
               </span>
               <!-- Code -->
               <span class="link-block">
@@ -91,7 +92,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We propose, <b>HaNDF</b>, object-conditional neural distance fields as data-driven priors for modeling the plausible hand–object configurations, in the product manifold of hand articulations. While recent unconditional generative priors showed success in modeling human pose, hands are versatile articulated bodies often found in interaction with other objects. This makes it crucial to develop a generative prior which can model the plausible hand poses conditioned on the object under interaction. To this end, our HaNDF proposes a geometry-aware, object-conditioned neural distance field, representing the plausible articulations in the zero-level set of a conditional field. We leverage tools from Riemannian geometry to (i) <em>represent</em> plausible hands in the zero level-set of an object-induced neural field, and (ii) <em>project</em> a given pose onto the this field. Using HaNDF, we can also optimize for a plausible <em>condition</em>, determining the object under interaction. Our extensive evaluations demonstrate that our HaNDF provides a flexible and powerful prior for hand–object interaction, suitable for applications such as pose refinement, reconstruction under occlusion, and physically plausible manipulation synthesis.
+            We propose, <b>HaNDF</b>, object-conditional neural distance fields as data-driven priors for modeling the plausible hand–object configurations, in the product manifold of hand articulations. While recent unconditional generative priors showed success in modeling human pose, hands are versatile articulated bodies often found in interaction with other objects. This makes it crucial to develop a generative prior which can model the plausible hand poses conditioned on the object under interaction. To this end, our HaNDF proposes a geometry-aware, object-conditioned neural distance field, representing the plausible articulations in the zero-level set of a conditional field. We leverage tools from Riemannian geometry to (i) <em>represent</em> plausible hands in the zero level-set of an object-induced neural field, and (ii) <em>project</em> a given pose onto this field. Using HaNDF, we can also optimize for a plausible <em>condition</em>, determining the object under interaction. Our extensive evaluations demonstrate that our HaNDF provides a flexible and powerful prior for hand–object interaction, suitable for applications such as pose refinement, reconstruction under occlusion, and physically plausible manipulation synthesis.
           </p>
         </div>
       </div>
