@@ -1,6 +1,8 @@
 import { setupDelayedVideoLoops } from './video-loop.js';
+import { setupDistributionDemo } from './demo.js';
 
 setupDelayedVideoLoops();
+setupDistributionDemo(document.getElementById('distribution-demo'));
 
 $(document).ready(function() {
   // Results Interactive Comparison Viewer Setup

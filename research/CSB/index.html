@@ -152,8 +152,8 @@
               underlying high-order structures. This paper explores a variant of diffusion bridges for solving
               real-world problems in complex vector spaces governed by scaling and rotation laws, such as Hamiltonian
               structures. To address this, we introduce conformal optimal transport (COT), a complex-valued
-              transportation framework designed for physical systems with geometric and dissipative dynamics under the
-              conformal invariance principle. Building on this, we propose a new class of dynamical diffusion bridges,
+              transportation framework designed for physical systems with geometric and dissipative dynamics under
+              a geometric lifting. Building on this, we propose a new class of dynamical diffusion bridges,
               called complex Schrödinger bridges (CSBs), whose derived algorithms can handle diffusion-based tasks using
               a conformal geometric prior. For scalability, we propose image-to-image CSB (I<sup>2</sup>CSB), a
               tractable
@@ -273,6 +273,125 @@
               </div>
             </div>
           </div>
+
+          <section class="hktex-box distribution-demo" id="distribution-demo" aria-labelledby="distribution-title">
+            <div class="distribution-heading">
+              <h3 class="title is-4" id="distribution-title">Gaussian SB<sup class="distribution-footnote-marker"><a
+                href="#gaussian-sb-citation" role="doc-noteref" aria-label="Footnote 1, Gaussian SB reference">1</a></sup> Interactive Demo</h3>
+              <!-- <p class="polar-key" id="polar-key"><span title="Mahalanobis radius from each Gaussian mean">Relative r · 1–4</span><span>Angle · 45°</span></p> -->
+            </div>
+            <div class="distribution-plots">
+              <div class="distribution-panel">
+                <figure class="distribution-figure distribution-a">
+                  <figcaption>
+                    <span class="process-label" id="distribution-a-title">Forward Process (\(z_t\))</span>
+                    <output aria-label="Selected point coordinates"></output>
+                  </figcaption>
+                  <div class="distribution-viewport">
+                    <canvas tabindex="0" aria-labelledby="distribution-a-title">
+                      The three green starting points stay fixed until Reset. Changing rotation selects their orange targets from 256 candidates. Hover or tap a marked endpoint to see its path’s spiral, or any other dot to see its best match among the 125 background dots displayed on the opposite cap.
+                    </canvas>
+                    <svg class="orbit-hint orbit-hint--left" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
+                      <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
+                    </svg>
+                    <svg class="orbit-hint orbit-hint--right" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
+                      <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
+                    </svg>
+                  </div>
+                  <canvas class="w-plane-minimap" width="104" height="104" role="img"
+                    aria-label="Forward w-plane minimap"></canvas>
+                  <span class="process-direction process-direction--forward" role="img" aria-label="rho zero (green Gaussian) to rho T (orange Gaussian)">
+                    <span class="process-endpoint" aria-hidden="true">
+                      <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
+                        <path class="gaussian-baseline" d="M1 20 H39" />
+                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                      </svg>
+                      <span class="process-density">\(\rho_0\)</span>
+                    </span>
+                    <span class="process-arrow" aria-hidden="true">→</span>
+                    <span class="process-endpoint" aria-hidden="true">
+                      <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
+                        <path class="gaussian-baseline" d="M1 20 H39" />
+                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                      </svg>
+                      <span class="process-density">\(\rho_T\)</span>
+                    </span>
+                  </span>
+                </figure>
+                <div class="gamma-control">
+                  <label for="distribution-forward-gamma">Rotation (γ) <output for="distribution-forward-gamma">0.000</output></label>
+                  <input id="distribution-forward-gamma" type="range" min="0" max="5" step="0.001" value="0"
+                    aria-label="Forward rotation (γ)">
+                  <div class="gamma-scale" aria-hidden="true"><span>0.000</span><span>2.500</span><span>5.000</span></div>
+                </div>
+              </div>
+              <div class="distribution-panel">
+                <figure class="distribution-figure distribution-b">
+                  <figcaption>
+                    <span class="process-label" id="distribution-b-title">Reverse Process (\(\bar{z}_s\))</span>
+                    <output aria-label="Selected point coordinates"></output>
+                  </figcaption>
+                  <div class="distribution-viewport">
+                    <canvas tabindex="0" aria-labelledby="distribution-b-title">
+                      The three orange starting points stay fixed until Reset. Changing rotation selects their green targets from 256 candidates. Hover or tap a marked endpoint to see its path’s spiral, or any other dot to see its best match among the 125 background dots displayed on the opposite cap.
+                    </canvas>
+                    <svg class="orbit-hint orbit-hint--left" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
+                      <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
+                    </svg>
+                    <svg class="orbit-hint orbit-hint--right" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
+                      <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
+                    </svg>
+                  </div>
+                  <canvas class="w-plane-minimap" width="104" height="104" role="img"
+                    aria-label="Reverse w-plane minimap"></canvas>
+                  <span class="process-direction process-direction--reverse" role="img" aria-label="rho T (orange Gaussian) to rho zero (green Gaussian)">
+                    <span class="process-endpoint" aria-hidden="true">
+                      <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
+                        <path class="gaussian-baseline" d="M1 20 H39" />
+                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                      </svg>
+                      <span class="process-density">\(\rho_T\)</span>
+                    </span>
+                    <span class="process-arrow" aria-hidden="true">→</span>
+                    <span class="process-endpoint" aria-hidden="true">
+                      <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
+                        <path class="gaussian-baseline" d="M1 20 H39" />
+                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                      </svg>
+                      <span class="process-density">\(\rho_0\)</span>
+                    </span>
+                  </span>
+                </figure>
+                <div class="gamma-control">
+                  <label for="distribution-reverse-gamma">Rotation (γ) <output for="distribution-reverse-gamma">0.000</output></label>
+                  <input id="distribution-reverse-gamma" type="range" min="0" max="5" step="0.001" value="0"
+                    aria-label="Reverse rotation (γ)">
+                  <div class="gamma-scale" aria-hidden="true"><span>0.000</span><span>2.500</span><span>5.000</span></div>
+                </div>
+              </div>
+            </div>
+            <div class="distribution-footer">
+              <div class="distribution-controls">
+                <button class="button" type="button" data-action="play" aria-pressed="false">
+                  <span class="icon is-small"><i class="fas fa-play" aria-hidden="true"></i><i class="fas fa-pause" aria-hidden="true"></i></span>
+                  <span data-play-label>Play</span>
+                </button>
+                <input id="distribution-seek" class="distribution-seek" type="range" min="0" max="1" step="0.001" value="0"
+                  aria-label="Simulation time" aria-valuetext="t = 0.00 T">
+                <output id="distribution-time" for="distribution-seek" aria-live="off">t = 0.00 T</output>
+                <button class="button" type="button" data-action="reset" title="Reset both 3D views, time, and rotation, and draw new samples">
+                  <span class="icon is-small"><i class="fas fa-redo" aria-hidden="true"></i></span>
+                  <span>Reset</span>
+                </button>
+              </div>
+              <!-- <p id="distribution-hint">Hover/tap: r, θ relative to μ and Σ.</p> -->
+            </div>
+            <aside class="distribution-citation" id="gaussian-sb-citation" role="doc-footnote" tabindex="-1">
+              <sup>1</sup> Bunne et al.,
+              <cite>The Schrödinger Bridge between Gaussian Measures has a Closed Form</cite>,
+              AISTAT 2023.
+            </aside>
+          </section>
 
         </div>
       </div>
