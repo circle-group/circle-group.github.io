@@ -215,6 +215,7 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
   const { tank, outline, light, sun } = makeTank(scene);
   const tube = createGaussianTube(scene, { forward });
   const trajectories = createBridgeTrajectories(scene, color);
+  let previewPaths = true;
   const topGrid = createGaussianPolarGrid(scene, mapToTankSurface, {
     height: halfHeight, opacity: 0.78, renderOrder: 3, ringColor, spokeColor,
   });
@@ -240,18 +241,21 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
   guide.visible = false;
   scene.add(guide);
   let pairing = null;
+  let endpointPairs = null;
+  let endpointScale = 0;
 
   let yaw = initialYaw;
   let elevation = initialElevation;
   let cameraSunDirection = null;
   let selected = -1;
   let selectedLayer = null;
+  let selectedPair = null;
   let pinned = null;
   let drag = null;
   let hovered = false;
   let emphasized = false;
   const figure = canvas.closest('.distribution-figure');
-  const rotationControl = figure?.closest('.distribution-panel')?.querySelector('.gamma-control');
+  const demo = figure?.closest('.distribution-demo');
   const raycaster = new THREE.Raycaster();
   const pointer = new THREE.Vector2();
   const hits = [];
@@ -339,7 +343,9 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
     if (!refresh && index === selected && layer === selectedLayer) return;
     selected = index;
     selectedLayer = layer;
-    const pair = layer && (layer.userData.animatedPairs.get(index) ?? pairing?.matchBackground?.(layer === samples, index));
+    const onPin = pinned && layer && index === (layer === samples ? pinned.sourceIndex : pinned.targetIndex);
+    const pair = onPin ? pinned : layer && (layer.userData.animatedPairs.get(index) ?? pairing?.matchBackground?.(layer === samples, index));
+    selectedPair = pair;
     markEndpoint(topRing, samples, pair?.sourceIndex ?? -1);
     markEndpoint(floorRing, floorSamples, pair?.targetIndex ?? -1);
     guide.visible = !!pairing && topRing.visible && floorRing.visible;
@@ -367,8 +373,9 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
     if (!refresh) draw();
   }
 
-  function restorePin() {
-    select(pinned?.index ?? -1, pinned?.layer ?? null);
+  function restorePin(refresh = false) {
+    const index = pinned ? (pinned.layer === samples ? pinned.sourceIndex : pinned.targetIndex) : -1;
+    select(index, pinned?.layer ?? null, refresh);
   }
 
   function clearSelection() {
@@ -400,8 +407,10 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
         }
       }
     }
-    if (pin) pinned = closestLayer ? { index: closest, layer: closestLayer } : null;
-    if (closestLayer) select(closest, closestLayer);
+    if (closestLayer) {
+      select(closest, closestLayer);
+      if (pin && selectedPair) pinned = { ...selectedPair, layer: closestLayer };
+    } else if (pin) clearSelection();
     else restorePin();
   }
 
@@ -430,7 +439,7 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
     const dy = event.clientY - drag.y;
     if (!drag.moved && Math.hypot(dx, dy) < 4) return;
     if (event.pointerType === 'touch' && !drag.moved && Math.abs(dy) > Math.abs(dx)) return;
-    if (!drag.moved) clearSelection();
+    if (!drag.moved) restorePin();
     drag.moved = true;
     yaw = drag.yaw - dx * 0.012;
     if (event.pointerType !== 'touch') {
@@ -452,7 +461,7 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
     if (drag?.id !== event.pointerId) return;
     drag = null;
     hovered = false;
-    clearSelection();
+    restorePin();
     updateInteraction();
   }
   canvas.addEventListener('pointercancel', cancelDrag);
@@ -464,13 +473,13 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
   });
   canvas.addEventListener('focus', updateInteraction);
   canvas.addEventListener('blur', event => {
-    if (rotationControl?.contains(event.relatedTarget)) restorePin();
-    else clearSelection();
+    if (event.relatedTarget && !demo?.contains(event.relatedTarget)) clearSelection();
+    else restorePin();
     updateInteraction();
   });
-  // Keep a clicked or tapped match visible while adjusting this panel's rotation.
+  // Keep the conditioning pair while inspecting the slice or scrubbing time.
   canvas.ownerDocument.addEventListener('pointerdown', event => {
-    if (event.target !== canvas && !rotationControl?.contains(event.target)) clearSelection();
+    if (!demo?.contains(event.target)) clearSelection();
   });
 
   function resetView() {
@@ -499,7 +508,7 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
     }
     event.preventDefault();
     updateInteraction();
-    clearSelection();
+    restorePin();
     orbit();
   });
   canvas.addEventListener('webglcontextrestored', () => {
@@ -542,62 +551,50 @@ export function createDistributionTank(canvas, { color, ringColor, spokeColor, r
     rings.visible = pairs.length > 0;
   }
 
-  function rememberSelection(layer, index) {
-    if (!layer) return null;
-    const pair = layer.userData.animatedPairs.get(index);
-    return { layer, point: layer.userData.cloud.points[index],
-      anchor: pair && samples.userData.cloud.points[pair.sourceIndex] };
-  }
-
-  function locateSelection(previous) {
-    if (!previous) return null;
-    // A trajectory follows its fixed anchor to the new target. Background
-    // samples can move to a different display slot or leave the current draw.
-    const { layer, point, anchor } = previous;
-    const pair = anchor && samples.userData.animatedPairs.get(samples.userData.cloud.points.indexOf(anchor));
-    const index = pair ? (layer === samples ? pair.sourceIndex : pair.targetIndex)
-      : layer.userData.cloud.points.indexOf(point);
-    return index >= 0 ? { layer, index } : null;
-  }
-
-  function setSamples(topCloud, floorCloud, visiblePairs, viewRadius, bridge, paths, time = 0, spiralPointAt, matchBackground) {
-    const oldSelection = rememberSelection(selectedLayer, selected);
-    const oldPin = pinned && rememberSelection(pinned.layer, pinned.index);
+  function setSamples(topCloud, floorCloud, visiblePairs, viewRadius, bridge, paths, time = 0, spiralPointAt, matchBackground, beforeRotation) {
     const scale = plotRadius / viewRadius;
     function project(x, y, time, position) {
       const plotX = (x - THREE.MathUtils.lerp(topCloud.x, floorCloud.x, time)) * scale;
       const plotZ = -(y - THREE.MathUtils.lerp(topCloud.y, floorCloud.y, time)) * scale;
       const height = halfHeight * (1 - 2 * time);
-      const depth = halfHeight - Math.abs(height);
       position.set(plotX, height, plotZ);
+      const depth = halfHeight - Math.abs(height);
       if (depth < rimRadius) {
         // Join the endpoint discs on the rounded cap. The discs have a small
         // surface offset for rendering, while the bridge ends on the glass.
         const capHeight = Math.sign(height) * halfHeight;
-        mapToTankSurface(plotX, plotZ, capHeight, surfacePosition, surfaceNormal, 0);
+        mapToTankSurface(position.x, position.z, capHeight, surfacePosition, surfaceNormal, 0);
         surfacePosition.y += height - capHeight;
         position.lerp(surfacePosition, 1 - THREE.MathUtils.smoothstep(depth, 0, rimRadius));
       }
       return position;
     }
-    topGrid.setDistribution(topCloud, scale, polarRings);
-    bottomGrid.setDistribution(floorCloud, scale, polarRings);
-    floorSamples.material.color.set(floorCloud.color).lerp(floorGray, 0.46);
-    tube.setBridge(bridge, project, topCloud.color, floorCloud.color);
+    // Only a new draw changes the caps. A γ update keeps every endpoint index.
+    if (topCloud !== samples.userData.cloud || floorCloud !== floorSamples.userData.cloud ||
+        visiblePairs !== endpointPairs || scale !== endpointScale) {
+      topGrid.setDistribution(topCloud, scale, polarRings);
+      bottomGrid.setDistribution(floorCloud, scale, polarRings);
+      floorSamples.material.color.set(floorCloud.color).lerp(floorGray, 0.46);
+      updateLayer(samples, topCloud, halfHeight, scale);
+      updateLayer(floorSamples, floorCloud, -halfHeight, scale);
+      markAnimatedPairs(samples, anchorRings[0], visiblePairs, 'sourceIndex');
+      markAnimatedPairs(floorSamples, anchorRings[1], visiblePairs, 'targetIndex');
+      endpointPairs = visiblePairs;
+      endpointScale = scale;
+      pinned = null;
+      select(-1, null, true);
+    }
+    tube.setBridge(bridge, project, topCloud.color, floorCloud.color, beforeRotation);
     trajectories.setPaths(paths, project);
-    updateLayer(samples, topCloud, halfHeight, scale);
-    updateLayer(floorSamples, floorCloud, -halfHeight, scale);
-    markAnimatedPairs(samples, anchorRings[0], visiblePairs, 'sourceIndex');
-    markAnimatedPairs(floorSamples, anchorRings[1], visiblePairs, 'targetIndex');
     pairing = spiralPointAt ? { project, spiralPointAt, matchBackground } : null;
-    pinned = locateSelection(oldPin);
-    const next = locateSelection(oldSelection) ?? pinned;
-    select(next?.index ?? -1, next?.layer ?? null, true);
-    setProgress(time);
+    if (selectedLayer) select(selected, selectedLayer, true);
+    // A rotation change rebuilds the paths at the current playback state.
+    setProgress(time, previewPaths);
   }
-  function setProgress(time) {
+  function setProgress(time, showFullPaths = false) {
+    previewPaths = showFullPaths;
     tube.setProgress(time);
-    trajectories.setProgress(time);
+    trajectories.setProgress(time, previewPaths);
     draw();
   }
   return { setSamples, setProgress, resetView };

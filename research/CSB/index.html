@@ -276,8 +276,8 @@
 
           <section class="hktex-box distribution-demo" id="distribution-demo" aria-labelledby="distribution-title">
             <div class="distribution-heading">
-              <h3 class="title is-4" id="distribution-title">Gaussian SB<sup class="distribution-footnote-marker"><a
-                href="#gaussian-sb-citation" role="doc-noteref" aria-label="Footnote 1, Gaussian SB reference">1</a></sup> Interactive Demo</h3>
+              <h3 class="title is-4" id="distribution-title">Gaussian Bridge Marginals<sup class="distribution-footnote-marker"><a
+                href="#gaussian-sb-citation" role="doc-noteref" aria-label="Footnote 1, reference Gaussian bridge">1</a></sup></h3>
               <!-- <p class="polar-key" id="polar-key"><span title="Mahalanobis radius from each Gaussian mean">Relative r · 1–4</span><span>Angle · 45°</span></p> -->
             </div>
             <div class="distribution-plots">
@@ -289,7 +289,7 @@
                   </figcaption>
                   <div class="distribution-viewport">
                     <canvas tabindex="0" aria-labelledby="distribution-a-title">
-                      The three green starting points stay fixed until Reset. Changing rotation selects their orange targets from 256 candidates. Hover or tap a marked endpoint to see its path’s spiral, or any other dot to see its best match among the 125 background dots displayed on the opposite cap.
+                      Three green starts and their sampled orange endpoints stay fixed until Reset. Adjust rotation to transform the same three bridge paths. Hover or tap a marked endpoint to see its pair’s mean path, or a background dot to see a likely match.
                     </canvas>
                     <svg class="orbit-hint orbit-hint--left" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
                       <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
@@ -319,10 +319,12 @@
                   </span>
                 </figure>
                 <div class="gamma-control">
-                  <label for="distribution-forward-gamma">Rotation (γ) <output for="distribution-forward-gamma">0.000</output></label>
-                  <input id="distribution-forward-gamma" type="range" min="0" max="5" step="0.001" value="0"
+                  <label for="distribution-forward-gamma">Rotation (γ)
+                    <span><output for="distribution-forward-gamma">0.000</output>&nbsp;·&nbsp;<span data-rotation-angle title="Signed turn of the endpoint-conditioned path">0.0°</span></span>
+                  </label>
+                  <input id="distribution-forward-gamma" type="range" min="-3" max="3" step="0.001" value="0"
                     aria-label="Forward rotation (γ)">
-                  <div class="gamma-scale" aria-hidden="true"><span>0.000</span><span>2.500</span><span>5.000</span></div>
+                  <div class="gamma-scale" aria-hidden="true"><span>−3.000</span><span>0.000</span><span>3.000</span></div>
                 </div>
               </div>
               <div class="distribution-panel">
@@ -333,7 +335,7 @@
                   </figcaption>
                   <div class="distribution-viewport">
                     <canvas tabindex="0" aria-labelledby="distribution-b-title">
-                      The three orange starting points stay fixed until Reset. Changing rotation selects their green targets from 256 candidates. Hover or tap a marked endpoint to see its path’s spiral, or any other dot to see its best match among the 125 background dots displayed on the opposite cap.
+                      The three forward paths run from orange to green here, with their imaginary coordinates reflected. Compare equal rotation settings at complementary times. Hover or tap a marked endpoint to see its pair’s mean path, or a background dot to see a likely match.
                     </canvas>
                     <svg class="orbit-hint orbit-hint--left" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
                       <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
@@ -363,10 +365,12 @@
                   </span>
                 </figure>
                 <div class="gamma-control">
-                  <label for="distribution-reverse-gamma">Rotation (γ) <output for="distribution-reverse-gamma">0.000</output></label>
-                  <input id="distribution-reverse-gamma" type="range" min="0" max="5" step="0.001" value="0"
+                  <label for="distribution-reverse-gamma">Rotation (γ)
+                    <span><output for="distribution-reverse-gamma">0.000</output>&nbsp;·&nbsp;<span data-rotation-angle title="Signed turn of the endpoint-conditioned path">0.0°</span></span>
+                  </label>
+                  <input id="distribution-reverse-gamma" type="range" min="-3" max="3" step="0.001" value="0"
                     aria-label="Reverse rotation (γ)">
-                  <div class="gamma-scale" aria-hidden="true"><span>0.000</span><span>2.500</span><span>5.000</span></div>
+                  <div class="gamma-scale" aria-hidden="true"><span>−3.000</span><span>0.000</span><span>3.000</span></div>
                 </div>
               </div>
             </div>
@@ -376,20 +380,20 @@
                   <span class="icon is-small"><i class="fas fa-play" aria-hidden="true"></i><i class="fas fa-pause" aria-hidden="true"></i></span>
                   <span data-play-label>Play</span>
                 </button>
-                <input id="distribution-seek" class="distribution-seek" type="range" min="0" max="1" step="0.001" value="0"
-                  aria-label="Simulation time" aria-valuetext="t = 0.00 T">
-                <output id="distribution-time" for="distribution-seek" aria-live="off">t = 0.00 T</output>
-                <button class="button" type="button" data-action="reset" title="Reset both 3D views, time, and rotation, and draw new samples">
+                <input id="distribution-seek" class="distribution-seek" type="range" min="0" max="1" step="0.001" value="0.5"
+                  aria-label="Elapsed time in each panel" aria-valuetext="Elapsed 0.50 T">
+                <output id="distribution-time" for="distribution-seek" aria-live="off">Elapsed 0.50 T</output>
+                <button class="button" type="button" data-action="reset" title="Draw new samples, reset both views and rotations, and pause halfway">
                   <span class="icon is-small"><i class="fas fa-redo" aria-hidden="true"></i></span>
                   <span>Reset</span>
                 </button>
               </div>
-              <!-- <p id="distribution-hint">Hover/tap: r, θ relative to μ and Σ.</p> -->
+              <p id="distribution-hint">The outline encloses 95% of the Gaussian population before \(\mathcal H_\gamma\), and shading shows its density inside the 95% contour after the map.</p>
             </div>
             <aside class="distribution-citation" id="gaussian-sb-citation" role="doc-footnote" tabindex="-1">
-              <sup>1</sup> Bunne et al.,
-              <cite>The Schrödinger Bridge between Gaussian Measures has a Closed Form</cite>,
-              AISTAT 2023.
+              <sup>1</sup> Both panels use the same three paths from the Gaussian bridge of
+              <a href="https://proceedings.mlr.press/v206/bunne23a.html">Bunne et al. (AISTATS 2023)</a>.
+              At equal γ, compare forward time \(t\) with reverse time \(s=T-t\).
             </aside>
           </section>
 

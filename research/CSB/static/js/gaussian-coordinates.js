@@ -1,6 +1,12 @@
 // The squared Mahalanobis distance of a 2D Gaussian has a chi-square(2) law.
 export const gaussian95Radius = Math.sqrt(-2 * Math.log(0.05));
 
+// At the collapsed endpoint the displacement is zero and has no orientation.
+export function bridgeAngle(time, gamma, forward) {
+  if (time === (forward ? 1 : 0)) return 0;
+  return gamma * (forward ? Math.log1p(-time) : -Math.log(time));
+}
+
 // Eq. (56) rotates the entire Brownian bridge about its conditioning endpoint.
 // Conjugate time reversal moves the pivot to the displayed source and flips the angle.
 export function rotateBridgePoint(time, point, source, target, gamma, forward) {
@@ -8,7 +14,7 @@ export function rotateBridgePoint(time, point, source, target, gamma, forward) {
   if (time === 1) return target;
   if (gamma === 0) return point;
   const center = forward ? target : source;
-  const angle = gamma * (forward ? Math.log1p(-time) : -Math.log(time));
+  const angle = bridgeAngle(time, gamma, forward);
   const dx = point.x - center.x;
   const dy = point.y - center.y;
   const cos = Math.cos(angle), sin = Math.sin(angle);
