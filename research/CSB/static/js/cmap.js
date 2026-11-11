@@ -1,4 +1,3 @@
-// Match the custom w-plane plots in transform/transform.py.
 const gridLines = 16;
 const segments = 160;
 const limit = 10;
@@ -41,9 +40,6 @@ export function createWPlaneMinimap(canvas) {
     ctx.stroke();
     ctx.setLineDash([]);
 
-    // w = exp((a + ib)z). At zero rotation this is exp(z).
-    const a = 1 / Math.sqrt(1 + Math.abs(gamma));
-    const b = a * Math.sign(gamma) * Math.sqrt(Math.abs(gamma));
     ctx.lineWidth = 0.85;
     function drawFamily(fixedReal) {
       for (let i = 0; i < gridLines; i++) {
@@ -56,8 +52,9 @@ export function createWPlaneMinimap(canvas) {
           const varying = (2 * j / segments - 1) * Math.PI;
           const x = fixedReal ? fixed : varying;
           const y = fixedReal ? varying : fixed;
-          const radius = Math.exp(a * x - b * y);
-          const angle = b * x + a * y;
+          // exp((1 + iγ)(x + iy)), with the panel's signed map parameter.
+          const radius = Math.exp(x - gamma * y);
+          const angle = y + gamma * x;
           const px = centerX + scale * radius * Math.cos(angle);
           const py = centerY - scale * radius * Math.sin(angle);
           if (j === 0) ctx.moveTo(px, py);
@@ -89,7 +86,7 @@ export function createWPlaneMinimap(canvas) {
     gamma = value;
     canvas.setAttribute('aria-description', gamma === 0
       ? 'Concentric circles and radial spokes at zero rotation.'
-      : `Two families of logarithmic spirals at rotation ${gamma.toFixed(2)}.`);
+      : `Two families of logarithmic spirals at rotation ${gamma.toFixed(3)}.`);
     draw();
   }
   return { setGamma };

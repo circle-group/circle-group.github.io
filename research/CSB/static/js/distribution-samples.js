@@ -20,7 +20,7 @@ export function createVisitRandom() {
   };
 }
 
-// SplitMix32 gives each slider tick a repeatable stream from a 32-bit seed.
+// SplitMix32 supplies a repeatable sampling stream from a 32-bit seed.
 export function createSeededRandom(seed) {
   let state = seed >>> 0;
   return () => {

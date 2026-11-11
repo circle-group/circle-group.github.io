@@ -1,0 +1,2 @@
+# The CIRCLE website ignores vendor directories. Keep this demo's browser modules visible to Git.
+!/vendor/

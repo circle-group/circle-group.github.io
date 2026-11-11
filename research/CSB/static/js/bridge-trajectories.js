@@ -135,14 +135,16 @@ export function createBridgeTrajectories(scene, color) {
     setProgress(0);
   }
 
-  function setProgress(time) {
-    progress.value = time;
+  function setProgress(time, previewPaths = false) {
+    progress.value = previewPaths ? 1 : time;
     for (const [steps, { line, heads }] of batches) {
       const step = time * steps;
       const i = Math.min(Math.floor(step), steps - 1);
       const coords = line.geometry.attributes.position.array;
-      // The shader cuts all current segments at the same fraction as the dots.
-      line.geometry.setDrawRange(0, 6 * heads.count * (i + 1));
+      // Preview the whole ribbon with the dot at its start. During playback
+      // the shader cuts the current segment at the dot's interpolated position.
+      const visibleSteps = previewPaths ? steps : i + 1;
+      line.geometry.setDrawRange(0, 6 * heads.count * visibleSteps);
       for (let path = 0; path < heads.count; path++) {
         const offset = 6 * (path * (steps + 1) + i);
         current.fromArray(coords, offset).lerp(next.fromArray(coords, offset + 6), step - i);

@@ -5,8 +5,8 @@ function rootColumns(covariance) {
   return [{ x: a, y: b }, { x: b, y: d }];
 }
 
-// Average the fixed-pair spiral posterior over the Gaussian endpoint law
-// Y|X used for target selection. Both clouds are in the panel's coordinates.
+// Integrate the endpoint-conditioned rotation over the reference bridge's
+// joint endpoint law. Both endpoints are in the panel's coordinates.
 export function createSpiralMarginal(source, target, transition, gamma, forward, sigma) {
   const origin = { x: 0, y: 0 };
   const endpointMean = transition.meanAt(source.mean);
