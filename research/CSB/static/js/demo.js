@@ -1,12 +1,9 @@
-import { createSeededRandom, createVisitRandom, sampleCloud, sampleStandardNormalPair, sampleWithoutReplacement } from './distribution-samples.js';
-import { createDistributionTank } from './distribution-tank.js';
-import { createGaussianBridge } from './gaussian-bridge.js';
-import { demoSigma, sampleDemoShapes } from './gaussian-demo-diffusion.js';
-import { createBackgroundMatcher } from './gaussian-pairs.js';
-import { transformBridgePath } from './spiral-bridge.js';
-import { createSpiralMarginal } from './spiral-marginal.js';
-import { bridgeAngle, gaussian95Radius, spiralGuidePoint } from './gaussian-coordinates.js';
-import { createWPlaneMinimap } from './cmap.js';
+import {
+  createSeededRandom, sampleCloud, sampleStandardNormalPair, sampleWithoutReplacement,
+  createGaussianBridge, demoSigma, sampleDemoShapes, createShortestPathMatcher,
+  transformBridgePath, createSpiralMarginal, gaussian95Radius, spiralGuidePoint,
+} from './gsb.js';
+import { createDistributionTank, createWPlaneMinimap } from './tank.js';
 
 // Fixed plot origins make the randomized means visible on the shared scale.
 const distributions = [
@@ -16,10 +13,31 @@ const distributions = [
 const meanJitterStd = 1.25;
 const minViewRadius = 4;
 const playbackDuration = 4000;
-const initialTime = 0.5;
+const initialTime = 1;
 const pathSteps = 320;
 const visibleParticles = 128;
 const animatedPathCount = 3;
+const gammaSnapRadius = 0.08;
+
+// xoshiro128** 1.1, seeded once per visit from the browser's entropy source.
+// https://prng.di.unimi.it/xoshiro128starstar.c
+export function createVisitRandom() {
+  const state = crypto.getRandomValues(new Uint32Array(4));
+  if (state.every(word => word === 0)) state[0] = 1;
+
+  return () => {
+    const product = Math.imul(state[1], 5);
+    const bits = Math.imul((product << 7) | (product >>> 25), 9) >>> 0;
+    const shift = state[1] << 9;
+    state[2] ^= state[0];
+    state[3] ^= state[1];
+    state[1] ^= state[2];
+    state[0] ^= state[3];
+    state[2] ^= shift;
+    state[3] = (state[3] << 11) | (state[3] >>> 21);
+    return bits / 0x100000000;
+  };
+}
 
 const conjugate = point => ({ ...point, y: -point.y });
 
@@ -56,23 +74,31 @@ export function prepareDirections(tanks, sourcePool, targetPool, viewRadius, nor
       reference: createGaussianBridge(reverseSource, reverseTarget, demoSigma) },
   ];
   const transitions = directions.map(({ reference }) => reference.endpointTransition(pathSteps));
-  const matchers = directions.map(({ source, target, pairs }, i) =>
-    createBackgroundMatcher(source.points, target.points, pairs, transitions[i]));
+  // Hover guides search the full candidate pools independently of the bridge law.
+  const physicalSource = source, physicalTarget = target, physicalPairs = pairs;
   return directions.map(({ source, target, pairs, baselinePaths, reference }, i) => {
     const forward = i === 0;
-    // In either panel condition on the point the user clicked. A click on this
-    // target cap is a source lookup in the other panel, with the indices swapped.
-    function matchBackground(sourceSide, index) {
-      if (sourceSide) return matchers[i](true, index);
-      const other = matchers[1 - i](true, index);
-      return other && swapPair(other);
+    function createBackgroundMatcher(distanceBetween) {
+      const distance = forward ? distanceBetween
+        : (start, end) => distanceBetween(conjugate(end), conjugate(start));
+      const match = createShortestPathMatcher(physicalSource.points, physicalTarget.points, physicalPairs,
+        sourcePool.points, targetPool.points, distance);
+      const cache = [new Map(), new Map()];
+      return (sourceSide, index) => {
+        const matches = cache[Number(sourceSide)];
+        if (!matches.has(index)) {
+          const pair = match(forward ? sourceSide : !sourceSide, index);
+          matches.set(index, forward || !pair ? pair : { ...swapPair(pair),
+            sourcePoint: conjugate(pair.targetPoint), targetPoint: conjugate(pair.sourcePoint) });
+        }
+        return matches.get(index);
+      };
     }
     return (gamma, time) => {
       const population = gamma === 0 ? reference : createSpiralMarginal(source, target, transitions[i], gamma, forward, demoSigma);
-      const beforeRotation = gamma === 0 ? null : reference;
       const paths = baselinePaths.map(path => transformBridgePath(path, gamma, forward));
       const spiralPointAt = (t, start, end) => spiralGuidePoint(t, start, end, gamma, forward);
-      tanks[i]?.setSamples(source, target, pairs, viewRadius, population, paths, time, spiralPointAt, matchBackground, beforeRotation);
+      tanks[i]?.setSamples(source, target, pairs, viewRadius, population, paths, time, spiralPointAt, createBackgroundMatcher);
     };
   });
 }
@@ -89,28 +115,32 @@ export function setupDistributionDemo(root) {
     const minimap = createWPlaneMinimap(figure.querySelector('.w-plane-minimap'));
     const gamma = panel.querySelector('.gamma-control input');
     const gammaValue = panel.querySelector('.gamma-control output');
-    const angleValue = panel.querySelector('[data-rotation-angle]');
-    function showAngle(time) {
-      if (time === (forward ? 1 : 0)) {
-        angleValue.textContent = '—';
-        return;
-      }
-      const degrees = bridgeAngle(time, gamma.valueAsNumber, forward) * 180 / Math.PI;
-      const rounded = Math.round(degrees * 10) / 10;
-      angleValue.textContent = `${rounded > 0 ? '+' : ''}${rounded.toFixed(1)}°`;
-    }
     function setGamma(rotation) {
       gamma.value = rotation;
       gammaValue.value = rotation.toFixed(3);
+      const fraction = (rotation - Number(gamma.min)) / (Number(gamma.max) - Number(gamma.min));
+      gamma.style.setProperty('--gamma-fill', `${fraction * 100}%`);
       minimap.setGamma(forward ? rotation : -rotation);
-      showAngle(currentTime);
     }
     let drawDirection;
     let pendingFrame = null;
-    gamma.addEventListener('pointerdown', pause);
+    let gammaPointer = null;
+    gamma.addEventListener('pointerdown', event => {
+      gammaPointer = event.pointerId;
+      pause();
+    });
+    function endGammaDrag(event) {
+      if (event.pointerId === gammaPointer) gammaPointer = null;
+    }
+    gamma.ownerDocument.addEventListener('pointerup', endGammaDrag);
+    gamma.ownerDocument.addEventListener('pointercancel', endGammaDrag);
     gamma.addEventListener('input', () => {
       if (animationFrame !== null) pause();
-      setGamma(gamma.valueAsNumber);
+      const rotation = gamma.valueAsNumber;
+      const integer = Math.round(rotation);
+      // Detents apply during dragging; keyboard steps retain full precision.
+      const snap = gammaPointer !== null && Math.abs(rotation - integer) <= gammaSnapRadius;
+      setGamma(snap ? integer : rotation);
       if (pendingFrame !== null) return;
       pendingFrame = requestAnimationFrame(() => {
         pendingFrame = null;
@@ -127,7 +157,6 @@ export function setupDistributionDemo(root) {
         forward,
         ringColor: style.getPropertyValue('--polar-radius').trim(),
         spokeColor: style.getPropertyValue('--polar-angle').trim(),
-        readout: figure.querySelector('output'),
       });
     } catch (error) {
       console.error('Unable to initialize the distribution plot.', error);
@@ -142,7 +171,7 @@ export function setupDistributionDemo(root) {
       drawDirection = draw;
       drawDirection(0, initialTime);
     }
-    return { ...distributions[index], color, tank, startBridge, showAngle };
+    return { ...distributions[index], color, tank, startBridge };
   });
 
   function resample() {
@@ -166,13 +195,13 @@ export function setupDistributionDemo(root) {
         maxStd: Math.max(stdX, stdY),
       };
     });
-    const [green, orange] = clouds;
-    const maxStd = Math.max(green.maxStd, orange.maxStd);
+    const [sourceCloud, targetCloud] = clouds;
+    const maxStd = Math.max(sourceCloud.maxStd, targetCloud.maxStd);
     // Keep the same scale for both directions and across the slider.
     const meanOffset = Math.max(...clouds.map(({ mean, x, y }) => Math.hypot(mean.x - x, mean.y - y)));
     const viewRadius = Math.max(minViewRadius, meanOffset + gaussian95Radius * Math.hypot(maxStd, demoSigma / 2));
     const seed = Math.floor(random() * 0x100000000);
-    const draws = prepareDirections(plots.map(plot => plot.tank), green, orange, viewRadius, normalPair, seed);
+    const draws = prepareDirections(plots.map(plot => plot.tank), sourceCloud, targetCloud, viewRadius, normalPair, seed);
     plots.forEach((plot, i) => plot.startBridge(draws[i]));
   }
 
@@ -186,11 +215,10 @@ export function setupDistributionDemo(root) {
   function showProgress(time) {
     currentTime = Math.max(0, Math.min(time, 1));
     progress.value = currentTime;
-    timeValue.value = `Elapsed ${currentTime.toFixed(2)} T`;
+    timeValue.value = `${currentTime.toFixed(2)} T`;
     progress.setAttribute('aria-valuetext', timeValue.value);
     progress.style.setProperty('--seek', `${currentTime * 100}%`);
     for (const plot of plots) {
-      plot.showAngle(currentTime);
       plot.tank?.setProgress(currentTime);
     }
   }

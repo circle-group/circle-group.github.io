@@ -58,7 +58,7 @@
                 <!-- PDF Link. -->
                 <span class="link-block">
                   <!-- Original href="https://link.springer.com/chapter/10.1007/978-3-032-37595-7_17" -->
-                  <a href="https://circle-group.github.io/research/CSB/"
+                  <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/153202"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -76,9 +76,9 @@
                     <span>arXiv</span>
                   </a>
                 </span>
-                <!-- Video Link. -->
+                <!-- Video Link temporarily disabled. Remove this comment wrapper to restore.
+                Original href="https://youtu.be/FA0QSIK1tNU"
                 <span class="link-block">
-                  <!-- Original href="https://youtu.be/FA0QSIK1tNU" -->
                   <a href="https://circle-group.github.io/research/CSB/"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -87,6 +87,7 @@
                     <span>Video</span>
                   </a>
                 </span>
+                -->
                 <!-- Code Link. -->
                 <span class="link-block">
                   <!-- Original href="https://github.com/circle-group/hktex" -->
@@ -101,7 +102,7 @@
                 <!-- Poster Link. -->
                 <span class="link-block">
                   <!-- Original href="./static/fig/poster.pdf" -->
-                  <a href="https://circle-group.github.io/research/CSB/"
+                  <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/153202"
                     class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
                       <i class="far fa-window-maximize"></i>
@@ -144,8 +145,8 @@
       <!-- Abstract. -->
       <div class="columns is-centered has-text-centered">
         <div class="column is-four-fifths">
-          <h2 class="title is-3">Abstract</h2>
-          <div class="content has-text-justified">
+          <h2 class="title abstract-heading" id="abstract-title">Abstract</h2>
+          <div class="content has-text-justified abstract-card">
             <p>
               Diffusion bridges have emerged as versatile frameworks for facilitating transformations between arbitrary
               data distributions. However, these approaches are hindered by an immense optimization space and its
@@ -181,11 +182,11 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section csb-section" aria-labelledby="csb-title">
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-full-width">
-          <h2 class="title">Complex Schrödinger Bridges</h2>
+          <h2 class="title" id="csb-title">Complex Schrödinger Bridges</h2>
 
           <div class="content has-text-justified">
             <p>
@@ -198,7 +199,7 @@
             </p>
           </div>
 
-          <div class="video-row">
+          <div class="video-row csb-video-block">
             <figure>
               <figcaption class="is-size-5 has-text-weight-semibold has-text-centered mb-3">Conformal OT</figcaption>
               <video autoplay muted loop playsinline controls aria-label="COT visualization">
@@ -222,6 +223,15 @@
             </figure>
           </div>
 
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section csb-methods-section" aria-label="CSB methods and interactive demo">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
           <!-- Framework image temporarily disabled. Remove this comment wrapper to restore.
           <img src="./static/fig/framework.png" class="padded-img" alt="HKTex Framework Overview" />
           -->
@@ -234,9 +244,10 @@
                   <strong class="method-term">CSB</strong> presents high-order diffusion and phase dynamics through an
                   complex-valued SDE formulation. The
                   <strong class="method-term">CSB-PDE</strong> system
-                  yields an <strong class="method-term">SB-CVSDE</strong> description of forward and backward stochastic
-                  evolution, with neural networks
-                  learning the complex potentials through iterative proportional fitting.
+                  yields a <strong class="method-term">complex-valued SDE</strong>
+                  description of forward and backward stochastic
+                  evolution, which predicts a distinct neural network
+                  learning algorithm for diffusion bridges.
                 </p>
                 <figure class="has-text-centered method-figure control-figure">
                   <figcaption class="method-figure-caption">Diffusion + Phase</figcaption>
@@ -276,21 +287,28 @@
 
           <section class="hktex-box distribution-demo" id="distribution-demo" aria-labelledby="distribution-title">
             <div class="distribution-heading">
-              <h3 class="title is-4" id="distribution-title">Gaussian Bridge Marginals<sup class="distribution-footnote-marker"><a
-                href="#gaussian-sb-citation" role="doc-noteref" aria-label="Footnote 1, reference Gaussian bridge">1</a></sup></h3>
+              <h3 class="title is-4" id="distribution-title">Gaussian SB<sup class="distribution-footnote-marker"><a
+                    href="#gaussian-sb-citation" role="doc-noteref"
+                    aria-label="Footnote 1, reference Gaussian bridge">1</a></sup> Interactive Demo</h3>
               <!-- <p class="polar-key" id="polar-key"><span title="Mahalanobis radius from each Gaussian mean">Relative r · 1–4</span><span>Angle · 45°</span></p> -->
             </div>
+            <p>Our formulation predicts a new OT formulation called conformal optimal transport (COT), which is suitable
+              for modelling phase and oscillatory spaces. Here, we visualize closed-form CSB path measures on
+              Gaussian marginal distributions. </p>
             <div class="distribution-plots">
               <div class="distribution-panel">
                 <figure class="distribution-figure distribution-a">
                   <figcaption>
                     <span class="process-label" id="distribution-a-title">Forward Process (\(z_t\))</span>
-                    <output aria-label="Selected point coordinates"></output>
                   </figcaption>
                   <div class="distribution-viewport">
                     <canvas tabindex="0" aria-labelledby="distribution-a-title">
-                      Three green starts and their sampled orange endpoints stay fixed until Reset. Adjust rotation to transform the same three bridge paths. Hover or tap a marked endpoint to see its pair’s mean path, or a background dot to see a likely match.
+                      Three blue starts and their sampled red endpoints stay fixed until Reset. Adjust rotation to
+                      transform the same three bridge paths. Hover or tap a marked endpoint to see its pair’s mean path,
+                      or a background dot to see the shortest spiral match from the full candidate pool.
                     </canvas>
+                    <span class="tank-axis-label" data-tank-axis="position">Position</span>
+                    <span class="tank-axis-label" data-tank-axis="momentum">Momentum</span>
                     <svg class="orbit-hint orbit-hint--left" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
                       <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
                     </svg>
@@ -298,13 +316,18 @@
                       <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
                     </svg>
                   </div>
-                  <canvas class="w-plane-minimap" width="104" height="104" role="img"
-                    aria-label="Forward w-plane minimap"></canvas>
-                  <span class="process-direction process-direction--forward" role="img" aria-label="rho zero (green Gaussian) to rho T (orange Gaussian)">
+                  <div class="w-plane-inset">
+                    <canvas class="w-plane-minimap" width="104" height="104" role="img"
+                      aria-label="Forward conformal map"></canvas>
+                    <span class="w-plane-label">Conformal map</span>
+                  </div>
+                  <span class="process-direction process-direction--forward" role="img"
+                    aria-label="rho zero (blue Gaussian) to rho T (red Gaussian)">
                     <span class="process-endpoint" aria-hidden="true">
                       <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
                         <path class="gaussian-baseline" d="M1 20 H39" />
-                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                        <path
+                          d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
                       </svg>
                       <span class="process-density">\(\rho_0\)</span>
                     </span>
@@ -312,7 +335,8 @@
                     <span class="process-endpoint" aria-hidden="true">
                       <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
                         <path class="gaussian-baseline" d="M1 20 H39" />
-                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                        <path
+                          d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
                       </svg>
                       <span class="process-density">\(\rho_T\)</span>
                     </span>
@@ -320,23 +344,28 @@
                 </figure>
                 <div class="gamma-control">
                   <label for="distribution-forward-gamma">Rotation (γ)
-                    <span><output for="distribution-forward-gamma">0.000</output>&nbsp;·&nbsp;<span data-rotation-angle title="Signed turn of the endpoint-conditioned path">0.0°</span></span>
+                    <output for="distribution-forward-gamma">0.000</output>
                   </label>
                   <input id="distribution-forward-gamma" type="range" min="-3" max="3" step="0.001" value="0"
                     aria-label="Forward rotation (γ)">
-                  <div class="gamma-scale" aria-hidden="true"><span>−3.000</span><span>0.000</span><span>3.000</span></div>
+                  <div class="gamma-scale" aria-hidden="true"><span>−3</span><span>0</span><span>3</span>
+                  </div>
                 </div>
               </div>
               <div class="distribution-panel">
                 <figure class="distribution-figure distribution-b">
                   <figcaption>
                     <span class="process-label" id="distribution-b-title">Reverse Process (\(\bar{z}_s\))</span>
-                    <output aria-label="Selected point coordinates"></output>
                   </figcaption>
                   <div class="distribution-viewport">
                     <canvas tabindex="0" aria-labelledby="distribution-b-title">
-                      The three forward paths run from orange to green here, with their imaginary coordinates reflected. Compare equal rotation settings at complementary times. Hover or tap a marked endpoint to see its pair’s mean path, or a background dot to see a likely match.
+                      The three forward paths run from red to blue here, with their imaginary coordinates reflected.
+                      Compare equal rotation settings at complementary times. Hover or tap a marked endpoint to see its
+                      pair’s mean path, or a background dot to see the shortest spiral match from the full candidate
+                      pool.
                     </canvas>
+                    <span class="tank-axis-label" data-tank-axis="position">Position</span>
+                    <span class="tank-axis-label" data-tank-axis="momentum">Momentum</span>
                     <svg class="orbit-hint orbit-hint--left" viewBox="0 0 32 88" aria-hidden="true" focusable="false">
                       <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
                     </svg>
@@ -344,13 +373,18 @@
                       <path d="M24 14 C5 31 5 57 24 74 M14 14 H24 V24 M14 74 H24 V64" />
                     </svg>
                   </div>
-                  <canvas class="w-plane-minimap" width="104" height="104" role="img"
-                    aria-label="Reverse w-plane minimap"></canvas>
-                  <span class="process-direction process-direction--reverse" role="img" aria-label="rho T (orange Gaussian) to rho zero (green Gaussian)">
+                  <div class="w-plane-inset">
+                    <canvas class="w-plane-minimap" width="104" height="104" role="img"
+                      aria-label="Reverse conformal map"></canvas>
+                    <span class="w-plane-label">Conformal map</span>
+                  </div>
+                  <span class="process-direction process-direction--reverse" role="img"
+                    aria-label="rho T (red Gaussian) to rho zero (blue Gaussian)">
                     <span class="process-endpoint" aria-hidden="true">
                       <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
                         <path class="gaussian-baseline" d="M1 20 H39" />
-                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                        <path
+                          d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
                       </svg>
                       <span class="process-density">\(\rho_T\)</span>
                     </span>
@@ -358,7 +392,8 @@
                     <span class="process-endpoint" aria-hidden="true">
                       <svg class="gaussian-symbol" viewBox="0 0 40 24" focusable="false">
                         <path class="gaussian-baseline" d="M1 20 H39" />
-                        <path d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
+                        <path
+                          d="M2 20 C7 20 9 19.5 11 16.5 C14 12 14.5 4 20 4 C25.5 4 26 12 29 16.5 C31 19.5 33 20 38 20" />
                       </svg>
                       <span class="process-density">\(\rho_0\)</span>
                     </span>
@@ -366,34 +401,36 @@
                 </figure>
                 <div class="gamma-control">
                   <label for="distribution-reverse-gamma">Rotation (γ)
-                    <span><output for="distribution-reverse-gamma">0.000</output>&nbsp;·&nbsp;<span data-rotation-angle title="Signed turn of the endpoint-conditioned path">0.0°</span></span>
+                    <output for="distribution-reverse-gamma">0.000</output>
                   </label>
                   <input id="distribution-reverse-gamma" type="range" min="-3" max="3" step="0.001" value="0"
                     aria-label="Reverse rotation (γ)">
-                  <div class="gamma-scale" aria-hidden="true"><span>−3.000</span><span>0.000</span><span>3.000</span></div>
+                  <div class="gamma-scale" aria-hidden="true"><span>−3</span><span>0</span><span>3</span>
+                  </div>
                 </div>
               </div>
             </div>
             <div class="distribution-footer">
               <div class="distribution-controls">
                 <button class="button" type="button" data-action="play" aria-pressed="false">
-                  <span class="icon is-small"><i class="fas fa-play" aria-hidden="true"></i><i class="fas fa-pause" aria-hidden="true"></i></span>
+                  <span class="icon is-small"><i class="fas fa-play" aria-hidden="true"></i><i class="fas fa-pause"
+                      aria-hidden="true"></i></span>
                   <span data-play-label>Play</span>
                 </button>
-                <input id="distribution-seek" class="distribution-seek" type="range" min="0" max="1" step="0.001" value="0.5"
-                  aria-label="Elapsed time in each panel" aria-valuetext="Elapsed 0.50 T">
-                <output id="distribution-time" for="distribution-seek" aria-live="off">Elapsed 0.50 T</output>
-                <button class="button" type="button" data-action="reset" title="Draw new samples, reset both views and rotations, and pause halfway">
+                <input id="distribution-seek" class="distribution-seek" type="range" min="0" max="1" step="0.001"
+                  value="1" aria-label="Time in each panel" aria-valuetext="1.00 T">
+                <output id="distribution-time" for="distribution-seek" aria-live="off">1.00 T</output>
+                <button class="button" type="button" data-action="reset"
+                  title="Draw new samples, reset both views and rotations, and pause at T">
                   <span class="icon is-small"><i class="fas fa-redo" aria-hidden="true"></i></span>
                   <span>Reset</span>
                 </button>
               </div>
-              <p id="distribution-hint">The outline encloses 95% of the Gaussian population before \(\mathcal H_\gamma\), and shading shows its density inside the 95% contour after the map.</p>
             </div>
             <aside class="distribution-citation" id="gaussian-sb-citation" role="doc-footnote" tabindex="-1">
-              <sup>1</sup> Both panels use the same three paths from the Gaussian bridge of
-              <a href="https://proceedings.mlr.press/v206/bunne23a.html">Bunne et al. (AISTATS 2023)</a>.
-              At equal γ, compare forward time \(t\) with reverse time \(s=T-t\).
+              <sup>1</sup> Bunne et al.,
+              <cite>The Schrödinger Bridge between Gaussian Measures has a Closed Form</cite>,
+              AISTAT 2023.
             </aside>
           </section>
 
@@ -403,25 +440,75 @@
     </div>
   </section>
 
-  <section class="section">
+  <section class="section results-section" aria-labelledby="results-title">
     <div class="container is-max-desktop">
-      <h2 class="title">Results</h2>
-      <div class="content has-text-centered">
-        <h3 class="title is-4">2D Control</h3>
-      </div>
-      <div class="has-text-centered results-summary">
-        <!-- Spidergrams temporarily disabled. Remove this comment wrapper to restore.
-        <img src="./static/fig/Spidergrams_combined.png" alt="Quantitative Spidergrams" />
-        -->
-        <div class="results-control-summary">
-          <video autoplay muted loop playsinline controls preload="metadata" width="1800" height="724"
-            aria-label="CSB optimal control on S-Tunnel, GMM-8, and V-Neck">
-            <source src="./static/vid/ctrl2d_csb.mp4" type="video/mp4">
-          </video>
-          <img class="results-control-metrics" src="./static/fig/metrics_stacked_box.png"
-            alt="GMM-8 forward Wasserstein distance and control cost across methods" width="483" height="765" />
+      <h2 class="title" id="results-title">Results</h2>
+      <section class="results-block results-control" aria-labelledby="control-results-title">
+        <div class="content">
+          <h3 class="title is-5" id="control-results-title">2D Control</h3>
         </div>
-      </div>
+        <div class="has-text-centered results-summary">
+          <!-- Spidergrams temporarily disabled. Remove this comment wrapper to restore.
+          <img src="./static/fig/Spidergrams_combined.png" alt="Quantitative Spidergrams" />
+          -->
+          <div class="results-control-summary">
+            <video autoplay muted loop playsinline controls preload="metadata" width="1800" height="724"
+              aria-label="CSB optimal control on S-Tunnel, GMM-8, and V-Neck">
+              <source src="./static/vid/ctrl2d_csb.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </section>
+
+      <section class="results-block results-translation" aria-labelledby="image-to-image-title">
+        <div class="content">
+          <h3 class="title is-5" id="image-to-image-title">Image-to-Image Translation</h3>
+        </div>
+        <div class="results-translation-row">
+          <figure>
+            <a href="./static/fig/cifar_recovery.png" target="_blank" rel="noopener" title="Open full-resolution image">
+              <img src="./static/fig/cifar_recovery.png" alt="CIFAR-10 recovered images after inpainting" width="612"
+                height="660" loading="lazy" decoding="async" />
+            </a>
+          </figure>
+          <figure class="results-translation-imgnet">
+            <a href="./static/fig/imgnet.png" target="_blank" rel="noopener" title="Open full-resolution image">
+              <img src="./static/fig/imgnet.png"
+                alt="ImageNet256 inpainting: a corrupted input and reconstructed images" width="612" height="658"
+                loading="lazy" decoding="async" />
+            </a>
+          </figure>
+          <figure class="results-translation-mri">
+            <a href="./static/fig/mri_simple.png" target="_blank" rel="noopener" title="Open full-resolution image">
+              <img src="./static/fig/mri_simple.png"
+                alt="Complex-valued brain MRI generation comparing I2SB, Ours, and Target, with magnitude above and phase below"
+                width="1104" height="673" loading="lazy" decoding="async" />
+            </a>
+          </figure>
+        </div>
+      </section>
+
+      <section class="results-block results-cqed" aria-labelledby="simulated-cqed-title">
+        <div class="content">
+          <h3 class="title is-5" id="simulated-cqed-title">Simulated cQED</h3>
+        </div>
+        <div class="results-cqed-row">
+          <figure>
+            <a href="./static/fig/phase.png" target="_blank" rel="noopener" title="Open full-resolution image">
+              <img src="./static/fig/phase.png"
+                alt="Simulated cQED phase-space prediction and stacked x1 and x2 time sequences" width="1138"
+                height="523" loading="lazy" decoding="async" />
+            </a>
+          </figure>
+          <figure>
+            <a href="./static/fig/bloch.png" target="_blank" rel="noopener" title="Open full-resolution image">
+              <img src="./static/fig/bloch.png"
+                alt="Our simulated Hadamard, Pauli-X, and Pauli-Y gate trajectories on Bloch spheres" width="1312"
+                height="497" loading="lazy" decoding="async" />
+            </a>
+          </figure>
+        </div>
+      </section>
 
       <!-- UV fitting and multi-view rendering temporarily disabled.
       <div id="results-uv" class="results-viewer">
