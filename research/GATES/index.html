@@ -3,479 +3,2870 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <!-- Primary Meta Tags -->
-  <meta name="title" content="Generalization at the Edge of Stability">
-  <meta name="description" content="Training modern neural networks often relies on large learning rates, operating at the edge of stability, where the optimization dynamics exhibit oscillatory and chaotic behavior. Empirically, this regime often yields improved generalization performance, yet the underlying mechanism remains poorly understood. In this work, we represent stochastic optimizers as random dynamical systems, which often converge to a fractal attractor set (rather than a point) with a smaller intrinsic dimension. Building on this connection and inspired by Lyapunov dimension theory, we introduce a novel notion of dimension, coined the 'sharpness dimension', and prove a generalization bound based on this dimension. Our results show that generalization in the chaotic regime depends on the complete Hessian spectrum and the structure of its partial determinants, highlighting a complexity that cannot be captured by the trace or spectral norm considered in prior work. Experiments across various MLPs and transformers validate our theory while also providing new insights into the recently observed phenomenon of grokking.">
-  <meta name="keywords" content="generalization, edge of stability, deep learning, machine learning, statistics, random dynamical systems, computer vision, AI">
+  <meta name="color-scheme" content="light">
+
+  <title>Generalization at the Edge of Stability — NeurIPS 2026</title>
+  <meta name="description" content="Modeling stochastic optimizers as random dynamical systems, we introduce the Sharpness Dimension (SD) and prove a worst-case generalization bound at the Edge of Stability. NeurIPS 2026.">
   <meta name="author" content="Mario Tuci, Caner Korkmaz, Umut Şimşekli, Tolga Birdal">
-  <meta name="robots" content="index, follow">
-  <meta name="language" content="English">
-  
-  <!-- Open Graph / Facebook -->
-  <!--   <meta property="og:type" content="article">
-  <meta property="og:site_name" content="Circle Lab">
-  <meta property="og:title" content="Generalization at the Edge of Stability">
-  <meta property="og:description" content="Training modern neural networks often relies on large learning rates, operating at the edge of stability, where the optimization dynamics exhibit oscillatory and chaotic behavior. Empirically, this regime often yields improved generalization performance, yet the underlying mechanism remains poorly understood. In this work, we represent stochastic optimizers as random dynamical systems, which often converge to a fractal attractor set (rather than a point) with a smaller intrinsic dimension. Building on this connection and inspired by Lyapunov dimension theory, we introduce a novel notion of dimension, coined the 'sharpness dimension', and prove a generalization bound based on this dimension. Our results show that generalization in the chaotic regime depends on the complete Hessian spectrum and the structure of its partial determinants, highlighting a complexity that cannot be captured by the trace or spectral norm considered in prior work. Experiments across various MLPs and transformers validate our theory while also providing new insights into the recently observed phenomenon of grokking.">
-  <meta property="og:url" content="https://circle-group.github.io/research/GATES">
-   TODO: Create a 1200x630px preview image and update path
-  <meta property="og:image" content="https://circle-group.github.io/research/GATES">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Generalization at the Edge of Stability - Research Preview">
-  <meta property="article:published_time" content="2026-04-22T00:00:00.000Z">
-  <meta property="article:author" content="Mario Tuci, Caner Korkmaz, Umut Şimşekli, Tolga Birdal">
-  <meta property="article:section" content="Research">
-  <meta property="article:tag" content="generalization">
-  <meta property="article:tag" content="edge of stability">
-  -->
+  <meta name="keywords" content="generalization, edge of stability, sharpness dimension, random dynamical systems, pullback attractor, Lyapunov dimension, Hessian spectrum, grokking, NeurIPS 2026">
 
-  <!-- Twitter -->
-  <!-- <meta name="twitter:card" content="summary_large_image"> -->
-  <!-- TODO: Replace with your lab/institution Twitter handle -->
-  <!-- <meta name="twitter:site" content="@YOUR_TWITTER_HANDLE"> -->
-  <!-- TODO: Replace with first author's Twitter handle -->
-  <!-- <meta name="twitter:creator" content="@AUTHOR_TWITTER_HANDLE"> -->
-  <!-- TODO: Same as paper title above -->
-  <!-- <meta name="twitter:title" content="PAPER_TITLE"> -->
-  <!-- TODO: Same as description above -->
-  <!-- <meta name="twitter:description" content="BRIEF_DESCRIPTION_OF_YOUR_RESEARCH_CONTRIBUTION_AND_FINDINGS"> -->
-  <!-- TODO: Same as social preview image above -->
-  <!-- <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/social_preview.png"> -->
-  <!-- <meta name="twitter:image:alt" content="PAPER_TITLE - Research Preview"> -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Generalization at the Edge of Stability (NeurIPS 2026)">
+  <meta property="og:description" content="We represent stochastic optimizers as random dynamical systems, introduce the Sharpness Dimension (SD), and prove a generalization bound over the random pullback attractor.">
+  <meta property="og:url" content="https://circle-group.github.io/research/GATES/">
+  <meta property="og:image" content="https://circle-group.github.io/research/GATES/static/images/EoS_teaser.png">
 
-  <!-- Academic/Research Specific -->
-  <meta name="citation_title" content="Generalization at the Edge of Stability">
-  <meta name="citation_author" content="Tuci, Mario">
-  <meta name="citation_author" content="Korkmaz, Caner">
-  <meta name="citation_author" content="Şimşekli, Umut">
-  <meta name="citation_author" content="Birdal, Tolga">
-  <meta name="citation_publication_date" content="2026">
-  <meta name="citation_conference_title" content="arXiv">
-  <!-- <meta name="citation_pdf_url" content="https://YOUR_DOMAIN.com/static/pdfs/paper.pdf"> -->
-  
-  <!-- Additional SEO -->
-  <meta name="theme-color" content="#2563eb">
-  <meta name="msapplication-TileColor" content="#2563eb">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="default">
-  
-  <!-- Preconnect for performance -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preconnect" href="https://ajax.googleapis.com">
-  <link rel="preconnect" href="https://documentcloud.adobe.com">
-  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,500;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 
+  <!-- KaTeX for crisp mathematical typesetting -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css" crossorigin="anonymous">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"></script>
 
-  <!-- TODO: Replace with your paper title and authors -->
-  <title>Generalization at the Edge of Stability | Circle Group</title>
-  
-  <!-- Favicon and App Icons -->
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
-  <link rel="apple-touch-icon" href="static/images/favicon.ico">
-  
-  <!-- Critical CSS - Load synchronously -->
-  <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/index.css">
-  
-  <!-- Non-critical CSS - Load asynchronously -->
-  <link rel="preload" href="static/css/bulma-carousel.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/bulma-slider.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  
-  <!-- Fallback for browsers that don't support preload -->
-  <noscript>
-    <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-    <link rel="stylesheet" href="static/css/bulma-slider.min.css">
-    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  </noscript>
-  
-  <!-- Fonts - Optimized loading -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
+  <style>
+/* ==========================================================================
+   Generalization at the Edge of Stability — Scholarly Stylesheet
+   ========================================================================== */
 
+:root {
+  /* Pure white scholarly palette — transparent seamless paper feel */
+  --bg: #ffffff;
+  --bg-tinted: #ffffff;
+  --surface: #ffffff;
+  --surface-alt: #f8f8f6;
+  --ink: #181b1f;
+  --ink-muted: #555c65;
+  --border: #e6e6e0;
+  --border-strong: #c8c8c0;
 
-  <!-- Defer non-critical JavaScript -->
-  <script defer src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
-  <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script defer src="static/js/bulma-carousel.min.js"></script>
-  <script defer src="static/js/bulma-slider.min.js"></script>
-  <script defer src="static/js/index.js"></script>
+  --accent: #1a5c65;
+  --accent-hover: #12434a;
+  --accent-soft: #eef5f6;
+
+  --expand: #b8422c;
+  --expand-soft: #fdf0ed;
+  --contract: #2b5c8f;
+  --contract-soft: #edf3f9;
+  --neutral: #8c929a;
+
+  color-scheme: light;
+  accent-color: var(--accent);
+
+  --font-serif: "Source Serif 4", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --radius-sm: 4px;
+  --radius-md: 6px;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 4.5rem;
+}
+
+body {
+  margin: 0;
+  background-color: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-serif);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  text-align: start;
+  overflow-wrap: break-word;
+  -webkit-font-smoothing: antialiased;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+[tabindex]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  inset-block-start: -3rem;
+  inset-inline-start: 1rem;
+  padding: 0.5rem 0.9rem;
+  background: var(--surface);
+  color: var(--ink);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  inset-block-start: 0.75rem;
+}
+
+/* Containers & Sections — unified full-width alignment across the whole page */
+.container,
+.container-wide {
+  width: min(100% - 3rem, 64rem);
+  margin-inline: auto;
+}
+
+.section {
+  padding-block: clamp(2.5rem, 4vw, 3.75rem);
+  border-block-start: 1px solid var(--border);
+}
+
+.section-tinted {
+  background-color: var(--bg-tinted);
+}
+
+.section-teaser {
+  padding-block: 0 clamp(2rem, 3.5vw, 3rem);
+}
+
+/* Navigation */
+.top-nav {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 40;
+  background-color: var(--bg);
+  border-block-end: 1px solid var(--border);
+  font-family: var(--font-sans);
+}
+
+.nav-inner {
+  width: min(100% - 3rem, 64rem);
+  margin-inline: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 1.5rem;
+  padding-block: 0.7rem;
+}
+
+.nav-brand {
+  font-weight: 600;
+  font-size: 0.92rem;
+  letter-spacing: 0.03em;
+  color: var(--ink);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+}
+
+.nav-venue {
+  font-weight: 400;
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.15rem;
+}
+
+.nav-links a {
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
+
+/* Header */
+.paper-header {
+  padding-block: clamp(2.5rem, 5vw, 4.25rem) clamp(1.75rem, 3vw, 2.5rem);
+  text-align: center;
+}
+
+.venue-line {
+  margin: 0 0 0.75rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.venue-line a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.venue-line a:hover {
+  text-decoration: underline;
+}
+
+.paper-title {
+  margin: 0 auto 1.25rem;
+  font-size: clamp(1.9rem, 1.35rem + 2.1vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.16;
+  letter-spacing: -0.015em;
+  text-wrap: balance;
+  max-width: 24ch;
+}
+
+.authors {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.35rem 1.4rem;
+  font-size: 1.125rem;
+  margin-block-end: 0.5rem;
+}
+
+.author a {
+  color: var(--ink);
+  text-decoration: none;
+  border-block-end: 1px solid transparent;
+}
+
+.author a:hover {
+  color: var(--accent);
+  border-block-end-color: var(--accent);
+}
+
+.author sup,
+.affiliations sup,
+.equal-contrib sup {
+  font-size: 0.72em;
+  color: var(--ink-muted);
+}
+
+.affiliations {
+  margin: 0.35rem 0 0.15rem;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.25rem 0.65rem;
+}
+
+.equal-contrib {
+  margin: 0 0 1.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--ink-muted);
+}
+
+.action-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.6rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.48rem 0.95rem;
+  min-block-size: 2.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background-color: var(--surface);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  font-size: 0.875rem;
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn:hover {
+  background-color: var(--surface-alt);
+  border-color: var(--ink-muted);
+  color: var(--ink);
+}
+
+.btn-primary {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-hover);
+  border-color: var(--accent-hover);
+  color: #ffffff;
+}
+
+.btn-small {
+  padding: 0.35rem 0.75rem;
+  min-block-size: 2rem;
+  font-size: 0.8125rem;
+}
+
+.badge-soon {
+  font-size: 0.72rem;
+  padding: 0.05rem 0.35rem;
+  border-radius: 3px;
+  background: var(--surface-alt);
+  color: var(--ink-muted);
+  border: 1px solid var(--border);
+}
+
+/* Teaser Figure — blends seamlessly into the white page */
+.paper-figure {
+  margin: 0;
+}
+
+.figure-surface {
+  background-color: #ffffff;
+  padding: clamp(0.25rem, 1vw, 0.75rem) 0;
+  overflow: hidden;
+}
+
+.figure-surface img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 58rem;
+  margin-inline: auto;
+}
+
+.paper-figure figcaption {
+  margin-block-start: 0.9rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--ink-muted);
+  text-wrap: pretty;
+}
+
+.paper-figure figcaption strong {
+  color: var(--ink);
+}
+
+/* Headings & Prose */
+h2 {
+  margin: 0 0 1rem;
+  font-size: clamp(1.4rem, 1.15rem + 0.8vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-wrap: balance;
+}
+
+h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+h4 {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.prose p,
+.prose-inline {
+  margin-block: 0 1rem;
+  text-wrap: pretty;
+}
+
+.section-head {
+  margin-block-end: 1.5rem;
+}
+
+.section-lead {
+  margin: 0;
+  color: var(--ink-muted);
+  font-size: 1.02rem;
+  text-wrap: pretty;
+}
+
+/* TL;DR Summary Callout */
+.tldr-box {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.9rem 1.1rem;
+  align-items: baseline;
+  padding: 1rem 1.25rem;
+  margin-block-end: 2rem;
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+
+.tldr-label {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+.tldr-box p {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  text-wrap: pretty;
+}
+
+@media (max-width: 560px) {
+  .tldr-box {
+    grid-template-columns: 1fr;
+    gap: 0.35rem;
+  }
+}
+
+/* Three-column Empirical Highlights */
+.exp-triptych {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.1rem;
+}
+
+@media (max-width: 860px) {
+  .exp-triptych {
+    grid-template-columns: 1fr;
+  }
+}
+
+.contrib-item {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.2rem;
+}
+
+.contrib-item h3 {
+  font-family: var(--font-sans);
+  font-size: 0.92rem;
+  color: var(--accent);
+  margin-block-end: 0.4rem;
+}
+
+.contrib-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   Interactive Panel 1: Sharpness Dimension Explorer
+   ========================================================================== */
+.interactive-panel {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: clamp(1rem, 2.2vw, 1.5rem);
+}
+
+.controls-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  padding-block-end: 1.2rem;
+  border-block-end: 1px solid var(--border);
+}
+
+.control-group-label {
+  display: block;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-block-end: 0.45rem;
+}
+
+.katex {
+  text-transform: none;
+}
+
+.preset-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.preset-btn {
+  font-family: var(--font-sans);
+  font-size: 0.82rem;
+  font-weight: 500;
+  padding: 0.38rem 0.75rem;
+  min-block-size: 2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-strong);
+  background: var(--surface-alt);
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.preset-btn:hover {
+  border-color: var(--accent);
+}
+
+.preset-btn.is-active {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.sliders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1rem 1.5rem;
+}
+
+.slider-control {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.slider-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+}
+
+.slider-header label {
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.mono-val {
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  font-variant-numeric: tabular-nums;
+}
+
+input[type="range"] {
+  width: 100%;
+  margin: 0;
+  cursor: pointer;
+}
+
+/* Fallback for browsers without accent-color support */
+@supports not (accent-color: var(--accent)) {
+  input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+  }
+
+  input[type="range"]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 6px;
+    background: linear-gradient(to right, var(--accent) var(--progress, 50%), var(--border) var(--progress, 50%));
+    border-radius: 3px;
+  }
+
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--accent);
+    margin-top: -4.5px;
+  }
+
+  input[type="range"]::-moz-range-track {
+    width: 100%;
+    height: 6px;
+    background: var(--border);
+    border-radius: 3px;
+  }
+
+  input[type="range"]::-moz-range-progress {
+    height: 6px;
+    background: var(--accent);
+    border-radius: 3px;
+  }
+
+  input[type="range"]::-moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border: none;
+    border-radius: 50%;
+    background: var(--accent);
+  }
+}
+
+.field-hint {
+  margin: 0.15rem 0 0;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: var(--ink-muted);
+}
+
+/* Metrics Readout Strip */
+.metrics-strip {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.65rem;
+  padding-block: 1rem;
+  border-block-end: 1px solid var(--border);
+}
+
+.metric-cell {
+  background: var(--surface-alt);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.metric-cell-highlight {
+  background: var(--accent-soft);
+  border-color: var(--accent);
+}
+
+.metric-label {
+  font-family: var(--font-sans);
+  font-size: 0.73rem;
+  color: var(--ink-muted);
+}
+
+.metric-value {
+  font-size: 1.05rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.metric-cell-highlight .metric-value {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.metric-sub {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--ink-muted);
+}
+
+.regime-tag {
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  font-weight: 600;
+  display: inline-block;
+  padding: 0.14rem 0.45rem;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.regime-eos {
+  background: var(--expand-soft);
+  color: var(--expand);
+}
+
+.regime-contract {
+  background: var(--contract-soft);
+  color: var(--contract);
+}
+
+.regime-diverge {
+  background: var(--expand);
+  color: #ffffff;
+}
+
+/* Triptych Charts */
+.charts-triptych {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  padding-block: 1.15rem;
+}
+
+@media (max-width: 880px) {
+  .charts-triptych {
+    grid-template-columns: 1fr;
+  }
+}
+
+.chart-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.8rem 0.85rem 0.55rem;
+  background: var(--bg);
+}
+
+.chart-header {
+  margin-block-end: 0.45rem;
+}
+
+.chart-header h3 {
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  margin-block-end: 0.15rem;
+}
+
+.chart-sub {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+}
+
+.chart-svg-wrap svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.explorer-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.65rem 1.25rem;
+  padding-block: 0.75rem;
+  border-block-start: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+}
+
+.legend-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+  color: var(--ink-muted);
+}
+
+.legend-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.swatch {
+  width: 0.7rem;
+  height: 0.7rem;
+  border-radius: 2px;
+  display: inline-block;
+}
+
+.swatch-expand { background: var(--expand); }
+.swatch-neutral { background: var(--neutral); }
+.swatch-contract { background: var(--contract); }
+.swatch-sd {
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.hover-readout {
+  margin: 0;
+  color: var(--ink);
+  font-size: 0.8rem;
+}
+
+/* Ellipsoid strip */
+.ellipsoid-strip {
+  margin-block-start: 0.75rem;
+  padding-block-start: 1rem;
+  border-block-start: 1px dashed var(--border-strong);
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+@media (max-width: 760px) {
+  .ellipsoid-strip {
+    grid-template-columns: 1fr;
+  }
+}
+
+.ellipsoid-text p {
+  margin: 0;
+  font-size: 0.93rem;
+  line-height: 1.55;
+  color: var(--ink-muted);
+}
+
+.ellipsoid-viz {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+  padding: 0.5rem;
+}
+
+.ellipsoid-viz svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ==========================================================================
+   Interactive Panel 2: Pullback Random Attractor
+   ========================================================================== */
+.attractor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 820px) {
+  .attractor-layout {
+    grid-template-columns: 1fr;
+  }
+}
+
+.attractor-canvas-wrap {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+#attractor-canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  background: var(--surface);
+}
+
+.canvas-caption-bar {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.55rem 0.9rem;
+  border-block-start: 1px solid var(--border);
+  background: var(--surface-alt);
+  font-size: 0.82rem;
+  color: var(--ink-muted);
+}
+
+.sim-controls-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.15rem 1.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-block-end: 1.15rem;
+}
+
+.sim-controls-card h3 {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.sim-btn-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.sim-readouts {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+  padding-block-start: 0.75rem;
+  border-block-start: 1px solid var(--border);
+}
+
+.sim-mode-toggle {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.4rem;
+}
+
+.sim-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
+  padding: 0.55rem 0.9rem;
+  border-block-start: 1px solid var(--border);
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+}
+
+.swatch-b1 { background: #1a5c65; }
+.swatch-b2 { background: #b8422c; }
+.swatch-b3 { background: #2b5c8f; }
+
+.sim-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.sim-notes p {
+  font-size: 0.95rem;
+  color: var(--ink-muted);
+}
+
+/* ==========================================================================
+   Mathematical Boxes (Definitions & Theorems)
+   ========================================================================== */
+.math-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-inline-start: 3px solid var(--border-strong);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  padding: 1.1rem 1.35rem;
+  margin-block: 1.25rem;
+}
+
+.math-box-theorem {
+  border-inline-start-color: var(--accent);
+}
+
+.math-box-title {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--ink);
+  margin-block-end: 0.55rem;
+}
+
+.math-box-theorem .math-box-title {
+  color: var(--accent);
+}
+
+.math-box p {
+  margin: 0 0 0.65rem;
+  text-wrap: pretty;
+}
+
+.math-box p:last-child {
+  margin-block-end: 0;
+}
+
+.math-note {
+  font-size: 0.94rem;
+  color: var(--ink-muted);
+}
+
+.eq-block {
+  overflow-x: auto;
+  padding-block: 0.35rem;
+  margin-block: 0.4rem;
+}
+
+.proof-sketch,
+.slq-box {
+  margin-block-start: 1.75rem;
+}
+
+.proof-steps {
+  margin: 0.6rem 0 0;
+  padding-inline-start: 1.35rem;
+}
+
+.proof-steps li {
+  margin-block-end: 0.65rem;
+  text-wrap: pretty;
+}
+
+.slq-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+}
+
+.slq-box p {
+  margin: 0;
+  font-size: 0.97rem;
+}
+
+/* ==========================================================================
+   Empirical Findings & Responsive Table
+   ========================================================================== */
+.exp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 1.25rem;
+  margin-block: 1.5rem 2rem;
+}
+
+.exp-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1.2rem 1.3rem;
+}
+
+.exp-card p {
+  font-size: 0.96rem;
+  color: var(--ink-muted);
+  margin-block: 0 0.85rem;
+  text-wrap: pretty;
+}
+
+.exp-card p:last-child {
+  margin-block-end: 0;
+}
+
+.mini-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+  margin-block-start: 0.85rem;
+  padding-block-start: 0.85rem;
+  border-block-start: 1px solid var(--border);
+}
+
+.mini-bar-row {
+  display: grid;
+  grid-template-columns: 7.4rem 1fr 3.4rem;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.78rem;
+}
+
+.mini-bar-label {
+  color: var(--ink);
+}
+
+.mini-bar-track {
+  height: 0.55rem;
+  background: var(--surface-alt);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.mini-bar-fill {
+  height: 100%;
+  border-radius: 2px;
+}
+
+.bar-pos { background: var(--accent); }
+.bar-pos-muted { background: var(--contract); }
+.bar-neutral { background: var(--neutral); }
+.bar-neg { background: var(--expand); opacity: 0.75; }
+
+.gpt2-block h3 {
+  margin-block-end: 0.6rem;
+}
+
+/* Responsive Data Table (container-query stacked layout + sticky headers) */
+.table-wrapper {
+  margin-block-start: 1.15rem;
+  overflow: auto;
+  max-inline-size: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  container-type: inline-size;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-family: var(--font-sans);
+  font-size: 0.86rem;
+  --label-1: "Varied Setting";
+  --label-2: "Estimator";
+  --label-3: "SGD";
+  --label-4: "SGD + Momentum";
+  --label-5: "AdamW";
+}
+
+.data-table caption {
+  caption-side: bottom;
+  text-align: start;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-serif);
+  font-size: 0.88rem;
+  color: var(--ink-muted);
+  border-block-start: 1px solid var(--border);
+}
+
+.data-table thead {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 2;
+}
+
+.data-table th,
+.data-table td {
+  padding: 0.65rem 0.9rem;
+  text-align: start;
+  border-block-end: 1px solid var(--border);
+}
+
+.data-table thead th {
+  background: var(--surface-alt);
+  font-weight: 600;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.data-table tbody th {
+  position: sticky;
+  inset-inline-start: 0;
+  background: var(--surface);
+  font-weight: 500;
+  color: var(--ink);
+  z-index: 1;
+}
+
+.data-table tr.row-highlight td,
+.data-table tr.row-highlight th {
+  background: var(--accent-soft);
+}
+
+@container (width < 560px) {
+  .data-table,
+  .data-table thead,
+  .data-table tbody,
+  .data-table tr,
+  .data-table th,
+  .data-table td {
+    display: block;
+  }
+
+  .data-table thead {
+    display: none;
+  }
+
+  .data-table tbody tr {
+    margin: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+  }
+
+  .data-table tbody th {
+    position: sticky;
+    inset-block-start: 0;
+    background: var(--surface-alt);
+    font-weight: 600;
+  }
+
+  .data-table tbody td {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  .data-table tbody td:nth-child(2)::before { content: var(--label-2) ": "; color: var(--ink-muted); }
+  .data-table tbody td:nth-child(3)::before { content: var(--label-3) ": "; color: var(--ink-muted); }
+  .data-table tbody td:nth-child(4)::before { content: var(--label-4) ": "; color: var(--ink-muted); }
+  .data-table tbody td:nth-child(5)::before { content: var(--label-5) ": "; color: var(--ink-muted); }
+}
+
+/* ==========================================================================
+   BibTeX & Footer
+   ========================================================================== */
+.bibtex-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  margin-block-end: 0.85rem;
+}
+
+.bibtex-header h2 {
+  margin: 0;
+}
+
+.bibtex-block {
+  margin: 0;
+  padding: 1.05rem 1.2rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: var(--ink);
+}
+
+.acknowledgments {
+  margin-block-start: 2rem;
+}
+
+.acknowledgments h3 {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--ink-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.acknowledgments p {
+  margin: 0;
+  font-size: 0.94rem;
+  color: var(--ink-muted);
+}
+
+.site-footer {
+  border-block-start: 1px solid var(--border);
+  padding-block: 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.84rem;
+  color: var(--ink-muted);
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+  </style>
 </head>
 <body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
 
-
-  <!-- Scroll to Top Button -->
-  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
-    <i class="fas fa-chevron-up"></i>
-  </button>
-
-  <!-- More Works Dropdown --><!-- 
-  <div class="more-works-container">
-    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View More Works from Our Lab">
-      <i class="fas fa-flask"></i>
-      More Works
-      <i class="fas fa-chevron-down dropdown-arrow"></i>
-    </button>
-    <div class="more-works-dropdown" id="moreWorksDropdown">
-      <div class="dropdown-header">
-        <h4>More Works from Our Lab</h4>
-        <button class="close-btn" onclick="toggleMoreWorks()">
-          <i class="fas fa-times"></i>
-        </button>
-      </div> -->
-      <!-- <div class="works-list"> -->
-        <!-- TODO: Replace with your lab's related works -->
-        <!-- <a href="https://arxiv.org/abs/PAPER_ID_1" class="work-item" target="_blank"> -->
-          <!-- <div class="work-info"> -->
-            <!-- TODO: Replace with actual paper title -->
-            <!-- <h5>Paper Title 1</h5> -->
-            <!-- TODO: Replace with brief description -->
-            <!-- <p>Brief description of the work and its main contribution.</p> -->
-            <!-- TODO: Replace with venue and year -->
-            <!-- <span class="work-venue">Conference/Journal 2024</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a> -->
-        <!-- TODO: Add more related works or remove extra items -->
-<!--         <a href="https://arxiv.org/abs/PAPER_ID_2" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 2</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-        <a href="https://arxiv.org/abs/PAPER_ID_3" class="work-item" target="_blank">
-          <div class="work-info">
-            <h5>Paper Title 3</h5>
-            <p>Brief description of the work and its main contribution.</p>
-            <span class="work-venue">Conference/Journal 2023</span>
-          </div>
-          <i class="fas fa-external-link-alt"></i>
-        </a>
-      </div>
+  <nav class="top-nav" aria-label="Section navigation">
+    <div class="nav-inner">
+      <a class="nav-brand" href="#top">GATES <span class="nav-venue">NeurIPS 2026</span></a>
+      <ul class="nav-links">
+        <li><a href="#abstract">Summary</a></li>
+        <li><a href="#sd-explorer">Sharpness Dimension</a></li>
+        <li><a href="#attractor-sim">Pullback Attractor</a></li>
+        <li><a href="#theory">Main Result</a></li>
+        <li><a href="#experiments">Experiments</a></li>
+        <li><a href="#bibtex">BibTeX</a></li>
+      </ul>
     </div>
-  </div> -->
+  </nav>
 
   <main id="main-content">
-  <section class="hero is-light">
-    <div class="hero-body">
-      <div class="container is-max-desktop">
-        <div class="columns is-centered">
-          <div class="column has-text-centered">
-            <!-- TODO: Replace with your paper title -->
-            <h1 class="title is-1 publication-title">Generalization at the Edge of Stability</h1>
-            <div class="is-size-5 publication-authors">
-              <!-- TODO: Replace with your paper authors and their personal links -->
-              <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=9pqOCWsAAAAJ&hl=en" target="_blank">Mario Tuci</a><sup>1,2,*</sup>,</span>
-                <span class="author-block">
-                  <a href="https://scholar.google.com/citations?user=zXYGSYgAAAAJ&hl=en" target="_blank">Caner Korkmaz</a><sup>2,*</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://www.di.ens.fr/umut.simsekli/" target="_blank">Umut Şimşekli</a><sup>1,†</sup>,</span>
-                  </span>
-                  <span class="author-block">
-                    <a href="https://tolgabirdal.github.io/" target="_blank">Tolga Birdal</a><sup>2,†</sup></span>
-                  </span>
-                  </div>
+    <!-- Title & Authors -->
+    <header id="top" class="paper-header">
+      <div class="container">
+        <p class="venue-line">
+          <a href="https://neurips.cc/virtual/2026/loc/sydney/poster/154976" target="_blank" rel="noopener">
+            NeurIPS 2026 · Sydney
+          </a>
+        </p>
 
-                  <div class="is-size-5 publication-authors">
-                    <!-- TODO: Replace with your institution and conference/journal info -->
-                    <span class="author-block"><sup>1</sup> École Normale Supérieure, INRIA, CNRS &nbsp; <sup>2</sup>Imperial College London <br/><sup>*,†</sup><small>Equal contribution</small></span>
-                  </div>
-<!-- 
-                  <div class="column has-text-centered">
-                    <div class="publication-links"> -->
-                         <!-- TODO: Update with your arXiv paper ID -->
-                      <!-- <span class="link-block">
-                        <a href="https://arxiv.org/pdf/<ARXIV PAPER ID>.pdf" target="_blank"
-                        class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                          <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
- -->
-                    <!-- TODO: Add your supplementary material PDF or remove this section -->
-<!--                     <span class="link-block">
-                      <a href="static/pdfs/supplementary_material.pdf" target="_blank"
-                      class="external-link button is-normal is-rounded is-dark">
-                      <span class="icon">
-                        <i class="fas fa-file-pdf"></i>
-                      </span>
-                      <span>Supplementary</span>
-                    </a>
-                  </span>
+        <h1 class="paper-title">Generalization at the Edge of Stability</h1>
 
- -->                 
-                  <span class="link-block">
-                    <a href="https://github.com/circle-group/GATES" target="_blank"
-                    class="external-link button is-normal is-rounded is-dark">
-                    <span class="icon">
-                      <i class="fab fa-github"></i>
-                    </span>
-                    <span>Code</span>
-                  </a>
-                </span>
+        <div class="authors" aria-label="Authors">
+          <span class="author">
+            <a href="https://scholar.google.com/citations?user=9pqOCWsAAAAJ&amp;hl=en" target="_blank" rel="noopener">Mario Tuci</a><sup>1,2,*</sup>
+          </span>
+          <span class="author">
+            <a href="https://scholar.google.com/citations?user=zXYGSYgAAAAJ&amp;hl=en" target="_blank" rel="noopener">Caner Korkmaz</a><sup>2,*</sup>
+          </span>
+          <span class="author">
+            <a href="https://www.di.ens.fr/umut.simsekli/" target="_blank" rel="noopener">Umut Şimşekli</a><sup>1,†</sup>
+          </span>
+          <span class="author">
+            <a href="https://tolgabirdal.github.io/" target="_blank" rel="noopener">Tolga Birdal</a><sup>2,†</sup>
+          </span>
+        </div>
 
-                  <span class="link-block">
-                  <a href="https://arxiv.org/abs/2604.19740" target="_blank"
-                  class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                    <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
+        <p class="affiliations">
+          <span><sup>1</sup> INRIA, CNRS, École Normale Supérieure</span>
+          <span class="sep" aria-hidden="true">·</span>
+          <span><sup>2</sup> Imperial College London</span>
+        </p>
+        <p class="equal-contrib"><sup>*,†</sup> Equal contribution</p>
+
+        <div class="action-links" role="group" aria-label="Paper links">
+          <a class="btn btn-primary" href="https://arxiv.org/abs/2604.19740" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            arXiv
+          </a>
+          <a class="btn" href="https://neurips.cc/virtual/2026/loc/sydney/poster/154976" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            NeurIPS 2026
+          </a>
+          <a class="btn" href="https://github.com/circle-group/GATES" target="_blank" rel="noopener">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Code <span class="badge-soon">soon</span>
+          </a>
+          <a class="btn" href="#bibtex">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+            BibTeX
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Teaser Figure -->
+    <section class="section-teaser" aria-label="Overview figure">
+      <div class="container">
+        <figure class="paper-figure">
+          <div class="figure-surface">
+            <img src="./static/images/EoS_teaser.png" alt="Conceptual diagram of stochastic optimization at the Edge of Stability: trajectories in R^d enter a lower-dimensional random attractor with expanding and contracting directions, governed by the Sharpness Dimension SD < d." width="1600" height="720" loading="eager">
+          </div>
+          <figcaption>
+            <strong>Figure 1 — Generalization at the Edge of Stability (EoS).</strong>
+            Modeling stochastic optimization as a random dynamical system (RDS), at EoS the leading sharpness satisfies \(\lambda_1 &gt; 0\) (local expansion along at least one direction), while contraction in the remaining directions confines trajectories to a fractal attractor with intrinsic dimension \(\mathrm{SD} &lt; d\).
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- TL;DR Summary & Abstract -->
+    <section id="abstract" class="section">
+      <div class="container">
+        <div class="tldr-box">
+          <span class="tldr-label">TL;DR</span>
+          <p>
+            At the Edge of Stability, stochastic optimizers do not converge to a single point—they explore a lower-dimensional <strong>random pullback attractor</strong>. We introduce the <strong>Sharpness Dimension (\(\mathrm{SD}\))</strong>, a Lyapunov-inspired measure built from the <em>full</em> Hessian spectrum, prove that it bounds the worst-case generalization gap over the attractor, and validate it across MLPs, modular-arithmetic grokking, and 124M-parameter GPT-2.
+          </p>
+        </div>
+
+        <h2>Abstract</h2>
+        <div class="prose">
+          <p>
+            Training modern neural networks often relies on large learning rates, operating at the <em>edge of stability</em>, where the optimization dynamics exhibit oscillatory and chaotic behavior. Empirically, this regime often yields improved generalization performance, yet the underlying mechanism remains poorly understood. In this work, we represent stochastic optimizers as <em>random dynamical systems</em>, which often converge to a <em>fractal attractor set</em> (rather than a point) with a smaller intrinsic dimension. Building on this connection and inspired by Lyapunov dimension theory, we introduce a novel notion of dimension, coined the <strong>sharpness dimension</strong>, and prove a generalization bound based on this dimension. Our results show that generalization in the chaotic regime depends on the <em>complete Hessian spectrum</em> and the structure of its <em>partial determinants</em>, highlighting a complexity that cannot be captured by the trace or spectral norm considered in prior work. Experiments across various MLPs and transformers validate our theory while also providing new insights into the recently observed phenomenon of grokking.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Explorer 1: Sharpness Dimension -->
+    <section id="sd-explorer" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Interactive: From Hessian Spectrum to Sharpness Dimension</h2>
+          <p class="section-lead">
+            Explore how the full Hessian spectrum \(\{\alpha_i\}_{i=1}^d\) and learning rate \(\eta\) determine the ordered one-step Jacobian log-singular values \(\lambda_k = \ln |1 - \eta \alpha_{\pi(k)}|\), the partial sums \(S_i = \sum_{k=1}^i \lambda_k\), and the <strong>Sharpness Dimension</strong> \(\dim_{\mathrm{S}}\mathcal{A}\).
+          </p>
+        </div>
+
+        <div class="interactive-panel" id="sd-widget">
+          <div class="controls-bar">
+            <div class="preset-group" role="group" aria-label="Spectrum presets">
+              <span class="control-group-label">Spectrum preset — determines (1) Hessian eigenvalues \(\{\alpha_i\}_{i=1}^d\)</span>
+              <div class="preset-buttons">
+                <button type="button" class="preset-btn is-active" data-preset="eos-spiked">EoS Spiked Bulk</button>
+                <button type="button" class="preset-btn" data-preset="contractive">Below EoS (\(\mathrm{SD}=0\))</button>
+                <button type="button" class="preset-btn" data-preset="negative-curv">Saddle / Negative Curvature</button>
+                <button type="button" class="preset-btn" data-preset="flat-vs-sharp">Same \(\alpha_{\max}\), Low \(\mathrm{SD}\)</button>
+              </div>
+              <p class="field-hint">Each preset chooses the Hessian spectrum \(\{\alpha_i\}\) in Panel (1); the sliders below push it through \(\lambda_k = \ln|1 - \eta\alpha_{\pi(k)}|\) in Panel (2) and its cumulative sum in Panel (3).</p>
+            </div>
+
+            <div class="sliders-grid">
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="slider-eta">Learning rate \(\eta\)</label>
+                  <output id="out-eta" for="slider-eta" class="mono-val">0.080</output>
+                </div>
+                <input type="range" id="slider-eta" min="0.01" max="0.18" step="0.002" value="0.08">
+              </div>
+
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="slider-spike">Top Hessian eigenvalue \(\alpha_{\max}\)</label>
+                  <output id="out-spike" for="slider-spike" class="mono-val">36.0</output>
+                </div>
+                <input type="range" id="slider-spike" min="10" max="60" step="0.5" value="36">
+              </div>
+
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="slider-bulk">Contractive bulk strength</label>
+                  <output id="out-bulk" for="slider-bulk" class="mono-val">0.75</output>
+                </div>
+                <input type="range" id="slider-bulk" min="0.10" max="1.20" step="0.05" value="0.75">
+              </div>
+            </div>
+          </div>
+
+          <div class="metrics-strip" aria-live="polite">
+            <div class="metric-cell">
+              <span class="metric-label">Stability threshold \(2/\eta\)</span>
+              <span class="metric-value mono-val" id="val-threshold">25.00</span>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-label">Top RDS sharpness \(\lambda_1\)</span>
+              <span class="metric-value mono-val" id="val-lambda1">+0.631</span>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-label">Hessian trace \(\mathrm{tr}(H)\)</span>
+              <span class="metric-value mono-val" id="val-trace">182.4</span>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-label">Transition index \(j^*\)</span>
+              <span class="metric-value mono-val" id="val-jstar">7</span>
+            </div>
+            <div class="metric-cell metric-cell-highlight">
+              <span class="metric-label">Sharpness Dimension \(\dim_{\mathrm{S}}\mathcal{A}\)</span>
+              <span class="metric-value mono-val" id="val-sd">14.94 <span class="metric-sub">/ 24</span></span>
+            </div>
+            <div class="metric-cell">
+              <span class="metric-label">Dynamical regime</span>
+              <span class="regime-tag" id="val-regime">Edge of Stability</span>
+            </div>
+          </div>
+
+          <div class="charts-triptych">
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3>1. Hessian Eigenvalues \(\alpha_i\)</h3>
+                <p class="chart-sub">Expanding if \(\alpha_i &gt; 2/\eta\) or \(\alpha_i &lt; 0\)</p>
+              </div>
+              <div class="chart-svg-wrap" id="chart-hessian"></div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3>2. Ordered RDS Sharpness \(\lambda_k\)</h3>
+                <p class="chart-sub">\(\lambda_k = \ln |1 - \eta \alpha_{\pi(k)}|\), sorted descending</p>
+              </div>
+              <div class="chart-svg-wrap" id="chart-lambda"></div>
+            </div>
+
+            <div class="chart-card">
+              <div class="chart-header">
+                <h3>3. Partial Sums \(S_i = \sum_{k=1}^i \lambda_k\)</h3>
+                <p class="chart-sub">Zero crossing gives \(\dim_{\mathrm{S}}\mathcal{A} = j^* + \frac{S_{j^*}}{|\lambda_{j^*+1}|}\)</p>
+              </div>
+              <div class="chart-svg-wrap" id="chart-partial"></div>
+            </div>
+          </div>
+
+          <div class="explorer-footer">
+            <div class="legend-row">
+              <span class="legend-item"><span class="swatch swatch-expand"></span> Expanding (\(\lambda_k &gt; 0\))</span>
+              <span class="legend-item"><span class="swatch swatch-neutral"></span> Near-neutral (\(\lambda_k \approx 0\))</span>
+              <span class="legend-item"><span class="swatch swatch-contract"></span> Contracting (\(\lambda_k &lt; 0\))</span>
+              <span class="legend-item"><span class="swatch swatch-sd"></span> \(\dim_{\mathrm{S}}\mathcal{A}\) zero-crossing</span>
+            </div>
+            <p class="hover-readout mono-val" id="hover-readout">Hover over any bar to inspect \((\alpha, \sigma, \lambda, S_k)\) across all three panels.</p>
+          </div>
+
+          <div class="ellipsoid-strip">
+            <div class="ellipsoid-text">
+              <h4>Geometric intuition (Ellipsoid covering)</h4>
+              <p>
+                One step of \(I - \eta H\) maps a ball \(B(0, R)\) to an ellipsoid with semi-axes \(R\sigma_1 \ge \dots \ge R\sigma_d\). Covering it with balls of radius \(R\sigma_{j^*+1}\) turns the volume product \(\prod_{k=1}^{j^*} \sigma_k\) into the partial sum \(S_{j^*}\), giving \(\dim_{\mathrm{S}}\mathcal{A}\) as the exact scale where \(j\)-volumes stop expanding.
+              </p>
+            </div>
+            <div class="ellipsoid-viz" id="chart-ellipsoid" aria-label="2D projection of ball mapped to Jacobian ellipsoid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Explorer 2: Pullback Random Attractor -->
+    <section id="attractor-sim" class="section">
+      <div class="container">
+        <div class="section-head">
+          <h2>Interactive: Pullback Attraction at the Edge of Stability</h2>
+          <p class="section-lead">
+            Visualizing <strong>Definition 2.2</strong> on \(L(x) = \frac{1}{2}\|x\|^2 - 2\cos(4x_1)\cos(4x_2)\). Three disjoint initial sets \(B_1, B_2, B_3\) share a fixed noise history \(\omega\). Increasing the pullback horizon \(t\) (starting earlier at \(-t\) and evolving to present time \(0\)) collapses all three initializations onto the <strong>same stationary snapshot attractor</strong> \(\mathcal{A}(\omega)\).
+          </p>
+        </div>
+
+        <div class="attractor-layout">
+          <div class="attractor-canvas-wrap">
+            <canvas id="attractor-canvas" width="600" height="600" aria-label="2D pullback random attractor simulation canvas showing three initial sets merging onto one snapshot attractor"></canvas>
+            <div class="sim-legend">
+              <span class="legend-item"><span class="swatch swatch-b1"></span> \(B_1\)</span>
+              <span class="legend-item"><span class="swatch swatch-b2"></span> \(B_2\)</span>
+              <span class="legend-item"><span class="swatch swatch-b3"></span> \(B_3\)</span>
+              <span class="legend-item" id="sim-mode-desc">Fixed target \(\mathcal{A}(\omega)\) at \(t_{\text{now}}=0\)</span>
+            </div>
+            <div class="canvas-caption-bar">
+              <span class="mono-val" id="sim-step">Pullback horizon t = 24</span>
+              <span class="mono-val" id="sim-sd">Ergodic 2D SD: —</span>
+            </div>
+          </div>
+
+          <div class="attractor-sidebar">
+            <div class="sim-controls-card">
+              <h3>Attraction Mode &amp; Parameters</h3>
+
+              <div class="sim-mode-toggle" role="group" aria-label="Attraction mode">
+                <button type="button" class="preset-btn is-active" id="btn-mode-pullback">Pullback \(\phi(t,\theta^{-t}\omega,B)\)</button>
+                <button type="button" class="preset-btn" id="btn-mode-forward">Forward \(\phi(t,\omega,B)\)</button>
+              </div>
+
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="sim-horizon" id="label-horizon">Horizon \(t\)</label>
+                  <output id="sim-out-t" for="sim-horizon" class="mono-val">24</output>
+                </div>
+                <input type="range" id="sim-horizon" min="0" max="80" step="1" value="24">
+                <p class="field-hint">In <strong>Pullback</strong> mode, \(B_1, B_2, B_3\) converge onto one fixed snapshot \(\mathcal{A}(\omega)\). In <strong>Forward</strong> mode, the attractor drifts as fresh noise arrives.</p>
+              </div>
+
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="sim-eta">Learning rate \(\eta\)</label>
+                  <output id="sim-out-eta" for="sim-eta" class="mono-val">0.074</output>
+                </div>
+                <input type="range" id="sim-eta" min="0.03" max="0.12" step="0.002" value="0.074">
+              </div>
+
+              <div class="slider-control">
+                <div class="slider-header">
+                  <label for="sim-sigma">Shared noise scale \(\sigma\)</label>
+                  <output id="sim-out-sigma" for="sim-sigma" class="mono-val">0.32</output>
+                </div>
+                <input type="range" id="sim-sigma" min="0.00" max="0.45" step="0.01" value="0.32">
+              </div>
+
+              <div class="sim-btn-row">
+                <button type="button" class="btn btn-primary" id="btn-sim-toggle">Play \(t\)</button>
+                <button type="button" class="btn" id="btn-sim-step">Step \(t+1\)</button>
+                <button type="button" class="btn" id="btn-sim-reset">Reset \(t=0\)</button>
+                <button type="button" class="btn" id="btn-sim-noise">New \(\omega\)</button>
+              </div>
+
+              <div class="sim-readouts">
+                <div class="sim-stat">
+                  <span class="metric-label">Hausdorff \(\mathrm{dist}(B_1, B_2)\)</span>
+                  <span class="mono-val" id="sim-hd">—</span>
+                </div>
+                <div class="sim-stat">
+                  <span class="metric-label">Ergodic 2D \(\mathrm{SD}\) (last 15 steps)</span>
+                  <span class="mono-val" id="sim-sd-card">—</span>
+                </div>
+                <div class="sim-stat">
+                  <span class="metric-label">Snapshot 2D \(\mathrm{SD}\) (step \(t\))</span>
+                  <span class="mono-val" id="sim-sd-snap">—</span>
+                </div>
+                <div class="sim-stat">
+                  <span class="metric-label">Ergodic \(\bar{\lambda}_1,\; \bar{\lambda}_2\)</span>
+                  <span class="mono-val" id="sim-l1l2">—</span>
+                </div>
+              </div>
+              <p class="field-hint">
+                Near minima \(\alpha_{\max} = 33\), so \(\eta &lt; 2/33 \approx 0.061\) is contractive (\(\mathrm{SD}=0\)). Above EoS, the single-step <em>Snapshot SD</em> can briefly dip to \(0\) when noise pushes particles onto the fold \(\sigma \approx 0\), whereas the time-averaged <em>Ergodic SD</em> estimates the expectation \(\mathbb{E}[\cdot]\) in Def. 3.1.
+              </p>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<!-- Teaser video--><!-- 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body"> -->
-      <!-- TODO: Replace with your teaser video -->
-      <!-- <video poster="" id="tree" autoplay controls muted loop height="100%" preload="metadata"> -->
-        <!-- TODO: Add your video file path here -->
-      <!--   <source src="static/videos/banner_video.mp4" type="video/mp4">
-      </video>
-       --><!-- TODO: Replace with your video description -->
-<!--       <h2 class="subtitle has-text-centered">
-        Aliquam vitae elit ullamcorper tellus egestas pellentesque. Ut lacus tellus, maximus vel lectus at, placerat pretium mi. Maecenas dignissim tincidunt vestibulum. Sed consequat hendrerit nisl ut maximus. 
-      </h2>
-    </div>
-  </div>
-</section> -->
-<!-- End teaser video -->
-
-<section class="hero is-small teaser">
-<div class="container is-max-desktop">
-  <div class="hero-body">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <img src="./static/images/EoS_teaser.png" alt="Teaser image" style="display: block; width: 100%; height: auto; margin: 1rem auto 0.75rem;" loading="lazy"/>
-        <div class="content has-text-justified">
-        <small>
-          <strong>Generalization at the Edge of Stability (EoS).</strong> 
-          Modeling stochastic optimization as a random dynamical system (RDS), 
-          we show that at EoS the leading sharpness satisfies \(\lambda_1>0\)
-          implying expansion along at least one direction.  
-          The fundamental balance between expansion and contraction implies that 
-          the effective dimensionality of the dynamics, measured by our <strong>Sharpness Dimension</strong>
-          (\(\mathrm{SD}\)), is strictly smaller than the ambient parameter space: \(\mathrm{SD}&lt;d\). 
-          We prove that the <strong>worst-case generalization error is governed by \(\mathbf{SD}\) rather than the parameter count</strong>. 
-          Our results identify EoS as precisely the regime where generalization is controlled by a provably lower-dimensional attractor, providing a principled explanation for why overparameterized models can generalize beyond classical complexity measures. 
-
-        </small>
-     
-        </div>
-     
-
-      </div>
-    </div>
-  </div>
-</div>
-</section>
-
-
-<!-- Paper abstract -->
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
+    <!-- Main Theoretical Result (Distilled) -->
+    <section id="theory" class="section">
+      <div class="container">
+        <h2>Main Theoretical Result</h2>
+        <div class="prose">
           <p>
-            Training modern neural networks often relies on large learning rates, operating at the edge of stability, where the optimization dynamics exhibit oscillatory and chaotic behavior. Empirically, this regime often yields improved generalization performance, yet the underlying mechanism remains poorly understood. In this work, we represent stochastic optimizers as random dynamical systems, which often converge to a fractal attractor set (rather than a point) with a smaller intrinsic dimension. Building on this connection and inspired by Lyapunov dimension theory, we introduce a novel notion of dimension, coined the 'sharpness dimension', and prove a generalization bound based on this dimension. Our results show that generalization in the chaotic regime depends on the complete Hessian spectrum and the structure of its partial determinants, highlighting a complexity that cannot be captured by the trace or spectral norm considered in prior work. Experiments across various MLPs and transformers validate our theory while also providing new insights into the recently observed phenomenon of grokking.
+            Modeling a stochastic optimizer as a random dynamical system \((\Omega, \mathcal{F}, \mathbb{P}, \theta, \phi)\) with one-step Jacobian singular values \(\sigma_1(\omega, w) \ge \dots \ge \sigma_d(\omega, w)\), we define the <strong>RDS Sharpness of Order \(k\)</strong> as \(\lambda_k := \mathbb{E}[\sup_{w \in \mathcal{A}(\omega)} \ln \sigma_k(\omega, w)]\). Letting \(j^* := \max\{ i : \sum_{k=1}^i \lambda_k \ge 0\}\), the <strong>Sharpness Dimension</strong> is
+          </p>
+          <div class="eq-block">
+            $$\dim_{\mathrm{S}}\mathcal{A} := j^* + \frac{\sum_{i=1}^{j^*} \lambda_i}{|\lambda_{j^*+1}|} \quad (1 \le j^* &lt; d),$$
+          </div>
+          <p>
+            with \(\dim_{\mathrm{S}}\mathcal{A} = 0\) when \(\lambda_1 &lt; 0\) and \(\dim_{\mathrm{S}}\mathcal{A} = d\) when \(j^* = d\). Using iterative ellipsoid covering, exterior-power subadditivity, and Birkhoff's ergodic theorem, we prove \(\overline{\dim}_M(\mathcal{A}(\omega)) \le \dim_{\mathrm{S}}\mathcal{A}\) almost surely, yielding our generalization bound over the entire random pullback attractor \(\mathcal{A}_S(\omega)\):
           </p>
         </div>
+
+        <article class="math-box math-box-theorem">
+          <div class="math-box-title">Theorem 3.4 — Generalization via Sharpness Dimension</div>
+          <p>
+            Under standard boundedness (\(B\)), \(L\)-Lipschitz continuity, and regular random dynamics assumptions (Assump. B.1–B.3), with probability at least \(1 - \zeta - \gamma\) over \((S, \omega)\), for sufficiently small \(\delta &gt; 0\),
+          </p>
+          <div class="eq-block">
+            $$\sup_{w \in \mathcal{A}_S(\omega)} \big(\mathcal{R}(w) - \widehat{\mathcal{R}}_S(w)\big) \;\le\; 2L\delta + 2B\sqrt{\frac{4\,\dim_{\mathrm{S}}\mathcal{A}_S \,\log(1/\delta)}{n}} + \frac{I_\infty(\mathcal{A}_S(\omega), S) + \log(1/\zeta)}{\sqrt{n}} + \frac{CB^2}{\sqrt{n}}.$$
+          </div>
+          <p class="math-note">
+            We also provide a mutual-information-free version via random set stability (Theorem C.6) and a scalable estimator via minibatch <strong>Stochastic Lanczos Quadrature (SLQ)</strong>, reducing memory from \(\Theta(N^2)\) to \(\Theta(mN)\).
+          </p>
+        </article>
       </div>
-    </div>
-  </div>
-</section>
-<!-- End paper abstract -->
+    </section>
 
+    <!-- Empirical Highlights (Concise 3-Column Summary) -->
+    <section id="experiments" class="section">
+      <div class="container">
+        <h2>Empirical Highlights</h2>
+        <div class="exp-triptych">
+          <div class="exp-card">
+            <h3>MNIST MLPs (3- &amp; 5-Layer)</h3>
+            <p>
+              Across a \(5\times 5\) learning-rate / batch-size grid, trajectory-based PH-Dim and top sharpness \(\lambda_1\) fail at EoS, whereas full-spectrum <strong>SD</strong> (\(\tau = \mathbf{0.76}\)) and <strong>SD-SLQ</strong> (\(\tau = \mathbf{0.61}\)) strongly track the generalization gap.
+            </p>
+            <div class="mini-bars" aria-label="3-layer MNIST Kendall correlation with Generalization Gap">
+              <div class="mini-bar-row">
+                <span class="mini-bar-label">SD (Exact)</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill bar-pos" style="width: 76%"></div></div>
+                <span class="mono-val">+0.76</span>
+              </div>
+              <div class="mini-bar-row">
+                <span class="mini-bar-label">SD-SLQ</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill bar-pos-muted" style="width: 61%"></div></div>
+                <span class="mono-val">+0.61</span>
+              </div>
+              <div class="mini-bar-row">
+                <span class="mini-bar-label">\(E_\alpha\) (\(\|\cdot\|_2\))</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill bar-neutral" style="width: 34%"></div></div>
+                <span class="mono-val">+0.34</span>
+              </div>
+              <div class="mini-bar-row">
+                <span class="mini-bar-label">RDS-Sharp. \(\lambda_1\)</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill bar-neg" style="width: 16%"></div></div>
+                <span class="mono-val">&minus;0.16</span>
+              </div>
+              <div class="mini-bar-row">
+                <span class="mini-bar-label">PH-Dim (\(\rho\))</span>
+                <div class="mini-bar-track"><div class="mini-bar-fill bar-neg" style="width: 40%"></div></div>
+                <span class="mono-val">&minus;0.40</span>
+              </div>
+            </div>
+          </div>
 
-<!-- Image carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div id="results-carousel" class="carousel results-carousel">
-       <div class="item"> -->
-        <!-- TODO: Replace with your research result images -->
-        <!-- <img src="static/images/carousel1.jpg" alt="First research result visualization" loading="lazy"/> -->
-        <!-- TODO: Replace with description of this result -->
-        <!-- <h2 class="subtitle has-text-centered">
-          First image description.
-        </h2>
-      </div>
-      <div class="item">
-         --><!-- Your image here -->
-        <!-- <img src="static/images/carousel2.jpg" alt="Second research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-          Second image description.
-        </h2>
-      </div>
-      <div class="item">
-         --><!-- Your image here -->
-        <!-- <img src="static/images/carousel3.jpg" alt="Third research result visualization" loading="lazy"/>
-        <h2 class="subtitle has-text-centered">
-         Third image description.
-       </h2>
-     </div>
-     <div class="item">
-       --><!-- Your image here -->
-      <!-- <img src="static/images/carousel4.jpg" alt="Fourth research result visualization" loading="lazy"/>
-      <h2 class="subtitle has-text-centered">
-        Fourth image description.
-      </h2>
-    </div>
-  </div>
-</div>
-</div>
-</section> -->
-<!-- End image carousel -->
+          <div class="exp-card">
+            <h3>Grokking (Mod 97)</h3>
+            <p>
+              On modular addition \((a + b) \bmod 97\), <strong>SD</strong> achieves up to \(\tau = \mathbf{0.88}\) using only single-checkpoint weights—matching trajectory-based \(E_\alpha\) without storing training trajectories.
+            </p>
+            <p>
+              In 3-layer ReLU grokking without momentum, classical sharpness and \(\mathrm{tr}(H)\) decay monotonically, while <strong>SD rises before grokking and drops sharply across the sudden generalization phase transition</strong>.
+            </p>
+          </div>
 
-
-
-
-<!-- Youtube video -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container"> -->
-      <!-- Paper video. -->
-<!--       <h2 class="title is-3">Video Presentation</h2>
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          
-          <div class="publication-video"> -->
-            <!-- TODO: Replace with your YouTube video ID -->
-            <!-- <iframe src="https://www.youtube.com/embed/JkaxUblCGz0" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+          <div class="exp-card">
+            <h3>GPT-2 (124M) on WikiText-2</h3>
+            <p>
+              Trained from scratch across SGD, SGD+Momentum, and AdamW hyperparameter grids, classical sharpness fails and correlates negatively with the loss gap under AdamW (\(\tau = -0.88\)).
+            </p>
+            <p>
+              Our smoothed SLQ estimators remain consistently positive across all three optimizers, with pseudo-spectrum <strong>SD-PS</strong> reaching \(\tau \approx \mathbf{0.51}\) (SGD+Mom.) and \(\tau \approx \mathbf{0.69}\) (AdamW).
+            </p>
           </div>
         </div>
       </div>
-    </div>
-  </div>
-</section> -->
-<!-- End youtube video -->
+    </section>
 
-
-<!-- Video carousel -->
-<!-- <section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title is-3">Another Carousel</h2>
-      <div id="results-carousel" class="carousel results-carousel">
-        <div class="item item-video1"> -->
-          <!-- TODO: Add poster image for better preview -->
-          <!-- <video poster="" id="video1" controls muted loop height="100%" preload="metadata"> -->
-            <!-- Your video file here --><!-- 
-            <source src="static/videos/carousel1.mp4" type="video/mp4">
-          </video>
+    <!-- BibTeX & Acknowledgments -->
+    <section id="bibtex" class="section">
+      <div class="container">
+        <div class="bibtex-header">
+          <h2>Citation</h2>
+          <button type="button" class="btn btn-small" id="btn-copy-bibtex">Copy BibTeX</button>
         </div>
-        <div class="item item-video2"> -->
-          <!-- TODO: Add poster image for better preview -->
-          <!-- <video poster="" id="video2" controls muted loop height="100%" preload="metadata"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel2.mp4" type="video/mp4">
-          </video>
-        </div>
-        <div class="item item-video3">
-           --><!-- TODO: Add poster image for better preview -->
-          <!-- <video poster="" id="video3" controls muted loop height="100%" preload="metadata"> -->
-            <!-- Your video file here -->
-            <!-- <source src="static/videos/carousel3.mp4" type="video/mp4">
-          </video>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> -->
-<!-- End video carousel -->
+        <pre class="bibtex-block"><code id="bibtex-code">@inproceedings{tuci2026generalization,
+  title         = {Generalization at the Edge of Stability},
+  author        = {Tuci, Mario and Korkmaz, Caner and
+                   {\c{S}}im{\c{s}}ekli, Umut and Birdal, Tolga},
+  booktitle     = {Advances in Neural Information Processing Systems (NeurIPS)},
+  year          = {2026},
+  eprint        = {2604.19740},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.LG},
+  url           = {https://arxiv.org/abs/2604.19740}
+}</code></pre>
 
-
-
-
-
-
-<!-- Paper poster -->
-<!-- <section class="hero is-small is-light">
-  <div class="hero-body">
-    <div class="container">
-      <h2 class="title">Poster</h2>
-
- -->      <!-- TODO: Replace with your poster PDF -->
-<!--       <iframe  src="static/pdfs/sample.pdf" width="100%" height="550">
-          </iframe>
-        
-      </div>
-    </div>
-  </section>
- --><!--End paper poster -->
-
-
-
-<!--BibTex citation -->
-<section class="section" id="BibTeX">
-    <div class="container is-max-desktop content">
-      <div class="bibtex-header">
-        <h2 class="title">BibTeX</h2>
-        <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
-          <i class="fas fa-copy"></i>
-          <span class="copy-text">Copy</span>
-        </button>
-      </div>
-      <pre id="bibtex-code"><code>
-        @misc{tuci2026generalizationedgestability,
-          title={Generalization at the Edge of Stability}, 
-          author={Mario Tuci and Caner Korkmaz and Umut Şimşekli and Tolga Birdal},
-          year={2026},
-          eprint={2604.19740},
-          archivePrefix={arXiv},
-          primaryClass={cs.LG},
-          url={https://arxiv.org/abs/2604.19740}, 
-    }
-</code></pre>
-    </div>
-</section>
-
-<!--End BibTex citation -->
-
-
-  <footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-
+        <div class="acknowledgments">
+          <h3>Acknowledgments</h3>
           <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            Commons Attribution-ShareAlike 4.0 International License</a>.
+            T. B. was supported by a UKRI Future Leaders Fellowship (MR/Y018818/1). The authors acknowledge support from the UK AI Research Resource (AIRR Isambard AI) through grant 0251-4584-0945-1 — TopoFound. U. Ş. is partially supported by the French government under the management of Agence Nationale de la Recherche as part of the “Investissements d’avenir” program, reference ANR-19-P3IA-0001 (PRAIRIE 3IA Institute). M. T. and U. Ş. are partially supported by the European Research Council Starting Grant DYNASTY — 101039676.
           </p>
-
         </div>
       </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>
+        <strong>Generalization at the Edge of Stability</strong> · NeurIPS 2026 ·
+        <a href="https://circle-group.github.io/" target="_blank" rel="noopener">CIRCLE Group</a>, Imperial College London &amp; INRIA / ENS.
+      </p>
     </div>
-  </div>
-</footer>
+  </footer>
+  <script>
+/* ==========================================================================
+   Generalization at the Edge of Stability — Interactive Visualizations
+   ========================================================================== */
 
-<!-- Statcounter tracking code -->
-  
-<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+(function () {
+  'use strict';
 
-    <!-- End of Statcounter Code -->
+  // --------------------------------------------------------------------------
+  // 1. KaTeX auto-render initialization
+  // --------------------------------------------------------------------------
+  function initMath() {
+    if (typeof window.renderMathInElement === 'function') {
+      window.renderMathInElement(document.body, {
+        delimiters: [
+          { left: '$$', right: '$$', display: true },
+          { left: '\\(', right: '\\)', display: false }
+        ],
+        throwOnError: false
+      });
+    }
+  }
 
-  </body>
-  </html>
+  // --------------------------------------------------------------------------
+  // 2. Range slider progress fallback (for browsers without accent-color)
+  // --------------------------------------------------------------------------
+  function initRangeFallback() {
+    if (window.CSS && CSS.supports && CSS.supports('accent-color', '#1a5c65')) {
+      return;
+    }
+    const updateProgress = (el) => {
+      const min = parseFloat(el.min) || 0;
+      const max = parseFloat(el.max) || 100;
+      const val = parseFloat(el.value) || 0;
+      const pct = ((val - min) / (max - min)) * 100;
+      el.style.setProperty('--progress', `${pct}%`);
+    };
+    document.querySelectorAll('input[type="range"]').forEach((slider) => {
+      updateProgress(slider);
+      slider.addEventListener('input', () => updateProgress(slider));
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // 3. Theme-aware color helper
+  // --------------------------------------------------------------------------
+  function getThemeColors() {
+    const cs = getComputedStyle(document.documentElement);
+    const get = (v, fb) => cs.getPropertyValue(v).trim() || fb;
+    return {
+      bg: get('--bg', '#fafaf7'),
+      surface: get('--surface', '#ffffff'),
+      ink: get('--ink', '#191c20'),
+      muted: get('--ink-muted', '#525860'),
+      border: get('--border', '#dcdcd4'),
+      borderStrong: get('--border-strong', '#b8b8ae'),
+      accent: get('--accent', '#1a5c65'),
+      accentSoft: get('--accent-soft', '#e7f1f2'),
+      expand: get('--expand', '#b8422c'),
+      contract: get('--contract', '#2b5c8f'),
+      neutral: get('--neutral', '#8a8f96')
+    };
+  }
+
+  // --------------------------------------------------------------------------
+  // 4. Interactive Explorer 1: Hessian Spectrum -> Sharpness Dimension
+  // --------------------------------------------------------------------------
+  const D = 24; // Ambient dimension for clear per-mode inspection
+
+  const PRESETS = {
+    'eos-spiked': {
+      eta: 0.08,
+      spike: 36.0,
+      bulk: 0.75,
+      build: (spike, bulk) => {
+        // 3 outlier spikes, decaying positive contractive bulk, near-zero modes, 2 small negative modes
+        return [
+          spike,
+          spike * 0.78,
+          spike * 0.62,
+          15.5 * bulk,
+          14.0 * bulk,
+          12.6 * bulk,
+          11.2 * bulk,
+          10.0 * bulk,
+          8.8 * bulk,
+          7.6 * bulk,
+          6.5 * bulk,
+          5.5 * bulk,
+          4.5 * bulk,
+          3.6 * bulk,
+          2.8 * bulk,
+          2.0 * bulk,
+          1.3 * bulk,
+          0.7 * bulk,
+          0.25,
+          0.05,
+          -0.1,
+          -0.6,
+          -1.6,
+          -3.0
+        ];
+      }
+    },
+    'contractive': {
+      eta: 0.045,
+      spike: 28.0,
+      bulk: 0.65,
+      build: (spike, bulk) => {
+        const arr = [];
+        for (let i = 0; i < D; i++) {
+          if (i === 0) arr.push(spike);
+          else if (i === 1) arr.push(spike * 0.75);
+          else {
+            const t = (D - i) / D;
+            arr.push(0.4 + 14.0 * bulk * Math.pow(t, 1.6));
+          }
+        }
+        return arr;
+      }
+    },
+    'negative-curv': {
+      eta: 0.06,
+      spike: 34.0,
+      bulk: 0.50,
+      build: (spike, bulk) => [
+        spike,
+        spike * 0.68,
+        13.0 * bulk,
+        11.2 * bulk,
+        9.6 * bulk,
+        8.0 * bulk,
+        6.5 * bulk,
+        5.2 * bulk,
+        4.0 * bulk,
+        3.0 * bulk,
+        2.1 * bulk,
+        1.3 * bulk,
+        0.6 * bulk,
+        0.15,
+        0.02,
+        -0.3,
+        -1.2,
+        -2.5,
+        -4.1,
+        -6.0,
+        -8.2,
+        -10.5,
+        -13.0,
+        -16.0
+      ]
+    },
+    'flat-vs-sharp': {
+      eta: 0.08,
+      spike: 36.0,
+      bulk: 1.05,
+      build: (spike, bulk) => [
+        spike, // Exact same top eigenvalue as eos-spiked!
+        15.5 * bulk,
+        14.2 * bulk,
+        13.0 * bulk,
+        12.0 * bulk,
+        11.0 * bulk,
+        10.2 * bulk,
+        9.4 * bulk,
+        8.6 * bulk,
+        7.8 * bulk,
+        7.1 * bulk,
+        6.4 * bulk,
+        5.8 * bulk,
+        5.2 * bulk,
+        4.6 * bulk,
+        4.0 * bulk,
+        3.5 * bulk,
+        3.0 * bulk,
+        2.5 * bulk,
+        2.0 * bulk,
+        1.6 * bulk,
+        1.2 * bulk,
+        0.8 * bulk,
+        0.4 * bulk
+      ]
+    }
+  };
+
+  let sdState = {
+    preset: 'eos-spiked',
+    eta: 0.08,
+    spike: 36.0,
+    bulk: 0.75,
+    hoveredId: null
+  };
+
+  function computeSpectrumData() {
+    const rawAlphas = PRESETS[sdState.preset].build(sdState.spike, sdState.bulk);
+    const eta = sdState.eta;
+    const eps = 1e-3;
+
+    // Preserve mode ID so hover links across all 3 charts
+    const modes = rawAlphas.map((alpha, idx) => {
+      const sigma = Math.max(Math.abs(1 - eta * alpha), eps);
+      const lambda = Math.log(sigma);
+      return { id: idx, alpha, sigma, lambda };
+    });
+
+    // Hessian ordered descending by alpha
+    const byAlpha = [...modes].sort((a, b) => b.alpha - a.alpha);
+
+    // RDS sharpness ordered descending by lambda
+    const byLambda = [...modes].sort((a, b) => b.lambda - a.lambda);
+
+    // Partial sums S_0 = 0, S_i = sum_{k=1}^i lambda_k
+    const partialSums = [0];
+    let acc = 0;
+    let jStar = 0;
+    for (let i = 0; i < byLambda.length; i++) {
+      acc += byLambda[i].lambda;
+      partialSums.push(acc);
+      if (acc >= 0) {
+        jStar = i + 1;
+      }
+    }
+
+    const lambda1 = byLambda[0].lambda;
+    let sd = 0;
+    let regime = 'Contractive (SD = 0)';
+    let regimeClass = 'regime-contract';
+
+    if (lambda1 < 0) {
+      jStar = 0;
+      sd = 0;
+    } else if (jStar >= D) {
+      sd = D;
+      regime = 'Expanding / Divergent';
+      regimeClass = 'regime-diverge';
+    } else {
+      const nextNeg = Math.abs(byLambda[jStar].lambda);
+      sd = jStar + (nextNeg > 1e-9 ? partialSums[jStar] / nextNeg : 0);
+      sd = Math.min(D, Math.max(0, sd));
+      regime = 'Edge of Stability';
+      regimeClass = 'regime-eos';
+    }
+
+    const trace = rawAlphas.reduce((s, v) => s + v, 0);
+    const threshold = 2 / eta;
+
+    return {
+      byAlpha,
+      byLambda,
+      partialSums,
+      jStar,
+      sd,
+      lambda1,
+      trace,
+      threshold,
+      regime,
+      regimeClass
+    };
+  }
+
+  function modeColor(lambda, colors) {
+    if (lambda > 0.015) return colors.expand;
+    if (lambda < -0.015) return colors.contract;
+    return colors.neutral;
+  }
+
+  function svgEl(tag, attrs = {}) {
+    const el = document.createElementNS('http://www.w3.org/2000/svg', tag);
+    for (const [k, v] of Object.entries(attrs)) {
+      el.setAttribute(k, String(v));
+    }
+    return el;
+  }
+
+  function renderHessianChart(container, data, colors) {
+    const W = 320, H = 205;
+    const pad = { top: 18, right: 12, bottom: 26, left: 36 };
+    const pw = W - pad.left - pad.right;
+    const ph = H - pad.top - pad.bottom;
+
+    const alphas = data.byAlpha.map((m) => m.alpha);
+    const maxA = Math.max(data.threshold * 1.15, ...alphas, 10);
+    const minA = Math.min(-4, ...alphas, 0);
+    const yScale = (v) => pad.top + ((maxA - v) / (maxA - minA)) * ph;
+    const y0 = yScale(0);
+
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Hessian eigenvalues bar chart' });
+
+    // Subtle horizontal grid & zero line
+    svg.appendChild(svgEl('line', {
+      x1: pad.left, y1: y0, x2: W - pad.right, y2: y0,
+      stroke: colors.borderStrong, 'stroke-width': 1
+    }));
+
+    // Stability threshold 2/eta line
+    if (data.threshold <= maxA) {
+      const yT = yScale(data.threshold);
+      svg.appendChild(svgEl('line', {
+        x1: pad.left, y1: yT, x2: W - pad.right, y2: yT,
+        stroke: colors.expand, 'stroke-width': 1.2, 'stroke-dasharray': '4 3'
+      }));
+      const lbl = svgEl('text', {
+        x: W - pad.right - 2, y: Math.max(pad.top + 9, yT - 4),
+        'text-anchor': 'end', fill: colors.expand,
+        'font-family': 'IBM Plex Mono, monospace', 'font-size': 9.5
+      });
+      lbl.textContent = `2/η = ${data.threshold.toFixed(1)}`;
+      svg.appendChild(lbl);
+    }
+
+    // Y-axis labels
+    [maxA, 0, minA].forEach((val) => {
+      if (Math.abs(val) < 1e-6 && minA === 0) return;
+      const t = svgEl('text', {
+        x: pad.left - 5, y: yScale(val) + 3,
+        'text-anchor': 'end', fill: colors.muted,
+        'font-family': 'IBM Plex Mono, monospace', 'font-size': 9
+      });
+      t.textContent = val.toFixed(0);
+      svg.appendChild(t);
+    });
+
+    // Bars
+    const step = pw / D;
+    const bw = Math.max(4, step - 2.5);
+    data.byAlpha.forEach((m, i) => {
+      const x = pad.left + i * step + (step - bw) / 2;
+      const yv = yScale(m.alpha);
+      const y = Math.min(y0, yv);
+      const h = Math.max(1.5, Math.abs(yv - y0));
+      const isHovered = sdState.hoveredId === m.id;
+      const rect = svgEl('rect', {
+        x, y, width: bw, height: h, rx: 1.5,
+        fill: modeColor(m.lambda, colors),
+        opacity: sdState.hoveredId === null || isHovered ? 0.92 : 0.3,
+        stroke: isHovered ? colors.ink : 'none',
+        'stroke-width': isHovered ? 1.2 : 0,
+        style: 'cursor:pointer'
+      });
+      rect.addEventListener('mouseenter', () => setHover(m.id));
+      rect.addEventListener('mouseleave', () => setHover(null));
+      svg.appendChild(rect);
+    });
+
+    const xLabel = svgEl('text', {
+      x: pad.left + pw / 2, y: H - 5, 'text-anchor': 'middle',
+      fill: colors.muted, 'font-family': 'Inter, sans-serif', 'font-size': 9.5
+    });
+    xLabel.textContent = `Eigenvalue index i = 1 … ${D}`;
+    svg.appendChild(xLabel);
+
+    container.replaceChildren(svg);
+  }
+
+  function renderLambdaChart(container, data, colors) {
+    const W = 320, H = 205;
+    const pad = { top: 18, right: 12, bottom: 26, left: 36 };
+    const pw = W - pad.left - pad.right;
+    const ph = H - pad.top - pad.bottom;
+
+    const lambdas = data.byLambda.map((m) => m.lambda);
+    const maxL = Math.max(0.5, ...lambdas) * 1.12;
+    const minL = Math.min(-0.8, ...lambdas) * 1.12;
+    const yScale = (v) => pad.top + ((maxL - v) / (maxL - minL)) * ph;
+    const y0 = yScale(0);
+
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Ordered RDS sharpness bar chart' });
+
+    svg.appendChild(svgEl('line', {
+      x1: pad.left, y1: y0, x2: W - pad.right, y2: y0,
+      stroke: colors.borderStrong, 'stroke-width': 1
+    }));
+
+    // Y ticks
+    [maxL * 0.85, 0, minL * 0.85].forEach((val) => {
+      const t = svgEl('text', {
+        x: pad.left - 5, y: yScale(val) + 3,
+        'text-anchor': 'end', fill: colors.muted,
+        'font-family': 'IBM Plex Mono, monospace', 'font-size': 9
+      });
+      t.textContent = val.toFixed(1);
+      svg.appendChild(t);
+    });
+
+    const step = pw / D;
+    const bw = Math.max(4, step - 2.5);
+
+    // Transition index j* dashed line
+    if (data.jStar > 0 && data.jStar < D) {
+      const xJ = pad.left + data.jStar * step;
+      svg.appendChild(svgEl('line', {
+        x1: xJ, y1: pad.top, x2: xJ, y2: H - pad.bottom,
+        stroke: colors.accent, 'stroke-width': 1.2, 'stroke-dasharray': '3 3'
+      }));
+      const lbl = svgEl('text', {
+        x: Math.min(W - pad.right - 2, xJ + 3), y: pad.top + 10,
+        fill: colors.accent, 'font-family': 'IBM Plex Mono, monospace', 'font-size': 9.5
+      });
+      lbl.textContent = `j* = ${data.jStar}`;
+      svg.appendChild(lbl);
+    }
+
+    data.byLambda.forEach((m, k) => {
+      const x = pad.left + k * step + (step - bw) / 2;
+      const yv = yScale(m.lambda);
+      const y = Math.min(y0, yv);
+      const h = Math.max(1.5, Math.abs(yv - y0));
+      const isHovered = sdState.hoveredId === m.id;
+      const rect = svgEl('rect', {
+        x, y, width: bw, height: h, rx: 1.5,
+        fill: modeColor(m.lambda, colors),
+        opacity: sdState.hoveredId === null || isHovered ? 0.92 : 0.3,
+        stroke: isHovered ? colors.ink : 'none',
+        'stroke-width': isHovered ? 1.2 : 0,
+        style: 'cursor:pointer'
+      });
+      rect.addEventListener('mouseenter', () => setHover(m.id));
+      rect.addEventListener('mouseleave', () => setHover(null));
+      svg.appendChild(rect);
+    });
+
+    const xLabel = svgEl('text', {
+      x: pad.left + pw / 2, y: H - 5, 'text-anchor': 'middle',
+      fill: colors.muted, 'font-family': 'Inter, sans-serif', 'font-size': 9.5
+    });
+    xLabel.textContent = `Ordered index k = 1 … ${D}`;
+    svg.appendChild(xLabel);
+
+    container.replaceChildren(svg);
+  }
+
+  function renderPartialSumChart(container, data, colors) {
+    const W = 320, H = 205;
+    const pad = { top: 18, right: 14, bottom: 26, left: 36 };
+    const pw = W - pad.left - pad.right;
+    const ph = H - pad.top - pad.bottom;
+
+    const sums = data.partialSums;
+    const maxS = Math.max(0.6, ...sums) * 1.15;
+    const minS = Math.min(-1.0, ...sums) * 1.12;
+    const xScale = (i) => pad.left + (i / D) * pw;
+    const yScale = (v) => pad.top + ((maxS - v) / (maxS - minS)) * ph;
+    const y0 = yScale(0);
+
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Partial sums of RDS sharpness and Sharpness Dimension zero-crossing' });
+
+    // Zero line
+    svg.appendChild(svgEl('line', {
+      x1: pad.left, y1: y0, x2: W - pad.right, y2: y0,
+      stroke: colors.borderStrong, 'stroke-width': 1
+    }));
+
+    // Y ticks (avoid collisions with 0 tick)
+    const yTicks = [0];
+    if (Math.abs(yScale(maxS * 0.85) - y0) > 16) yTicks.push(maxS * 0.85);
+    if (Math.abs(yScale(minS * 0.85) - y0) > 16) yTicks.push(minS * 0.85);
+    yTicks.forEach((val) => {
+      const t = svgEl('text', {
+        x: pad.left - 5, y: yScale(val) + 3,
+        'text-anchor': 'end', fill: colors.muted,
+        'font-family': 'IBM Plex Mono, monospace', 'font-size': 9
+      });
+      t.textContent = val.toFixed(1);
+      svg.appendChild(t);
+    });
+
+    // Shaded positive area under S_i up to SD
+    if (data.sd > 0) {
+      const areaPts = [`${xScale(0)},${y0}`];
+      for (let i = 1; i <= data.jStar; i++) {
+        areaPts.push(`${xScale(i)},${yScale(sums[i])}`);
+      }
+      areaPts.push(`${xScale(data.sd)},${y0}`);
+      svg.appendChild(svgEl('polygon', {
+        points: areaPts.join(' '),
+        fill: colors.accentSoft,
+        opacity: 0.9
+      }));
+    }
+
+    // Polyline for S_i
+    const pts = sums.map((s, i) => `${xScale(i)},${yScale(s)}`).join(' ');
+    svg.appendChild(svgEl('polyline', {
+      points: pts,
+      fill: 'none',
+      stroke: colors.ink,
+      'stroke-width': 1.8,
+      'stroke-linejoin': 'round'
+    }));
+
+    // Interactive points
+    for (let i = 1; i <= D; i++) {
+      const m = data.byLambda[i - 1];
+      const isHovered = sdState.hoveredId === m.id;
+      const c = svgEl('circle', {
+        cx: xScale(i), cy: yScale(sums[i]),
+        r: isHovered ? 4.5 : 2.2,
+        fill: isHovered ? colors.ink : modeColor(m.lambda, colors),
+        style: 'cursor:pointer'
+      });
+      c.addEventListener('mouseenter', () => setHover(m.id));
+      c.addEventListener('mouseleave', () => setHover(null));
+      svg.appendChild(c);
+    }
+
+    // Exact Sharpness Dimension zero-crossing marker
+    const xSD = xScale(data.sd);
+    svg.appendChild(svgEl('line', {
+      x1: xSD, y1: pad.top + 14, x2: xSD, y2: H - pad.bottom,
+      stroke: colors.accent, 'stroke-width': 1.4, 'stroke-dasharray': '3 3'
+    }));
+    svg.appendChild(svgEl('circle', {
+      cx: xSD, cy: y0, r: 4.5,
+      fill: colors.accent, stroke: colors.surface, 'stroke-width': 1.5
+    }));
+
+    // Clean pill badge at top of dashed line — never collides with curve or y-axis
+    const badgeText = `SD = ${data.sd.toFixed(2)}`;
+    const badgeW = 64;
+    const badgeH = 16;
+    const badgeX = Math.min(W - pad.right - badgeW, Math.max(pad.left + 2, xSD - badgeW / 2));
+    const badgeY = pad.top - 2;
+    svg.appendChild(svgEl('rect', {
+      x: badgeX, y: badgeY, width: badgeW, height: badgeH, rx: 3,
+      fill: colors.accentSoft, stroke: colors.accent, 'stroke-width': 0.9
+    }));
+    const sdLabel = svgEl('text', {
+      x: badgeX + badgeW / 2,
+      y: badgeY + 11.5,
+      'text-anchor': 'middle',
+      fill: colors.accent,
+      'font-family': 'IBM Plex Mono, monospace',
+      'font-size': 9.5,
+      'font-weight': 600
+    });
+    sdLabel.textContent = badgeText;
+    svg.appendChild(sdLabel);
+
+    const xLabel = svgEl('text', {
+      x: pad.left + pw / 2, y: H - 5, 'text-anchor': 'middle',
+      fill: colors.muted, 'font-family': 'Inter, sans-serif', 'font-size': 9.5
+    });
+    xLabel.textContent = `Partial sum index i = 0 … ${D}`;
+    svg.appendChild(xLabel);
+
+    container.replaceChildren(svg);
+  }
+
+  function renderEllipsoidInset(container, data, colors) {
+    const W = 310, H = 112;
+    const svg = svgEl('svg', { viewBox: `0 0 ${W} ${H}`, role: 'img', 'aria-label': 'Ellipsoid covering under one-step Jacobian' });
+
+    const cy = 58;
+    const R = 24;
+
+    // Left: initial ball B(0, R)
+    const cx1 = 52;
+    svg.appendChild(svgEl('circle', {
+      cx: cx1, cy, r: R,
+      fill: colors.accentSoft, stroke: colors.ink, 'stroke-width': 1.2, 'stroke-dasharray': '3 2'
+    }));
+    const t1 = svgEl('text', {
+      x: cx1, y: 18, 'text-anchor': 'middle', fill: colors.muted,
+      'font-family': 'IBM Plex Mono, monospace', 'font-size': 9.5
+    });
+    t1.textContent = 'B(0, R)';
+    svg.appendChild(t1);
+
+    // Arrow: Dphi = I - eta H
+    svg.appendChild(svgEl('line', {
+      x1: 92, y1: cy, x2: 142, y2: cy,
+      stroke: colors.muted, 'stroke-width': 1.2
+    }));
+    svg.appendChild(svgEl('polygon', {
+      points: `142,${cy} 136,${cy - 3.5} 136,${cy + 3.5}`,
+      fill: colors.muted
+    }));
+    const tArr = svgEl('text', {
+      x: 117, y: cy - 8, 'text-anchor': 'middle', fill: colors.ink,
+      'font-family': 'IBM Plex Mono, monospace', 'font-size': 9
+    });
+    tArr.textContent = 'I − ηH';
+    svg.appendChild(tArr);
+
+    // Right: mapped ellipsoid (sigma_1 vs sigma_{j*+1})
+    const cx2 = 228;
+    const s1 = data.byLambda[0].sigma;
+    const sNext = data.jStar < D ? data.byLambda[data.jStar].sigma : data.byLambda[D - 1].sigma;
+
+    const rx = Math.min(68, Math.max(14, R * Math.min(s1, 2.8)));
+    const ry = Math.min(34, Math.max(6, R * Math.min(sNext, 1.3)));
+
+    svg.appendChild(svgEl('ellipse', {
+      cx: cx2, cy, rx, ry,
+      fill: s1 > 1 ? colors.expand : colors.contract,
+      'fill-opacity': 0.14,
+      stroke: s1 > 1 ? colors.expand : colors.contract,
+      'stroke-width': 1.5
+    }));
+
+    // Covering balls of radius rho_1 = ry along the expanding axis
+    const nBalls = Math.min(9, Math.max(1, Math.ceil(rx / ry)));
+    for (let b = 0; b < nBalls; b++) {
+      const frac = nBalls === 1 ? 0 : -1 + (2 * b) / (nBalls - 1);
+      const bx = cx2 + frac * Math.max(0, rx - ry * 0.75);
+      svg.appendChild(svgEl('circle', {
+        cx: bx, cy, r: ry,
+        fill: 'none', stroke: colors.accent, 'stroke-width': 1, 'stroke-dasharray': '2 2'
+      }));
+    }
+
+    const t2 = svgEl('text', {
+      x: cx2, y: 18, 'text-anchor': 'middle', fill: colors.muted,
+      'font-family': 'IBM Plex Mono, monospace', 'font-size': 9.5
+    });
+    t2.textContent = `σ₁=${s1.toFixed(2)}, σ(j*+1)=${sNext.toFixed(2)}`;
+    svg.appendChild(t2);
+
+    container.replaceChildren(svg);
+  }
+
+  function updateSDExplorer() {
+    const data = computeSpectrumData();
+    const colors = getThemeColors();
+
+    // Update text readouts
+    document.getElementById('out-eta').textContent = sdState.eta.toFixed(3);
+    document.getElementById('out-spike').textContent = sdState.spike.toFixed(1);
+    document.getElementById('out-bulk').textContent = sdState.bulk.toFixed(2);
+
+    document.getElementById('val-threshold').textContent = data.threshold.toFixed(2);
+    document.getElementById('val-lambda1').textContent =
+      (data.lambda1 >= 0 ? '+' : '') + data.lambda1.toFixed(3);
+    document.getElementById('val-trace').textContent = data.trace.toFixed(1);
+    document.getElementById('val-jstar').textContent = String(data.jStar);
+    document.getElementById('val-sd').innerHTML =
+      `${data.sd.toFixed(2)} <span class="metric-sub">/ ${D}</span>`;
+
+    const regEl = document.getElementById('val-regime');
+    regEl.textContent = data.regime;
+    regEl.className = `regime-tag ${data.regimeClass}`;
+
+    // Render charts
+    renderHessianChart(document.getElementById('chart-hessian'), data, colors);
+    renderLambdaChart(document.getElementById('chart-lambda'), data, colors);
+    renderPartialSumChart(document.getElementById('chart-partial'), data, colors);
+    renderEllipsoidInset(document.getElementById('chart-ellipsoid'), data, colors);
+
+    // Update hover readout
+    const hoverEl = document.getElementById('hover-readout');
+    if (sdState.hoveredId !== null) {
+      const kIdx = data.byLambda.findIndex((m) => m.id === sdState.hoveredId);
+      const m = data.byLambda[kIdx];
+      const sVal = data.partialSums[kIdx + 1];
+      hoverEl.textContent =
+        `Mode k=${kIdx + 1}: α = ${m.alpha.toFixed(2)}, σ = |1 − ηα| = ${m.sigma.toFixed(3)}, λ = ${m.lambda >= 0 ? '+' : ''}${m.lambda.toFixed(3)}, partial sum S_${kIdx + 1} = ${sVal >= 0 ? '+' : ''}${sVal.toFixed(3)}`;
+    } else {
+      hoverEl.textContent =
+        'Hover over any bar to inspect (α, σ, λ, S_k) synchronized across all three panels.';
+    }
+  }
+
+  function setHover(id) {
+    if (sdState.hoveredId === id) return;
+    sdState.hoveredId = id;
+    updateSDExplorer();
+  }
+
+  function initSDExplorer() {
+    const sliderEta = document.getElementById('slider-eta');
+    const sliderSpike = document.getElementById('slider-spike');
+    const sliderBulk = document.getElementById('slider-bulk');
+
+    const syncSliders = () => {
+      sliderEta.value = sdState.eta;
+      sliderSpike.value = sdState.spike;
+      sliderBulk.value = sdState.bulk;
+      sliderEta.dispatchEvent(new Event('input'));
+    };
+
+    sliderEta.addEventListener('input', () => {
+      sdState.eta = parseFloat(sliderEta.value);
+      updateSDExplorer();
+    });
+    sliderSpike.addEventListener('input', () => {
+      sdState.spike = parseFloat(sliderSpike.value);
+      updateSDExplorer();
+    });
+    sliderBulk.addEventListener('input', () => {
+      sdState.bulk = parseFloat(sliderBulk.value);
+      updateSDExplorer();
+    });
+
+    document.querySelectorAll('.preset-btn').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.dataset.preset;
+        const p = PRESETS[key];
+        if (!p) return;
+        document.querySelectorAll('.preset-btn').forEach((b) => b.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        sdState.preset = key;
+        sdState.eta = p.eta;
+        sdState.spike = p.spike;
+        sdState.bulk = p.bulk;
+        sdState.hoveredId = null;
+        syncSliders();
+      });
+    });
+
+    updateSDExplorer();
+  }
+
+  // --------------------------------------------------------------------------
+  // 5. Interactive Explorer 2: Pullback vs. Forward Random Attractor
+  //    Definition 2.2 & Figure 7(a):
+  //    L(x) = 0.5 ||x||^2 - A cos(k x1) cos(k x2),  A = 2.0, k = 4.0
+  //    Three disjoint initial sets B1, B2, B3 evolve under a fixed noise
+  //    realization omega = (xi_{-T}, ..., xi_{-1}).
+  // --------------------------------------------------------------------------
+  function initAttractorSim() {
+    const canvas = document.getElementById('attractor-canvas');
+    if (!canvas) return;
+    const ctx = canvas.getContext('2d');
+
+    const T_MAX = 80;
+    const N_SET = 2400; // per initial set (7,200 total -> instant scrubbing of t)
+    const A = 2.0;
+    const K = 4.0;
+    const AK = A * K;       // 8.0
+    const AKK = A * K * K;  // 32.0
+
+    const W = canvas.width;
+    const H = canvas.height;
+
+    let mode = 'pullback'; // 'pullback' | 'forward'
+    let horizonT = 24;
+    let simEta = 0.074;
+    let simSigma = 0.32;
+    let playing = false;
+    let rafId = null;
+    let lastFrame = 0;
+
+    // Seedable PRNG (Mulberry32)
+    let seed = 20260422;
+    function rand() {
+      seed |= 0;
+      seed = (seed + 0x6d2b79f5) | 0;
+      let t = Math.imul(seed ^ (seed >>> 15), 1 | seed);
+      t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    }
+
+    function randn() {
+      const u1 = Math.max(1e-7, rand());
+      const u2 = rand();
+      return Math.sqrt(-2 * Math.log(u1)) * Math.cos(2 * Math.PI * u2);
+    }
+
+    // Fixed unit-normal noise tape omega[0..T_MAX-1]
+    // In pullback mode, index 0 is xi_{-1} (present), index t-1 is xi_{-t} (past).
+    const noiseX = new Float32Array(T_MAX);
+    const noiseY = new Float32Array(T_MAX);
+
+    function resampleOmega() {
+      for (let i = 0; i < T_MAX; i++) {
+        noiseX[i] = randn();
+        noiseY[i] = randn();
+      }
+    }
+
+    // Three fixed disjoint initial sets B1, B2, B3
+    const initSets = [
+      { x: new Float32Array(N_SET), y: new Float32Array(N_SET), color: 'rgba(26, 92, 101, 0.42)', stroke: '#1a5c65', label: 'B₁', box: [-2.2, -0.7, 0.7, 2.2] },
+      { x: new Float32Array(N_SET), y: new Float32Array(N_SET), color: 'rgba(184, 66, 44, 0.40)', stroke: '#b8422c', label: 'B₂', box: [0.7, 2.2, 0.7, 2.2] },
+      { x: new Float32Array(N_SET), y: new Float32Array(N_SET), color: 'rgba(43, 92, 143, 0.40)', stroke: '#2b5c8f', label: 'B₃', box: [-0.75, 0.75, -2.2, -0.7] }
+    ];
+
+    // Deterministic fill of the 3 initial boxes
+    (function populateInitialSets() {
+      let s = 1337;
+      const u = () => {
+        s = (s * 1664525 + 1013904223) >>> 0;
+        return s / 4294967296;
+      };
+      initSets.forEach((set) => {
+        const [x0, x1, y0, y1] = set.box;
+        for (let i = 0; i < N_SET; i++) {
+          set.x[i] = x0 + u() * (x1 - x0);
+          set.y[i] = y0 + u() * (y1 - y0);
+        }
+      });
+    })();
+
+    // Working buffers for evolved sets
+    const curSets = initSets.map(() => ({
+      x: new Float32Array(N_SET),
+      y: new Float32Array(N_SET)
+    }));
+
+    // Track both single-step snapshot (l1, l2) and ergodic average over last W_ERG steps
+    const W_ERG = 15;
+    let lastErgL1 = 0, lastErgL2 = 0;
+    let lastSnapL1 = 0, lastSnapL2 = 0;
+
+    function sampleMeanLambdas(eta) {
+      let sumL1 = 0;
+      let sumL2 = 0;
+      const stride = 12;
+      let count = 0;
+      for (let s = 0; s < 3; s++) {
+        const xs = curSets[s].x;
+        const ys = curSets[s].y;
+        for (let i = 0; i < N_SET; i += stride) {
+          const x = xs[i];
+          const y = ys[i];
+          const cc = Math.cos(K * x) * Math.cos(K * y);
+          const ss = Math.sin(K * x) * Math.sin(K * y);
+
+          const jDiag = 1 - eta * (1 + AKK * cc);
+          const jOff = Math.abs(eta * AKK * ss);
+
+          const mu1 = Math.abs(jDiag + jOff);
+          const mu2 = Math.abs(jDiag - jOff);
+          const s1 = Math.max(mu1, mu2, 1e-4);
+          const s2 = Math.max(Math.min(mu1, mu2), 1e-4);
+
+          sumL1 += Math.log(s1);
+          sumL2 += Math.log(s2);
+          count += 1;
+        }
+      }
+      return [sumL1 / count, sumL2 / count];
+    }
+
+    function sdFrom2D(l1, l2) {
+      if (l1 < 0) return 0;
+      if (l1 + l2 >= 0) return 2;
+      return 1 + l1 / Math.abs(l2);
+    }
+
+    function evolveToHorizon(t) {
+      const eta = simEta;
+      const sig = simSigma;
+
+      // Copy initial sets
+      for (let s = 0; s < 3; s++) {
+        curSets[s].x.set(initSets[s].x);
+        curSets[s].y.set(initSets[s].y);
+      }
+
+      if (t <= 0) {
+        const [l1, l2] = sampleMeanLambdas(eta);
+        lastSnapL1 = lastErgL1 = l1;
+        lastSnapL2 = lastErgL2 = l2;
+        return;
+      }
+
+      const ergStart = Math.max(0, t - W_ERG);
+      let ergSum1 = 0, ergSum2 = 0, ergCount = 0;
+
+      for (let step = 0; step < t; step++) {
+        // Pullback: apply xi_{-t}, ..., xi_{-1} (ending at fixed xi_{-1} -> stationary A(omega))
+        // Forward:  apply xi_{0}, ..., xi_{t-1} (appending fresh noise -> moving A(theta^t omega))
+        const nIdx = mode === 'pullback' ? (t - 1 - step) : step;
+        const xi1 = noiseX[nIdx] * sig;
+        const xi2 = noiseY[nIdx] * sig;
+
+        for (let s = 0; s < 3; s++) {
+          const xs = curSets[s].x;
+          const ys = curSets[s].y;
+          for (let i = 0; i < N_SET; i++) {
+            const x = xs[i];
+            const y = ys[i];
+            const sx = Math.sin(K * x);
+            const cx = Math.cos(K * x);
+            const sy = Math.sin(K * y);
+            const cy = Math.cos(K * y);
+
+            const gx = x + AK * sx * cy;
+            const gy = y + AK * cx * sy;
+
+            let nx = x - eta * gx + xi1;
+            let ny = y - eta * gy + xi2;
+
+            if (nx > 5.5) nx = 5.5; else if (nx < -5.5) nx = -5.5;
+            if (ny > 5.5) ny = 5.5; else if (ny < -5.5) ny = -5.5;
+
+            xs[i] = nx;
+            ys[i] = ny;
+          }
+        }
+
+        if (step >= ergStart) {
+          const [l1, l2] = sampleMeanLambdas(eta);
+          ergSum1 += l1;
+          ergSum2 += l2;
+          ergCount += 1;
+          if (step === t - 1) {
+            lastSnapL1 = l1;
+            lastSnapL2 = l2;
+          }
+        }
+      }
+
+      lastErgL1 = ergSum1 / Math.max(1, ergCount);
+      lastErgL2 = ergSum2 / Math.max(1, ergCount);
+    }
+
+    function computeHausdorffB1B2() {
+      // Subsampled symmetric Hausdorff distance between evolved B1 and B2
+      const M = 100;
+      const stride = Math.floor(N_SET / M);
+      const x1 = curSets[0].x, y1 = curSets[0].y;
+      const x2 = curSets[1].x, y2 = curSets[1].y;
+
+      let max12 = 0;
+      for (let i = 0; i < M; i++) {
+        const ax = x1[i * stride], ay = y1[i * stride];
+        let minD2 = Infinity;
+        for (let j = 0; j < M; j++) {
+          const dx = ax - x2[j * stride];
+          const dy = ay - y2[j * stride];
+          const d2 = dx * dx + dy * dy;
+          if (d2 < minD2) minD2 = d2;
+        }
+        if (minD2 > max12) max12 = minD2;
+      }
+
+      let max21 = 0;
+      for (let j = 0; j < M; j++) {
+        const bx = x2[j * stride], by = y2[j * stride];
+        let minD2 = Infinity;
+        for (let i = 0; i < M; i++) {
+          const dx = bx - x1[i * stride];
+          const dy = by - y1[i * stride];
+          const d2 = dx * dx + dy * dy;
+          if (d2 < minD2) minD2 = d2;
+        }
+        if (minD2 > max21) max21 = minD2;
+      }
+      return Math.sqrt(Math.max(max12, max21));
+    }
+
+    function updateSimStats() {
+      const ergSD = sdFrom2D(lastErgL1, lastErgL2);
+      const snapSD = sdFrom2D(lastSnapL1, lastSnapL2);
+      const hd = computeHausdorffB1B2();
+
+      const fmt = (v) => (v >= 0 ? '+' : '') + v.toFixed(2);
+
+      document.getElementById('sim-step').textContent =
+        mode === 'pullback' ? `Pullback horizon t = ${horizonT}` : `Forward step t = ${horizonT}`;
+      document.getElementById('sim-out-t').textContent = String(horizonT);
+      document.getElementById('sim-hd').textContent = hd.toFixed(3);
+      document.getElementById('sim-sd').textContent = `Ergodic 2D SD: ${ergSD.toFixed(2)} / 2.00`;
+      document.getElementById('sim-sd-card').textContent = `${ergSD.toFixed(2)} / 2.00`;
+      document.getElementById('sim-sd-snap').textContent = `${snapSD.toFixed(2)} / 2.00`;
+      document.getElementById('sim-l1l2').textContent = `${fmt(lastErgL1)}, ${fmt(lastErgL2)}`;
+    }
+
+    function renderParticles() {
+      const bound = 3.2;
+      const scaleX = W / (2 * bound);
+      const scaleY = H / (2 * bound);
+      const halfW = W * 0.5;
+      const halfH = H * 0.5;
+
+      // Pure white background
+      ctx.fillStyle = '#ffffff';
+      ctx.fillRect(0, 0, W, H);
+
+      // Subtle axes
+      ctx.strokeStyle = '#ecece8';
+      ctx.lineWidth = 1;
+      ctx.beginPath();
+      ctx.moveTo(0, halfH);
+      ctx.lineTo(W, halfH);
+      ctx.moveTo(halfW, 0);
+      ctx.lineTo(halfW, H);
+      ctx.stroke();
+
+      // Faint dashed outlines of the initial regions B1, B2, B3 so the user sees where they started
+      ctx.save();
+      ctx.setLineDash([4, 4]);
+      ctx.lineWidth = 1;
+      initSets.forEach((set) => {
+        const [x0, x1, y0, y1] = set.box;
+        const rx = halfW + x0 * scaleX;
+        const ry = halfH - y1 * scaleY;
+        const rw = (x1 - x0) * scaleX;
+        const rh = (y1 - y0) * scaleY;
+        ctx.strokeStyle = set.stroke;
+        ctx.globalAlpha = horizonT === 0 ? 0.55 : 0.16;
+        ctx.strokeRect(rx, ry, rw, rh);
+        ctx.fillStyle = set.stroke;
+        ctx.globalAlpha = horizonT === 0 ? 0.85 : 0.35;
+        ctx.font = '11px "IBM Plex Mono", monospace';
+        ctx.fillText(set.label, rx + 5, ry + 14);
+      });
+      ctx.restore();
+
+      // Draw all 3 evolved sets (interleaved order avoids one color hiding the others)
+      for (let s = 0; s < 3; s++) {
+        ctx.fillStyle = initSets[s].color;
+        const xs = curSets[s].x;
+        const ys = curSets[s].y;
+        for (let i = 0; i < N_SET; i++) {
+          const px = halfW + xs[i] * scaleX;
+          const py = halfH - ys[i] * scaleY;
+          if (px >= 0 && px < W && py >= 0 && py < H) {
+            ctx.fillRect(px - 0.8, py - 0.8, 1.7, 1.7);
+          }
+        }
+      }
+    }
+
+    function recomputeAndDraw() {
+      evolveToHorizon(horizonT);
+      renderParticles();
+      updateSimStats();
+    }
+
+    function loop(ts) {
+      if (!playing) return;
+      if (ts - lastFrame > 95) {
+        horizonT = horizonT >= T_MAX ? 0 : horizonT + 1;
+        document.getElementById('sim-horizon').value = horizonT;
+        recomputeAndDraw();
+        lastFrame = ts;
+      }
+      rafId = requestAnimationFrame(loop);
+    }
+
+    // Controls
+    const sliderHorizon = document.getElementById('sim-horizon');
+    const sliderEta = document.getElementById('sim-eta');
+    const sliderSigma = document.getElementById('sim-sigma');
+    const outEta = document.getElementById('sim-out-eta');
+    const outSigma = document.getElementById('sim-out-sigma');
+    const btnToggle = document.getElementById('btn-sim-toggle');
+    const btnStep = document.getElementById('btn-sim-step');
+    const btnReset = document.getElementById('btn-sim-reset');
+    const btnNoise = document.getElementById('btn-sim-noise');
+    const btnPullback = document.getElementById('btn-mode-pullback');
+    const btnForward = document.getElementById('btn-mode-forward');
+    const modeDesc = document.getElementById('sim-mode-desc');
+
+    function setPlaying(val) {
+      playing = val;
+      btnToggle.textContent = playing ? 'Pause' : 'Play t';
+      if (playing) {
+        lastFrame = 0;
+        rafId = requestAnimationFrame(loop);
+      } else if (rafId) {
+        cancelAnimationFrame(rafId);
+      }
+    }
+
+    btnPullback.addEventListener('click', () => {
+      mode = 'pullback';
+      btnPullback.classList.add('is-active');
+      btnForward.classList.remove('is-active');
+      modeDesc.textContent = 'Fixed target A(ω) at t_now = 0';
+      recomputeAndDraw();
+    });
+
+    btnForward.addEventListener('click', () => {
+      mode = 'forward';
+      btnForward.classList.add('is-active');
+      btnPullback.classList.remove('is-active');
+      modeDesc.textContent = 'Moving target A(θᵗω) as t grows';
+      recomputeAndDraw();
+    });
+
+    sliderHorizon.addEventListener('input', () => {
+      setPlaying(false);
+      horizonT = parseInt(sliderHorizon.value, 10);
+      recomputeAndDraw();
+    });
+
+    sliderEta.addEventListener('input', () => {
+      simEta = parseFloat(sliderEta.value);
+      outEta.textContent = simEta.toFixed(3);
+      recomputeAndDraw();
+    });
+
+    sliderSigma.addEventListener('input', () => {
+      simSigma = parseFloat(sliderSigma.value);
+      outSigma.textContent = simSigma.toFixed(2);
+      recomputeAndDraw();
+    });
+
+    btnToggle.addEventListener('click', () => setPlaying(!playing));
+
+    btnStep.addEventListener('click', () => {
+      setPlaying(false);
+      horizonT = Math.min(T_MAX, horizonT + 1);
+      sliderHorizon.value = horizonT;
+      recomputeAndDraw();
+    });
+
+    btnReset.addEventListener('click', () => {
+      setPlaying(false);
+      horizonT = 0;
+      sliderHorizon.value = 0;
+      recomputeAndDraw();
+    });
+
+    btnNoise.addEventListener('click', () => {
+      seed = Math.floor(Math.random() * 1e9);
+      resampleOmega();
+      recomputeAndDraw();
+    });
+
+    resampleOmega();
+    recomputeAndDraw();
+  }
+
+  // --------------------------------------------------------------------------
+  // 6. BibTeX Copy Button
+  // --------------------------------------------------------------------------
+  function initBibtexCopy() {
+    const btn = document.getElementById('btn-copy-bibtex');
+    const code = document.getElementById('bibtex-code');
+    if (!btn || !code) return;
+
+    btn.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(code.textContent.trim());
+        btn.textContent = 'Copied';
+        setTimeout(() => {
+          btn.textContent = 'Copy BibTeX';
+        }, 1800);
+      } catch {
+        // Fallback selection
+        const range = document.createRange();
+        range.selectNodeContents(code);
+        const sel = window.getSelection();
+        sel.removeAllRanges();
+        sel.addRange(range);
+        btn.textContent = 'Selected';
+        setTimeout(() => {
+          btn.textContent = 'Copy BibTeX';
+        }, 1800);
+      }
+    });
+  }
+
+  // --------------------------------------------------------------------------
+  // Bootstrap
+  // --------------------------------------------------------------------------
+  document.addEventListener('DOMContentLoaded', () => {
+    initMath();
+    initRangeFallback();
+    initSDExplorer();
+    initAttractorSim();
+    initBibtexCopy();
+  });
+})();
+
+  </script>
+</body>
+</html>
