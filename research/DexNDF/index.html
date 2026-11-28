@@ -1,21 +1,242 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DexNDF</title>
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans" rel="stylesheet">
-  <style>
-    body { margin: 0; font-family: 'Noto Sans', sans-serif; background: #fff; color: #363636; }
-    main { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 16px; text-align: center; }
-    h1 { font-family: 'Google Sans', sans-serif; font-size: 3rem; margin: 0 0 0.5rem; }
-    p { font-size: 1.25rem; color: #7a7a7a; margin: 0; }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<meta name="description" content="DexNDF learns object-aware geometric priors for dexterous robot hands. Explore the paper, method, and simulated manipulation results.">
+<title>DexNDF · Object-Aware Geometric Dexterous Hand Priors</title>
+<link rel="stylesheet" href="style.css?v=31">
+<script defer src="page.js"></script>
 </head>
-<body>
-  <main>
-    <h1>DexNDF</h1>
-    <p>Project page coming soon.</p>
-  </main>
-</body>
-</html>
+<body id="top">
+<a class="skip" href="#main">Skip to content</a>
+<header><nav class="wrap" aria-label="Main navigation">
+
+<div class="navlinks"><a href="#abstract">Abstract</a><a href="#method">Method</a><a href="#applications">Applications</a></div>
+</nav></header>
+<main id="main">
+<div class="wrap">
+<section class="hero" aria-labelledby="project-title">
+<h1 id="project-title">DexNDF: Object-Aware Geometric Dexterous Hand Priors</h1>
+<p class="authors"><a href="https://zuhaoliu.github.io/">Zuhao Liu</a>, <a href="https://tolgabirdal.com/">Tolga Birdal</a></p>
+<p class="institution">Imperial College London</p>
+<div class="buttons">
+<button type="button" class="button upcoming" disabled>arXiv <small>Coming soon</small></button>
+<button type="button" class="button upcoming" disabled>Code <small>Coming soon</small></button>
+<a class="button" href="#applications"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m10 9 5 3-5 3z"/></svg>Videos</a>
+</div>
+</section>
+<figure class="leadfigure">
+<a class="teaser-zoom" href="assets/figures/teaser.pdf" aria-label="View the full-resolution DexNDF teaser"><img src="assets/figures/teaser.webp?v=2" width="4400" height="1882" fetchpriority="high" alt="Two rows show finger poses approaching grasps for a carton and a duck. Each row follows the projection trajectories for Inspire, XHand, and the held-out Sharpa hand."></a>
+<figcaption>DexNDF refines finger poses for a carton and a duck across different hands. On the unseen Sharpa hand, a kinematic adapter lets the same frozen predictor guide the grasp.</figcaption>
+</figure>
+</div>
+<section class="band tinted" id="abstract"><div class="wrap"><div class="reading">
+<h2>Abstract</h2><p>Learning dexterous manipulation priors requires modeling object-dependent robot-hand configuration spaces from sparse demonstrations. We introduce DexNDF, a cross-embodiment, object-aware geometric neural distance field. We represent revolute joints on a product of circles via our TorusHand. Through embodiment-specific embeddings, object-aware grasp pooling, and negative sampling, we learn a shared conditional field, which is formulated as an energy-based model, that connects distance-field gradients to the Riemannian score, yielding a <em>score direction supervision</em> alongside distance regression. Our novel <em>stochastic tempered geodesic projection</em> unifies denoising and sampling. To zero-shot generalize to unseen hands, we train only a lightweight adapter using kinematic correspondences, requiring no target-hand interaction data. Over six training embodiments and one unseen hand, we demonstrate improved denoising and manipulation performance across pose denoising, pose generation, dexterous grasping, RL-based imitation learning, and model predictive control.</p></div></div></section>
+<section class="band" id="method"><div class="wrap reading">
+<h2>Method overview</h2>
+<h3>TorusHand</h3>
+<p>We represent each finger joint angle as a point on a circle. Together, these circles form a torus, where each point represents a dexterous hand pose. Given an object’s geometry, DexNDF estimates how far that pose is from a plausible configuration for grasping the object.</p>
+<figure class="methodfigure"><a href="assets/figures/torushand.webp"><img src="assets/figures/torushand.webp" width="1450" height="807" loading="lazy" alt="A joint angle on a circle and several hand poses on a torus. Colored paths connect three poses on the surface."></a>
+</figure>
+
+<h3>Adaptive Tempered Geodesic Projection (ATGP)</h3>
+<p>Adaptive Tempered Geodesic Projection (ATGP) unifies pose denoising and grasp generation. Each step moves the fingers toward a plausible grasp using a step size that scales with the predicted distance. The inverse temperature β controls how much the size can vary. High β keeps the updates focused on refining a noisy pose, while lower β lets the same method explore more diverse ways to interact with the same object.</p>
+<figure class="methodfigure atgp"><a href="assets/figures/tempered-torus.webp"><img src="assets/figures/tempered-torus.webp" width="2097" height="495" loading="lazy" alt="Three tori at inverse temperatures 1, 6, and 20. Warm colors concentrate around the stronger of two modes as inverse temperature rises."></a>
+</figure>
+<h3 id="learning-from-sparse-grasps">Novel Training Scheme</h3>
+<p>To learn from sparse robot manipulation data, we use 3D object geometry to pool reference grasps from similarly shaped objects and exclude those objects when selecting negative examples. We also align pose representations across hands so the field can generalize to unseen hand embodiments.</p>
+</div></section>
+<section class="band tinted" id="applications"><div class="wrap" id="demos">
+<h2>Applications</h2>
+<article class="application-box" aria-labelledby="imitation-learning">
+<h3 id="imitation-learning">Imitation Learning</h3>
+<div class="video-grid featured"><figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Puzzle cube imitation across five robot hands" poster="assets/posters/imitation-grid-t30.jpg" src="assets/videos/imitation_t30_3x2.mp4">
+    <a href="assets/videos/imitation_t30_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Dumbbell imitation across five robot hands" poster="assets/posters/imitation-grid-t85.jpg" src="assets/videos/imitation_t85_3x2.mp4">
+    <a href="assets/videos/imitation_t85_3x2.mp4">Download the MP4</a>
+  </video>
+</figure></div>
+<details class="more-videos"><summary>Show more videos</summary>
+<h4>Imitation across hands</h4>
+<div class="video-grid">
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="BBQ bottle · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t0.jpg" src="assets/videos/imitation_t0_3x2.mp4">
+    <a href="assets/videos/imitation_t0_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Tomato sauce can · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t12.jpg" src="assets/videos/imitation_t12_3x2.mp4">
+    <a href="assets/videos/imitation_t12_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Black holder · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t19.jpg" src="assets/videos/imitation_t19_3x2.mp4">
+    <a href="assets/videos/imitation_t19_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Remote control · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t27.jpg" src="assets/videos/imitation_t27_3x2.mp4">
+    <a href="assets/videos/imitation_t27_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Patterned mug · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t37.jpg" src="assets/videos/imitation_t37_3x2.mp4">
+    <a href="assets/videos/imitation_t37_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Potato masher · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t55.jpg" src="assets/videos/imitation_t55_3x2.mp4">
+    <a href="assets/videos/imitation_t55_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Mouse · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t90.jpg" src="assets/videos/imitation_t90_3x2.mp4">
+    <a href="assets/videos/imitation_t90_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2160" height="1536" style="aspect-ratio:2160/1536" controls playsinline muted preload="none" aria-label="Red spatula · Cross-embodiment imitation" poster="assets/posters/imitation-grid-t98.jpg" src="assets/videos/imitation_t98_3x2.mp4">
+    <a href="assets/videos/imitation_t98_3x2.mp4">Download the MP4</a>
+  </video>
+</figure>
+</div>
+<h4>Imitation method comparisons</h4>
+<div class="video-grid">
+<figure>
+  <video width="2880" height="792" style="aspect-ratio:2880/792" controls playsinline muted preload="none" aria-label="Allegro imitation · Orange-juice carton" poster="assets/posters/methods-t7_allegro.jpg" src="assets/videos/methods-t7_allegro_1x4.mp4">
+    <a href="assets/videos/methods-t7_allegro_1x4.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2880" height="792" style="aspect-ratio:2880/792" controls playsinline muted preload="none" aria-label="Allegro · Ranch bottle" poster="assets/posters/methods-t59_allegro.jpg" src="assets/videos/methods-t59_allegro_1x4.mp4">
+    <a href="assets/videos/methods-t59_allegro_1x4.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2880" height="792" style="aspect-ratio:2880/792" controls playsinline muted preload="none" aria-label="Shadow · Waffles box" poster="assets/posters/methods-t69_shadow.jpg" src="assets/videos/methods-t69_shadow_1x4.mp4">
+    <a href="assets/videos/methods-t69_shadow_1x4.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2880" height="792" style="aspect-ratio:2880/792" controls playsinline muted preload="none" aria-label="Shadow · Coffee pot" poster="assets/posters/methods-t77_shadow.jpg" src="assets/videos/methods-t77_shadow_1x4.mp4">
+    <a href="assets/videos/methods-t77_shadow_1x4.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2880" height="792" style="aspect-ratio:2880/792" controls playsinline muted preload="none" aria-label="XHand · Patterned mug" poster="assets/posters/methods-t45_xhand.jpg" src="assets/videos/methods-t45_xhand_1x4.mp4">
+    <a href="assets/videos/methods-t45_xhand_1x4.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2880" height="792" style="aspect-ratio:2880/792" controls playsinline muted preload="none" aria-label="XHand · Puzzle toy" poster="assets/posters/methods-t32_xhand.jpg" src="assets/videos/methods-t32_xhand_1x4.mp4">
+    <a href="assets/videos/methods-t32_xhand_1x4.mp4">Download the MP4</a>
+  </video>
+</figure>
+</div>
+</details>
+</article>
+<article class="application-box" aria-labelledby="generation-grid-headphones-title">
+<h3 id="generation-grid-headphones-title">Dexterous Pose Generation</h3>
+<div class="video-grid featured"><figure><video width="2240" height="1440" style="aspect-ratio:2240/1440" controls playsinline muted preload="none" aria-labelledby="generation-grid-headphones-title" poster="assets/posters/generation-grid-headphones.jpg" src="assets/videos/generation-grid-headphones_6s.mp4">
+    <a href="assets/videos/generation-grid-headphones_6s.mp4">Download the MP4</a>
+  </video></figure></div>
+<details class="more-videos"><summary>Show more videos</summary>
+<div class="video-grid">
+<figure>
+  <video width="2240" height="1440" style="aspect-ratio:2240/1440" controls playsinline muted preload="none" aria-label="Bottle · Pose generation" poster="assets/posters/generation-grid-bottle.jpg" src="assets/videos/generation-grid-bottle.mp4">
+    <a href="assets/videos/generation-grid-bottle.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2240" height="1440" style="aspect-ratio:2240/1440" controls playsinline muted preload="none" aria-label="Knife · Pose generation" poster="assets/posters/generation-grid-knife.jpg" src="assets/videos/generation-grid-knife.mp4">
+    <a href="assets/videos/generation-grid-knife.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2240" height="1440" style="aspect-ratio:2240/1440" controls playsinline muted preload="none" aria-label="Camera · Pose generation" poster="assets/posters/generation-grid-camera.jpg" src="assets/videos/generation-grid-camera.mp4">
+    <a href="assets/videos/generation-grid-camera.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="2240" height="1440" style="aspect-ratio:2240/1440" controls playsinline muted preload="none" aria-label="Flashlight · Pose generation" poster="assets/posters/generation-grid-flashlight.jpg" src="assets/videos/generation-grid-flashlight_6s.mp4">
+    <a href="assets/videos/generation-grid-flashlight_6s.mp4">Download the MP4</a>
+  </video>
+</figure>
+</div>
+</details>
+</article>
+<article class="application-box" aria-labelledby="denoising-grid-sharpa-title">
+<h3 id="denoising-grid-sharpa-title">Dexterous Pose Denoising</h3>
+<div class="video-grid featured"><figure><video width="3240" height="1144" style="aspect-ratio:3240/1144" controls playsinline muted preload="none" aria-labelledby="denoising-grid-sharpa-title" poster="assets/posters/denoising-grid-sharpa.jpg" src="assets/videos/denoising_sharpa_1x3_smooth.mp4">
+    <a href="assets/videos/denoising_sharpa_1x3_smooth.mp4">Download the MP4</a>
+  </video></figure></div>
+<details class="more-videos"><summary>Show more videos</summary>
+<div class="video-grid">
+<figure>
+  <video width="3240" height="1144" style="aspect-ratio:3240/1144" controls playsinline muted preload="none" aria-label="Shadow · Pose denoising" poster="assets/posters/denoising-grid-shadow.jpg" src="assets/videos/denoising_shadow_1x3_smooth.mp4">
+    <a href="assets/videos/denoising_shadow_1x3_smooth.mp4">Download the MP4</a>
+  </video>
+</figure>
+<figure>
+  <video width="3240" height="1144" style="aspect-ratio:3240/1144" controls playsinline muted preload="none" aria-label="XHand · Pose denoising" poster="assets/posters/denoising-grid-xhand.jpg" src="assets/videos/denoising_xhand_1x3_smooth.mp4">
+    <a href="assets/videos/denoising_xhand_1x3_smooth.mp4">Download the MP4</a>
+  </video>
+</figure>
+</div>
+</details>
+</article>
+<article class="application-box" aria-labelledby="dexterous-grasping">
+<h3 id="dexterous-grasping">Dexterous Grasping</h3>
+<figure class="grasp-plate"><a href="assets/grasping/main-comparison.webp"><img src="assets/grasping/main-comparison.webp" width="1888" height="848" loading="lazy" alt="DRO-Grasp on the left and CEDex on the right. Each pair of objects shows the baseline above and the same method with DexNDF below."></a></figure>
+<details class="more-videos"><summary>Show More Results</summary>
+<figure class="grasp-plate"><a href="assets/grasping/supp-comparison.webp"><img src="assets/grasping/supp-comparison.webp" width="1888" height="848" loading="lazy" alt="Four additional grasp examples. DRO-Grasp and CEDex baselines appear above the corresponding DexNDF results."></a></figure>
+</details>
+</article>
+</div></section>
+<section class="band tinted" id="citation"><div class="wrap reading"><div class="results-head"><h2>Citation</h2></div>
+<pre><code id="bib">@unpublished{liu2026dexndf,
+  author = {Liu, Zuhao and Birdal, Tolga},
+  title  = {{DexNDF}: Object-Aware Geometric Dexterous Hand Priors},
+  year   = {2026},
+  note   = {Manuscript}
+}</code></pre>
+</div></section>
+</main>
+<footer><div class="wrap footrow"><span>DexNDF · Imperial College London</span><span>Page inspired by <a class="footerlink" href="https://circle-group.github.io/research/NRMF/">NRMF</a>.</span></div></footer>
+</body></html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
